@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Modern, powerful and simple theme for Hexo",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "npm cache clean && npm install",
+    "lint": "bash lint.sh"
   },
   "repository": {
     "type": "git",

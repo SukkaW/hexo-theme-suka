@@ -12,9 +12,15 @@ gulp.task('minify-js', () => {
 
 gulp.task('minify-css', () => {
   return gulp.src('dist/**/*.css')
-	.pipe(rename({suffix: '.min'}))
+    .pipe(rename({suffix: '.min'}))
     .pipe(cleanCSS())
     .pipe(gulp.dest('source'));
 });
 
-gulp.task('default', gulp.series('minify-js', 'minify-css'));
+gulp.task('build', gulp.parallel('minify-js', 'minify-css'));
+
+gulp.task('default', gulp.parallel('build'));
+
+gulp.task('watch', function() {
+    gulp.watch('./dist/**', gulp.parallel('build'));
+});
