@@ -1,4 +1,4 @@
-/** !
+/**!
  * Patch by neoFelhz on 2017/11/16 https://github.com/neoFelhz https://lab.nfz.moe/lsloader/
  * Created by EYHN on 2017/4/17. https://github.com/EYHN
  * From sexdevil/LSLoader https://github.com/sexdevil/LSLoader

@@ -1,0 +1,50 @@
+<%
+    var title = page.title;
+    if (is_archive()) {
+        title = __('archive');
+        if (is_month()) {
+            title += ': ' + page.year + '-' + page.month;
+        }
+        else if (is_year()) {
+            title += ': ' + page.year;
+        }
+    }
+    else if (is_category()) {
+        title = __('category') + ': ' + page.category;
+    }
+    else if (is_tag()) {
+        title = __('tag') + ': ' + page.tag;
+    }
+%>
+<meta property="og:title" content="<% if (title) { %><%= title %> | <% } %><%= config.title %>">
+
+<meta property="og:type" content="blog">
+<meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '') %>">
+<meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= url_for(theme.head.high_res_favicon) %><% } %>">
+
+<%
+    var description = config.description;
+    if (page.description) {
+        description = page.description;
+    } else if (page.excerpt) {
+        description = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
+    }
+%>
+<% if (description) { %><meta property="og:description" content="<%= description %>"><% } %>
+
+<% if (page.tags && page.tags.each) { page.tags.each(function(tag){ %>
+    <meta property="og:article:tag" content="<%= tag.name %>">
+<% })} else if (theme.head.keywords) { %>
+    <meta property="og:article:tag" content="<%= theme.head.keywords %>">
+<% } %>
+
+<meta name="twitter:card" content="<% if (page.thumbnail) { %>summary_large_image<% } else { %>summary<% } %>">
+<% if(theme.sns.twitter) { %>
+    <meta property="twitter:site" content="<%= theme.sns.twitter %>">
+    <meta property="twitter:creator" content="<%= theme.sns.twitter.replace('https://twitter.com/','') %>">
+<% } %>
+
+<% if( (is_post()) ) { %>
+    <meta property="article:published_time" content="<%= date_xml(page.date) %>">
+    <meta property="article:modified_time" content="<%= date_xml(page.date) %>">
+<% } %>

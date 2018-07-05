@@ -1,4 +1,29 @@
 # ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+head:
+  favicon: favicon.ico
+  high_res_favicon: favicon.ico
+  keywords: 12345
+  android_chrome_color: '#000000'
+  site_verification:
+    google:
+    baidu:
+  pwa_manifest:
+  open_search:
+
+img:
+  avatar:
+
+
+sns:
+  twttier:
+analytics:
+  google_site_id:
+  baidu_site_id:
+  cnzz_site_id:
+
+# ---------------------------------------------------------------
 # !!ATTENTION!!
 # Do Not Modify Below This Line, unless you know what you are doing!
 # ---------------------------------------------------------------

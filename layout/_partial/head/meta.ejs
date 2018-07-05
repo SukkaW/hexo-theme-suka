@@ -1,0 +1,50 @@
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<%
+    var title = page.title;
+    if (is_archive()) {
+        title = __('archive');
+        if (is_month()) {
+            title += ': ' + page.year + '-' + page.month;
+        }
+        else if (is_year()) {
+            title += ': ' + page.year;
+        }
+    }
+    else if (is_category()) {
+        title = __('category') + ': ' + page.category;
+    }
+    else if (is_tag()) {
+        title = __('tag') + ': ' + page.tag;
+    }
+%>
+<title><% if (title) { %><%= title + ' | ' %><% } %><%= config.title %></title>
+
+<!-- Favicons -->
+<link rel="icon shortcut" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
+<link rel="icon" href="<%= url_for(theme.head.high_res_favicon) %>">
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<%
+    var description = config.description;
+    if (page.description) {
+        description = page.description;
+    } else if (page.excerpt) {
+        description = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
+    }
+%>
+<% if (description) { %><meta name="description" itemprop="description" content="<%= description %>"><% } %>
+
+<!-- Keywords -->
+<meta name="keywords" content="<%= theme.head.keywords %><% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %>">
+
+<% if (theme.head.android_chrome_color) { %><meta name="theme-color" content="<%= theme.head.android_chrome_color %>"><% } %>
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />

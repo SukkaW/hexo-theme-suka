@@ -1,0 +1,84 @@
+<% if( (page.current === 1) && (is_home()) ) { %>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Blog",
+    "author": {
+        "@type": "Person",
+        "name": "<%= config.author %>",
+        "image": {
+            "@type": "ImageObject",
+            "url": "<%= theme.img.avatar %>"
+        },
+        "description": "<%- theme.slogan %>"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "<%= config.title %>",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "<%= theme.head.high_res_favicon %>"
+        }
+    },
+    "url": "<%- config.url %>",
+    "image": {
+        "@type": "ImageObject",
+        "url": "<%= theme.head.high_res_favicon %>"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<%= config.url %>"
+    },
+    "keywords": "<%= theme.head.keywords %>",
+    "description": "<%= config.description %>"
+}
+</script>
+<% } %>
+
+<% if( (is_post()) ) { %>
+
+<%
+    var description = config.description;
+    if (page.description) {
+        description = page.description;
+    } else if (page.excerpt) {
+        description = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
+    }
+%>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<%- config.url %>"
+    },
+    "headline": "<%- page.title %>",
+    <% if(page.thumbnail) { %>
+    "image": "<%= page.thumbnail %>",
+    <% } %>
+    "datePublished": "<%= date_xml(page.date) %>",
+    "dateModified": "<%= date_xml(page.updated) %>",
+    "author": {
+        "@type": "Person",
+        "name": "<%= config.author %>",
+        "image": {
+            "@type": "ImageObject",
+            "url": "<%= theme.img.avatar %>"
+        },
+        "description": "<%- theme.slogan %>"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "<%= config.title %>",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "<%= theme.head.high_res_favicon %>"
+        }
+    },
+    "keywords": "<% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %><%= theme.head.keywords %>",
+    "description": "<%= description %>"
+}
+</script>
+<% } %>
