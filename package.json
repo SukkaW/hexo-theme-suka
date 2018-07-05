@@ -1,0 +1,33 @@
+{
+  "name": "hexo-theme-suka",
+  "version": "0.0.1",
+  "description": "Modern, powerful and simple theme for Hexo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SukkaW/hexo-theme-suka.git"
+  },
+  "keywords": [
+    "hexo",
+    "hexo-theme",
+    "suka",
+    "sukkaw"
+  ],
+  "author": "SukkaW",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SukkaW/hexo-theme-suka/issues"
+  },
+  "homepage": "https://github.com/SukkaW/hexo-theme-suka#readme",
+  "devDependencies": {
+    "ejs-lint": "^0.3.0",
+    "eslint": "^5.0.1",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-rename": "^1.3.0",
+    "gulp-uglify": "^3.0.0",
+    "sass-lint": "^1.12.1"
+  }
+}
