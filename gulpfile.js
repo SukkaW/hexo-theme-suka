@@ -22,5 +22,5 @@ gulp.task('build', gulp.parallel('minify-js', 'minify-css'));
 gulp.task('default', gulp.parallel('build'));
 
 gulp.task('watch', function() {
-    gulp.watch('./dist/**', gulp.parallel('build'));
+  gulp.watch('./dist/**', gulp.parallel('build'));
 });
