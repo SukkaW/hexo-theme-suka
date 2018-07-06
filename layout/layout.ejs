@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html style="display:none" <% if(config.language) { %>lang="<%- config.language %>"<% } %>>
+<html <% if(config.language) { %>lang="<%- config.language %>"<% } %>>
     <%- partial('_partial/head/main') %>
 
     <body>
-        <%- partial('_source/footer') %>
+        <!-- ### Import File ### -->
+        <%- partial('_partial/source/footer', {}, {cache: true}) %>
     </body>
 
 </html>

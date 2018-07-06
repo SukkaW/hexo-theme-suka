@@ -18,28 +18,28 @@
         ]
     </script>
 
-    <!-- DNS Prefetch -->
+    <!-- ### DNS Prefetch ### -->
     <%- partial('_partial/head/dns-prefetch', {}, {cache: true}) %>
 
-    <!-- Meta & Title & Info -->
+    <!-- ### Meta & Title & Info ### -->
     <%- partial('_partial/head/meta') %>
 
-    <!-- Import File -->
-    <%- partial('_source/head') %>
+    <!-- ### Import File ### -->
+    <%- partial('_partial/source/head', {}, {cache: true}) %>
 
-    <!-- Site Verification -->
+    <!-- ### Site Verification ### -->
     <%- partial('_partial/head/site-verification', {}, {cache: true}) %>
 
-    <!-- RSS -->
+    <!-- ### RSS ### -->
     <%- partial('_partial/head/rss', {}, {cache: true}) %>
 
-    <!-- WebApp -->
+    <!-- ### WebApp ### -->
     <%- partial('_partial/head/webapp') %>
 
-    <!-- The Open Graph & Twitter Card Protocol -->
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
     <%- partial('_partial/head/open-graph') %>
 
-    <!-- Analytics -->
+    <!-- ### Analytics ### -->
     <% if(theme.analytics.google_site_id) { %>
         <%- partial('_plugin/analytics/google', {}, {cache: true}) %>
     <% } %>
@@ -50,13 +50,13 @@
         <%- partial('_plugin/analytics/cnzz', {}, {cache: true}) %>
     <% } %>
 
-    <!-- Canonical link -->
+    <!-- ### Canonical link ### -->
     <link rel="canonical" href="<%= config.url + url_for(page.path).replace('index.html', '') %>">
 
-    <!-- Structured Data -->
+    <!-- ### Structured Data ### -->
     <%- partial('_partial/head/structured-data') %>
 
-    <!-- Custom Head -->
+    <!-- ### Custom Head ### -->
     <% if (site.data.head) { %>
         <% for (var i in site.data.head) { %>
             <%- site.data.head[i] %>

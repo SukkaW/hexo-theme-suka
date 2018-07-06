@@ -24,6 +24,30 @@ analytics:
   cnzz_site_id:
 
 # ---------------------------------------------------------------
+# Vendors Settings
+# ---------------------------------------------------------------
+# Set a CDN address for the vendor you want to customize.
+# Be aware that you should use the same version as internal ones to avoid potential problems.
+# We prefer you using the https protocol of CDN files whether you enable https on your site or not.
+vendors:
+  # hexo-theme-suka
+  # https://github.com/SukkaW/hexo-theme-suka
+  suka:
+    style_css:
+  # Spectre.css
+  # https://picturepan2.github.io/spectre/
+  # Version: 0.5.3
+  spectre:
+    spectre_css:
+    spectre_exp_css:
+    spectre_icons_css:
+  # Lazyload
+  # https://github.com/verlok/lazyload
+  # Version: 8.9.0
+  lazyload:
+
+
+# ---------------------------------------------------------------
 # !!ATTENTION!!
 # Do Not Modify Below This Line, unless you know what you are doing!
 # ---------------------------------------------------------------
