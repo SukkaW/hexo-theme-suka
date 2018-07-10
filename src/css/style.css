@@ -4,11 +4,19 @@
  * Link: https://github.com/SukkaW/hexo-theme-suka
  * License: GPL-3.0
  */
+
 /*
  * Global
+ * Header
+ * Sidebar
  * Footer
 */
-/*============* Global */
+
+/**
+ * =========================================================
+ * ************   Global   ************
+ * =========================================================
+ */
 
 body,
 html {
@@ -22,37 +30,164 @@ code {
 
 /* Override the Spectre.css */
 
-a {
-    text-decoration: none;
-}
-a:focus {
-    box-shadow: unset !important;
+html a:focus {
+    box-shadow: none !important;
 }
 
-/*============* Footer */
+/* Scrollbar */
+
+html *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+}
+
+@media (min-width: 1024px) {
+    html *::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+html *::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .3);
+}
+
+/**
+ * =========================================================
+ * ************   Header   ************
+ * =========================================================
+ */
+
+/* Only show on the screen width smaller than or equal to 960px. */
+
+header {
+    padding: 4rem .75rem;
+}
+
+.header-title {
+    font-size: 1.3rem
+}
+
+.header-slogan {
+    font-size: .8rem
+}
+
+@media (max-width: 481px) {
+    header {
+        padding: 3.5rem .75rem 2rem;
+    }
+}
+
+/**
+ * =========================================================
+ * ************   Sidebar   ************
+ * =========================================================
+ */
+
+.off-canvas .off-canvas-content {
+    padding: .4rem;
+}
+
+/* Overlay shadow */
+
+.off-canvas .off-canvas-overlay {
+    background: #000;
+    opacity: .55;
+}
+
+/* Sidebar content */
+
+
+/* Responsive */
+
+@media screen and (min-width: 480px) {
+    .main-layout-container {
+        max-width: 27.4rem;
+    }
+    #sidebar {
+        padding: .8rem
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .main-layout-container {
+        max-width: 36.1rem;
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main-layout-container {
+        max-width: 44.7rem;
+        padding-right: 2.4rem;
+        padding-left: 2.4rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .main-layout-container {
+        max-width: 61rem;
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+}
+
+#sidebar {
+    width: 14rem;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 960px) {
+    #sidebar {
+        width: 12.5rem;
+        box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .3), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .16);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #sidebar {
+        width: 61.818%;
+        box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .3), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .16);
+    }
+}
+
+/**
+ * =========================================================
+ * ************   Footer   ************
+ * =========================================================
+ */
 
 footer {
     padding: 1.2rem;
-    font-size: .8rem;
-    max-width: 36rem;
+    font-size: .75rem;
     color: #999;
 }
 
-.footer-copyright a {
+.footer-copyright-a,
+.footer-copyright-a:visited {
     text-decoration: none;
     color: #999;
 }
 
-.footer-copyright a:hover {
+.footer-copyright-a:hover,
+.footer-copyright-a:focus {
     color: #535353;
     text-decoration: underline !important;
 }
 
-.footer-develop a {
+.footer-text a {
+    color: #999;
+}
+
+.footer-develop-a,
+.footer-develop-a:visited {
     color: #6b6b6b;
 }
 
-.footer-develop a:hover {
+.footer-develop-a:hover,
+.footer-develop-a:focus {
     color: #535353;
 }
 

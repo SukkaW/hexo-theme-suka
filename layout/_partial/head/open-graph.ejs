@@ -48,3 +48,5 @@
     <meta property="article:published_time" content="<%= date_xml(page.date) %>">
     <meta property="article:modified_time" content="<%= date_xml(page.date) %>">
 <% } %>
+
+<% if(config.language) { %><meta property="og:locale" content="<%- config.language %>"><% } %>

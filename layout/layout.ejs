@@ -11,14 +11,13 @@
             </a>
             <!-- ### off-screen: Sidebar ### -->
             <div id="sidebar" class="off-canvas-sidebar">
-                <div id="sidebar-content">
-                    <%- partial('_partial/sidebar') %>
-                </div>
+                <%- partial('_partial/sidebar/main') %>
             </div>
             <a class="off-canvas-overlay" href="#close"></a>
             <div class="off-canvas-content">
                 <!-- ### off-screen: Main content ### -->
                 <main>
+                    <%- partial('_partial/header', {}, {cache: true}) %>
                     <%- body %>
                 </main>
                 <!-- ### off-screen: Footer ### -->

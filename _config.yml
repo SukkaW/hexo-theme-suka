@@ -23,9 +23,11 @@ footer:
   # Footer Text
   # You can specify the text you want to show in footer, HTML tag is supported.
   # For example, you can setup ICP license number as:
-  #   custom_text: '<a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>'
+  #   custom_text: '<a href="http://www.miitbeian.gov.cn" rel="nofollow noopener noreferrer">某ICP备xxxxxxxx号-x</a>'
 
-  custom_text: '<a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>'
+  custom_text:
+    - '<a href="http://www.miitbeian.gov.cn" rel="nofollow noopener noreferrer">某ICP备xxxxxxxx号-x</a>'
+    - 'Hosted on XXXXX Pages'
 # ---------------------------------------------------------------
 # Style Settings
 # ---------------------------------------------------------------
@@ -35,6 +37,7 @@ img:
   avatar:
 
 uiux:
+  slogan: 孰是孰非就让人评说 终不过 成王败寇
   link_color:
   link_hover_color:
   primary_color:

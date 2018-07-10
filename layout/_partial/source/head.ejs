@@ -16,11 +16,12 @@
 <% } else { %>
     <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre-icons.css') %>">
 <% } %>
+
+<%- partial('_partial/head/config_style', {}, {cache: true}) %>
+
 <!-- style.css -->
 <% if (theme.vendors.suka.style_css) { %>
     <link rel="stylesheet" href="<%= theme.vendors.suka.style_css %>">
 <% } else { %>
     <link rel="stylesheet" href="<%- url_for('css/style.min.css') %>">
 <% } %>
-
-<%- partial('_partial/head/config_style', {}, {cache: true}) %>

@@ -1,0 +1,12 @@
+<div class="hide-lg sidebar-header">
+    <h1 class="header-title text-center"><%= config.title %></h1>
+    <p class="text-center header-slogan">
+    <% if(theme.uiux.slogan) { %>
+        <% if(Array.isArray(theme.uiux.slogan)) { %>
+            <%- theme.uiux.slogan.join('<br>') %>
+        <% } else { %>
+            <%- theme.uiux.slogan %>
+        <% } %>
+    <% } %>
+    </p>
+</div>
