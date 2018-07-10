@@ -2,8 +2,10 @@
 # Site Information Settings
 # ---------------------------------------------------------------
 head:
+  # You should use a image/x-icon type icon and configure it here.
   favicon: favicon.ico
   high_res_favicon: favicon.ico
+  # It defined meta keyword.
   keywords: 12345
   android_chrome_color: '#000000'
   site_verification:
@@ -12,12 +14,42 @@ head:
   pwa_manifest:
   open_search:
 
+footer:
+  # Copyright Since
+  # Specify the date when the site was setup.
+  # For example, if you set it as 2015, then footer will show something like '© 2015 - 2018'
+  # If you just want to show it like '© 2018' onlt, simly leave it blank as not defined.
+  copyright_since:
+  # Footer Text
+  # You can specify the text you want to show in footer, HTML tag is supported.
+  # For example, you can setup ICP license number as:
+  #   custom_text: '<a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>'
+
+  custom_text: '<a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>'
+# ---------------------------------------------------------------
+# Style Settings
+# ---------------------------------------------------------------
+
+
 img:
   avatar:
+
+uiux:
+  link_color:
+  link_hover_color:
+  primary_color:
+  secondary_color:
+  bg_color: '#fcfcfc'
 
 
 sns:
   twttier:
+
+# ---------------------------------------------------------------
+# Integrated Services
+# ---------------------------------------------------------------
+
+
 analytics:
   google_site_id:
   baidu_site_id:

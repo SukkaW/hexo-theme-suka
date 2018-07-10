@@ -1,0 +1,65 @@
+/*!
+ * Hexo Theme Suka | style.css
+ * Author: SukkaW
+ * Link: https://github.com/SukkaW/hexo-theme-suka
+ * License: GPL-3.0
+ */
+/*
+ * Global
+ * Footer
+*/
+/*============* Global */
+
+body,
+html {
+    overflow-x: hidden !important;
+}
+
+code {
+    font-family: Consolas, Courier, 'Courier New', monospace;
+    /* It was the same as SukkaW's IDE font-family set */
+}
+
+/* Override the Spectre.css */
+
+a {
+    text-decoration: none;
+}
+a:focus {
+    box-shadow: unset !important;
+}
+
+/*============* Footer */
+
+footer {
+    padding: 1.2rem;
+    font-size: .8rem;
+    max-width: 36rem;
+    color: #999;
+}
+
+.footer-copyright a {
+    text-decoration: none;
+    color: #999;
+}
+
+.footer-copyright a:hover {
+    color: #535353;
+    text-decoration: underline !important;
+}
+
+.footer-develop a {
+    color: #6b6b6b;
+}
+
+.footer-develop a:hover {
+    color: #535353;
+}
+
+.footer-develop-divider {
+    margin: 0 .3rem;
+}
+
+.footer-develop-divider::after {
+    content: "|"
+}

@@ -14,7 +14,7 @@
 <% if (theme.vendors.spectre.spectre_icons_css) { %>
     <link rel="stylesheet" href="<%= theme.vendors.spectre.spectre_icons_css %>">
 <% } else { %>
-    <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre-exp.icons.css') %>">
+    <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre-icons.css') %>">
 <% } %>
 <!-- style.css -->
 <% if (theme.vendors.suka.style_css) { %>
@@ -22,3 +22,5 @@
 <% } else { %>
     <link rel="stylesheet" href="<%- url_for('css/style.min.css') %>">
 <% } %>
+
+<%- partial('_partial/head/config_style', {}, {cache: true}) %>

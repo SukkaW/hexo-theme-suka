@@ -4,3 +4,18 @@
 <% } else { %>
     <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>"></script>
 <% } %>
+<script>
+var copyrightNow = new Date().getFullYear();
+var copyrightContent = document.querySelector('span[year]')
+
+<% if (theme.footer.since > 0) { %>
+  copyrightSince = <%= theme.footer.since %>;
+  if (copyrightSince === copyrightNow) {
+    copyrightContent.textContent = copyrightNow
+  } else {
+    copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+  }
+<% } else { %>
+    copyrightContent.textContent = copyrightNow
+<% } %>
+</script>

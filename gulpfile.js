@@ -23,14 +23,14 @@ var configs = {
 };
 
 gulp.task('minify-js', () => {
-  return gulp.src('dist/**/*.js')
+  return gulp.src('src/**/*.js')
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('source'));
 });
 
 gulp.task('minify-css', () => {
-  return gulp.src('dist/**/*.css')
+  return gulp.src('src/**/*.css')
     .pipe(autoprefixer(configs.autoprefixer))
     .pipe(cleanCSS(configs.cleanCSS))
     .pipe(rename({suffix: '.min'}))
@@ -42,5 +42,5 @@ gulp.task('build', gulp.parallel('minify-js', 'minify-css'));
 gulp.task('default', gulp.parallel('build'));
 
 gulp.task('watch', function() {
-  gulp.watch('./dist/**', gulp.parallel('build'));
+  gulp.watch('src/**', gulp.parallel('build'));
 });

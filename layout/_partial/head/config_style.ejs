@@ -1,0 +1,25 @@
+<style>
+    body {
+        <% if (theme.uiux.bg_color) { %>
+        background-color: <%= theme.uiux.bg_color %>;
+        <% } else { %>
+        background-color: #f8f9fa;
+        <% } %>
+    }
+
+    a {
+        <% if (theme.uiux.link_color) { %>
+        color: <%= theme.uiux.link_color %>;
+        <% } else { %>
+        color: #333;
+        <% } %>
+    }
+
+    a:hover {
+        <% if (theme.uiux.link_hover_color) { %>
+        color: <%= theme.uiux.link_hover_color %>;
+        <% } else { %>
+        color: #555;
+        <% } %>
+    }
+</style>
