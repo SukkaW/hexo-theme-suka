@@ -8,6 +8,7 @@
 /*
  * Global
  * Header
+ * Main Layout
  * Sidebar
  * Footer
 */
@@ -32,6 +33,34 @@ code {
 
 html a:focus {
     box-shadow: none !important;
+}
+
+@media (min-width: 1024px) {
+    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-toggle {
+        display: none;
+    }
+    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-sidebar {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        position: relative;
+        transform: none;
+    }
+    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-overlay {
+        display: none !important;
+    }
+}
+
+.show-lg--suka {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .hide-lg--suka {
+        display: none !important;
+    }
+    .show-lg--suka {
+        display: block !important;
+    }
 }
 
 /* Scrollbar */
@@ -62,20 +91,61 @@ html *::-webkit-scrollbar-thumb {
 /* Only show on the screen width smaller than or equal to 960px. */
 
 header {
-    padding: 4rem .75rem;
+    padding: 3.6rem .4rem 1.8rem;
 }
 
 .header-title {
-    font-size: 1.3rem
+    font-size: 1.2rem
 }
 
 .header-slogan {
     font-size: .8rem
 }
 
-@media (max-width: 481px) {
+@media (min-width: 481px) {
     header {
-        padding: 3.5rem .75rem 2rem;
+        padding: 4.8rem .8rem 2rem;
+    }
+    .header-title {
+        font-size: 1.4rem
+    }
+}
+
+/**
+ * =========================================================
+ * ************   Main Layout   ************
+ * =========================================================
+ */
+
+/* Responsive */
+
+@media screen and (min-width: 480px) {
+    .main-container {
+        max-width: 27.4rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .main-container {
+        max-width: 36.1rem;
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main-container {
+        max-width: 44.7rem;
+        padding-right: 2.4rem;
+        padding-left: 2.4rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .main-container {
+        max-width: 61rem;
+        padding-right: 4rem;
+        padding-left: 4rem;
     }
 }
 
@@ -98,45 +168,10 @@ header {
 
 /* Sidebar content */
 
-
-/* Responsive */
-
-@media screen and (min-width: 480px) {
-    .main-layout-container {
-        max-width: 27.4rem;
-    }
-    #sidebar {
-        padding: .8rem
-    }
-}
-
-@media screen and (min-width: 960px) {
-    .main-layout-container {
-        max-width: 36.1rem;
-        padding-right: 1.6rem;
-        padding-left: 1.6rem;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .main-layout-container {
-        max-width: 44.7rem;
-        padding-right: 2.4rem;
-        padding-left: 2.4rem;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .main-layout-container {
-        max-width: 61rem;
-        padding-right: 4rem;
-        padding-left: 4rem;
-    }
-}
-
 #sidebar {
-    width: 14rem;
+    width: 14.4rem;
     box-shadow: none;
+    padding: .8rem
 }
 
 @media screen and (max-width: 960px) {
@@ -148,7 +183,7 @@ header {
 
 @media screen and (max-width: 480px) {
     #sidebar {
-        width: 61.818%;
+        width: 61.8%;
         box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .3), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .16);
     }
 }
