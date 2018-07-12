@@ -1,0 +1,11 @@
+<%- partial('_partial/header', {}, {cache: true}) %>
+<main>
+    <div class="post-stream-container">
+        <!-- Post List -->
+        <% page.posts.each(function(post) { %>
+            <% if(!((typeof hasposttop === 'function') && post.top)) { %>
+                <%- partial('_partial/post-entry', { post: post, index: true, pin: false }) %>
+            <% } %>
+        <% }); %>
+    </div>
+</main>

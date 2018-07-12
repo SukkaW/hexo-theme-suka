@@ -14,4 +14,12 @@
     #sidebar {
         background-color: <% if (theme.uiux.bg_color) { %><%= theme.uiux.bg_color %><% } else { %>#f8f9fa<% } %>;
     }
+
+    .off-canvas-toggle.btn {
+        color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#111<% } %>;
+    }
+    .off-canvas-toggle.btn:hover {
+        color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#111<% } %>;
+        opacity: 0.7;
+    }
 </style>

@@ -35,32 +35,8 @@ html a:focus {
     box-shadow: none !important;
 }
 
-@media (min-width: 1024px) {
-    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-toggle {
-        display: none;
-    }
-    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-sidebar {
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        position: relative;
-        transform: none;
-    }
-    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-overlay {
-        display: none !important;
-    }
-}
-
-.show-lg--suka {
-    display: none !important;
-}
-
-@media (max-width: 1024px) {
-    .hide-lg--suka {
-        display: none !important;
-    }
-    .show-lg--suka {
-        display: block !important;
-    }
+.card {
+    border: none;
 }
 
 /* Scrollbar */
@@ -111,6 +87,15 @@ header {
     }
 }
 
+@media (min-width: 961px) {
+    header {
+        padding: 4.8rem .8rem 2rem;
+    }
+    .header-title {
+        font-size: 1.3rem
+    }
+}
+
 /**
  * =========================================================
  * ************   Main Layout   ************
@@ -119,31 +104,48 @@ header {
 
 /* Responsive */
 
-@media screen and (min-width: 480px) {
-    .main-container {
-        max-width: 27.4rem;
+.off-canvas .off-canvas-content.main-container {
+    padding: .4rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 960px) {
+    .off-canvas .off-canvas-content.main-container {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
-@media screen and (min-width: 960px) {
-    .main-container {
-        max-width: 36.1rem;
+@media screen and (min-width: 481px) {
+    .off-canvas .off-canvas-content.main-container {
+        max-width: 27.4rem;
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+}
+
+@media screen and (min-width: 721px) {
+    .off-canvas .off-canvas-content.main-container {
+        max-width: 33.5rem;
         padding-right: 1.6rem;
         padding-left: 1.6rem;
     }
 }
 
-@media screen and (min-width: 1024px) {
-    .main-container {
-        max-width: 44.7rem;
+@media screen and (min-width: 960px) {
+    .off-canvas .off-canvas-content.main-container {
+        max-width: 27.4rem;
         padding-right: 2.4rem;
-        padding-left: 2.4rem;
+        padding-left: 5rem;
+    }
+    .off-canvas.off-canvas-sidebar-show.main-container {
+        padding-left: 2rem;
     }
 }
 
-@media screen and (min-width: 1280px) {
-    .main-container {
-        max-width: 61rem;
+@media screen and (min-width: 1281px) {
+    .off-canvas .off-canvas-content.main-container {
+        max-width: 32rem;
         padding-right: 4rem;
         padding-left: 4rem;
     }
@@ -155,10 +157,6 @@ header {
  * =========================================================
  */
 
-.off-canvas .off-canvas-content {
-    padding: .4rem;
-}
-
 /* Overlay shadow */
 
 .off-canvas .off-canvas-overlay {
@@ -166,26 +164,45 @@ header {
     opacity: .55;
 }
 
+/* Sidebar toggle */
+
+.off-canvas .off-canvas-toggle {
+    left: .6rem;
+    top: .6rem;
+}
+
 /* Sidebar content */
 
 #sidebar {
     width: 14.4rem;
     box-shadow: none;
-    padding: .8rem
+    padding: 5rem .8rem .8rem .8rem
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 959px) {
     #sidebar {
         width: 12.5rem;
         box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .3), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .16);
+        padding: .8rem;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
     #sidebar {
         width: 61.8%;
         box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .3), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .16);
     }
+}
+
+/**
+ * =========================================================
+ * ************   Post Entry   ************
+ * =========================================================
+ */
+
+.post-entry {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    margin: .5rem 0
 }
 
 /**

@@ -4,7 +4,7 @@
     <%- partial('_partial/head/main') %>
 
     <body>
-        <div class="off-canvas off-canvas-sidebar-show--suka">
+        <div class="off-canvas off-canvas-sidebar-show">
             <!-- ### off-screen: toggle button ### -->
             <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
                 <i class="icon icon-menu"></i>
@@ -14,12 +14,9 @@
                 <%- partial('_partial/sidebar/main') %>
             </div>
             <a class="off-canvas-overlay" href="#close"></a>
-            <div class="off-canvas-content">
+            <div class="off-canvas-content main-container">
                 <!-- ### off-screen: Main content ### -->
-                <%- partial('_partial/header', {}, {cache: true}) %>
-                <main>
-                    <%- body %>
-                </main>
+                <%- body %>
                 <!-- ### off-screen: Footer ### -->
                 <%- partial('_partial/footer', {}, {cache: true}) %>
                 <!-- ### off-screen: toTop ### -->
