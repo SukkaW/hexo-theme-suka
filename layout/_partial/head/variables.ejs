@@ -1,0 +1,25 @@
+<%
+    suka_title = page.title;
+    if (is_archive()) {
+        suka_title = __('archive');
+        if (is_month()) {
+            suka_title += ': ' + page.year + '-' + page.month;
+        }
+        else if (is_year()) {
+            suka_title += ': ' + page.year;
+        }
+    }
+    else if (is_category()) {
+        suka_title = __('category') + ': ' + page.category;
+    }
+    else if (is_tag()) {
+        suka_title = __('tag') + ': ' + page.tag;
+    }
+
+    suka_descr = config.description;
+    if (page.description) {
+        suka_descr = page.description;
+    } else if (page.excerpt) {
+        suka_descr = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
+    }
+%>

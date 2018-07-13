@@ -1,3 +1,5 @@
+<% include variables.ejs %>
+
 <% if( (page.current === 1) && (is_home()) ) { %>
 <script type="application/ld+json">
 {
@@ -30,21 +32,12 @@
         "@id": "<%= config.url %>"
     },
     "keywords": "<%= theme.head.keywords %>",
-    "description": "<%= config.description %>"
+    "description": "<%= suka_descr %>"
 }
 </script>
 <% } %>
 
 <% if( (is_post()) ) { %>
-
-<%
-    var description = config.description;
-    if (page.description) {
-        description = page.description;
-    } else if (page.excerpt) {
-        description = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
-    }
-%>
 
 <script type="application/ld+json">
 {
@@ -54,7 +47,7 @@
         "@type": "WebPage",
         "@id": "<%- config.url %>"
     },
-    "headline": "<%- page.title %>",
+    "headline": "<%= suka_title %>",
     <% if(page.thumbnail) { %>
     "image": "<%= page.thumbnail %>",
     <% } %>
@@ -78,7 +71,7 @@
         }
     },
     "keywords": "<% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %><%= theme.head.keywords %>",
-    "description": "<%= description %>"
+    "description": "<%= suka_descr %>"
 }
 </script>
 <% } %>
