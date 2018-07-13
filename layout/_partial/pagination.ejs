@@ -1,0 +1,22 @@
+<% if (page.total > 1) { %>
+<nav>
+<ul class="pagination">
+    <% if (page.prev) { %>
+        <li class="page-item page-prev">
+            <a href="#">
+                <div class="page-item-title h5"><i class="icon icon-back"></i></div>
+                <div class="page-item-subtitle">上一页</div>
+            </a>
+        </li>
+    <% } %>
+    <% if (page.next) { %>
+        <li class="page-item page-next">
+            <a href="#">
+                <div class="page-item-title h5"><i class="icon icon-forward"></i></div>
+                <div class="page-item-subtitle">下一页</div>
+            </a>
+        </li>
+    <% } %>
+</ul>
+</nav>
+<% } %>
