@@ -1,4 +1,4 @@
-<% include _include/head_variables.ejs %>
+<% include variables.ejs %>
 
 <meta property="og:title" content="<% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %>">
 
@@ -8,10 +8,8 @@
 
 <% if (suka_descr) { %><meta property="og:description" content="<%= suka_descr %>"><% } %>
 
-<% if (page.tags && page.tags.each) { page.tags.each(function(tag){ %>
-    <meta property="og:article:tag" content="<%= tag.name %>">
-<% })} else if (theme.head.keywords) { %>
-    <meta property="og:article:tag" content="<%= theme.head.keywords %>">
+<% if (suka_tags) { %>
+    <meta property="og:article:tag" content="<%= suka_tags %>">
 <% } %>
 
 <meta name="twitter:card" content="<% if (page.thumbnail) { %>summary_large_image<% } else { %>summary<% } %>">

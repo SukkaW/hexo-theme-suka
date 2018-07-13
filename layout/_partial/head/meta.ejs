@@ -17,7 +17,7 @@
 <% if (suka_descr) { %><meta name="description" itemprop="description" content="<%= suka_descr %>"><% } %>
 
 <!-- Keywords -->
-<meta name="keywords" content="<%= theme.head.keywords %><% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %>">
+<% if (suka_tags) { %><meta name="keywords" content="<%= suka_tags %>"><% } %>
 
 <% if (theme.head.android_chrome_color) { %><meta name="theme-color" content="<%= theme.head.android_chrome_color %>"><% } %>
 

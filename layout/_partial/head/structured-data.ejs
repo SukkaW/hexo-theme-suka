@@ -31,7 +31,7 @@
         "@type": "WebPage",
         "@id": "<%= config.url %>"
     },
-    "keywords": "<%= theme.head.keywords %>",
+    "keywords": "<%= suka_tags %>",
     "description": "<%= suka_descr %>"
 }
 </script>
@@ -70,7 +70,7 @@
             "url": "<%= theme.head.high_res_favicon %>"
         }
     },
-    "keywords": "<% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %><%= theme.head.keywords %>",
+    "keywords": "<%= suka_tags %>",
     "description": "<%= suka_descr %>"
 }
 </script>

@@ -22,4 +22,11 @@
     } else if (page.excerpt) {
         suka_descr = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
     }
+
+    suka_tags = theme.head.keywords;
+    if (page.tags && page.tags.each) {
+        page.tags.each(function(tag) {
+            suka_tags = ',' + tag.name;
+        })
+    }
 %>
