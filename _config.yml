@@ -39,7 +39,6 @@ img:
 uiux:
   slogan: 孰是孰非就让人评说 终不过 成王败寇
   link_color:
-  link_hover_color:
   primary_color:
   secondary_color:
   bg_color: '#fcfcfc'
@@ -92,6 +91,7 @@ vendors:
   # https://github.com/SukkaW/hexo-theme-suka
   suka:
     style_css:
+    local_search_js:
   # Spectre.css
   # https://picturepan2.github.io/spectre/
   # Version: 0.5.3

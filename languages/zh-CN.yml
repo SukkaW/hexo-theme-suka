@@ -1,6 +1,7 @@
 archive: 归档
 category: 分类
 search: 搜索
+search_placeholder: 请输入关键字....
 tag: 标签
 nav:
   prev_page: 上一页

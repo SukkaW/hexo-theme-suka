@@ -1,0 +1,34 @@
+<div class="container">
+    <%- partial('_partial/header', {}, {cache: true}) %>
+    <div class="main-container">
+        <!-- # Input # -->
+        <div id="search-input">
+            <form class="input-group" autocomplete="off">
+                <input maxlength="80" type="search" id="search-field" name="s" class="form-input input-lg" placeholder="<%= __('search_placeholder') %>" required>
+                <button class="btn btn-primary input-group-btn btn-lg"><%= __('search') %></button>
+            </form>
+        </div>
+        <!-- # Description & Output # -->
+        <div id="search-output">
+            <!-- Import Description from markdown -->
+            <%- page.content %>
+        </div>
+    </div>
+</div>
+
+<script>
+String.prototype.queryUrl = function (e) {
+    var t = this.replace(/^[^?=]*\?/ig, "").split("#")[0],
+        n = {};
+    return t.replace(/(^|&)([^&=]+)=([^&]*)/g, function (e, t, r, i) {
+        try {
+            r = decodeURIComponent(r)
+        } catch (s) { }
+        try {
+            i = decodeURIComponent(i)
+        } catch (s) { }
+        r in n ? n[r] instanceof Array ? n[r].push(i) : n[r] = [n[r], i] : n[r] = /\[\]$/.test(r) ? [i] : i
+    }), e ? n[e] : n
+};
+var searchQuery = location.search.queryUrl();
+</script>

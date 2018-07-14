@@ -33,7 +33,8 @@ code {
 
 /* Override the Spectre.css */
 
-html a:focus {
+html a:focus,
+html .btn:focus {
     box-shadow: none !important;
 }
 
@@ -172,6 +173,11 @@ header .divider {
 
 .pagination .page-item i {
     vertical-align: -7.5% !important;
+}
+
+.pagination .page-item a:hover {
+    color: #667189;
+    opacity: .85;
 }
 
 /**
@@ -317,4 +323,19 @@ a.timeline-tile-title span:hover {
     transition: .2s;
     opacity: .85;
     padding: .75rem;
+}
+
+/**
+ * =========================================================
+ * ************   Page: Search   ************
+ * =========================================================
+ */
+
+#search-input .btn {
+    border: none;
+}
+
+#search-input .form-input:focus {
+    border-color: rgba(0,0,0,.4);
+    box-shadow: 0 0 0 .08rem rgba(0,0,0,.2);
 }

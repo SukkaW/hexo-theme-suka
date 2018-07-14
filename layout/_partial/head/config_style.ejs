@@ -9,7 +9,7 @@
 
     a:active, a:focus, a:hover {
         color: <% if (theme.uiux.link_color) { %><%= theme.uiux.link_color %><% } else { %>#0070ff<% } %>;
-        opacity: .6;
+        opacity: .75;
     }
 
     .post-entry .card-body a {
@@ -18,15 +18,17 @@
 
     .navbar-link,
     .navbar-link:visited,
-    .pagination .page-item a,
-    .pagination .page-item a:visited,
     .timeline .timeline-item .timeline-icon.icon-lg {
         color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#0070ff<% } %>;
     }
 
-    .navbar-link:hover,
-    .pagination .page-item a:hover {
+    .navbar-link:hover {
         color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#0070ff<% } %>;
         opacity: .8;
+    }
+
+    #search-input .btn {
+        background: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#727e96<% } %>;
+        border-color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#727e96<% } %>;
     }
 </style>

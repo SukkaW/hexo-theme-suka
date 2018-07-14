@@ -24,7 +24,11 @@ var configs = {
 
 gulp.task('minify-js', () => {
   return gulp.src('src/**/*.js')
-    .pipe(uglify())
+  .pipe(uglify({
+      output: {
+        comments: /^!/
+      }
+    }))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('source'));
 });

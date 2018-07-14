@@ -1,5 +1,6 @@
-/**!
- * Patch by neoFelhz on 2017/11/16 https://github.com/neoFelhz https://lab.nfz.moe/lsloader/
+/*!
+ * Hexo Theme Suka | lsloader.js
+ * Patched by SukkaW on 2018/7/14 https://github.com/SukkaW
  * Created by EYHN on 2017/4/17. https://github.com/EYHN
  * From sexdevil/LSLoader https://github.com/sexdevil/LSLoader
  */

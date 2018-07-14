@@ -1,0 +1,71 @@
+<% var res = new Array() -%>
+<% var index = 0 -%>
+<% if(posts){ -%>
+    <% posts.each(function(post) { -%>
+        <% var temp_post = new Object() -%>
+        <% if (post.title) { -%>
+            <% temp_post.title = post.title -%>
+        <% } -%>
+        <% if (post.path) { -%>
+            <% temp_post.url = config.root + post.path -%>
+        <% } -%>
+        <% if (post._content) { -%>
+            <% temp_post.content = post.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'') -%>
+        <% } -%>
+        <% if (post.tags && post.tags.length > 0) { -%>
+            <% var tags = new Array() -%>
+            <% var tag_index = 0 -%>
+            <% post.tags.each(function (tag) { -%>
+                    <% tags[tag_index] = tag.name; -%>
+                    <% tag_index += 1 -%>
+            <% }); -%>
+            <% temp_post.tags = tags -%>
+        <% } -%>
+        <% if (post.categories && post.categories.length > 0) { -%>
+            <% var categories = new Array() -%>
+            <% var cate_index = 0 -%>
+            <% post.categories.each(function (cate) { -%>
+                <% categories[cate_index] = cate.name; -%>
+                <% cate_index += 1 -%>
+            <% }); -%>
+            <% temp_post.categories = categories -%>
+        <% } -%>
+        <% res[index] = temp_post; -%>
+        <% index += 1; -%>
+<% }); -%>
+<% } -%>
+<% if(pages){ -%>
+    <% pages.each(function(page){ -%>
+    <% var temp_page = new Object() -%>
+        <% if (page.title) { -%>
+            <% temp_page.title = page.title -%>
+        <% } -%>
+        <% if (page.path) { -%>
+            <% temp_page.url = config.root + page.path -%>
+        <% } -%>
+        <% if (page._content) { -%>
+            <% temp_page.content = page.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'') -%>
+        <% } -%>
+        <% if (page.tags && page.tags.length > 0) { -%>
+            <% var tags = new Array() -%>
+            <% var tag_index = 0 -%>
+            <% page.tags.each(function (tag) { -%>
+                   <% tags[tag_index] = tag.name; -%>
+                   <% tag_index += 1 -%>
+            <% }); -%>
+            <% temp_page.tags = tags -%>
+        <% } -%>
+        <% if (page.categories && page.categories.length > 0) { -%>
+            <% var categories = new Array() -%>
+            <% var cate_index = 0 -%>
+            <% page.categories.each(function (cate) { -%>
+                   <% categories[cate_index] = cate.name; -%>
+                   <% cate_index += 1 -%>
+            <% }); -%>
+            <% temp_page.categories = categories -%>
+        <% } -%>
+        <% res[index] = temp_page; -%>
+        <% index += 1; -%>
+    <% }); -%>
+<% } -%>
+<%- stringify(res) -%>
