@@ -5,6 +5,9 @@
     <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>"></script>
 <% } %>
 <script>
+var myLazyLoad = new LazyLoad({
+    elements_selector: ".lazyload"
+});
 var copyrightNow = new Date().getFullYear();
 var copyrightContent = document.querySelector('span[year]')
 <% if (theme.footer.copyright_since > 0) { %>

@@ -1,3 +1,8 @@
 archive: 归档
 category: 分类
 tag: 标签
+nav:
+  prev_page: 上一页
+  next_page: 下一页
+  prev_post: 上一篇
+  next_post: 下一篇

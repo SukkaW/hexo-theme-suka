@@ -44,6 +44,8 @@ uiux:
   secondary_color:
   bg_color: '#fcfcfc'
 
+post:
+  entry_excerpt: 120
 
 sns:
   twttier:

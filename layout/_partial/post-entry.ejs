@@ -1,9 +1,23 @@
-<div class="post-entry card">
-    <div class="card-image"><img class="img-responsive" src="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" alt="OS X El Capitan"></div>
+<article class="post-entry card">
+    <% if (post.thumbnail) { %><div class="post-thumbnail lazyload" data-src="<%= post.thumbnail %>"></div><% } %>
     <div class="card-header">
-        <div class="card-title h5">Microsoft</div>
-        <div class="card-subtitle text-gray">Software and hardware</div>
+        <div class="card-title h5"><%= post.title %></div>
+        <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') %>&nbsp;·
+        <% if (post.categories && post.categories.length) { %>
+            <!-- Category -->
+            <%- list_categories(post.categories, {
+                show_count: false,
+                style: 'none'
+            }) %>
+    <% } %>
+        </div>
     </div>
-    <div class="card-body">Empower every person and every organization on the planet to achieve more.</div>
-    <div class="card-footer"><a class="btn btn-primary" href="#cards">Do</a></div>
-</div>
+    <div class="card-body">
+        <% if(post.excerpt) {%>
+            <%- strip_html(post.excerpt) %>
+        <% } else { %>
+            <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
+        <% } %>
+    </div>
+    <div class="card-footer"></div>
+</article>

@@ -22,6 +22,7 @@
 body,
 html {
     overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased;
 }
 
 code {
@@ -149,13 +150,14 @@ header {
 
 @media screen and (min-width: 961px) {
     .off-canvas .off-canvas-content.main-container {
-        max-width: 41.3rem;
-        padding-left: 2.5rem;
+        max-width: 41.4rem;
+        padding-left: 2rem;
+        padding-right: .6rem;
     }
     .off-canvas.off-canvas-sidebar-show--suka {
         padding-left: 2.8rem;
         padding-right: 2.8rem;
-        max-width: 62.9rem;
+        max-width: 63rem;
         margin-left: auto;
         margin-right: auto;
     }
@@ -168,18 +170,6 @@ header {
     }
     .off-canvas.off-canvas-sidebar-show--suka {
         max-width: 64.4rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media screen and (min-width: 1535px) {
-    .off-canvas .off-canvas-content.main-container {
-        padding-left: 6rem;
-        max-width: 49.8rem;
-    }
-    .off-canvas.off-canvas-sidebar-show--suka {
-        max-width: 73.4rem;
         margin-left: auto;
         margin-right: auto;
     }
@@ -241,7 +231,33 @@ header {
 
 .post-entry {
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
-    margin: .5rem 0
+    margin: .8rem 0;
+    border-radius: 0;
+    position: relative;
+    word-wrap: break-word;
+    background-clip: border-box;
+    /* Post Card width: 400 */
+}
+
+.post-entry .post-thumbnail {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.post-entry .card-body {
+    padding-top: 0;
+}
+
+.post-entry .text-gray a {
+    color: #acb3c2 !important;
+}
+
+.post-entry .text-gray a:hover {
+    color: #999 !important;
 }
 
 /**
