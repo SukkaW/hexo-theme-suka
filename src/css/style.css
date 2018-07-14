@@ -9,7 +9,9 @@
  * Global
  * Header
  * Main Layout
+ * Post Entry
  * Footer
+ * Page: Tagscloud
 */
 
 /**
@@ -36,7 +38,13 @@ html a:focus {
 }
 
 .card {
+    /* Remove card border */
     border: none;
+}
+
+.timeline .timeline-item:last-child::before {
+    /* Fix timeline */
+    background: transparent;
 }
 
 /* Scrollbar */
@@ -56,11 +64,6 @@ html *::-webkit-scrollbar {
 
 html *::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, .3);
-}
-
-.pagination .page-item a:hover {
-    color: #667189 !important;
-    opacity: .75;
 }
 
 /**
@@ -263,4 +266,55 @@ footer {
 
 .footer-develop-divider::after {
     content: "|"
+}
+
+/**
+ * =========================================================
+ * ************   Page: Archive   ************
+ * =========================================================
+ */
+
+a.timeline-tile-title,
+a.timeline-tile-title span,
+a.timeline-tile-title:visited {
+    color: #454d5d;
+    opacity: .85;
+}
+
+a.timeline-tile-title span:hover {
+    color: #454d5d;
+    opacity: 1;
+}
+
+/**
+ * =========================================================
+ * ************   Page: Tagscloud   ************
+ * =========================================================
+ */
+
+.tagscloud {
+    margin: 3rem 1.2rem 3rem;
+    padding: 0 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .tagscloud {
+        padding: 0;
+    }
+}
+
+.tagscloud a {
+    text-decoration: none;
+    padding: .5rem;
+    margin: .2rem;
+    line-height: 2;
+    white-space: nowrap;
+    transition: .2s;
+    opacity: 1;
+}
+
+.tagscloud a:hover {
+    transition: .2s;
+    opacity: .85;
+    padding: .75rem;
 }

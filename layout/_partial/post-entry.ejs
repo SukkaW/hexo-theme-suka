@@ -3,7 +3,7 @@
         <div class="columns col-gapless">
             <% if (post.thumbnail) { %>
                 <div class="column column-thumbnail col-4 col-md-12">
-                    <div class="post-thumbnail lazyload" data-src="<%= post.thumbnail %>"></div>
+                    <a href="<%= url_for(post.path) %>"><div class="post-thumbnail lazyload" data-src="<%= post.thumbnail %>"></div></a>
                 </div>
                 <div class="column column-body col-8 col-md-12">
                     <div class="card-header">

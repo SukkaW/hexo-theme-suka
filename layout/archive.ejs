@@ -1,0 +1,9 @@
+<div class="container">
+    <%- partial('_partial/header', {}, {cache: true}) %>
+    <div class="main-container">
+        <main>
+            <%- partial('_partial/archive-timeline.ejs', {}, {cache: true}) %>
+        </main>
+        <%- partial('_partial/pagination') %>
+    </div>
+</div>

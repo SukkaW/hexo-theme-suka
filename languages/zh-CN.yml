@@ -18,3 +18,5 @@ share:
   toQQ: "分享到 QQ"
 post:
   continue: "阅读全文"
+counter:
+  archive: "目前共计 %d 篇文章"
