@@ -6,3 +6,14 @@ nav:
   next_page: 下一页
   prev_post: 上一篇
   next_post: 下一篇
+share:
+  rss: "订阅 RSS"
+  toTwitter: "分享到 Twitter"
+  toFacebook: "分享到 Facebook"
+  toLinkedIn: "分享到 LinkedIn"
+  toTelegram: "分享到 Telegram"
+  toGplus: "分享到 Google+"
+  toWeibo: "分享到微博"
+  toQQ: "分享到 QQ"
+post:
+  continue: "阅读全文"
