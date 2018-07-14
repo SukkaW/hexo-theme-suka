@@ -4,12 +4,10 @@
     <%- partial('_partial/head/main') %>
 
     <body>
-        <!-- ### off-screen: Main content ### -->
+        <!-- ### Main content ### -->
         <%- body %>
-        <!-- ### off-screen: Footer ### -->
+        <!-- ### Footer ### -->
         <%- partial('_partial/footer', {}, {cache: true}) %>
-        <!-- ### off-screen: toTop ### -->
-        <%- partial('_partial/toTop', {}, {cache: true}) %>
         <!-- ### Import File ### -->
         <%- partial('_partial/source/footer', {}, {cache: true}) %>
     </body>
