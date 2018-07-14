@@ -9,7 +9,6 @@
  * Global
  * Header
  * Main Layout
- * Sidebar
  * Footer
 */
 
@@ -38,21 +37,6 @@ html a:focus {
 
 .card {
     border: none;
-}
-
-@media (min-width: 1025px) {
-    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-toggle {
-        display: none
-    }
-    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-sidebar {
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        position: relative;
-        transform: none
-    }
-    .off-canvas.off-canvas-sidebar-show--suka .off-canvas-overlay {
-        display: none !important
-    }
 }
 
 /* Scrollbar */
@@ -86,6 +70,25 @@ header {
     padding: 3.6rem .4rem 1.8rem;
 }
 
+header a {
+    color: #50596c;
+    text-decoration: none;
+}
+
+header a:hover,
+header a:focus,
+header a:visited {
+    text-decoration: none;
+    color: #50596c;
+}
+
+header .divider {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    opacity: .5;
+}
+
 .header-title {
     font-size: 1.2rem
 }
@@ -112,6 +115,10 @@ header {
     }
 }
 
+.navbar-link {
+    padding: .35rem .4rem;
+}
+
 /**
  * =========================================================
  * ************   Main Layout   ************
@@ -120,20 +127,15 @@ header {
 
 /* Responsive */
 
-.off-canvas .off-canvas-content.main-container {
+.main-container {
     padding: .4rem;
     width: 100%;
-}
-
-@media screen and (max-width: 1024px) {
-    .off-canvas .off-canvas-content.main-container {
-        margin-left: auto;
-        margin-right: auto;
-    }
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media screen and (min-width: 481px) {
-    .off-canvas .off-canvas-content.main-container {
+    .main-container {
         max-width: 28.4rem;
         padding-right: .5rem;
         padding-left: .5rem;
@@ -141,7 +143,7 @@ header {
 }
 
 @media screen and (min-width: 721px) {
-    .off-canvas .off-canvas-content.main-container {
+    .main-container {
         max-width: 33.5rem;
         padding-right: 1.6rem;
         padding-left: 1.6rem;
@@ -149,82 +151,19 @@ header {
 }
 
 @media screen and (min-width: 1025px) {
-    .off-canvas .off-canvas-content.main-container {
+    .main-container {
         max-width: 41.4rem;
-        padding-left: 2rem;
-        padding-right: .6rem;
-    }
-    .off-canvas.off-canvas-sidebar-show--suka {
-        padding-left: 2.8rem;
-        padding-right: 2.8rem;
-        max-width: 63rem;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
 @media screen and (min-width: 1335px) {
-    .off-canvas .off-canvas-content.main-container {
-        padding-left: 4rem;
+    .main-container {
         max-width: 42.9rem;
-    }
-    .off-canvas.off-canvas-sidebar-show--suka {
-        max-width: 64.4rem;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
 .pagination .page-item i {
     vertical-align: -7.5% !important;
-}
-
-/**
- * =========================================================
- * ************   Sidebar   ************
- * =========================================================
- */
-
-/* Overlay shadow */
-
-.off-canvas .off-canvas-overlay {
-    background: #000;
-    opacity: .55;
-}
-
-/* Sidebar toggle */
-
-.off-canvas .off-canvas-toggle {
-    left: .6rem;
-    top: .6rem;
-}
-
-/* Sidebar content */
-
-#sidebar {
-    width: 16rem;
-    box-shadow: none;
-    padding: 5rem .8rem .8rem .8rem
-}
-
-@media screen and (max-width: 1023px) {
-    #sidebar {
-        width: 12.5rem;
-        box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .3), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .16);
-        padding: .8rem;
-    }
-}
-
-@media screen and (max-width: 479px) {
-    #sidebar {
-        width: 61.8%;
-    }
-}
-
-#sidebar-content {
-    -webkit-overflow-scrolling: touch;
-    overflow-y: auto;
-    position: fixed;
 }
 
 /**
@@ -251,6 +190,12 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
+}
+
+@media (min-width: 840px) {
+    .post-entry .column-body {
+        order: -1;
+    }
 }
 
 .post-entry .card-subtitle {

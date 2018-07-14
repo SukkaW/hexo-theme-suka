@@ -1,12 +1,16 @@
-<header class="show-lg">
-    <h1 class="header-title text-center"><%= config.title %></h1>
-    <p class="text-center header-slogan">
-    <% if(theme.uiux.slogan) { %>
-        <% if(Array.isArray(theme.uiux.slogan)) { %>
-            <%- theme.uiux.slogan.join('<br>') %>
-        <% } else { %>
-            <%- theme.uiux.slogan %>
+<header>
+    <a href="<%= config.root %>">
+        <h1 class="header-title text-center"><%= config.title %></h1>
+        <p class="text-center header-slogan">
+        <% if(theme.uiux.slogan) { %>
+            <% if(Array.isArray(theme.uiux.slogan)) { %>
+                <%- theme.uiux.slogan.join('<br>') %>
+            <% } else { %>
+                <%- theme.uiux.slogan %>
+            <% } %>
         <% } %>
-    <% } %>
-    </p>
+        </p>
+    </a>
+
+    <%- partial('_partial/index-nav', {}, {cache: true}) %>
 </header>

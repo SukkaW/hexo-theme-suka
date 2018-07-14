@@ -4,25 +4,12 @@
     <%- partial('_partial/head/main') %>
 
     <body>
-        <div class="off-canvas off-canvas-sidebar-show--suka">
-            <!-- ### off-screen: toggle button ### -->
-            <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
-                <i class="icon icon-menu"></i>
-            </a>
-            <!-- ### off-screen: Sidebar ### -->
-            <div id="sidebar" class="off-canvas-sidebar">
-                <%- partial('_partial/sidebar/main') %>
-            </div>
-            <a class="off-canvas-overlay" href="#close"></a>
-            <div class="off-canvas-content main-container">
-                <!-- ### off-screen: Main content ### -->
-                <%- body %>
-                <!-- ### off-screen: Footer ### -->
-                <%- partial('_partial/footer', {}, {cache: true}) %>
-                <!-- ### off-screen: toTop ### -->
-                <%- partial('_partial/toTop', {}, {cache: true}) %>
-            </div>
-        </div>
+        <!-- ### off-screen: Main content ### -->
+        <%- body %>
+        <!-- ### off-screen: Footer ### -->
+        <%- partial('_partial/footer', {}, {cache: true}) %>
+        <!-- ### off-screen: toTop ### -->
+        <%- partial('_partial/toTop', {}, {cache: true}) %>
         <!-- ### Import File ### -->
         <%- partial('_partial/source/footer', {}, {cache: true}) %>
     </body>
