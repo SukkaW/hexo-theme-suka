@@ -4,30 +4,25 @@
     }
 
     a, a:visited {
-        color: <% if (theme.uiux.link_color) { %><%= theme.uiux.link_color %><% } else { %>#333<% } %>;
+        color: <% if (theme.uiux.link_color) { %><%= theme.uiux.link_color %><% } else { %>#0070ff<% } %>;
     }
 
     a:active, a:focus, a:hover {
-        color: <% if (theme.uiux.link_hover_color) { %><%= theme.uiux.link_hover_color %><% } else { %>#555<% } %>;
-    }
-
-    #sidebar {
-        background-color: <% if (theme.uiux.bg_color) { %><%= theme.uiux.bg_color %><% } else { %>#f8f9fa<% } %>;
-    }
-
-    .off-canvas-toggle.btn {
-        color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#111<% } %>;
-    }
-    .off-canvas-toggle.btn:hover {
-        color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#111<% } %>;
-        opacity: 0.7;
+        color: <% if (theme.uiux.link_color) { %><%= theme.uiux.link_color %><% } else { %>#0070ff<% } %>;
+        opacity: .6;
     }
 
     .post-entry .card-body a {
         color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#0070ff<% } %>;
     }
 
-    .navbar-link {
+    .navbar-link,
+    .navbar-link:visited {
         color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#0070ff<% } %>;
+    }
+
+    .navbar-link:hover{
+        color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#0070ff<% } %>;
+        opacity: .8;
     }
 </style>

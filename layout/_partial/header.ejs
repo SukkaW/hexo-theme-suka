@@ -1,7 +1,8 @@
 <header>
     <a href="<%= config.root %>">
         <h1 class="header-title text-center"><%= config.title %></h1>
-        <p class="text-center header-slogan">
+    </a>
+    <p class="text-center header-slogan">
         <% if(theme.uiux.slogan) { %>
             <% if(Array.isArray(theme.uiux.slogan)) { %>
                 <%- theme.uiux.slogan.join('<br>') %>
@@ -9,8 +10,7 @@
                 <%- theme.uiux.slogan %>
             <% } %>
         <% } %>
-        </p>
-    </a>
+    </p>
 
     <%- partial('_partial/index-nav', {}, {cache: true}) %>
 </header>

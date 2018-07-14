@@ -1,12 +1,14 @@
 <section class="navbar-section text-center">
-    <div class="main-container divider"></div>
-    <a href="..." class="navbar-link">Docs</a>
-    <a href="..." class="navbar-link">GitHub</a>
-    <a href="..." class="navbar-link">Docs</a>
-    <a href="..." class="navbar-link">GitHub</a>
-    <a href="..." class="navbar-link">Docs</a>
-    <a href="..." class="navbar-link">GitHub</a>
-    <a href="..." class="navbar-link">Docs</a>
-    <a href="..." class="navbar-link">GitHub</a>
-    <div class="main-container divider"></div>
+    <% if(theme.nav.archives.use === true) { %>
+        <a href="<%= url_for('archives/') %>" class="navbar-link"><%= __('archive') %></a>
+    <% } %>
+    <% if(theme.nav.search.use === true) { %>
+        <a href="<%= url_for(theme.nav.search.link) %>" class="navbar-link"><%= __('search') %></a>
+    <% } %>
+    <% for (var i in theme.nav.pages){ %>
+        <a href="<%= theme.nav.pages[i].link %>" class="navbar-link"><%= i %></a>
+    <% } %>
+    <% if(theme.nav.rss.use === true) { %>
+        <a href="<%= theme.url.rss %>" class="navbar-link">RSS</a>
+    <% } %>
 </section>

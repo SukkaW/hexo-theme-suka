@@ -60,6 +60,17 @@ sns_share:
   qq: false
   telegram: false
 
+nav:
+  archives:
+    use: true
+  rss:
+    use: true
+  search:
+    use: true
+    link: /search
+  pages:
+
+
 # ---------------------------------------------------------------
 # Integrated Services
 # ---------------------------------------------------------------

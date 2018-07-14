@@ -58,6 +58,11 @@ html *::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, .3);
 }
 
+.pagination .page-item a:hover {
+    color: #667189 !important;
+    opacity: .75;
+}
+
 /**
  * =========================================================
  * ************   Header   ************
