@@ -40,7 +40,7 @@ html a:focus {
     border: none;
 }
 
-@media (min-width: 961px) {
+@media (min-width: 1025px) {
     .off-canvas.off-canvas-sidebar-show--suka .off-canvas-toggle {
         display: none
     }
@@ -103,7 +103,7 @@ header {
     }
 }
 
-@media (min-width: 961px) {
+@media (min-width: 1025px) {
     header {
         padding: 4.8rem .8rem 2rem;
     }
@@ -125,7 +125,7 @@ header {
     width: 100%;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
     .off-canvas .off-canvas-content.main-container {
         margin-left: auto;
         margin-right: auto;
@@ -148,7 +148,7 @@ header {
     }
 }
 
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 1025px) {
     .off-canvas .off-canvas-content.main-container {
         max-width: 41.4rem;
         padding-left: 2rem;
@@ -173,6 +173,10 @@ header {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+.pagination .page-item i {
+    vertical-align: -7.5% !important;
 }
 
 /**
@@ -203,7 +207,7 @@ header {
     padding: 5rem .8rem .8rem .8rem
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 1023px) {
     #sidebar {
         width: 12.5rem;
         box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .3), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .16);
@@ -229,23 +233,28 @@ header {
  * =========================================================
  */
 
-.post-entry {
+.post-entry.card {
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
     margin: .8rem 0;
     border-radius: 0;
     position: relative;
+    min-width: 0;
     word-wrap: break-word;
     background-clip: border-box;
-    /* Post Card width: 400 */
 }
 
 .post-entry .post-thumbnail {
     width: 100%;
     height: 100%;
+    min-height: 8rem;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
+}
+
+.post-entry .card-subtitle {
+    font-size: .75rem;
 }
 
 .post-entry .card-body {

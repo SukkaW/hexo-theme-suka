@@ -1,23 +1,56 @@
 <article class="post-entry card">
-    <% if (post.thumbnail) { %><div class="post-thumbnail lazyload" data-src="<%= post.thumbnail %>"></div><% } %>
-    <div class="card-header">
-        <div class="card-title h5"><%= post.title %></div>
-        <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') %>&nbsp;·
-        <% if (post.categories && post.categories.length) { %>
-            <!-- Category -->
-            <%- list_categories(post.categories, {
-                show_count: false,
-                style: 'none'
-            }) %>
-    <% } %>
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            <% if (post.thumbnail) { %>
+                <div class="column col-4 col-xl-12">
+                    <div class="post-thumbnail lazyload" data-src="<%= post.thumbnail %>"></div>
+                </div>
+                <div class="column col-8 col-xl-12">
+                    <div class="card-header">
+                        <div class="card-title h5"><%= post.title %></div>
+                        <!-- Date & Category -->
+                        <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') %>&nbsp;·&nbsp;
+                        <% if (post.categories && post.categories.length) { %>
+                            <%- list_categories(post.categories, {
+                                show_count: false,
+                                style: 'none'
+                            }) %>
+                        <% } %>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <% if(post.excerpt) {%>
+                            <%- strip_html(post.excerpt) %>
+                        <% } else { %>
+                            <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
+                        <% } %>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="column col-12">
+                    <div class="card-header">
+                        <div class="card-title h5"><%= post.title %></div>
+                        <!-- Date & Category -->
+                        <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') %>&nbsp;·&nbsp;
+                        <% if (post.categories && post.categories.length) { %>
+                            <%- list_categories(post.categories, {
+                                show_count: false,
+                                style: 'none'
+                            }) %>
+                        <% } %>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <% if(post.excerpt) {%>
+                            <%- strip_html(post.excerpt) %>
+                        <% } else { %>
+                            <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
+                        <% } %>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            <% } %>
         </div>
     </div>
-    <div class="card-body">
-        <% if(post.excerpt) {%>
-            <%- strip_html(post.excerpt) %>
-        <% } else { %>
-            <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
-        <% } %>
-    </div>
-    <div class="card-footer"></div>
+
 </article>

@@ -3,17 +3,17 @@
 <ul class="pagination">
     <% if (page.prev) { %>
         <li class="page-item page-prev">
-            <a href="<%- url_for(page.prev.path) %>">
-                <div class="page-item-title h5"><i class="icon icon-back"></i></div>
-                <div class="page-item-subtitle"><%= __('nav.prev_page') %></div>
+            <a href="<%- url_for(page.prev_link) %>">
+                <span class="page-item-subtitle"><i class="icon icon-back"></i></span>
+                <span class="page-item-title"><%= __('nav.prev_page') %></span>
             </a>
         </li>
     <% } %>
     <% if (page.next) { %>
         <li class="page-item page-next">
-            <a href="<%- url_for(page.next.path) %>">
-                <div class="page-item-title h5"><i class="icon icon-forward"></i></div>
-                <div class="page-item-subtitle"><%= __('nav.next_page') %></div>
+            <a href="<%- url_for(page.next_link) %>">
+                <span class="page-item-title"><%= __('nav.next_page') %></span>
+                <span class="page-item-subtitle"><i class="icon icon-forward"></i></span>
             </a>
         </li>
     <% } %>
