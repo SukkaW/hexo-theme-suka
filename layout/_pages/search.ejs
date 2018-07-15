@@ -1,245 +1,34 @@
-<div class="container">
+<div class="container search-container">
     <%- partial('_partial/header', {}, {cache: true}) %>
     <div class="main-container">
         <!-- # Input # -->
+        <h2><%= __('search.main') %></h2>
         <div id="search-input">
             <form class="input-group" autocomplete="off">
-                <input maxlength="80" type="search" id="search-field" name="s" class="form-input input-lg" placeholder="<%= __('search_placeholder') %>" required>
-                <button class="btn btn-primary input-group-btn btn-lg"><%= __('search') %></button>
+                <input maxlength="80" type="search" id="search-field" name="s" class="form-input input-lg" placeholder="<%= __('search.placeholder') %>" required>
+                <button class="btn btn-primary input-group-btn btn-lg"><%= __('search.main') %></button>
             </form>
         </div>
         <!-- # Description & Output # -->
-        <div id="search-result-info">总共找到 <span id="search-result-num"></span> 条结果</div>
-        <div id="search-output">
+        <div id="search-result-info" class="pt-2"><%= __('search.num_before') %>&nbsp;<span id="search-result-num"></span>&nbsp;<%= __('search.num_after') %></div>
+        <div id="search-output" class="pt-2">
             <!-- Import Description from markdown -->
             <%- page.content %>
         </div>
     </div>
 </div>
 
+<!-- load local-search -->
+<% if (theme.vendors.suka.local_search_js) { %>
+    <script src="<%= theme.vendors.suka.local_search_js %>"></script>
+<% } else { %>
+    <script src="<%- url_for('js/local-search.min.js') %>"></script>
+<% } %>
+
 <script>
-String.prototype.queryUrl = function (e) {
-    var t = this.replace(/^[^?=]*\?/ig, "").split("#")[0],
-        n = {};
-    return t.replace(/(^|&)([^&=]+)=([^&]*)/g, function (e, t, r, i) {
-        try {
-            r = decodeURIComponent(r)
-        } catch (s) { }
-        try {
-            i = decodeURIComponent(i)
-        } catch (s) { }
-        r in n ? n[r] instanceof Array ? n[r].push(i) : n[r] = [n[r], i] : n[r] = /\[\]$/.test(r) ? [i] : i
-    }), e ? n[e] : n
-};
-var searchQuery = location.search.queryUrl();
-
-var res;
-var searchFunc = function (searchFilePath) {
-    'use strict';
-    fetch(searchFilePath).then(function (res) {
-        return res.json();
-    }).then(function (datas) {
-        var $resultContent = document.getElementById("search-output");
-        var $resultNum = document.getElementById("search-result-num");
-        var $resultInfo = document.getElementById("search-result-info");
-        if (typeof(searchQuery.s) !== "undefined") {
-            search(searchQuery.s)
-            document.getElementById('search-field').setAttribute('value', searchQuery.s)
-        }
-        function search(key) {
-            var str = '';
-            var strNone = '';
-            var keywords = key.trim().toLowerCase().split(/[\s\-]+/);
-            var index_num = 0;
-            $resultContent.innerHTML = '';
-            if (key.trim().length <= 0) {
-                return;
-            }
-            // perform local searching
-            datas.forEach(function (data) {
-                if (typeof data.title === "undefined") return
-                if (typeof data.content === "undefined") return
-                var isMatch = true;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_date = new Date(data.date).toLocaleDateString();
-                if (typeof data.tags !== "undefined") {
-                    var data_tags = data.tags;
-                } else {
-                    var data_tags = [];
-                }
-                var data_content = data.content.trim().replace(/<[^>]+>/g, '').toLowerCase();
-                var data_url = data.url;
-                var index_title = -1;
-                var index_tags = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if (data_title !== '' && data_content !== '') {
-                    keywords.forEach(function (keyword, i) {
-                        index_title = data_title.indexOf(keyword);
-                        index_tags = data_tags.indexOf(keyword);
-                        index_content = data_content.indexOf(keyword);
-                        if (index_title < 0 && index_tags < 0 && index_content < 0) {
-                            isMatch = false;
-                        } else {
-                            if (index_content < 0) {
-                                index_content = 0;
-                            }
-                            if (i === 0) {
-                                first_occur = index_content;
-                            }
-                            index_num = index_num + 1
-                        }
-                    });
-                }
-                // show search results
-                var position = 1;
-                if (isMatch) {
-                    str += '<div class="tile"><div class="tile-content">';
-                    str += '<a href="' + data_url + '"><p class="tile-title mb-2">' + data_title + '</p></a>';
-                    str += data_tags.map(function(tag) {
-                        return '<span>' + tag + ' | </span>';
-                    }).join('')
-                    var content = data.content.trim();
-                    if (first_occur >= 0) {
-                        // cut out characters
-                        var start = first_occur - 6;
-                        var end = first_occur + 12;
-                        if (start < 0) {
-                            start = 0;
-                        }
-                        if (start === 0) {
-                            end = 10;
-                        }
-                        if (end > content.length) {
-                            end = content.length - 10;
-                        }
-                        var match_content = content.substr(start, end);
-                        keywords.forEach(function (keyword) {
-                            var regS = new RegExp(keyword, 'gi');
-                            match_content = match_content.replace(regS, '<strong><mark>' + keyword + '</mark></strong>');
-                        })
-                        str += '<p class="tile-subtitle my-1 text-gray">' + match_content + '...</p>';
-                    }
-                    str += '</div></div>'
-                    str += '<div class="divider pt-1"></div>';
-                    position++;
-                }
-            });
-            $resultNum.innerHTML = index_num;
-            if (index_num <= 0) {
-                $resultInfo.style.display = 'none';
-                strNone += '<span>没有找到任何结果，请更换关键字试试~</span>';
-                strNone += '<br>';
-                strNone += '<span>或者你可以试试 Google 站内搜索：</span>'
-                strNone += '<a href="https://www.google.com/search?&q=' + keywords + '%20site:<%= config.url %>" target="_blank">' + keywords + '&nbsp;site:<%= config.url %></a>'
-                $resultContent.innerHTML = strNone;
-            } else {
-                $resultContent.innerHTML = str;
-            }
-        }
-    })
-}
-searchFunc('<%= url_for('/search.json') %>')
-
-/*
-function loadData(success) {
-    if (!searchData) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '<%= url_for('/search.json') %>', true);
-        xhr.onload = function() {
-            if (this.status >= 200 && this.status < 300) {
-                var res = JSON.parse(this.response||this.responseText);
-                searchData = res instanceof Array ? res : res.posts;
-                success(searchData);
-            } else {
-                console.error(this.statusText);
-            }
-        };
-        xhr.onerror = function() {
-            console.error(this.statusText);
-        };
-        xhr.send();
-    } else {
-        success(searchData);
-    }
-}
-
-function matcher(post, regExp) {
-    // only match artiles with not empty titles and contents
-    // title > tags > text
-    if (post.title !== '' && post.content !== '') {
-        return regtest(post.title, regExp) || regtest(post.tags, regExp) || regtest(post.categories, regExp) || regtest(post.content, regExp);
-    }
-
-    keywords.forEach(function (keyword, i) {
-        index_title = data_title.indexOf(keyword);
-        index_tags = data_tags.indexOf(keyword);
-        index_content = data_content.indexOf(keyword);
-        if (index_title < 0 && index_tags < 0 && index_content < 0) {
-            isMatch = false;
-        } else {
-            if (index_content < 0) {
-                index_content = 0;
-            }
-            if (i === 0) {
-                first_occur = index_content;
-            }
-        }
-    });
-}
-function regtest(raw, regExp) {
-    regExp.lastIndex = 0;
-    return regExp.test(raw);
-}
-
-function render(data) {
-    var html = '';
-    if (data.length) {
-        html = data.map(function(post) {
-            if (typeof post.tags !== "undefined") {
-                var data_tags = post.tags;
-            } else {
-                var data_tags = [];
-            }
-            return tpl(searchTpl, {
-                title: post.title,
-                path: post.url,
-                date: new Date(post.date).toLocaleDateString(),
-                tags: data_tags.map(function(tag) {
-                    return '<span>' + tag + ' | </span>';
-                }).join('')
-            });
-        }).join('');
-    } else {
-        html = '<div class="tips"><i class="fa fa-empty"></i><p>Results not found!</p></div>';
-    }
-    document.getElementById('search-output').innerHTML = html;
-}
-
-function tpl(html, data) {
-    return html.replace(/\{\w+\}/g, function(str) {
-        var prop = str.replace(/\{|\}/g, '');
-        return data[prop] || '';
-    });
-}
-
-function search(e) {
-    var key = e.trim();
-    if (!key) {
-        return;
-    }
-    // 关键字 => 正则，空格隔开的看作多个关键字
-    // a b c => /a|b|c/gmi
-    var regExp = new RegExp(key.replace(/[ ]/g, '|'), 'gmi');
-    loadData(function(data) {
-        var result = data.filter(function(post) {
-            return matcher(post, regExp);
-        });
-        render(result);
-    });
-}
-*/
-
+searchFunc('<%= url_for('/search.json') %>');
+var searchNoResult = '';
+searchNoResult += '<span><%= __('search.noresult') %>'
+searchNoResult += '<br><%= __('search.trygoogle') %>&nbsp;:&nbsp;</span>'
+searchNoResult += '<a href="https://www.google.com/search?&q=' + searchQuery.s + '%20site:<%= config.url %>" target="_blank">' + searchQuery.s + '&nbsp;site:<%= config.url %></a>'
 </script>

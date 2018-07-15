@@ -31,7 +31,7 @@
             <% temp_post.categories = categories -%>
         <% } -%>
         <% if (post._content) { -%>
-            <% temp_post.content = post.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'') -%>
+            <% temp_post.content = post.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'').replace(new RegExp('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]','g'),'') -%>
         <% } -%>
         <% res[index] = temp_post; -%>
         <% index += 1; -%>
@@ -68,7 +68,7 @@
             <% temp_page.categories = categories -%>
         <% } -%>
         <% if (page._content) { -%>
-            <% temp_page.content = page.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'') -%>
+            <% temp_page.content = page.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'').replace(new RegExp('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]','g'),'') -%>
         <% } -%>
         <% res[index] = temp_page; -%>
         <% index += 1; -%>

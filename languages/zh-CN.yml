@@ -1,7 +1,13 @@
 archive: 归档
 category: 分类
-search: 搜索
-search_placeholder: 请输入关键字....
+search:
+  main: 搜索
+  placeholder: 请输入关键字....
+  num_before: 总共找到
+  num_after: 条结果
+  # It will show as '总共找到 %d 条结果'
+  noresult: 没有找到任何结果，请更换关键字试试~
+  trygoogle: 你可以试试 Google 站内搜索
 tag: 标签
 nav:
   prev_page: 上一页

@@ -5,15 +5,6 @@
     <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>"></script>
 <% } %>
 
-<!-- load local-search when using search layout -->
-<% if(page.layout === 'search') { %>
-    <% if (theme.vendors.suka.local_search_js) { %>
-        <script src="<%= theme.vendors.suka.local_search_js %>"></script>
-    <% } else { %>
-        <script src="<%- url_for('js/local-search.min.js') %>"></script>
-    <% } %>
-<% } %>
-
 <script>
 var myLazyLoad = new LazyLoad({
     elements_selector: ".lazyload"
@@ -30,5 +21,5 @@ var copyrightContent = document.querySelector('span[year]')
 <% } else { %>
     copyrightContent.textContent = copyrightNow
 <% } %>
-console.log('\n %c Theme Suka (hexo-theme-suka) | © SukkaW | Verision <%= theme.verison %> %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme.verison %> %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
 </script>

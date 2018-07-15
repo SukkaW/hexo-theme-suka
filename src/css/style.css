@@ -339,3 +339,30 @@ a.timeline-tile-title span:hover {
     border-color: rgba(0,0,0,.4);
     box-shadow: 0 0 0 .08rem rgba(0,0,0,.2);
 }
+
+.search-container {
+    padding-bottom: 2rem;
+}
+
+#search-output {
+    min-height: 20rem;
+}
+
+@media screen and (max-width: 960px) {
+    #search-output {
+        min-height: 10rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #search-output {
+        min-height: 5rem;
+    }
+}
+
+.search-result-summary {
+    font-size: .7rem;
+    line-height: 1rem !important;
+    max-height: 3rem;
+    overflow: hidden;
+}
