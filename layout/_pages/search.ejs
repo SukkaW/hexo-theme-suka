@@ -9,23 +9,13 @@
             </form>
         </div>
         <!-- # Description & Output # -->
+        <div id="search-result-info">总共找到 <span id="search-result-num"></span> 条结果</div>
         <div id="search-output">
             <!-- Import Description from markdown -->
             <%- page.content %>
         </div>
     </div>
 </div>
-
-<template id="search-tpl">
-    <div class="item">
-    <a href="{path}" title="{title}">
-        <div class="title">{title}</div>
-        <div class="time">{date}</div>
-        <div class="tags">{tags}</div>
-        <div class="content">{content}</div>
-    </a>
-    </div>
-</template>
 
 <script>
 String.prototype.queryUrl = function (e) {
@@ -43,16 +33,6 @@ String.prototype.queryUrl = function (e) {
 };
 var searchQuery = location.search.queryUrl();
 
-window.onload = function() {
-    if (typeof(searchQuery.s) !== "undefined") {
-        search(searchQuery.s)
-        document.getElementById('search-field').setAttribute('value', searchQuery.s)
-    }
-}
-
-var searchData,
-    searchTpl = document.getElementById('search-tpl').innerHTML;
-/*
 var res;
 var searchFunc = function (searchFilePath) {
     'use strict';
@@ -60,10 +40,17 @@ var searchFunc = function (searchFilePath) {
         return res.json();
     }).then(function (datas) {
         var $resultContent = document.getElementById("search-output");
-
+        var $resultNum = document.getElementById("search-result-num");
+        var $resultInfo = document.getElementById("search-result-info");
+        if (typeof(searchQuery.s) !== "undefined") {
+            search(searchQuery.s)
+            document.getElementById('search-field').setAttribute('value', searchQuery.s)
+        }
         function search(key) {
             var str = '';
+            var strNone = '';
             var keywords = key.trim().toLowerCase().split(/[\s\-]+/);
+            var index_num = 0;
             $resultContent.innerHTML = '';
             if (key.trim().length <= 0) {
                 return;
@@ -90,7 +77,6 @@ var searchFunc = function (searchFilePath) {
                 // only match artiles with not empty titles and contents
                 if (data_title !== '' && data_content !== '') {
                     keywords.forEach(function (keyword, i) {
-                        console.log(data_tags)
                         index_title = data_title.indexOf(keyword);
                         index_tags = data_tags.indexOf(keyword);
                         index_content = data_content.indexOf(keyword);
@@ -103,6 +89,7 @@ var searchFunc = function (searchFilePath) {
                             if (i === 0) {
                                 first_occur = index_content;
                             }
+                            index_num = index_num + 1
                         }
                     });
                 }
@@ -110,12 +97,15 @@ var searchFunc = function (searchFilePath) {
                 var position = 1;
                 if (isMatch) {
                     str += '<div class="tile"><div class="tile-content">';
-                    str += '<a href="' + data_url + '"><p class="tile-title mb-2">' + data.title + '</p></a>';
+                    str += '<a href="' + data_url + '"><p class="tile-title mb-2">' + data_title + '</p></a>';
+                    str += data_tags.map(function(tag) {
+                        return '<span>' + tag + ' | </span>';
+                    }).join('')
                     var content = data.content.trim();
                     if (first_occur >= 0) {
                         // cut out characters
-                        var start = first_occur - 10;
-                        var end = first_occur + 10;
+                        var start = first_occur - 6;
+                        var end = first_occur + 12;
                         if (start < 0) {
                             start = 0;
                         }
@@ -137,14 +127,23 @@ var searchFunc = function (searchFilePath) {
                     position++;
                 }
             });
-            $resultContent.innerHTML = str;
+            $resultNum.innerHTML = index_num;
+            if (index_num <= 0) {
+                $resultInfo.style.display = 'none';
+                strNone += '<span>没有找到任何结果，请更换关键字试试~</span>';
+                strNone += '<br>';
+                strNone += '<span>或者你可以试试 Google 站内搜索：</span>'
+                strNone += '<a href="https://www.google.com/search?&q=' + keywords + '%20site:<%= config.url %>" target="_blank">' + keywords + '&nbsp;site:<%= config.url %></a>'
+                $resultContent.innerHTML = strNone;
+            } else {
+                $resultContent.innerHTML = str;
+            }
         }
     })
 }
 searchFunc('<%= url_for('/search.json') %>')
 
-*/
-
+/*
 function loadData(success) {
     if (!searchData) {
         var xhr = new XMLHttpRequest();
@@ -168,8 +167,27 @@ function loadData(success) {
 }
 
 function matcher(post, regExp) {
+    // only match artiles with not empty titles and contents
     // title > tags > text
-    return regtest(post.title, regExp) || regtest(post.tags, regExp) || regtest(post.categories, regExp) || regtest(post.content, regExp);
+    if (post.title !== '' && post.content !== '') {
+        return regtest(post.title, regExp) || regtest(post.tags, regExp) || regtest(post.categories, regExp) || regtest(post.content, regExp);
+    }
+
+    keywords.forEach(function (keyword, i) {
+        index_title = data_title.indexOf(keyword);
+        index_tags = data_tags.indexOf(keyword);
+        index_content = data_content.indexOf(keyword);
+        if (index_title < 0 && index_tags < 0 && index_content < 0) {
+            isMatch = false;
+        } else {
+            if (index_content < 0) {
+                index_content = 0;
+            }
+            if (i === 0) {
+                first_occur = index_content;
+            }
+        }
+    });
 }
 function regtest(raw, regExp) {
     regExp.lastIndex = 0;
@@ -222,5 +240,6 @@ function search(e) {
         render(result);
     });
 }
+*/
 
 </script>
