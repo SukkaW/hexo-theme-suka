@@ -6,11 +6,11 @@
         <% if (post.title) { -%>
             <% temp_post.title = post.title -%>
         <% } -%>
+        <% if (post.date) { -%>
+            <% temp_post.date = post.date -%>
+        <% } -%>
         <% if (post.path) { -%>
             <% temp_post.url = config.root + post.path -%>
-        <% } -%>
-        <% if (post._content) { -%>
-            <% temp_post.content = post.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'') -%>
         <% } -%>
         <% if (post.tags && post.tags.length > 0) { -%>
             <% var tags = new Array() -%>
@@ -30,6 +30,9 @@
             <% }); -%>
             <% temp_post.categories = categories -%>
         <% } -%>
+        <% if (post._content) { -%>
+            <% temp_post.content = post.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'') -%>
+        <% } -%>
         <% res[index] = temp_post; -%>
         <% index += 1; -%>
 <% }); -%>
@@ -40,11 +43,11 @@
         <% if (page.title) { -%>
             <% temp_page.title = page.title -%>
         <% } -%>
+        <% if (page.date) { -%>
+            <% temp_page.date = page.date -%>
+        <% } -%>
         <% if (page.path) { -%>
             <% temp_page.url = config.root + page.path -%>
-        <% } -%>
-        <% if (page._content) { -%>
-            <% temp_page.content = page.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'') -%>
         <% } -%>
         <% if (page.tags && page.tags.length > 0) { -%>
             <% var tags = new Array() -%>
@@ -63,6 +66,9 @@
                    <% cate_index += 1 -%>
             <% }); -%>
             <% temp_page.categories = categories -%>
+        <% } -%>
+        <% if (page._content) { -%>
+            <% temp_page.content = page.content.replace(new RegExp('<pre(.*?)\<\/pre\>','gs'),'').replace(new RegExp('<[^>]*>','g'),'').replace(new RegExp('\n','g'),'').replace(new RegExp('&lt;[^>]*>','g'),'') -%>
         <% } -%>
         <% res[index] = temp_page; -%>
         <% index += 1; -%>
