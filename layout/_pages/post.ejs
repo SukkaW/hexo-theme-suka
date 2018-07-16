@@ -1,15 +1,30 @@
+<% var toc_obj = toc(page.content, {
+    class: 'post-toc',
+    list_number: true,
+    style: 'max-height:80vh; overflow-y:scroll;'
+}) %>
+
 <div class="post-container">
-    <div id="post-card" class="card">
-        <div class="card-image" style="background-image:url(<%= page.thumbnail %>)"></div>
-        <div class="card-header">
-            <div class="card-title h5">...</div>
-            <div class="card-subtitle text-gray">...</div>
-        </div>
-        <div class="card-body">
-        ...
-        </div>
-        <div class="card-footer">
-            <button class="btn btn-primary">...</button>
+    <div class="columns">
+        <article id="post-card" class="card column col-10">
+            <% if(page.thumbnail) { %>
+                <div class="card-image" style="background-image: url('<%= page.thumbnail %>');"></div>
+            <% } %>
+            <div class="card-header">
+                <div class="card-title h5"><%= page.title %></div>
+                <div class="card-subtitle text-gray">...</div>
+            </div>
+            <div class="card-body">
+                ...
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary">...</button>
+            </div>
+        </article>
+        <div id="post-toc" class="column col-2">
+            <% if (toc_obj.length > 0) { %>
+                <%- toc_obj %>
+            <% } %>
         </div>
     </div>
 </div>

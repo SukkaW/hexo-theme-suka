@@ -110,7 +110,7 @@ header .divider {
 
 @media (min-width: 481px) {
     header {
-        padding: 4.8rem .8rem 2rem;
+        padding: 4.8rem .8rem 2.6rem;
     }
     .header-title {
         font-size: 1.4rem
@@ -119,7 +119,7 @@ header .divider {
 
 @media (min-width: 1025px) {
     header {
-        padding: 4.8rem .8rem 2rem;
+        padding: 4.8rem .8rem 3rem;
     }
     .header-title {
         font-size: 1.3rem
@@ -249,6 +249,84 @@ header .divider {
 
 /**
  * =========================================================
+ * ************   Post   ************
+ * =========================================================
+ */
+
+.post-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@media screen and (min-width: 481px) {
+    .post-container {
+        padding-right: .5rem;
+        padding-left: .5rem; 
+        max-width: calc(100vw - .5rem);
+    } 
+}
+
+@media screen and (min-width: 721px) {
+    .post-container {
+        max-width: 41.4rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+@media screen and (min-width: 1335px) { 
+    .post-container {
+        max-width: 43rem;
+    }
+}
+
+#post-card.card {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+}
+
+#post-card .card-image {
+    display: flex;
+    box-sizing: border-box;
+    background-size: cover;
+    flex-grow: 1;
+    box-orient: horizontal;
+    box-direction: normal;
+    flex-direction: row;
+    align-items: flex-end;
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    background-origin: padding-box;
+    background-attachment: scroll;
+    height: 12.36rem;
+}
+
+@media screen and (min-width: 481px) {
+    #post-card .card-image {
+        height: 13.6rem;
+    }
+}
+
+@media screen and (min-width: 721px) {
+    #post-card .card-image {
+        height: 14rem;
+    }
+}
+
+#post-card .card-item-container {
+    display: flex;
+    align-items: center;
+}
+
+#post-card .card-inner-cell {
+    padding: 1rem;
+    width: 100%;
+}
+
+/**
+ * =========================================================
  * ************   Footer   ************
  * =========================================================
  */
@@ -291,80 +369,6 @@ footer {
 
 .footer-develop-divider::after {
     content: "|"
-}
-
-/**
- * =========================================================
- * ************   Post   ************
- * =========================================================
- */
-
-.post-container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 0;
-    padding-left: 0;
-}
-
-@media screen and (min-width: 481px) {
-    .post-container {
-        padding-right: .5rem;
-        padding-left: .5rem;
-        max-width: calc(100vw - .5rem);
-    }
-}
-
-@media screen and (min-width: 721px) {
-    .post-container {
-        max-width: 41.4rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-}
-
-@media screen and (min-width: 1335px) {
-    .post-container {
-        max-width: 43rem;
-    }
-}
-
-#post-card.card {
-    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
-}
-
-#post-card .card-image {
-    display: flex;
-    box-sizing: border-box;
-    background-size: cover;
-    flex-grow: 1;
-    box-orient: horizontal;
-    box-direction: normal;
-    flex-direction: row;
-    align-items: flex-end;
-    background-repeat: repeat;
-    background-position: 50% 50%;
-    background-origin: padding-box;
-    background-attachment: scroll;
-    height: 12.36rem;
-}
-
-@media screen and (min-width: 481px) {
-    #post-card .card-image {
-        height: 14.2rem;
-    }
-}
-
-@media screen and (min-width: 721px) {
-    #post-card .card-image {
-        height: 14.6rem;
-    }
-}
-
-@media screen and (min-width: 961px) {
-    #post-card .card-image {
-        height: 15rem;
-    }
 }
 
 /**
