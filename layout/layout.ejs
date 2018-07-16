@@ -5,6 +5,7 @@
 
     <body>
         <!-- ### Main content ### -->
+        <%- partial('_partial/header', {}, {cache: true}) %>
         <%- body %>
         <!-- ### Footer ### -->
         <%- partial('_partial/footer', {}, {cache: true}) %>
