@@ -87,14 +87,19 @@ var searchFunc = function (searchFilePath) {
                 var position = 1;
                 if (isMatch) {
                     str += '<div class="tile"><div class="tile-content">';
-                    str += data_date;
-                    str += '<a href="' + data_url + '"><p class="tile-title mb-2">' + data.title + '</p></a>';
-                    str += data_tags.map(function(tag) {
-                        return '<span>' + tag + ' | </span>';
-                    }).join('')
-                    var content = data.content.trim();
+
+                    // highlight keyword in title
+                    var match_title = data.title;
+                    keywords.forEach(function (keyword) {
+                        var regS = new RegExp(keyword, 'gi');
+                        match_title = match_title.replace(regS, '<strong><mark>' + key + '</mark></strong>');
+                    })
+                    str += '<a href="' + data_url + '"><p class="tile-title search-result-title">' + match_title + '</p></a>';
+                    str += '<p class="text-gray search-result-summary">'
+                    str += '<span class="saerch-result-date">' + data_date + '</span>'
+                    var content = data.content;
                     if (first_occur >= 0) {
-                        /* cut out characters
+                        /* cut out characters & highlight keyword in content
                            There were still some bugs when cutting CJK.
                            Need to set max-height and overflow:none to elements contain search result summary
                         */
@@ -114,10 +119,9 @@ var searchFunc = function (searchFilePath) {
                             var regS = new RegExp(keyword, 'gi');
                             match_content = match_content.replace(regS, '<strong><mark>' + key + '</mark></strong>');
                         })
-                        str += '<p class="tile-subtitle my-1 text-gray search-result-summary">' + match_content + '...</p>';
+                        str += match_content + '...</p>';
                     }
                     str += '</div></div>'
-                    str += '<div class="divider pt-1"></div>';
                     position++;
                 }
             });

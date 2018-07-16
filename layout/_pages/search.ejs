@@ -1,20 +1,21 @@
 <div class="container search-container">
     <%- partial('_partial/header', {}, {cache: true}) %>
     <div class="main-container">
-        <!-- # Input # -->
         <h2><%= __('search.main') %></h2>
+
+        <!-- # Input # -->
         <div id="search-input">
             <form class="input-group" autocomplete="off">
                 <input maxlength="80" type="search" id="search-field" name="s" class="form-input input-lg" placeholder="<%= __('search.placeholder') %>" required>
                 <button class="btn btn-primary input-group-btn btn-lg"><%= __('search.main') %></button>
             </form>
         </div>
+
         <!-- # Description & Output # -->
-        <div id="search-result-info" class="pt-2"><%= __('search.num_before') %>&nbsp;<span id="search-result-num"></span>&nbsp;<%= __('search.num_after') %></div>
-        <div id="search-output" class="pt-2">
-            <!-- Import Description from markdown -->
-            <%- page.content %>
-        </div>
+        <div id="search-result-info" hidden><%= __('search.num_before') %>&nbsp;<span id="search-result-num"></span>&nbsp;<%= __('search.num_after') %></div>
+
+        <div id="search-output"></div>
+
     </div>
 </div>
 
@@ -28,7 +29,7 @@
 <script>
 searchFunc('<%= url_for('/search.json') %>');
 var searchNoResult = '';
-searchNoResult += '<span><%= __('search.noresult') %>'
+searchNoResult += '<div class="search-noresult"><span><%= __('search.noresult') %>'
 searchNoResult += '<br><%= __('search.trygoogle') %>&nbsp;:&nbsp;</span>'
-searchNoResult += '<a href="https://www.google.com/search?&q=' + searchQuery.s + '%20site:<%= config.url %>" target="_blank">' + searchQuery.s + '&nbsp;site:<%= config.url %></a>'
+searchNoResult += '<a href="https://www.google.com/search?&q=' + searchQuery.s + '%20site:<%= config.url %>" target="_blank">' + searchQuery.s + '&nbsp;site:<%= config.url %></a></div>'
 </script>
