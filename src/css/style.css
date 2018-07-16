@@ -318,12 +318,24 @@ a.timeline-tile-title span:hover {
  */
 
 .tagscloud {
-    margin: 3rem 1.2rem 3rem;
+    margin: 0 3rem 3rem;
     padding: 0 1rem;
+    min-height: 20rem;
+}
+
+@media screen and (max-width: 960px) {
+    .tagscloud {
+        min-height: 10rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .tagscloud {
+        min-height: 5rem;
+        margin-left: .5rem;
+        margin-right: .5rem;
         padding: 0;
     }
 }
