@@ -11,7 +11,9 @@
  * Main Layout
  * Post Entry
  * Footer
+ * Page: Archive
  * Page: Tagscloud
+ * Page: Search
 */
 
 /**
@@ -381,22 +383,6 @@ a.timeline-tile-title span:hover {
     max-height: 3rem;
     overflow: hidden;
     margin-bottom: 0;
-}
-
-.search-tags-item {
-    list-style: none;
-    float: left;
-    font-size: .6rem;
-    border: 1px solid #c2c2c2;
-    letter-spacing: 1px;
-    border-radius: .1rem;
-    padding-right: .3rem;
-    padding-left: .3rem;
-    margin: .4rem .4rem 0 0;
-    text-align: center;
-    appearance: none;
-    letter-spacing: 0;
-    line-height: 1.1rem;
 }
 
 .search-noresult {

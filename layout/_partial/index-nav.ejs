@@ -9,6 +9,6 @@
         <a href="<%= theme.nav.pages[i].link %>" class="navbar-link"><%= i %></a>
     <% } %>
     <% if (theme.nav.rss.use === true) { %>
-        <a href="<%= theme.url.rss %>" class="navbar-link">RSS</a>
+        <a href="<%= url_for(config.feed.path) %>" target="_blank" class="navbar-link">RSS</a>
     <% } %>
 </section>
