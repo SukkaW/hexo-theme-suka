@@ -130,6 +130,10 @@ header .divider {
     padding: .35rem .4rem;
 }
 
+.page-title {
+    font-size: 1.2rem
+}
+
 /**
  * =========================================================
  * ************   Main Layout   ************
@@ -173,6 +177,10 @@ header .divider {
     }
 }
 
+.post-stream-container {
+    width: 100%;
+}
+
 .pagination .page-item i {
     vertical-align: -7.5% !important;
 }
@@ -212,6 +220,15 @@ header .divider {
     .post-entry .column-body {
         order: -1;
     }
+}
+
+.post-entry a.card-title,
+.post-entry a.card-title:hover,
+.post-entry a.card-title:visited,
+.post-entry a.card-title:focus {
+    color: #50596c;
+    opacity: 1;
+    text-decoration: none;
 }
 
 .post-entry .card-subtitle {
@@ -374,7 +391,6 @@ a.timeline-tile-title span:hover {
 .saerch-result-date {
     padding-right: .4rem;
     color: #444;
-
 }
 
 .search-result-summary {

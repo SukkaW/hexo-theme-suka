@@ -1,0 +1,20 @@
+<div class="container">
+    <%- partial('_partial/header', {}, {cache: true}) %>
+    <div class="main-container">
+        <main>
+            <!-- # Title # -->
+            <h2 class="page-title"><%= __("tag") + " : " + page.tag %></h2>
+
+            <div class="grid-container">
+
+            <% page.posts.sort('date', -1).each(function(post){ %>
+                <div class="grid-item">
+                    <%- partial('_partial/post-entry', { post: post, index: true, pin: false }) %>
+                </div>
+            <% }) %>
+
+            </div>
+        </main>
+        <%- partial('_partial/pagination') %>
+    </div>
+</div>

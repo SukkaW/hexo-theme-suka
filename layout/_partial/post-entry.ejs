@@ -7,7 +7,7 @@
                 </div>
                 <div class="column column-body col-8 col-md-12">
                     <div class="card-header">
-                        <div class="card-title h5"><%= post.title %></div>
+                        <a class="card-title h5" href="<%= url_for(post.path) %>"><%= post.title %></a>
                         <!-- Date & Category -->
                         <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') %>&nbsp;·&nbsp;
                         <% if (post.categories && post.categories.length) { %>
@@ -29,9 +29,9 @@
             <% } else { %>
                 <div class="column col-12">
                     <div class="card-header">
-                        <div class="card-title h5"><%= post.title %></div>
+                        <a class="card-title h5" href="<%= url_for(post.path) %>"><%= post.title %></a>
                         <!-- Date & Category -->
-                        <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') %>&nbsp;·&nbsp;
+                        <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') + ' · ' %>
                         <% if (post.categories && post.categories.length) { %>
                             <%- list_categories(post.categories, {
                                 show_count: false,
