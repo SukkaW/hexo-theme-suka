@@ -25,5 +25,12 @@ share:
   toQQ: "分享到 QQ"
 post:
   continue: "阅读全文"
+  posted: 本文发表于
+  edited: 最后修改于
+  author: 本文链接
+  permalink: 永久链接
+  expired_before: 本文最后更新于
+  expired_after: 天前，文中所描述的信息可能已发生改变
+    # It will show as '本文最后更新于 %d 天前，文中所描述的信息可能已发生改变。'
 counter:
   archive: "目前共计 %d 篇文章"

@@ -45,6 +45,14 @@ uiux:
 
 post:
   entry_excerpt: 120
+  expire: true
+  # Post License
+  # You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
+  #   For example, you can setup a CC license as:
+  #       license: 'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
+  # You can also use Front-Matter `license` to override this setting
+  # or use Front-Matter `hide_license: true` to hide license on spefic post
+  license: 'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
 
 sns:
   twttier:
@@ -73,7 +81,13 @@ nav:
 # ---------------------------------------------------------------
 # Integrated Services
 # ---------------------------------------------------------------
-
+# Comment Systems
+# Available value of "use":
+#     disqus | disqus_click | changyan | livere | gitment | gitalk | valine
+# If you want to use gitment or gitalk,you should get the client_id and client_secret form https://github.com/settings/applications/new
+# If you want to use valine,you should get the app_id and app_key form https://leancloud.cn ,more setting please see https://valine.js.org
+comment:
+  use:
 
 analytics:
   google_site_id:

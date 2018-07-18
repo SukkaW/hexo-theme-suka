@@ -1,0 +1,7 @@
+<h2 class="card-title h3 mb-2"><%= page.title %></h2>
+<span><%= date(page.date, config.date_format) %></span>&nbsp;·&nbsp;<% if (page.categories && page.categories.length) { %>
+    <%- list_categories(page.categories, {
+        show_count: false,
+        style: 'none'
+    }) %>
+<% } %>

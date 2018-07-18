@@ -5,28 +5,31 @@
 }) %>
 
 <div class="post-container">
-    <article id="post-card" class="card">
+    <div id="post-card" class="card">
         <% if(page.thumbnail) { %>
             <div class="card-image" style="background-image: url('<%= page.thumbnail %>');"></div>
         <% } %>
         <div class="card-item-container">
             <div class="card-inner-cell">
                 <div class="card-header">
-                    <h2 class="card-title h3 mb-0"><%= page.title %></h2>
-                    <div class="card-subtitle text-gray">这里待会放点东西进去</div>
+                    <%- partial('_partial/post/header-info') %>
                 </div>
                 <div class="card-body">
-                    <div id="post-toc" class="<% if(page.thumbnail) { %>post-toc-with-thumbnail<% } %>">
+                    <div id="post-toc">
                         <%- toc_obj %>
                     </div>
-                    <div id="post-content">
+                    <article id="post-content">
                         <%- page.content %>
+                    </article>
+                    <%- partial('_partial/post/footer-info') %>
+                </div>
+                <%- partial('_partial/post/footer-pagination') %>
+                <% if (theme.comment.use) { %>
+                    <div class="card-footer post-comment">
+                        <%- partial('_plugin/comment/' + theme.comment.use + '/main') %>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-primary">...</button>
-                </div>
+                <% } %>
             </div>
         </div>
-    </article>
+    </div>
 </div>
