@@ -88,6 +88,49 @@ nav:
 # If you want to use valine,you should get the app_id and app_key form https://leancloud.cn ,more setting please see https://valine.js.org
 comment:
   use:
+  disqus:
+    shortname: # disqus shortname
+  disqus_proxy:
+    shortname:
+    apikey: # The pubkey of your application
+    proxy: # The proxy of https://disqus.com/api/3.0/, the address should end with '/'
+  changyan:
+    appid:
+    conf:
+    thread_key_type: path # id | path. Only when you generate static id for each post before you using 'id'
+  livere:
+    data_uid:
+  gitment:
+    repo:
+    owner:
+    client_id:
+    client_secret:
+  gitalk:
+    repo:
+    owner:
+    client_id:
+    client_secret:
+  valine:
+    leancloud_appId:  # leancloud application app id
+    leancloud_appKey:  # leancloud application app key
+    notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+    verify: false # valine verify code (true/false)
+    pageSize: 10 # comment list page size
+    avatar: identicon # gravatar style https://valine.js.org/#/avatar
+    lang: zh-cn # i18n
+    placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+    guest_info: nick,mail,link #valine comment header info
+  wildfire:
+    database_provider: firebase # firebase or wilddog
+    wilddog_site_id:
+    firebase_api_key:
+    firebase_auth_domain:
+    firebase_database_url:
+    firebase_project_id:
+    firebase_storage_bucket:
+    firebase_messaging_sender_id:
+    theme: light # light or dark
+    locale: en # en or zh-CN
 
 analytics:
   google_site_id:
@@ -106,6 +149,7 @@ vendors:
   suka:
     style_css:
     local_search_js:
+    dsq_proxy_css:
   # Spectre.css
   # https://picturepan2.github.io/spectre/
   # Version: 0.5.3

@@ -1,0 +1,25 @@
+<style type="text/css">
+    .wildfire_thread a {
+        border-bottom: none;
+    }
+</style>
+<div class="wildfire_thread"></div>
+<script>
+    var wildfireConfig = () => ({
+        databaseProvider: '<%= theme.comment.wildfire.database_provider %>',
+        databaseConfig: {
+            <% if (theme.comment.wildfire.database_provider == 'wilddog') { %>
+                siteId: '<%= theme.comment.wildfire.wilddog_site_id %>' 
+            <% } else if (theme.comment.wildfire.database_provider == 'firebase') { %>
+                apiKey: '<%= theme.comment.wildfire.firebase_api_key %>',
+                authDomain: '<%= theme.comment.wildfire.firebase_auth_domain %>',
+                databaseURL: '<%= theme.comment.wildfire.firebase_database_url %>',
+                projectId: '<%= theme.comment.wildfire.firebase_project_id %>',
+                storageBucket: '<%= theme.comment.wildfire.firebase_storage_bucket %>',
+                messagingSenderId: '<%= theme.comment.wildfire.firebase_messaging_sender_id %>'
+            <% } %>
+        },
+        theme: '<%= theme.comment.wildfire.theme %>',
+        locale: '<%= theme.comment.wildfire.locale %>',
+    })
+</script>
