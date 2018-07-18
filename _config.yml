@@ -92,8 +92,8 @@ comment:
     shortname: # disqus shortname
   disqus_proxy:
     shortname:
-    apikey: # The pubkey of your application
-    proxy: # The proxy of https://disqus.com/api/3.0/, the address should end with '/'
+    apikey: E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F # The pubkey of your application
+    proxy: https://cors-anywhere.herokuapp.com/disqus.com/api/3.0/ # The proxy of https://disqus.com/api/3.0/
   changyan:
     appid:
     conf:
