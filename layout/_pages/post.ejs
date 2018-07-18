@@ -6,22 +6,25 @@
 
 <div class="post-container">
     <div class="columns">
-        <article id="post-card" class="card column col-10">
-            <% if(page.thumbnail) { %>
-                <div class="card-image" style="background-image: url('<%= page.thumbnail %>');"></div>
-            <% } %>
-            <div class="card-header">
-                <div class="card-title h5"><%= page.title %></div>
-                <div class="card-subtitle text-gray">...</div>
-            </div>
-            <div class="card-body">
-                ...
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-primary">...</button>
-            </div>
-        </article>
-        <div id="post-toc" class="column col-2">
+        <div id="post-card-push" class="column col-2 hide-lg"></div>
+        <div class="column col-8 col-lg-12">
+            <article id="post-card" class="card">
+                <% if(page.thumbnail) { %>
+                    <div class="card-image" style="background-image: url('<%= page.thumbnail %>');"></div>
+                <% } %>
+                <div class="card-header">
+                    <div class="card-title h5"><%= page.title %></div>
+                    <div class="card-subtitle text-gray">...</div>
+                </div>
+                <div class="card-body">
+                    ...
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">...</button>
+                </div>
+            </article>
+        </div>
+        <div id="post-toc" class="column col-2 hide-lg">
             <% if (toc_obj.length > 0) { %>
                 <%- toc_obj %>
             <% } %>
