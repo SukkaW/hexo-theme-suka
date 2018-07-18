@@ -54,19 +54,6 @@ post:
   # or use Front-Matter `hide_license: true` to hide license on spefic post
   license: 'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
 
-sns:
-  twttier:
-
-# SNS Share Switch
-sns_share:
-  twitter: true
-  facebook: true
-  googleplus: true
-  weibo: true
-  linkedin: false
-  qq: false
-  telegram: false
-
 nav:
   archives:
     use: true
