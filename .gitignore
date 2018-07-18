@@ -6,8 +6,6 @@ _config.yml
 
 node_modules
 
-layout/_plugin/comment
-
 .idea
 
 .directory

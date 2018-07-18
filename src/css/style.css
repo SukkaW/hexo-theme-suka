@@ -325,6 +325,16 @@ header .divider {
     width: 100%;
 }
 
+#post-card .card-header {
+    padding: 1.2rem;
+    border-bottom: .05rem solid #ddd;
+}
+
+#post-card .card-info {
+    margin-bottom: 0;
+    font-size: .7rem;
+}
+
 /* Post Tag/Category List */
 
 .post-categories-list,
@@ -363,7 +373,7 @@ a.post-categories-list-item:visited {
 }
 
 a.category-link {
-    color: #50596c;
+    color: #acb3c2;
     text-decoration: none;
 }
 
@@ -412,7 +422,6 @@ a.category-link {
 /* Footer Info */
 
 #post-card .post-footer-info {
-    /* border-top: .05rem solid #ddd; */
     margin-top: .8rem;
     padding-top: .8rem;
     font-size: .75rem

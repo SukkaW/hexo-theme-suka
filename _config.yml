@@ -83,7 +83,7 @@ nav:
 # ---------------------------------------------------------------
 # Comment Systems
 # Available value of "use":
-#     disqus | disqus_click | changyan | livere | gitment | gitalk | valine
+#     disqus | disqus_proxy | disqus_click | changyan | livere | gitment | gitalk | valine
 # If you want to use gitment or gitalk,you should get the client_id and client_secret form https://github.com/settings/applications/new
 # If you want to use valine,you should get the app_id and app_key form https://leancloud.cn ,more setting please see https://valine.js.org
 comment:

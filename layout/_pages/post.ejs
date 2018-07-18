@@ -7,10 +7,12 @@
 <div class="post-container">
     <div id="post-card" class="card">
         <% if(page.thumbnail) { %>
+            <!-- # Post Thumbnail # -->
             <div class="card-image" style="background-image: url('<%= page.thumbnail %>');"></div>
         <% } %>
         <div class="card-item-container">
             <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
                 <div class="card-header">
                     <%- partial('_partial/post/header-info') %>
                 </div>
@@ -25,6 +27,7 @@
                 </div>
                 <%- partial('_partial/post/footer-pagination') %>
                 <% if (theme.comment.use) { %>
+                    <!-- # Comment # -->
                     <div class="card-footer post-comment">
                         <%- partial('_plugin/comment/' + theme.comment.use + '/main') %>
                     </div>

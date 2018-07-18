@@ -24,6 +24,10 @@
         color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#0070ff<% } %>;
     }
 
+    .avatar {
+        background: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#444<% } %>;
+    }
+
     .navbar-link,
     .navbar-link:visited,
     .timeline .timeline-item .timeline-icon.icon-lg {
@@ -35,7 +39,10 @@
         opacity: .8;
     }
 
-    #search-input .btn {
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
         background: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#727e96<% } %>;
         border-color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#727e96<% } %>;
     }

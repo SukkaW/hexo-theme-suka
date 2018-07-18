@@ -6,9 +6,11 @@
 <% } %>
 
 <script>
+/* Init lazyload */
 var myLazyLoad = new LazyLoad({
     elements_selector: ".lazyload"
 });
+/* Copyright */
 var copyrightNow = new Date().getFullYear();
 var copyrightContent = document.querySelector('span[year]')
 <% if (theme.footer.copyright_since > 0) { %>
@@ -21,5 +23,11 @@ var copyrightContent = document.querySelector('span[year]')
 <% } else { %>
     copyrightContent.textContent = copyrightNow
 <% } %>
+/* Cnosole Log */
 console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme.verison %> %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
 </script>
+
+<!-- Comment -->
+<% if (theme.comment.use){ %>
+    <%- partial('_plugin/comment/' + theme.comment.use + '/common') %>
+ <% } %>
