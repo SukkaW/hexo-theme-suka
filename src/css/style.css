@@ -279,7 +279,13 @@ header .divider {
 
 @media screen and (min-width: 961px) {
     .post-container {
-        max-width: 64.5rem;
+        max-width: 38rem;
+    }
+}
+
+@media screen and (min-width: 1335px) {
+    .post-container {
+        max-width: 43rem;
     }
 }
 
@@ -321,8 +327,45 @@ header .divider {
 }
 
 #post-card .card-inner-cell {
-    padding: 1rem;
     width: 100%;
+}
+
+/* Post TOC */
+
+#post-toc {
+    position: relative;
+    z-index: 0;
+    max-width: 890px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    text-align: right;
+    line-height: .6rem;
+    font-size: .65rem;
+}
+
+#post-toc > ol {
+    margin-left: 1.2rem;
+    margin-top: 7rem;
+    max-width: 8rem;
+    position: fixed;
+    z-index: 0;
+    top: 180px;
+    display: inline-block;
+    text-align: left;
+}
+
+@media screen and (max-width: 960px) {
+    #post-toc {
+        display: none;
+    }
+}
+
+#post-toc ol {
+    list-style: none;
+}
+
+#post-toc .post-toc-child {
+    margin: .2rem 0 .2rem .5rem
 }
 
 /**
