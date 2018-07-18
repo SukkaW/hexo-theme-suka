@@ -28,11 +28,6 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-code {
-    font-family: Consolas, Courier, 'Courier New', monospace;
-    /* It was the same as SukkaW's IDE font-family set */
-}
-
 /* Override the Spectre.css */
 
 html a:focus,
@@ -54,14 +49,14 @@ html .btn:focus {
 
 html *::-webkit-scrollbar {
     width: 6px;
-    height: 6px;
+    height: 4px;
     background: transparent;
 }
 
 @media (min-width: 1024px) {
     html *::-webkit-scrollbar {
         width: 8px;
-        height: 8px;
+        height: 6px;
     }
 }
 
@@ -279,11 +274,11 @@ header .divider {
 
 @media screen and (min-width: 961px) {
     .post-container {
-        max-width: 38rem;
+        max-width: 36rem;
     }
 }
 
-@media screen and (min-width: 1335px) {
+@media screen and (min-width: 1281px) {
     .post-container {
         max-width: 43rem;
     }
@@ -343,8 +338,8 @@ header .divider {
     font-size: .65rem;
 }
 
-#post-toc > ol {
-    margin-left: 1.2rem;
+#post-toc>ol {
+    margin-left: 1.5rem;
     margin-top: 7rem;
     max-width: 8rem;
     position: fixed;
@@ -366,6 +361,553 @@ header .divider {
 
 #post-toc .post-toc-child {
     margin: .2rem 0 .2rem .5rem
+}
+
+/**
+ * =========================================================
+ * ************   Post Content: markdown css   ************
+ * =========================================================
+ */
+
+#post-card .card-body {
+    padding: 1.2rem
+}
+
+#post-content {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.5;
+    font-size: .8rem;
+    word-wrap: break-word;
+    padding-top: 0;
+}
+
+#post-content .octicon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+}
+
+#post-content a {
+    background-color: transparent;
+}
+
+#post-content a:active,
+#post-content a:hover {
+    outline-width: 0;
+}
+
+#post-content strong {
+    font-weight: inherit;
+}
+
+#post-content strong {
+    font-weight: bolder;
+}
+
+#post-content h1 {
+    margin: 0.67em 0;
+}
+
+#post-content img {
+    border-style: none;
+}
+
+#post-content code,
+#post-content kbd,
+#post-content pre {
+    font-size: 1rem;
+    font-family: "SF Mono", "Segoe UI Mono", Consolas, "Roboto Mono", "Liberation Mono", Menlo, Courier, 'Courier New', monospace;
+    /* It was the same as SukkaW's IDE font-family set */
+}
+
+#post-content hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+#post-content input {
+    font: inherit;
+    margin: 0;
+}
+
+#post-content input {
+    overflow: visible;
+}
+
+#post-content [type="checkbox"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+#post-content * {
+    box-sizing: border-box;
+}
+
+#post-content input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+#post-content a {
+    text-decoration: none;
+}
+
+#post-content a:hover {
+    text-decoration: underline;
+}
+
+#post-content strong {
+    font-weight: 600;
+}
+
+#post-content hr {
+    height: 0;
+    margin: 15px 0;
+    overflow: hidden;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #dfe2e5;
+}
+
+#post-content hr::before {
+    display: table;
+    content: "";
+}
+
+#post-content hr::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+#post-content table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+#post-content td,
+#post-content th {
+    padding: 0;
+}
+
+/* H1-H6 */
+
+#post-content h1,
+#post-content h2,
+#post-content h3,
+#post-content h4,
+#post-content h5,
+#post-content h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#post-content h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#post-content h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#post-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+#post-content h4 {
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+#post-content h5 {
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+#post-content h6 {
+    font-size: .7ren;
+    font-weight: 600;
+}
+
+#post-content p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#post-content blockquote {
+    margin: 0;
+}
+
+#post-content ul,
+#post-content ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#post-content ol ol,
+#post-content ul ol {
+    list-style-type: lower-roman;
+}
+
+#post-content ul ul ol,
+#post-content ul ol ol,
+#post-content ol ul ol,
+#post-content ol ol ol {
+    list-style-type: lower-alpha;
+}
+
+#post-content dd {
+    margin-left: 0;
+}
+
+#post-content code {
+    font-size: 12px;
+}
+
+#post-content pre {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+#post-content .octicon {
+    vertical-align: text-bottom;
+}
+
+#post-content::before {
+    display: table;
+    content: "";
+}
+
+#post-content::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+#post-content>*:first-child {
+    margin-top: 0 !important;
+}
+
+#post-content>*:last-child {
+    margin-bottom: 0 !important;
+}
+
+#post-content a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+#post-content .anchor {
+    float: left;
+    padding-right: 4px;
+    margin-left: -20px;
+    line-height: 1;
+}
+
+#post-content .anchor:focus {
+    outline: none;
+}
+
+#post-content p,
+#post-content blockquote,
+#post-content ul,
+#post-content ol,
+#post-content dl,
+#post-content table,
+#post-content pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+#post-content hr {
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #e1e4e8;
+    border: 0;
+}
+
+#post-content blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: 0.25em solid #dfe2e5;
+}
+
+#post-content blockquote>:first-child {
+    margin-top: 0;
+}
+
+#post-content blockquote>:last-child {
+    margin-bottom: 0;
+}
+
+#post-content kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: #444d56;
+    vertical-align: middle;
+    background-color: #fafbfc;
+    border: solid 1px #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+}
+
+#post-content h1,
+#post-content h2,
+#post-content h3,
+#post-content h4,
+#post-content h5,
+#post-content h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+#post-content h1 .octicon-link,
+#post-content h2 .octicon-link,
+#post-content h3 .octicon-link,
+#post-content h4 .octicon-link,
+#post-content h5 .octicon-link,
+#post-content h6 .octicon-link {
+    color: #1b1f23;
+    vertical-align: middle;
+    visibility: hidden;
+}
+
+#post-content h1:hover .anchor,
+#post-content h2:hover .anchor,
+#post-content h3:hover .anchor,
+#post-content h4:hover .anchor,
+#post-content h5:hover .anchor,
+#post-content h6:hover .anchor {
+    text-decoration: none;
+}
+
+#post-content h1:hover .anchor .octicon-link,
+#post-content h2:hover .anchor .octicon-link,
+#post-content h3:hover .anchor .octicon-link,
+#post-content h4:hover .anchor .octicon-link,
+#post-content h5:hover .anchor .octicon-link,
+#post-content h6:hover .anchor .octicon-link {
+    visibility: visible;
+}
+
+#post-content h1 {
+    padding-bottom: 0.3em;
+    font-size: 2em;
+    border-bottom: 1px solid #eaecef;
+}
+
+#post-content h2 {
+    padding-bottom: 0.3em;
+    font-size: 1.5em;
+    border-bottom: 1px solid #eaecef;
+}
+
+#post-content h3 {
+    font-size: 1.25em;
+}
+
+#post-content h4 {
+    font-size: 1em;
+}
+
+#post-content h5 {
+    font-size: 0.875em;
+}
+
+#post-content h6 {
+    font-size: 0.85em;
+    color: #6a737d;
+}
+
+#post-content ul,
+#post-content ol {
+    margin-left: .7rem;
+}
+
+#post-content ul ul,
+#post-content ul ol,
+#post-content ol ol,
+#post-content ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#post-content li {
+    word-wrap: break-all;
+}
+
+#post-content li>p {
+    margin-top: 16px;
+}
+
+#post-content li+li {
+    margin-top: 0.25em;
+}
+
+#post-content dl {
+    padding: 0;
+}
+
+#post-content dl dt {
+    padding: 0;
+    margin-top: 16px;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 600;
+}
+
+#post-content dl dd {
+    padding: 0 16px;
+    margin-bottom: 16px;
+}
+
+#post-content table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+}
+
+#post-content table th {
+    font-weight: 600;
+}
+
+#post-content table th,
+#post-content table td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+#post-content table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+}
+
+#post-content table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+#post-content img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: #fff;
+}
+
+#post-content img[align=right] {
+    padding-left: 20px;
+}
+
+#post-content img[align=left] {
+    padding-right: 20px;
+}
+
+#post-content code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27, 31, 35, 0.05);
+    color: inherit;
+    border-radius: 3px;
+}
+
+#post-content pre {
+    word-wrap: normal;
+}
+
+#post-content pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 95%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+}
+
+#post-content .highlight {
+    margin-bottom: 16px;
+}
+
+#post-content .highlight pre {
+    margin-bottom: 0;
+    word-break: normal;
+}
+
+#post-content .highlight pre,
+#post-content pre {
+    padding: 14px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+}
+
+#post-content pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+}
+
+#post-content .full-commit .btn-outline:not(:disabled):hover {
+    color: #005cc5;
+    border-color: #005cc5;
+}
+
+#post-content kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    line-height: 10px;
+    color: #444d56;
+    vertical-align: middle;
+    background-color: #fafbfc;
+    border: solid 1px #d1d5da;
+    border-bottom-color: #c6cbd1;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+#post-content :checked+.radio-label {
+    position: relative;
+    z-index: 1;
+    border-color: #0366d6;
+}
+
+#post-content .task-list-item {
+    list-style-type: none;
+}
+
+#post-content .task-list-item+.task-list-item {
+    margin-top: 3px;
+}
+
+#post-content .task-list-item input {
+    margin: 0 0.2em 0.25em -1.6em;
+    vertical-align: middle;
+}
+
+#post-content hr {
+    border-bottom-color: #eee;
 }
 
 /**
