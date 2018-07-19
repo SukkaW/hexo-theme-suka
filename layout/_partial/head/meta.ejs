@@ -1,6 +1,6 @@
 <% include variables.ejs %>
 
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
@@ -8,13 +8,13 @@
 <title><% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %></title>
 
 <!-- Favicons -->
-<link rel="icon shortcut" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
+<link rel="shortcut icon" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
 <link rel="icon" href="<%= url_for(theme.head.high_res_favicon) %>">
 
 <meta name="format-detection" content="telephone=no">
 
 <!-- Description -->
-<% if (suka_descr) { %><meta name="description" itemprop="description" content="<%= suka_descr %>"><% } %>
+<% if (suka_descr) { %><meta name="description" content="<%= suka_descr %>"><% } %>
 
 <!-- Keywords -->
 <% if (suka_tags) { %><meta name="keywords" content="<%= suka_tags %>"><% } %>

@@ -60,7 +60,7 @@ ATTENTION: THE DOCS MIGHT UPDATE ANYTIME, AND BEFORE YOU OPEN A NEW ISSUE, CHECK
 ## 如果你在浏览器中发现了问题
 ## If you find something wrong when visiy your blog in browser.
 
-### Which device am I using, such as Android, iOS, Windows, Linux, MacO
+### Which device am I using, such as Android, iOS, Windows, Linux, MacOS
 ### 我使用的平台，如 Android、iOS、Windows、Linux、MacOS 等
 
 

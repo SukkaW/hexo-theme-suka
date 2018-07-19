@@ -1,0 +1,49 @@
+<div class="container search-container">
+    <div class="main-container">
+
+    <% if (site.data.links) { %>
+    <div class="columns">
+    <% for (var i in site.data.links) { %>
+        <div class="column link-box col-3 col-md-4 col-xs-6">
+            <div class="card link-item">
+                <div class="link-img">
+                    <a href="https://1a23.com" class="link-thumb" style="background-image: url(https://cdn.jsdelivr.net/favicon.ico);" target="_blank">
+                        <div class="link-title">
+                            <div class="link-title-text">1A23 Studio</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-header">
+                    <div class="card-title h5">...</div>
+                    <div class="card-subtitle text-gray">...</div>
+                </div>
+                <div class="card-body">
+                    ...
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">...</button>
+                </div>
+            </div>
+        </div>
+        <!--<li class="link-item">
+        <a href="<%= site.data.links[i].link %>" title="<%= i %>" target="_blank">
+            <div class="card">
+                <div class="tile">
+                    <div class="tile-avatar">
+                        <img src="<%= site.data.links[i].avatar %>" >
+                    </div>
+                    <div class="tile-content">
+                        <p class="tile-title mb-1 text-center h5"><%= i %></p>
+                        <p class="tile-subtitle mb-0 text-gray text-center">
+                            <small><%- truncate(site.data.links[i].descr, 36) %></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        </li>-->
+    <% } %>
+    </div>
+    <% } %>
+    </div>
+</div>
