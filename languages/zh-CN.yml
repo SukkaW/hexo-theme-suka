@@ -4,9 +4,7 @@ tag: 标签
 search:
   main: 搜索
   placeholder: 请输入关键字....
-  num_before: 总共找到
-  num_after: 条结果
-  # It will show as '总共找到 %d 条结果'
+  num: "总共找到 %s 条结果"
   noresult: 没有找到任何结果，请更换关键字试试~
   trygoogle: 你可以试试 Google 站内搜索
 nav:
@@ -29,9 +27,7 @@ post:
   edited: 最后修改于
   author: 本文链接
   permalink: 永久链接
-  expired_before: 本文最后更新于
-  expired_after: 天前，文中所描述的信息可能已发生改变
-  # It will show as '本文最后更新于 %d 天前，文中所描述的信息可能已发生改变。'
+  expired: 本文最后更新于 %s 天前，文中所描述的信息可能已发生改变
   comment:
     load_disqus_button: "阅读评论（请确保 disqus 可以正常加载）"
     load_disqus_fully_button: "加载完整评论（请确保 disqus 可以正常加载）"

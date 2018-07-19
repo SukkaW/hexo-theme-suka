@@ -424,7 +424,7 @@ a.category-link {
 #post-card .post-footer-info {
     margin-top: .8rem;
     padding-top: .8rem;
-    font-size: .75rem
+    text-align: center;
 }
 
 #post-card .post-license {
@@ -436,7 +436,7 @@ a.category-link {
 }
 
 #post-card .post-expired-notify {
-    margin: 2em 0 0;
+    margin: 0 0 1rem;
     padding: .5rem .8rem;
     background: #ffffc0;
     border-left: 3px solid #fff000;

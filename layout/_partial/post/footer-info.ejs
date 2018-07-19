@@ -15,13 +15,29 @@
     </blockquote>
 <% } %>
 
-<p class="post-footer-info mb-2 mt-0 pt-0"><%= __('post.posted') %>&nbsp;<time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date, config.date_format) %></time>
+<% if (theme.post.expire === true) { %>
+    <blockquote id="date-expire-notification" class="post-expired-notify"><%- __('post.expired', '<span id="date-expire-num"></span>') %></blockquote>
+    <script>
+        var dateUpdate = Date.parse("<%= date(page.updated, 'YYYY-MM-DD') %>");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+<% } %>
+
+<p class="post-footer-info mb-0 pt-0"><%= __('post.posted') %>&nbsp;<time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date, config.date_format) %></time>
 <%  var posted = date(page.date, 'MMM DD, YYYY')
     var edited = date(page.updated, 'MMM DD, YYYY')
     if (posted !== edited) { %>
     , <%= __('post.edited') %>&nbsp;<time datetime="<%= date_xml(page.updated) %>" itemprop="dateModified"><%= date(page.updated, config.date_format) %></time>
 <% } %>
-</p>
+<br>
 
 <% if (page.categories && page.categories.length) { %>
 <span class="post-categories-list">
@@ -41,18 +57,4 @@
 </span>
 <% } %>
 
-<% if (theme.post.expire === true) { %>
-    <blockquote id="date-expire-notification" class="post-expired-notify mt-2"><%= __('post.expired_before') %>&nbsp;<span id="date-expire-num"></span>&nbsp;<%= __('post.expired_after') %></blockquote>
-    <script>
-        var dateUpdate = Date.parse("<%= date(page.updated, 'YYYY-MM-DD') %>");
-        var nowDate = new Date();
-        var a = nowDate.getTime();
-        var b = a - dateUpdate;
-        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
-        if (daysUpdateExpire >= 120) {
-            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
-        } else {
-            document.getElementById('date-expire-notification').style.display = 'none';
-        }
-    </script>
-<% } %>
+</p>
