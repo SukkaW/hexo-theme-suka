@@ -160,9 +160,9 @@ header .divider {
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 961px) {
     .main-container {
-        max-width: 41.4rem;
+        max-width: 41.2rem;
     }
 }
 
@@ -211,7 +211,7 @@ header .divider {
     overflow: hidden;
 }
 
-@media (min-width: 841px) {
+@media (min-width: 961px) {
     .post-entry .column-body {
         order: -1;
     }
