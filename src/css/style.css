@@ -941,13 +941,17 @@ a.category-link {
     border-radius: 3px;
 }
 
+#post-content pre.line-numbers {
+    padding-left: 3.6em;
+}
+
 #post-content pre code {
     display: inline;
     max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
-    line-height: inherit;
+    line-height: 1.5;
     word-wrap: normal;
     background-color: transparent;
     border: 0;
@@ -993,6 +997,21 @@ a.category-link {
 
 #post-content hr {
     border-bottom-color: #eee;
+}
+
+/* Fix for highlight */
+
+#post-content figure.highlight {
+    margin: .5rem;
+}
+
+#post-content .highlight td {
+    padding: 0;
+    border: none;
+}
+
+#post-content .highlight table tr {
+    border: none;
 }
 
 /**

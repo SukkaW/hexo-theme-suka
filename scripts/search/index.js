@@ -6,10 +6,7 @@
 var merge = require('utils-merge');
 var pathFn = require('path');
 
-var config = hexo.config.search = merge({
-    path: 'search.json',
-    field: 'post'
-}, hexo.config.search);
+var config = hexo.config.suka_theme.search
 
 // Set default search path
 if (!config.path) {

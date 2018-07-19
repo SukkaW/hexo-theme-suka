@@ -25,7 +25,7 @@
     <%- partial('_partial/head/meta') %>
 
     <!-- ### Import File ### -->
-    <%- partial('_partial/source/head', {}, {cache: true}) %>
+    <%- partial('_partial/source/head') %>
 
     <!-- ### Site Verification ### -->
     <%- partial('_partial/head/site-verification', {}, {cache: true}) %>
@@ -34,7 +34,7 @@
     <%- partial('_partial/head/rss', {}, {cache: true}) %>
 
     <!-- ### WebApp ### -->
-    <%- partial('_partial/head/webapp') %>
+    <%- partial('_partial/head/webapp', {}, {cache: true}) %>
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
     <%- partial('_partial/head/open-graph') %>

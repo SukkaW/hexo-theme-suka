@@ -8,7 +8,7 @@ var searchTmpl = ejs.compile(fs.readFileSync(searchTmplSrc, 'utf8'));
 
 module.exports = function (locals) {
     var config = this.config;
-    var searchConfig = config.search;
+    var searchConfig = config.suka_theme.search;
     var template = searchTmpl;
     var searchfield = searchConfig.field;
 

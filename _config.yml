@@ -136,7 +136,6 @@ vendors:
   suka:
     style_css:
     local_search_js:
-    dsq_proxy_css:
   # Spectre.css
   # https://picturepan2.github.io/spectre/
   # Version: 0.5.3
@@ -144,6 +143,12 @@ vendors:
     spectre_css:
     spectre_exp_css:
     spectre_icons_css:
+  # Prism & Prism Theme
+  # https://github.com/PrismJS/prism/ https://github.com/PrismJS/prism-themes
+  # Prism Version: 1.15.0 | Prism Theme Version: 1.0.1
+  prism:
+    theme:
+    line_number:
   # Lazyload
   # https://github.com/verlok/lazyload
   # Version: 8.9.0
