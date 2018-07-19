@@ -29,5 +29,5 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 
 <!-- Comment -->
 <% if (theme.comment.use){ %>
-    <%- partial('_plugin/comment/' + theme.comment.use + '/common') %>
+    <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: true}) %>
  <% } %>

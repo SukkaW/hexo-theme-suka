@@ -55,6 +55,8 @@ post:
   license: 'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
 
 nav:
+  home:
+    use: true
   archives:
     use: true
   rss:

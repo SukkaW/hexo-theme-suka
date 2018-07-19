@@ -1,4 +1,7 @@
 <section class="navbar-section text-center">
+    <% if (theme.nav.home.use === true) { %>
+        <a href="<%= url_for(config.root) %>" class="navbar-link"><%= __('home') %></a>
+    <% } %>
     <% if (theme.nav.archives.use === true) { %>
         <a href="<%= url_for('archives/') %>" class="navbar-link"><%= __('archive') %></a>
     <% } %>

@@ -428,7 +428,7 @@ a.category-link {
 }
 
 #post-card .post-license {
-    margin: 2.5rem 0 .8rem;
+    margin: 0 0 1rem;
     padding: .5rem .8rem;
     border-left: 3px solid #F44336;
     background-color: #F5F5F5;
@@ -465,6 +465,7 @@ a.category-link {
     font-size: .8rem;
     word-wrap: break-word;
     padding-top: 0;
+    padding-bottom: 1.8rem;
 }
 
 #post-content .octicon {
@@ -957,11 +958,6 @@ a.category-link {
     border: 0;
 }
 
-#post-content .full-commit .btn-outline:not(:disabled):hover {
-    color: #005cc5;
-    border-color: #005cc5;
-}
-
 #post-content kbd {
     display: inline-block;
     padding: 3px 5px;
@@ -1058,6 +1054,204 @@ footer {
 
 .footer-develop-divider::after {
     content: "|"
+}
+
+/**
+ * =========================================================
+ * ************   Icon   ************
+ * =========================================================
+ */
+
+/*! Spectre.css Icons v0.5.3 | MIT License | github.com/picturepan2/spectre */
+
+.icon {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: inherit;
+    font-style: normal;
+    height: 1em;
+    position: relative;
+    text-indent: -9999px;
+    vertical-align: middle;
+    width: 1em;
+}
+
+.icon::before,
+.icon::after {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon.icon-2x {
+    font-size: 1.6rem;
+}
+
+.icon.icon-3x {
+    font-size: 2.4rem;
+}
+
+.icon.icon-4x {
+    font-size: 3.2rem;
+}
+
+.accordion .icon,
+.btn .icon,
+.toast .icon,
+.menu .icon {
+    vertical-align: -10%;
+}
+
+.btn-lg .icon {
+    vertical-align: -15%;
+}
+
+.icon-arrow-down::before,
+.icon-arrow-left::before,
+.icon-arrow-right::before,
+.icon-arrow-up::before,
+.icon-downward::before,
+.icon-back::before,
+.icon-forward::before,
+.icon-upward::before {
+    border: .1rem solid currentColor;
+    border-bottom: 0;
+    border-right: 0;
+    content: "";
+    height: .65em;
+    width: .65em;
+}
+
+.icon-arrow-down::before {
+    transform: translate(-50%, -75%) rotate(225deg);
+}
+
+.icon-arrow-left::before {
+    transform: translate(-25%, -50%) rotate(-45deg);
+}
+
+.icon-arrow-right::before {
+    transform: translate(-75%, -50%) rotate(135deg);
+}
+
+.icon-arrow-up::before {
+    transform: translate(-50%, -25%) rotate(45deg);
+}
+
+.icon-back::after,
+.icon-forward::after {
+    background: currentColor;
+    content: "";
+    height: .1rem;
+    width: .8em;
+}
+
+.icon-downward::after,
+.icon-upward::after {
+    background: currentColor;
+    content: "";
+    height: .8em;
+    width: .1rem;
+}
+
+.icon-back::after {
+    left: 55%;
+}
+
+.icon-back::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.icon-downward::after {
+    top: 45%;
+}
+
+.icon-downward::before {
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.icon-forward::after {
+    left: 45%;
+}
+
+.icon-forward::before {
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.icon-upward::after {
+    top: 55%;
+}
+
+.icon-upward::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/**
+ * =========================================================
+ * ************   Timeline   ************
+ * =========================================================
+ */
+
+/*! Spectre.css Experimentals v0.5.3 | MIT License | github.com/picturepan2/spectre */
+
+.timeline .timeline-item {
+    display: flex;
+    display: -ms-flexbox;
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.timeline .timeline-item::before {
+    background: #e7e9ed;
+    content: "";
+    height: 100%;
+    left: 11px;
+    position: absolute;
+    top: 1.2rem;
+    width: 2px;
+}
+
+.timeline .timeline-item .timeline-left {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+.timeline .timeline-item .timeline-content {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 2px 0 2px .8rem;
+}
+
+.timeline .timeline-item .timeline-icon {
+    border-radius: 50%;
+    color: #fff;
+    display: block;
+    height: 1.2rem;
+    text-align: center;
+    width: 1.2rem;
+}
+
+.timeline .timeline-item .timeline-icon::before {
+    border: .1rem solid #5755d9;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: .4rem;
+    left: .4rem;
+    position: absolute;
+    top: .4rem;
+    width: .4rem;
+}
+
+.timeline .timeline-item .timeline-icon.icon-lg {
+    background: #5755d9;
+    line-height: 1.2rem;
+}
+
+.timeline .timeline-item .timeline-icon.icon-lg::before {
+    content: none;
 }
 
 /**

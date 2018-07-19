@@ -4,18 +4,6 @@
 <% } else { %>
     <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre.min.css') %>">
 <% } %>
-<!-- spectre-exp.css -->
-<% if (theme.vendors.spectre.spectre_exp_css) { %>
-    <link rel="stylesheet" href="<%= theme.vendors.spectre.spectre_exp_css %>">
-<% } else { %>
-    <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre-exp.min.css') %>">
-<% } %>
-<!-- spectre-icons.css -->
-<% if (theme.vendors.spectre.spectre_icons_css) { %>
-    <link rel="stylesheet" href="<%= theme.vendors.spectre.spectre_icons_css %>">
-<% } else { %>
-    <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre-icons.css') %>">
-<% } %>
 
 <%- partial('_partial/head/config_style', {}, {cache: true}) %>
 
