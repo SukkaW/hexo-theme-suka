@@ -7,14 +7,15 @@
 
 /*
  * Global
+ * Menu
+ * Icon
  * Header
+ * Timeline
  * Main Layout
  * Post Entry
  * Post
  * Post Content: markdown css
  * Footer
- * Icon
- * Timeline
  * Page: Archive
  * Page: Tagscloud
  * Page: Search
@@ -71,6 +72,152 @@ html *::-webkit-scrollbar-thumb {
 
 .suka-devide-dot::after {
     content: " · "
+}
+
+/**
+ * =========================================================
+ * ************   Menu   ************
+ * =========================================================
+ */
+
+.share-menu {
+    text-align: left;
+}
+
+.dropdown a {
+    cursor: pointer;
+}
+
+/**
+ * =========================================================
+ * ************   Icon   ************
+ * =========================================================
+ */
+
+/*! Spectre.css Icons v0.5.3 | MIT License | github.com/picturepan2/spectre */
+
+.icon {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: inherit;
+    font-style: normal;
+    height: 1em;
+    position: relative;
+    text-indent: -9999px;
+    vertical-align: middle;
+    width: 1em;
+}
+
+.icon::before,
+.icon::after {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon.icon-2x {
+    font-size: 1.6rem;
+}
+
+.icon.icon-3x {
+    font-size: 2.4rem;
+}
+
+.icon.icon-4x {
+    font-size: 3.2rem;
+}
+
+.accordion .icon,
+.btn .icon,
+.toast .icon,
+.menu .icon {
+    vertical-align: -10%;
+}
+
+.btn-lg .icon {
+    vertical-align: -15%;
+}
+
+.icon-arrow-down::before,
+.icon-arrow-left::before,
+.icon-arrow-right::before,
+.icon-arrow-up::before,
+.icon-downward::before,
+.icon-back::before,
+.icon-forward::before,
+.icon-upward::before {
+    border: .1rem solid currentColor;
+    border-bottom: 0;
+    border-right: 0;
+    content: "";
+    height: .65em;
+    width: .65em;
+}
+
+.icon-arrow-down::before {
+    transform: translate(-50%, -75%) rotate(225deg);
+}
+
+.icon-arrow-left::before {
+    transform: translate(-25%, -50%) rotate(-45deg);
+}
+
+.icon-arrow-right::before {
+    transform: translate(-75%, -50%) rotate(135deg);
+}
+
+.icon-arrow-up::before {
+    transform: translate(-50%, -25%) rotate(45deg);
+}
+
+.icon-back::after,
+.icon-forward::after {
+    background: currentColor;
+    content: "";
+    height: .1rem;
+    width: .8em;
+}
+
+.icon-downward::after,
+.icon-upward::after {
+    background: currentColor;
+    content: "";
+    height: .8em;
+    width: .1rem;
+}
+
+.icon-back::after {
+    left: 55%;
+}
+
+.icon-back::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.icon-downward::after {
+    top: 45%;
+}
+
+.icon-downward::before {
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.icon-forward::after {
+    left: 45%;
+}
+
+.icon-forward::before {
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.icon-upward::after {
+    top: 55%;
+}
+
+.icon-upward::before {
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 /**
@@ -335,13 +482,25 @@ header .divider {
 }
 
 #post-card .card-header {
-    padding: 1.2rem;
+    padding: 1.2rem 1.2rem 2rem;
     border-bottom: .05rem solid #ddd;
 }
 
-#post-card .card-info {
+#post-card .post-header-info {
     margin-bottom: 0;
     font-size: .7rem;
+}
+
+#post-card .post-header-info-left {
+    float: left;
+}
+
+#post-card .post-header-info-right {
+    float: right;
+}
+
+#post-card .post-header-info-right a {
+    text-decoration: none;
 }
 
 /* Post Tag/Category List */
@@ -1067,134 +1226,47 @@ footer {
 
 /**
  * =========================================================
- * ************   Icon   ************
+ * ************   Page: Tagscloud   ************
  * =========================================================
  */
 
-/*! Spectre.css Icons v0.5.3 | MIT License | github.com/picturepan2/spectre */
-
-.icon {
-    box-sizing: border-box;
-    display: inline-block;
-    font-size: inherit;
-    font-style: normal;
-    height: 1em;
-    position: relative;
-    text-indent: -9999px;
-    vertical-align: middle;
-    width: 1em;
+.tagscloud {
+    margin: 0 3rem 3rem;
+    padding: 0 1rem;
+    min-height: 20rem;
 }
 
-.icon::before,
-.icon::after {
-    display: block;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+@media screen and (max-width: 960px) {
+    .tagscloud {
+        min-height: 10rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
 }
 
-.icon.icon-2x {
-    font-size: 1.6rem;
+@media screen and (max-width: 480px) {
+    .tagscloud {
+        min-height: 5rem;
+        margin-left: .5rem;
+        margin-right: .5rem;
+        padding: 0;
+    }
 }
 
-.icon.icon-3x {
-    font-size: 2.4rem;
+.tagscloud a {
+    text-decoration: none;
+    padding: .5rem;
+    margin: .2rem;
+    line-height: 2;
+    white-space: nowrap;
+    transition: .2s;
+    opacity: 1;
 }
 
-.icon.icon-4x {
-    font-size: 3.2rem;
-}
-
-.accordion .icon,
-.btn .icon,
-.toast .icon,
-.menu .icon {
-    vertical-align: -10%;
-}
-
-.btn-lg .icon {
-    vertical-align: -15%;
-}
-
-.icon-arrow-down::before,
-.icon-arrow-left::before,
-.icon-arrow-right::before,
-.icon-arrow-up::before,
-.icon-downward::before,
-.icon-back::before,
-.icon-forward::before,
-.icon-upward::before {
-    border: .1rem solid currentColor;
-    border-bottom: 0;
-    border-right: 0;
-    content: "";
-    height: .65em;
-    width: .65em;
-}
-
-.icon-arrow-down::before {
-    transform: translate(-50%, -75%) rotate(225deg);
-}
-
-.icon-arrow-left::before {
-    transform: translate(-25%, -50%) rotate(-45deg);
-}
-
-.icon-arrow-right::before {
-    transform: translate(-75%, -50%) rotate(135deg);
-}
-
-.icon-arrow-up::before {
-    transform: translate(-50%, -25%) rotate(45deg);
-}
-
-.icon-back::after,
-.icon-forward::after {
-    background: currentColor;
-    content: "";
-    height: .1rem;
-    width: .8em;
-}
-
-.icon-downward::after,
-.icon-upward::after {
-    background: currentColor;
-    content: "";
-    height: .8em;
-    width: .1rem;
-}
-
-.icon-back::after {
-    left: 55%;
-}
-
-.icon-back::before {
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.icon-downward::after {
-    top: 45%;
-}
-
-.icon-downward::before {
-    transform: translate(-50%, -50%) rotate(-135deg);
-}
-
-.icon-forward::after {
-    left: 45%;
-}
-
-.icon-forward::before {
-    transform: translate(-50%, -50%) rotate(135deg);
-}
-
-.icon-upward::after {
-    top: 55%;
-}
-
-.icon-upward::before {
-    transform: translate(-50%, -50%) rotate(45deg);
+.tagscloud a:hover {
+    transition: .2s;
+    opacity: .85;
+    padding: .75rem;
 }
 
 /**
@@ -1283,51 +1355,6 @@ a.timeline-tile-title span:hover {
 
 /**
  * =========================================================
- * ************   Page: Tagscloud   ************
- * =========================================================
- */
-
-.tagscloud {
-    margin: 0 3rem 3rem;
-    padding: 0 1rem;
-    min-height: 20rem;
-}
-
-@media screen and (max-width: 960px) {
-    .tagscloud {
-        min-height: 10rem;
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .tagscloud {
-        min-height: 5rem;
-        margin-left: .5rem;
-        margin-right: .5rem;
-        padding: 0;
-    }
-}
-
-.tagscloud a {
-    text-decoration: none;
-    padding: .5rem;
-    margin: .2rem;
-    line-height: 2;
-    white-space: nowrap;
-    transition: .2s;
-    opacity: 1;
-}
-
-.tagscloud a:hover {
-    transition: .2s;
-    opacity: .85;
-    padding: .75rem;
-}
-
-/**
- * =========================================================
  * ************   Page: Search   ************
  * =========================================================
  */
@@ -1391,7 +1418,7 @@ a.timeline-tile-title span:hover {
  * =========================================================
  * ************   Page: Link   ************
  * =========================================================
- */ 
+ */
 
 .link-container {
     padding: .4rem 0;

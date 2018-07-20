@@ -48,7 +48,16 @@
     }
 
     #post-toc a.post-toc-link,
-    #post-toc a.post-toc-link:visited {
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
         color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#727e96<% } %>;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: <% if (theme.uiux.bg_color) { %><%= theme.uiux.bg_color %><% } else { %>#f8f9fa<% } %>;
+        opacity: .85;
     }
 </style>

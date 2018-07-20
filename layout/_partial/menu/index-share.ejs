@@ -1,11 +1,11 @@
 <div class="dropdown">
-    <a class="btn btn-link btn-gray dropdown-toggle" tabindex="0">分享</a>
-    <ul class="menu">
+    <a class="navbar-link dropdown-toggle" tabindex="0"><%= __('share.share') %></a>
+    <ul class="menu share-menu">
 
         <!-- Share Weibo -->
         <% if(theme.sns_share.weibo === true) { %>
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= config.title %>&url=<%- config.url %>&pic=<%- config.url + theme.head.favicon %>&searchPic=false&style=simple" target="_blank"><%= __('share.toWeibo') %></a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= config.title %>&url=<%- config.url %>&pic=<%- config.url + url_for(theme.head.favicon) %>&searchPic=false&style=simple" target="_blank"><%= __('share.toWeibo') %></a>
         </li>
         <% } %>
 
@@ -40,7 +40,7 @@
         <!-- Share QQ -->
         <% if(theme.sns_share.qq === true) { %>
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%= config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<%- config.url + theme.head.favicon %>&url=<%- config.url +  url_for(path) %>" target="_blank"> <%= __('share.toQQ') %></a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%= config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<%- config.url + url_for(theme.head.favicon) %>&url=<%- config.url + url_for(path) %>" target="_blank"> <%= __('share.toQQ') %></a>
         </li>
         <% } %>
 
@@ -48,6 +48,13 @@
         <% if(theme.sns_share.telegram === true) { %>
         <li class="menu-item">
             <a href="https://telegram.me/share/url?url=<%- config.url + url_for(path) %>&text=<%= page.title %>" target="_blank"><%= __('share.toTelegram') %></a>
+        </li>
+        <% } %>
+
+        <!-- QRCode -->
+        <% if(theme.qrcode.post_share === true) { %>
+        <li class="menu-item">
+            <img src="<%- qrcode(url, {margin: 2, size: 4}) %>">
         </li>
         <% } %>
 

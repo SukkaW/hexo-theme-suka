@@ -46,6 +46,7 @@ uiux:
 post:
   entry_excerpt: 120
   expire: true
+  share: true
   # Post License
   # You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
   #   For example, you can setup a CC license as:
@@ -61,11 +62,25 @@ nav:
     use: true
   rss:
     use: true
+  share:
+    use: true
   search:
     use: true
     link: /search
   pages:
 
+sns_share:
+  weibo: true
+  facebook: true
+  twitter: true
+  telegram: true
+  googleplus: true
+  linkedin: true
+  qq: true
+
+qrcode:
+  index_share: true
+  post_share: true
 
 # ---------------------------------------------------------------
 # Integrated Services

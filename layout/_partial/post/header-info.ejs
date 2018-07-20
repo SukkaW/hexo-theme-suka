@@ -1,8 +1,17 @@
 <h2 class="card-title h3 mb-2"><%= page.title %></h2>
-<p class="card-info text-gray"><span><%= date(page.date, config.date_format) %></span><span class="suka-devide-dot"></span>
-<% if (page.categories && page.categories.length) { %>
-    <%- list_categories(page.categories, {
-        show_count: false,
-        style: 'none'
-    }) %>
-<% } %></p>
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <span><%= date(page.date, config.date_format) %></span><span class="suka-devide-dot"></span>
+        <% if (page.categories && page.categories.length) { %>
+            <%- list_categories(page.categories, {
+                show_count: false,
+                style: 'none'
+            }) %>
+        <% } %>
+    </p>
+    <div class="post-header-info-right">
+        <% if (theme.post.share === true) { %>
+            <%- partial('_partial/menu/post-share') %>
+        <% } %>
+    </div>
+</div>
