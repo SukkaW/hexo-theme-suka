@@ -10,10 +10,15 @@
  * Header
  * Main Layout
  * Post Entry
+ * Post
+ * Post Content: markdown css
  * Footer
+ * Icon
+ * Timeline
  * Page: Archive
  * Page: Tagscloud
  * Page: Search
+ * Page: Link
 */
 
 /**
@@ -62,6 +67,10 @@ html *::-webkit-scrollbar {
 
 html *::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, .3);
+}
+
+.suka-devide-dot::after {
+    content: " · "
 }
 
 /**
@@ -1382,60 +1391,74 @@ a.timeline-tile-title span:hover {
  * =========================================================
  * ************   Page: Link   ************
  * =========================================================
- */
+ */ 
 
-.link-box {
-    padding: .4rem;
-    position: relative;
-    box-sizing: border-box;
+.link-container {
+    padding: .4rem 0;
+}
+
+@media (min-width: 960px) {
+    .link-container {
+        padding: .8rem 1.2rem 1.2rem;
+    }
+}
+
+.link-list {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 15rem;
+}
+
+@media screen and (min-width: 680px) {
+    .link-list {
+        max-width: 32rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .link-list {
+        max-width: 48rem;
+    }
+}
+
+@media screen and (min-width: 1340px) {
+    .link-list {
+        max-width: 64rem;
+    }
 }
 
 .link-item {
-    color: #555;
-    transform: translateZ(0);
-    transition: box-shadow 0.3s;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-    border-radius: .2rem;
-    width: 100%;
-    background: #fff;
+    margin: .4rem;
+    box-shadow: 0 1px 1.5px 1px rgba(0, 0, 0, .12);
+    transition: all .3s;
+    height: 3.8rem;
+    width: 15rem;
+    float: left;
 }
 
-.link-item:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.32);
-}
-
-.link-item .link-img {
-    text-shadow: 0 1px 3px rgba(0,0,0,.75);
-    border-radius: 4px 4px 0 0;
-    background-image: url(../img/link-default-bg.png);
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.link-item .link-thumb {
-    color: #fff;
+.link-item a,
+.link-item a:hover,
+.link-item a:focus,
+.link-item a:visited {
     text-decoration: none;
-    display: block;
-    border-radius: 4px 4px 0 0;
-    background-position: center;
-    background-size: cover;
-    height: 5rem;
+}
+
+.link-item .link-img img {
+    vertical-align: middle;
+    height: 3.8rem;
+    width: 3.8rem;
+}
+
+.link-item .link-content {
+    padding-left: .6rem !important;
+    padding-right: .6rem !important;
 }
 
 .link-item .link-title {
-    position: absolute;
-    left: .3rem;
-    bottom: .3rem;
-    width: calc(100% - .6rem);
+    font-size: .9rem;
+    color: #50596c;
 }
 
-.link-item .link-title .link-title-text {
-    white-space: nowrap!important;
-    text-overflow: ellipsis!important;
-    overflow: hidden!important;
-    font-size: 1rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,.75);
+.link-item .link-descr {
+    font-size: .65rem
 }

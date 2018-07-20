@@ -9,7 +9,7 @@
                     <div class="card-header">
                         <a class="card-title h5" href="<%= url_for(post.path) %>"><%= post.title %></a>
                         <!-- Date & Category -->
-                        <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') %>&nbsp;·&nbsp;
+                        <div class="card-subtitle text-gray"><time><%= date(post.date, config.date_format) %></time><span class="suka-devide-dot"></span>
                         <% if (post.categories && post.categories.length) { %>
                             <%- list_categories(post.categories, {
                                 show_count: false,

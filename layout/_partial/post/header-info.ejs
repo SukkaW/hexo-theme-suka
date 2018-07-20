@@ -1,5 +1,5 @@
 <h2 class="card-title h3 mb-2"><%= page.title %></h2>
-<p class="card-info text-gray"><span><%= date(page.date, config.date_format) %></span>&nbsp;·&nbsp;
+<p class="card-info text-gray"><span><%= date(page.date, config.date_format) %></span><span class="suka-devide-dot"></span>
 <% if (page.categories && page.categories.length) { %>
     <%- list_categories(page.categories, {
         show_count: false,
