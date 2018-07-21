@@ -15,18 +15,17 @@
     </p>
     <!-- footer develop info -->
     <p class="footer-develop mb-0">
+    <% if(theme.busuanzi.enable === true) { %>
+        <% if(theme.busuanzi.site.enable === true) { %>
+            <!-- Busuanzi Post Views -->
+            <span id="busuanzi_container_site_uv">
+                <%- __('counter.busuanzi_site_' + theme.busuanzi.site.type, '<span id="busuanzi_value_site_' + theme.busuanzi.site.type + '"></span>') %>
+            </span>
+            <span class="footer-develop-divider"></span>
+        <% } %>
+    <% } %>
         Powered by&nbsp;<!--
          --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
          --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a">Suka</a>
-
-        <% if(theme.busuanzi.enable === true) { %>
-            <% if(theme.busuanzi.site.enable === true) { %>
-                <!-- Busuanzi Post Views -->
-                <span class="footer-develop-divider"></span>
-                <span id="busuanzi_container_site_uv">
-                    <%- __('counter.busuanzi_site_' + theme.busuanzi.site.type, '<span id="busuanzi_value_site_' + theme.busuanzi.site.type + '"></span>') %>
-                </span>
-            <% } %>
-        <% } %>
     </p>
 </footer>
