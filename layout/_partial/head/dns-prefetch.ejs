@@ -1,1 +1,39 @@
 <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+<% if(theme.busuanzi.enable === true) { %>
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+<% } %>
+
+<!-- comment -->
+<% if(theme.comment.use === "changyan") { %>
+    <link rel="dns-prefetch" href="//changyan.sohu.com">
+<% } %>
+<% if ( (theme.comment.use === "disqus") || (theme.comment.use === "disqus_click") ) { %>
+    <link rel="dns-prefetch" href="//disqus.com">
+    <link rel="dns-prefetch" href="//<%= theme.comment.disqus.shortname %>.disqus.com">
+<% } %>
+<% if(theme.comment.use === "gitalk") { %>
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+<% } %>
+<% if(theme.comment.use === "gitment") { %>
+    <link rel="dns-prefetch" href="//imsun.github.io">
+    <link rel="dns-prefetch" href="//api.github.com">
+<% } %>
+<% if(theme.comment.use === "livere") { %>
+    <link rel="dns-prefetch" href="//cdn-city.livere.com">
+<% } %>
+<% if(theme.comment.use === "valine") { %>
+    <link rel="dns-prefetch" href="//cdn1.lncld.net">
+<% } %>
+
+<!-- analytics -->
+<% if(theme.analytics.use === "baidu") { %>
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+<% } %>
+<% if(theme.analytics.use === "google") { %>
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+<% } %>
+<% if(theme.analytics.use === "cnzz") { %>
+    <link rel="dns-prefetch" href="//s95.cnzz.com">
+<% } %>
