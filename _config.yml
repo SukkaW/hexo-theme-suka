@@ -141,6 +141,14 @@ analytics:
   baidu_site_id:
   cnzz_site_id:
 
+busuanzi:
+  enable: true
+  site:
+    enable: true
+    type: pv # pv | uv
+  post_pv:
+    enable: true
+
 # ---------------------------------------------------------------
 # Vendors Settings
 # ---------------------------------------------------------------
@@ -170,6 +178,9 @@ vendors:
   # https://github.com/verlok/lazyload
   # Version: 8.9.0
   lazyload:
+  # Busuanzi
+  # https://busuanzi.ibruce.info
+  busuanzi:
 
 
 # ---------------------------------------------------------------

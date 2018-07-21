@@ -5,6 +5,21 @@
     <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>"></script>
 <% } %>
 
+
+<% if(theme.busuanzi.enable === true) { %>
+    <!-- Busuanzi -->
+    <% if (theme.vendors.busuanzi) { %>
+        <script src="<%= theme.vendors.busuanzi %>"></script>
+    <% } else { %>
+        <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <% } %>
+<% } %>
+
+<!-- Comment -->
+<% if (theme.comment.use){ %>
+    <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: true}) %>
+<% } %>
+
 <script>
 /* Init lazyload */
 var myLazyLoad = new LazyLoad({
@@ -26,8 +41,3 @@ var copyrightContent = document.querySelector('span[data-year]')
 /* Cnosole Log */
 console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme.verison %> %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
 </script>
-
-<!-- Comment -->
-<% if (theme.comment.use){ %>
-    <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: true}) %>
- <% } %>

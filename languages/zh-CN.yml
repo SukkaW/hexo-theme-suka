@@ -30,9 +30,12 @@ post:
   author: 本文链接
   permalink: 永久链接
   expired: 本文最后更新于 %s 天前，文中所描述的信息可能已发生改变
+  views: "%s 次浏览"
   comment:
     load_disqus_button: "阅读评论（请确保 disqus 可以正常加载）"
     load_disqus_fully_button: "加载完整评论（请确保 disqus 可以正常加载）"
     load_disqus_proxy_button: "加载评论基本模式"
 counter:
   archive: "目前共计 %d 篇文章"
+  busuanzi_site_uv: "共 %s 人到访"
+  busuanzi_site_pv: "共 %s 次访问"
