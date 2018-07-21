@@ -18,10 +18,10 @@
     <% if(theme.busuanzi.enable === true) { %>
         <% if(theme.busuanzi.site.enable === true) { %>
             <!-- Busuanzi Post Views -->
-            <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_container_site_uv" style="display:none">
                 <%- __('counter.busuanzi_site_' + theme.busuanzi.site.type, '<span id="busuanzi_value_site_' + theme.busuanzi.site.type + '"></span>') %>
+                <span class="footer-develop-divider"></span>
             </span>
-            <span class="footer-develop-divider"></span>
         <% } %>
     <% } %>
         Powered by&nbsp;<!--
