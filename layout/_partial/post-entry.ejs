@@ -8,15 +8,6 @@
                 <div class="column column-body col-8 col-lg-12">
                     <div class="card-header">
                         <a class="card-title h5" href="<%= url_for(post.path) %>"><%= post.title %></a>
-                        <!-- Date & Category -->
-                        <div class="card-subtitle text-gray"><time><%= date(post.date, config.date_format) %></time><span class="suka-devide-dot"></span>
-                        <% if (post.categories && post.categories.length) { %>
-                            <%- list_categories(post.categories, {
-                                show_count: false,
-                                style: 'none'
-                            }) %>
-                        <% } %>
-                        </div>
                     </div>
                     <div class="card-body">
                         <% if(post.excerpt) {%>
@@ -25,20 +16,24 @@
                             <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
                         <% } %><a href="<%= url_for(post.path) %>"><%= __('post.continue') %></a>
                     </div>
+                    <div class="card-footer">
+                        <!-- Date & Category -->
+                        <div class="post-entry-info text-gray">
+                            <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>">
+                            <time><%= date(post.date, config.date_format) %></time>
+                            <span class="suka-devide-dot"></span>
+                            <% if (post.categories && post.categories.length) { %>
+                                    <%- list_categories(post.categories, {
+                                        show_count: false,
+                                        style: 'none'
+                            }) %><% } %>
+                        </div>
+                    </div>
                 </div>
             <% } else { %>
                 <div class="column col-12">
                     <div class="card-header">
                         <a class="card-title h5" href="<%= url_for(post.path) %>"><%= post.title %></a>
-                        <!-- Date & Category -->
-                        <div class="card-subtitle text-gray"><%= date(post.date, 'YYYY-MM-DD') + ' · ' %>
-                        <% if (post.categories && post.categories.length) { %>
-                            <%- list_categories(post.categories, {
-                                show_count: false,
-                                style: 'none'
-                            }) %>
-                        <% } %>
-                        </div>
                     </div>
                     <div class="card-body">
                         <% if(post.excerpt) {%>
@@ -47,6 +42,19 @@
                             <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
                         <% } %>
                         <a href="<%= url_for(post.path) %>"><%= __('post.continue') %></a>
+                    </div>
+                    <div class="card-footer">
+                        <!-- Date & Category -->
+                        <div class="post-entry-info text-gray">
+                            <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>">
+                            <time><%= date(post.date, config.date_format) %></time>
+                            <span class="suka-devide-dot"></span>
+                            <% if (post.categories && post.categories.length) { %>
+                                    <%- list_categories(post.categories, {
+                                        show_count: false,
+                                        style: 'none'
+                            }) %><% } %>
+                        </div>
                     </div>
                 </div>
             <% } %>

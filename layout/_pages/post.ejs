@@ -1,8 +1,9 @@
-<% var toc_obj = toc(page.content, {
-    class: 'post-toc',
-    list_number: true,
-    style: 'max-height:80vh; overflow-y:scroll;'
-}) %>
+<% if ( (theme.toc.enable === true) && (page.toc !== false) ) { %>
+    <% var toc_obj = toc(page.content, {
+        class: 'post-toc',
+        list_number: theme.toc.line_number || false,
+    }) %>
+<% } %>
 
 <div class="post-container">
     <div id="post-card" class="card">
@@ -17,9 +18,13 @@
                     <%- partial('_partial/post/header-info') %>
                 </div>
                 <div class="card-body">
-                    <div id="post-toc">
-                        <%- toc_obj %>
-                    </div>
+                    <% if ( (theme.toc.enable === true) && (page.toc !== false) ) { %>
+                        <% if(toc_obj.length > 0) { %>
+                            <div id="post-toc">
+                                <%- toc_obj %>
+                            </div>
+                        <% } %>
+                    <% } %>
                     <article id="post-content">
                         <%- page.content %>
                     </article>

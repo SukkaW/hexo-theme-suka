@@ -1,6 +1,7 @@
 <h2 class="card-title h3 mb-2"><%= page.title %></h2>
 <div class="post-header-info">
     <p class="post-header-info-left text-gray">
+        <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>">
         <span><%= date(page.date, config.date_format) %></span><span class="suka-devide-dot"></span>
         <% if (page.categories && page.categories.length) { %>
             <%- list_categories(page.categories, {

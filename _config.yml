@@ -1,47 +1,61 @@
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
+# Put your favicons into `hexo-site/source/` directory.
+# To get or check favicons visit: https://realfavicongenerator.net
 head:
   # You should use a image/x-icon type icon and configure it here.
   favicon: favicon.ico
   high_res_favicon: favicon.ico
-  # It defined meta keyword.
-  keywords: 12345
+  # It defined meta keyword, split with `,`.
+  keywords:
   android_chrome_color: '#000000'
   site_verification:
     google:
     baidu:
+  # You can setup your blog as pwa with a manifest.
+  # https://app-manifest.firebaseapp.com where you can generate a manifest quickly
+  # Leave it blank if you don't have one
   pwa_manifest:
+  # Fill in your opensearch xml file here.
+  # Leave it blank if you don't have one
   open_search:
 
 footer:
   # Copyright Since
   # Specify the date when the site was setup.
   # For example, if you set it as 2015, then footer will show something like '© 2015 - 2018'
-  # If you just want to show it like '© 2018' onlt, simly leave it blank as not defined.
+  # If you just want to show something like '© 2018' only, simly leave it blank.
   copyright_since:
   # Footer Text
   # You can specify the text you want to show in footer, HTML tag is supported.
   # For example, you can setup ICP license number as:
   #   custom_text: '<a href="http://www.miitbeian.gov.cn" rel="nofollow noopener noreferrer">某ICP备xxxxxxxx号-x</a>'
-
+  # Another example, you can setup 'Hosted on Coding Pages' as:
+  #   custom_text: 'Hosted on <a href="https://pages.coding.me" rel="nofollow noopener noreferrer">Coding Pages</a>'
+  # Muilt line footer text is supported.
   custom_text:
-    - '<a href="http://www.miitbeian.gov.cn" rel="nofollow noopener noreferrer">某ICP备xxxxxxxx号-x</a>'
-    - 'Hosted on XXXXX Pages'
+
 # ---------------------------------------------------------------
 # Style Settings
 # ---------------------------------------------------------------
-
-
-img:
-  avatar:
-
 uiux:
+  # Muilt line slogan is supported.
   slogan: 孰是孰非就让人评说 终不过 成王败寇
+  # For most link color except post color
   link_color:
   primary_color:
-  secondary_color:
+  # Background color
   bg_color: '#fcfcfc'
+
+img:
+  avatar: '/img/default_avatar.png'
+
+toc:
+  # You can still disable toc for each single post by setting their front-matter with 'toc: false'
+  enable: true
+  # Show line number for each toc list-item or not. Default is true.
+  line_number: true
 
 post:
   entry_excerpt: 120
@@ -93,7 +107,7 @@ qrcode:
 comment:
   use:
   disqus:
-    shortname: suka # disqus shortname
+    shortname: # disqus shortname
   disqus_proxy:
     shortname:
     apikey: E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F # The pubkey of your application

@@ -371,6 +371,9 @@ header .divider {
     .post-entry .column-body {
         order: -1;
     }
+    .post-entry .post-thumbnail {
+        min-height: 6.5rem;
+    }
 }
 
 .post-entry a.card-title,
@@ -382,12 +385,22 @@ header .divider {
     text-decoration: none;
 }
 
-.post-entry .card-subtitle {
+.post-entry .post-entry-info {
     font-size: .75rem;
+    line-height: 1.6;
+}
+
+.post-entry .author-thumb,
+.post-header-info .author-thumb {
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin-right: 9px;
+    border-radius: 100%;
 }
 
 .post-entry .card-body {
-    padding-top: 0;
+    padding-top: .4rem;
 }
 
 .post-entry .text-gray a {
@@ -396,6 +409,14 @@ header .divider {
 
 .post-entry .text-gray a:hover {
     color: #999 !important;
+}
+
+.post-entry .card-footer {
+    padding: .4rem .8rem;
+}
+
+.post-entry .card-footer:last-child {
+    padding-bottom: .6rem;
 }
 
 /**
@@ -488,11 +509,12 @@ header .divider {
 
 #post-card .post-header-info {
     margin-bottom: 0;
-    font-size: .7rem;
+    font-size: .75rem;
 }
 
 #post-card .post-header-info-left {
     float: left;
+    line-height: 1.6;
 }
 
 #post-card .post-header-info-right {
@@ -590,8 +612,6 @@ a.category-link {
 /* Footer Info */
 
 #post-card .post-footer-info {
-    margin-top: .8rem;
-    padding-top: .8rem;
     text-align: center;
 }
 
