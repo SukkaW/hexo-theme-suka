@@ -15,7 +15,7 @@ head:
   high_res_favicon: /img/suka-favicon.png
   # It defined meta keyword, split with `,`.
   keywords:
-  android_chrome_color: '#000000'
+  android_chrome_color:
   site_verification:
     google:
     baidu:
@@ -47,12 +47,12 @@ footer:
 # ---------------------------------------------------------------
 uiux:
   # Muilt line slogan is supported.
-  slogan: 孰是孰非就让人评说 终不过 成王败寇
+  slogan: Hi, nice to meet you.
   # For most link color except post color
   link_color:
   primary_color:
   # Background color
-  bg_color: '#fcfcfc'
+  bg_color:
 
 img:
   avatar: '/img/default_avatar.png'
