@@ -181,6 +181,7 @@ comment:
 # Material theme has a built in Baidu's, Google's website analytics and CNZZ's analytics service
 analytics:
   google_site_id:
+  gtags_site_id:
   baidu_site_id:
   cnzz_site_id:
 
