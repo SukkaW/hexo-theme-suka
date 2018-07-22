@@ -1,12 +1,18 @@
 # ---------------------------------------------------------------
+# !!ATTENTION!!
+# There are some pivotal config which should be configured in site config!
+# Read the documents for more info.
+# ---------------------------------------------------------------
+
+# ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
 # Put your favicons into `hexo-site/source/` directory.
 # To get or check favicons visit: https://realfavicongenerator.net
 head:
   # You should use a image/x-icon type icon and configure it here.
-  favicon: favicon.ico
-  high_res_favicon: favicon.ico
+  favicon: /img/suka-favicon.ico
+  high_res_favicon: /img/suka-favicon.png
   # It defined meta keyword, split with `,`.
   keywords:
   android_chrome_color: '#000000'
@@ -37,7 +43,7 @@ footer:
   custom_text:
 
 # ---------------------------------------------------------------
-# Style Settings
+# Customize Settings
 # ---------------------------------------------------------------
 uiux:
   # Muilt line slogan is supported.
@@ -51,24 +57,11 @@ uiux:
 img:
   avatar: '/img/default_avatar.png'
 
-toc:
-  # You can still disable toc for each single post by setting their front-matter with 'toc: false'
-  enable: true
-  # Show line number for each toc list-item or not. Default is true.
-  line_number: true
-
-post:
-  entry_excerpt: 120
-  expire: true
-  share: true
-  # Post License
-  # You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
-  #   For example, you can setup a CC license as:
-  #       license: 'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
-  # You can also use Front-Matter `license` to override this setting
-  # or use Front-Matter `hide_license: true` to hide license on spefic post
-  license: 'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
-
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+# Nav settings
+# Used to choose which
 nav:
   home:
     use: true
@@ -82,7 +75,13 @@ nav:
     use: true
     link: /search
   pages:
+    #About:
+      #link: /about/
+    #Friends:
+      #link: /links/
 
+# SNS Share Switch
+# Used to choose which items will be displayed in share menu.
 sns_share:
   weibo: true
   facebook: true
@@ -92,9 +91,37 @@ sns_share:
   linkedin: true
   qq: true
 
+# Qrcode which will show in share menu, for redirect to other device
 qrcode:
   index_share: true
   post_share: true
+
+
+# ---------------------------------------------------------------
+# Post Settings
+# ---------------------------------------------------------------
+post:
+  # Default Excerpt
+  # Please use <!-- more --> in the post to control excerpt accurately and will override the configuration here.
+  entry_excerpt: 120
+  # Notify on expire of the page
+  # To let the visitor know if the post hasn't been update for long.
+  expire: true
+  share: true
+  # Post License
+  # You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
+  #   For example, you can setup a CC license as:
+  #       license: 'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
+  # You can also use Front-Matter `license` to override this setting
+  # or use Front-Matter `hide_license: true` to hide license on spefic post
+  license:
+
+# Table Of Contents which will be show on right side of the post
+toc:
+  # You can still disable toc for each single post by setting their front-matter with 'toc: false'
+  enable: true
+  # Show line number for each toc list-item or not. Default is true.
+  line_number: true
 
 # ---------------------------------------------------------------
 # Integrated Services
@@ -103,7 +130,7 @@ qrcode:
 # Available value of "use":
 #     disqus | disqus_proxy | disqus_click | changyan | livere | gitment | gitalk | valine
 # If you want to use gitment or gitalk,you should get the client_id and client_secret form https://github.com/settings/applications/new
-# If you want to use valine,you should get the app_id and app_key form https://leancloud.cn ,more setting please see https://valine.js.org
+# If you want to use valine,you should get the app_id and app_key form https://leancloud.cn , more setting please see https://valine.js.org
 comment:
   use:
   disqus:
@@ -150,16 +177,24 @@ comment:
     theme: light # light or dark
     locale: en # en or zh-CN
 
+# Site Analytics
+# Material theme has a built in Baidu's, Google's website analytics and CNZZ's analytics service
 analytics:
   google_site_id:
   baidu_site_id:
   cnzz_site_id:
 
+# Views Analytics
+# The counter by https://busuanzi.ibruce.info
 busuanzi:
   enable: true
+  # Site views analytics support either pv or uv
+  # will be show at footer
   site:
     enable: true
     type: pv # pv | uv
+  # Post views analytics
+  # will be show at post header info
   post_pv:
     enable: true
 
@@ -180,8 +215,6 @@ vendors:
   # Version: 0.5.3
   spectre:
     spectre_css:
-    spectre_exp_css:
-    spectre_icons_css:
   # Prism & Prism Theme
   # https://github.com/PrismJS/prism/ https://github.com/PrismJS/prism-themes
   # Prism Version: 1.15.0 | Prism Theme Version: 1.0.1
