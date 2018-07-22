@@ -27,8 +27,8 @@ post:
   continue: "阅读全文"
   posted: 本文发表于
   edited: 最后修改于
-  author: 本文链接
-  permalink: 永久链接
+  author: 本文作者
+  permalink: 本文链接
   expired: 本文最后更新于 %s 天前，文中所描述的信息可能已发生改变
   views: "%s 次浏览"
   comment:
