@@ -13,8 +13,6 @@ head:
   # You should use a image/x-icon type icon and configure it here.
   favicon: /img/suka-favicon.ico
   high_res_favicon: /img/suka-favicon.png
-  # It defined meta keyword, split with `,`.
-  keywords:
   android_chrome_color:
   site_verification:
     google:
