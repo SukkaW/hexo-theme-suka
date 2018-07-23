@@ -2,8 +2,9 @@
 <div class="post-header-info">
     <p class="post-header-info-left text-gray">
         <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>">
-        <span><%= date(page.date, config.date_format) %></span><span class="suka-devide-dot"></span>
+        <span><%= date(page.date, config.date_format) %></span>
         <% if (page.categories && page.categories.length) { %>
+            <span class="suka-devide-dot"></span>
             <%- list_categories(page.categories, {
                 show_count: false,
                 style: 'none'

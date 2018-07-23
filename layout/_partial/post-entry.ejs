@@ -21,8 +21,8 @@
                         <div class="post-entry-info text-gray">
                             <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>">
                             <time><%= date(post.date, config.date_format) %></time>
-                            <span class="suka-devide-dot"></span>
                             <% if (post.categories && post.categories.length) { %>
+                                    <span class="suka-devide-dot"></span>
                                     <%- list_categories(post.categories, {
                                         show_count: false,
                                         style: 'none'
@@ -48,8 +48,8 @@
                         <div class="post-entry-info text-gray">
                             <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>">
                             <time><%= date(post.date, config.date_format) %></time>
-                            <span class="suka-devide-dot"></span>
                             <% if (post.categories && post.categories.length) { %>
+                                    <span class="suka-devide-dot"></span>
                                     <%- list_categories(post.categories, {
                                         show_count: false,
                                         style: 'none'
