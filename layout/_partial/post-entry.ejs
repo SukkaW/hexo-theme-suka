@@ -7,7 +7,7 @@
                 </div>
                 <div class="column column-body col-8 col-lg-12">
                     <div class="card-header">
-                        <a class="card-title h5" href="<%= url_for(post.path) %>"><%= post.title %></a>
+                        <a class="card-title h5" href="<%= url_for(post.path) %>"><%- post.title %></a>
                     </div>
                     <div class="card-body">
                         <% if(post.excerpt) {%>
@@ -34,7 +34,7 @@
             <% } else { %>
                 <div class="column col-12">
                     <div class="card-header">
-                        <a class="card-title h5" href="<%= url_for(post.path) %>"><%= post.title %></a>
+                        <a class="card-title h5" href="<%= url_for(post.path) %>"><%- post.title %></a>
                     </div>
                     <div class="card-body">
                         <% if(post.excerpt) {%>
