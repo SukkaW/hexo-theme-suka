@@ -1,3 +1,3 @@
 #!/bin/bash
-hexo clean
-hexo g
+npm run clean
+npm run generate
