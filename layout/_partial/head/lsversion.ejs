@@ -1,0 +1,12 @@
+<script>
+window.lsVersion = "<%= theme.verison %>",
+window.oldVersion = [
+    <% if(theme.old_verison) { %>
+        <% if(Array.isArray(theme.old_verison)) { %>
+            "<%- theme.old_verison.join('\",\"') %>"
+        <% } else { %>
+            "<%- theme.old_verison %>"
+        <% } %>
+    <% } %>
+]
+</script>

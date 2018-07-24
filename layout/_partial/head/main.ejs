@@ -5,18 +5,7 @@
         GitHub: https://github.com/SukkaW/hexo-theme-suka
         Version: <%= theme.verison %>
     -->
-    <script>
-        window.lsVersion = "<%= theme.verison %>",
-        window.oldVersion = [
-            <% if(theme.old_verison) { %>
-                <% if(Array.isArray(theme.old_verison)) { %>
-                    "<%- theme.old_verison.join('\",\"') %>"
-                <% } else { %>
-                    "<%- theme.old_verison %>"
-                <% } %>
-            <% } %>
-        ]
-    </script>
+    <%- partial('_partial/head/lsversion', {}, {cache: true}) %>
 
     <!-- ### DNS Prefetch ### -->
     <%- partial('_partial/head/dns-prefetch', {}, {cache: true}) %>
@@ -60,9 +49,6 @@
     <%- partial('_partial/head/structured-data') %>
 
     <!-- ### Custom Head ### -->
-    <% if (site.data.head) { %>
-        <% for (var i in site.data.head) { %>
-            <%- site.data.head[i] %>
-        <% } %>
-    <% } %>
+    <%- partial('_partial/head/custom-head', {}, {cache: true}) %>
+
 </head>
