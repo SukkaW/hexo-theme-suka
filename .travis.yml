@@ -1,14 +1,25 @@
 language: node_js
 node_js:
-  - "7"
+  - "10"
 git:
   depth: 2
   quiet: true
 install:
   - npm install hexo-cli -g
-  - chmod +x ./test/install.sh
-  - ./test/install.sh
+before_script:
+  - git clone https://github.com/theme-suka/hexo-theme-unit-test.git suka-theme-test --depth=5
+  - cd suka-theme-test
+  - rm -rf .git
+  - npm i
+  - git clone https://github.com/SukkaW/hexo-theme-suka.git themes/suka
+  #~/suka-theme-test/themes/suka
+  #git checkout -t origin/canary
+  - rm -rf .git
+  - npm i --production
+  - cd ..
+  - cd ..
 script:
+  - \cp -f _config.theme.yml themes/suka/_config.yml
   - hexo clean
   - hexo g
   - chmod +x ./test/deploy.sh
