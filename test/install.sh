@@ -1,5 +1,7 @@
 #!/bin/bash
 
+npm i hexo-cli -g
+
 # Clone Test Unit
 git clone https://github.com/theme-suka/hexo-theme-unit-test.git suka-theme-test --depth=5
 cd suka-theme-test
