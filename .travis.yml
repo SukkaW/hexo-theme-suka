@@ -1,18 +1,15 @@
 language: node_js
 node_js:
-  - "10"
+  - "7"
 git:
   depth: 2
   quiet: true
-install:
-  - npm i hexo-cli -g
-  - readlink -f .
 before_script:
   - chmod +x ./test/install.sh
   - ./test/install.sh
 script:
-  - hexo clean
-  - hexo g
+  - npm run clean
+  - npm run generate
   - chmod +x ./test/deploy.sh
   - ./test/deploy.sh
 cache:

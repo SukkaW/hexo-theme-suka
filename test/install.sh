@@ -1,5 +1,4 @@
 #!/bin/bash
-readlink -f .
 # Clone Test Unit
 git clone https://github.com/theme-suka/hexo-theme-unit-test.git suka-theme-test --depth=5
 cd suka-theme-test
@@ -17,11 +16,10 @@ cd themes/suka
 #git pull
 rm -rf .git
 npm i --production
-readlink -f .
+
 # Theme config import
 cd ..
 #~/suka-theme-test/themes
 cd ..
 #~/suka-theme-test
-readlink -f .
 \cp -f _config.theme.yml themes/suka/_config.yml
