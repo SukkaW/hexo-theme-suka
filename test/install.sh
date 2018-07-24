@@ -15,7 +15,7 @@ cd themes/suka
 #git checkout -t origin/canary
 #git pull
 rm -rf .git
-npm i
+npm i --production
 
 # Theme config import
 cd ..
