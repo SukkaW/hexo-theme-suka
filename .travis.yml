@@ -18,7 +18,7 @@ before_script:
   - cd ..
   - cd ..
 script:
-  - cp -i ./theme_config.yml themes/suka/_config.yml
+  - \cp -f ./theme_config.yml themes/suka/_config.yml
   - hexo clean
   - hexo g
   - chmod +x ./test/deploy.sh
