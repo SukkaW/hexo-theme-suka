@@ -16,3 +16,7 @@ script:
   - ./test/build.sh
   - chmod +x ./test/deploy.sh
   - ./test/deploy.sh
+cache:
+  directories:
+    - node_modules
+    - themes/suka/node_modules

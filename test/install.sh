@@ -21,4 +21,4 @@ cd ..
 #~/suka-theme-test/theme
 cd ..
 #~/suka-theme-test
-cp -i _config.theme.yml themes/suka/_config.yml
+\cp -f _config.theme.yml themes/suka/_config.yml
