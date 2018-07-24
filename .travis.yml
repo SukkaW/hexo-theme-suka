@@ -4,12 +4,13 @@ node_js:
 git:
   depth: 2
   quiet: true
-before_script:
+install:
+  - npm install hexo-cli -g
   - chmod +x ./test/install.sh
   - ./test/install.sh
 script:
-  - npm run clean
-  - npm run generate
+  - hexo clean
+  - hexo g
   - chmod +x ./test/deploy.sh
   - ./test/deploy.sh
 cache:
