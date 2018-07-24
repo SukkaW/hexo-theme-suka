@@ -12,14 +12,13 @@ before_script:
   - rm -rf .git
   - npm i
   - git clone https://github.com/SukkaW/hexo-theme-suka.git themes/suka
-  #~/suka-theme-test/themes/suka
-  #git checkout -t origin/canary
+  - git checkout -t origin/chore/ci
   - rm -rf .git
   - npm i --production
   - cd ..
   - cd ..
 script:
-  - \cp -f _config.theme.yml themes/suka/_config.yml
+  - cp -i _config.theme.yml themes/suka/_config.yml
   - hexo clean
   - hexo g
   - chmod +x ./test/deploy.sh
