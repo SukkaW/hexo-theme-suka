@@ -9,16 +9,17 @@ rm -rf .git
 # Install dependencies
 npm i
 # Install Themes
-git clone https://github.com/SukkaW/hexo-theme-suka themes/suka
+git clone https://github.com/SukkaW/hexo-theme-suka.git themes/suka
 cd themes/suka
-#~/suka-theme-test/theme/suka
+#~/suka-theme-test/themes/suka
 #git checkout -t origin/canary
 #git pull
 rm -rf .git
+npm i
 
 # Theme config import
 cd ..
-#~/suka-theme-test/theme
+#~/suka-theme-test/themes
 cd ..
 #~/suka-theme-test
 \cp -f _config.theme.yml themes/suka/_config.yml
