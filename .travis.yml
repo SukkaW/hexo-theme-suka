@@ -6,6 +6,7 @@ git:
   quiet: true
 install:
   - npm i hexo-cli -g
+  - readlink -f .
 before_script:
   - chmod +x ./test/install.sh
   - ./test/install.sh

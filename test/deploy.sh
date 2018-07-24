@@ -1,5 +1,6 @@
 #!/bin/bash
 # Init git
+readlink -f .
 mkdir ./deploy-git
 cd ./deploy-git
 #~/suka-theme-test/deploy-git
