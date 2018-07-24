@@ -7,6 +7,7 @@ cd suka-theme-test
 rm -rf .git
 
 # Install dependencies
+npm i hexo
 npm i
 # Install Themes
 git clone https://github.com/SukkaW/hexo-theme-suka.git themes/suka

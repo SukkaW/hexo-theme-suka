@@ -10,7 +10,8 @@ before_script:
   - chmod +x ./test/install.sh
   - ./test/install.sh
 script:
-  - hexo clean && hexo g
+  - hexo clean
+  - hexo g
   - chmod +x ./test/deploy.sh
   - ./test/deploy.sh
 cache:
