@@ -8,6 +8,6 @@
 <link rel="apple-touch-icon" href="<%= url_for(theme.head.high_res_favicon) %>">
 
 <!-- Manifest Import -->
-<% if(theme.head.pwa_manifest) { %><link rel="manifest" href="<%= theme.head.pwa_manifest %>"><% } %>
+<% if(theme.pwa_manifest) { %><link rel="manifest" href="<%= theme.pwa_manifest %>"><% } %>
 <!-- Open Search -->
-<% if(theme.head.open_search) { %><link rel="search" type="application/opensearchdescription+xml" href="<%= theme.head.open_search %>" title="<%= config.title %>"><% } %>
+<% if(theme.open_search) { %><link rel="search" type="application/opensearchdescription+xml" href="<%= theme.open_search %>" title="<%= config.title %>"><% } %>
