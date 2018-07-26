@@ -6,6 +6,7 @@ git:
   quiet: true
 install:
   - npm install hexo-cli -g
+  - npm install gulp-cli -g
 before_script:
   - git clone https://github.com/theme-suka/hexo-theme-unit-test.git suka-theme-test --depth=5
   - cd suka-theme-test
