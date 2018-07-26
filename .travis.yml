@@ -14,9 +14,8 @@ before_script:
   - chmod +x ./install-theme.sh
   - ./install-theme.sh
 script:
-  - \cp -f ./theme_config.yml themes/suka/_config.yml
-  - hexo clean
-  - hexo g
+  - chmod +x ./build.sh
+  - ./build.sh
   - chmod +x ./deploy.sh
   - ./deploy.sh > /dev/null
 cache:
