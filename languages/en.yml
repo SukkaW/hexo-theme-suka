@@ -1,39 +1,42 @@
-home: "Home"
-archive: "Archives"
-category: "Category"
-tag: "Tag"
+---
+home: 首页
+archive: 归档
+category: 分类
+tag: 标签
 search:
-  main: "Search"
-  placeholder: "Please enter a keyword..."
-  num: "Total %s results found"
-  noresult: "No results found. Try another keywords?"
-  trygoogle: "You can also try using Google"
+  main: 搜索
+  placeholder: 请输入关键字....
+  num: "总共找到 %s 条结果"
+  noresult: 没有找到任何结果，请更换关键字试试~
+  trygoogle: 你可以试试 Google 站内搜索
 nav:
-  prev_page: "Previous"
-  next_page: "Next"
+  prev_page: 上一页
+  next_page: 下一页
+  prev_post: 上一篇
+  next_post: 下一篇
 share:
-  share: "Share"
-  post: "Share the post"
-  toTwitter: "Share to Twitter"
-  toFacebook: "Share to Facebook"
-  toLinkedIn: "Share to LinkedIn"
-  toTelegram: "Share to Telegram"
-  toGplus: "Share to Google+"
-  toWeibo: "Share to Weibo"
-  toQQ: "Share to QQ"
+  share: 分享
+  post: 分享本文
+  toTwitter: "分享到 Twitter"
+  toFacebook: "分享到 Facebook"
+  toLinkedIn: "分享到 LinkedIn"
+  toTelegram: "分享到 Telegram"
+  toGplus: "分享到 Google+"
+  toWeibo: "分享到微博"
+  toQQ: "分享到 QQ"
 post:
-  continue: "Read more"
-  posted: "Published at"
-  edited: "Updated at"
-  author: "Author"
-  permalink: "Link to this article"
-  expired: "This article was last updated on %s days ago, and the information described in the article may have changed."
-  views: "%s Views"
+  continue: "阅读全文"
+  posted: 本文发表于
+  edited: 最后修改于
+  author: 本文作者
+  permalink: 本文链接
+  expired: 本文最后更新于 %s 天前，文中所描述的信息可能已发生改变
+  views: "%s 次浏览"
   comment:
-    load_disqus_button: "Read the comment (Make sure that disqus can load properly)"
-    load_disqus_fully_button: "Load the fully comment (Make sure that disqus can load properly)"
-    load_disqus_proxy_button: "Load the basic comment"
+    load_disqus_button: "阅读评论（请确保 disqus 可以正常加载）"
+    load_disqus_fully_button: "加载完整评论（请确保 disqus 可以正常加载）"
+    load_disqus_proxy_button: "加载评论基本模式"
 counter:
-  archive: "%d posts in total"
-  busuanzi_site_uv: "%s Viewers"
-  busuanzi_site_pv: "%s Views"
+  archive: "目前共计 %d 篇文章"
+  busuanzi_site_uv: "共 %s 人到访"
+  busuanzi_site_pv: "共 %s 次访问"
