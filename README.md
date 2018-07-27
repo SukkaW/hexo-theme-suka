@@ -1,8 +1,6 @@
-![](https://i.loli.net/2018/07/27/5b5b1b7f27495.png)
+![](https://i.loli.net/2018/07/27/5b5b2eee0dc9b.png)
 
-<img src="https://i.loli.net/2018/07/27/5b5b2c94511e5.png" alt="logo" width="64" height="64" align="right" />
-
-# [Suka Theme](https://theme.suka.moe)
+# <div align="center"><a title="Go to homepage" href="https://theme.suka.moe"><img align="center" alt="S" width="56" height="56" src="https://i.loli.net/2018/07/27/5b5b32fb7963f.png"></a>u k a</div>
 
 > Modern · Powerful · Simple  
 > 现代 · 强大 · 简洁
@@ -17,7 +15,7 @@
 
 ## Contents 目录
 
-- [Introduction 介绍](#introduction-介绍)
+- [Introduction 简介](#introduction-简介)
 - [Demo 演示](#demo-演示)
 - [Install 安装](#install-安装)
 - [Documents 文档](#documents-文档)
@@ -85,6 +83,10 @@ Authored and maintained by Sukka with help from contributors ([list](https://git
 ## License 许可证
 
 [![license](https://img.shields.io/github/license/sukkaw/hexo-theme-suka.svg?style=flat-square)](./LICENSE)
+
+Open sourced under the GPL v3.0 license.
+
+根据 GPL V3.0 许可证开源。
 
 ## Support 支持
 
