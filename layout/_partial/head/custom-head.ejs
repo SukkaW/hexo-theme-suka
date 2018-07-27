@@ -1,5 +1,11 @@
-<% if (site.data.head) { %>
-    <% for (var i in site.data.head) { %>
-        <%- site.data.head[i] %>
-    <% } %>
-<% } %>
+<%
+if (site.data.head) {
+    for (var i in site.data.head) {
+        if(Array.isArray(site.data.head[i])) { %>
+            <%- site.data.head[i].join('') %>
+        <% } else { %>
+            <%- site.data.head[i] %>
+        <% }
+    }
+}
+%>
