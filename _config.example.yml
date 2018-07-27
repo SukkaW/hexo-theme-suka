@@ -31,11 +31,6 @@ head:
   #   https://app-manifest.firebaseapp.com where you can generate a manifest quickly
   #   Leave it blank if you don't have one
   pwa_manifest:
-  # Microsoft Web App
-  #   Windows 8 and 10 users can pin your web site on their desktop.
-  #   Your site appears as a tile, just like a native Windows app.
-  #   Leave it blank if you don't have one
-  ms_browserconfig:
   # Open search
   #   Fill in your opensearch xml file here.
   #   Leave it blank if you don't have one
