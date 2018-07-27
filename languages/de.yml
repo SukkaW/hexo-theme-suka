@@ -1,0 +1,42 @@
+---
+home: 首页
+archive: 归档
+category: 分类
+tag: 标签
+search:
+  main: 搜索
+  placeholder: 请输入关键字....
+  num: "总共找到 %s 条结果"
+  noresult: 没有找到任何结果，请更换关键字试试~
+  trygoogle: 你可以试试 Google 站内搜索
+nav:
+  prev_page: 上一页
+  next_page: 下一页
+  prev_post: 上一篇
+  next_post: 下一篇
+share:
+  share: 分享
+  post: 分享本文
+  toTwitter: "分享到 Twitter"
+  toFacebook: "分享到 Facebook"
+  toLinkedIn: "分享到 LinkedIn"
+  toTelegram: "分享到 Telegram"
+  toGplus: "分享到 Google+"
+  toWeibo: "分享到微博"
+  toQQ: "分享到 QQ"
+post:
+  continue: "阅读全文"
+  posted: 本文发表于
+  edited: 最后修改于
+  author: 本文作者
+  permalink: 本文链接
+  expired: 本文最后更新于 %s 天前，文中所描述的信息可能已发生改变
+  views: "%s 次浏览"
+  comment:
+    load_disqus_button: "阅读评论（请确保 disqus 可以正常加载）"
+    load_disqus_fully_button: "加载完整评论（请确保 disqus 可以正常加载）"
+    load_disqus_proxy_button: "加载评论基本模式"
+counter:
+  archive: "目前共计 %d 篇文章"
+  busuanzi_site_uv: "共 %s 人到访"
+  busuanzi_site_pv: "共 %s 次访问"
