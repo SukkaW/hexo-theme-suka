@@ -31,11 +31,14 @@
                     <%- partial('_partial/post/footer-info') %>
                 </div>
                 <%- partial('_partial/post/footer-pagination') %>
-                <% if (theme.comment.use) { %>
+
+                <% if(page.comment !== false) { %>
                     <!-- # Comment # -->
-                    <div class="card-footer post-comment">
-                        <%- partial('_plugin/comment/' + theme.comment.use + '/main') %>
-                    </div>
+                    <% if (theme.comment.use) { %>
+                        <div class="card-footer post-comment">
+                            <%- partial('_plugin/comment/' + theme.comment.use + '/main') %>
+                        </div>
+                    <% } %>
                 <% } %>
             </div>
         </div>
