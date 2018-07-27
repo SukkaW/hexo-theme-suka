@@ -1,13 +1,20 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="<%= config.title %>">
 <meta name="msapplication-starturl" content="<%= config.url %>">
-<meta name="msapplication-navbutton-color" content="<%= theme.head.android_chrome_color %>">
+<meta name="msapplication-navbutton-color" content="<%= theme.head.color %>">
+<% if (theme.head.ms_browserconfig) { %>
+    <meta name="msapplication-config" content="<%= url_for(theme.head.ms_browserconfig) %>" />
+<% } %>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="apple-touch-icon" href="<%= url_for(theme.head.high_res_favicon) %>">
 
 <!-- Manifest Import -->
-<% if(theme.pwa_manifest) { %><link rel="manifest" href="<%= theme.pwa_manifest %>"><% } %>
+<% if(theme.head.pwa_manifest) { %>
+    <link rel="manifest" href="<%= theme.head.pwa_manifest %>">
+<% } %>
 <!-- Open Search -->
-<% if(theme.open_search) { %><link rel="search" type="application/opensearchdescription+xml" href="<%= theme.open_search %>" title="<%= config.title %>"><% } %>
+<% if(theme.head.open_search) { %>
+    <link rel="search" type="application/opensearchdescription+xml" href="<%= theme.head.open_search %>" title="<%= config.title %>">
+<% } %>
