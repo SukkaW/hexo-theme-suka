@@ -2,9 +2,9 @@
 
 <!-- vanilla-lazyload -->
 <% if (theme.vendors.lazyload) { %>
-    <script src="<%= theme.vendors.lazyload %>"></script>
+    <script src="<%= theme.vendors.lazyload %>" async></script>
 <% } else { %>
-    <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>"></script>
+    <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" async></script>
 <% } %>
 
 
@@ -23,17 +23,24 @@
 <% } %>
 
 <!-- ### Custom Footer ### -->
-<% if (site.data.footer) { %>
-    <% for (var i in site.data.footer) { %>
-        <%- site.data.footer[i] %>
-    <% } %>
-<% } %>
+<%
+if (site.data.footer) {
+    for (var i in site.data.footer) {
+        if(Array.isArray(site.data.footer[i])) { %>
+            <%- site.data.footer[i].join('') %>
+        <% } else { %>
+            <%- site.data.footer[i] %>
+        <% }
+    }
+}
+%>
 
 <script>
-/* Init lazyload */
-var myLazyLoad = new LazyLoad({
-    elements_selector: ".lazyload"
-});
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
 /* Copyright */
 var copyrightNow = new Date().getFullYear();
 var copyrightContent = document.querySelector('span[data-year]')

@@ -688,11 +688,13 @@ a.category-link {
 }
 
 #post-content code,
+#post-content .highlight span,
+#post-content .highlight code,
 #post-content kbd,
 #post-content pre {
-    font-size: 1rem;
-    font-family: "SF Mono", "Segoe UI Mono", Consolas, "Roboto Mono", "Liberation Mono", Menlo, Courier, 'Courier New', monospace;
+    font-family: "SF Mono", "Segoe UI Mono", Consolas, "Roboto Mono", "Liberation Mono", Menlo, Courier, 'Courier New', monospace !important;
     /* It was the same as SukkaW's IDE font-family set */
+    /* Override Spectre.css font-family for zh-CN */
 }
 
 #post-content hr {
@@ -1126,7 +1128,6 @@ a.category-link {
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
     border-radius: 3px;
 }
 

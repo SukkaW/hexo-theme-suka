@@ -1,3 +1,4 @@
+<% include variables.ejs %>
 <div class="dropdown">
     <a class="navbar-link dropdown-toggle" tabindex="0"><%= __('share.share') %></a>
     <ul class="menu share-menu">
@@ -5,7 +6,7 @@
         <!-- Share Weibo -->
         <% if(theme.sns_share.weibo === true) { %>
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=<%- config.title %>&url=<%- config.url %>&pic=<%- config.url + url_for(theme.head.favicon) %>&searchPic=false&style=simple" target="_blank"><%= __('share.toWeibo') %></a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=<%- config.title %>&url=<%- config.url %>&pic=<%- suka_share_icon %>&searchPic=false&style=simple" target="_blank"><%= __('share.toWeibo') %></a>
         </li>
         <% } %>
 
@@ -40,7 +41,7 @@
         <!-- Share QQ -->
         <% if(theme.sns_share.qq === true) { %>
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%- config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<%- config.url + url_for(theme.head.favicon) %>&url=<%- config.url + url_for(path) %>" target="_blank"> <%= __('share.toQQ') %></a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%- config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<%- suka_share_icon %>&url=<%- config.url + url_for(path) %>" target="_blank"> <%= __('share.toQQ') %></a>
         </li>
         <% } %>
 

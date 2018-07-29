@@ -7,9 +7,8 @@
 <!-- Title -->
 <title><% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %></title>
 
-<!-- Favicons -->
-<link rel="shortcut icon" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
-<link rel="icon" href="<%= url_for(theme.head.high_res_favicon) %>">
+<!-- favicon -->
+<%- partial('_partial/head/favicon', {}, {cache: true}) %>
 
 <meta name="format-detection" content="telephone=no">
 
@@ -18,8 +17,6 @@
 
 <!-- Keywords -->
 <% if (suka_tags) { %><meta name="keywords" content="<%= suka_tags %>"><% } %>
-
-<% if (theme.head.android_chrome_color) { %><meta name="theme-color" content="<%= theme.head.android_chrome_color %>"><% } %>
 
 <!-- Disable Fucking Bloody Baidu Tranformation -->
 <meta http-equiv="Cache-Control" content="no-transform" />
