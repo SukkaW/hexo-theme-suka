@@ -19,7 +19,3 @@ script:
   - ./build.sh
   - chmod +x ./deploy.sh
   - ./deploy.sh > /dev/null
-cache:
-  directories:
-    - node_modules
-    - themes/suka/node_modules
