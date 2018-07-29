@@ -1,4 +1,4 @@
-<div id="comment" class="vcomment"></div>
+<div id="vcomments"></div>
 
 <script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
@@ -10,14 +10,16 @@
     var notify = '<%= theme.comment.valine.notify %>' == true;
     var verify = '<%= theme.comment.valine.verify %>' == true;
     new Valine({
-        el: '.vcomment',
+        el: '#vcomments',
         notify: notify,
         verify: verify,
         appId: "<%= theme.comment.valine.leancloud_appId %>",
         appKey: "<%= theme.comment.valine.leancloud_appKey %>",
         placeholder: "<%= theme.comment.valine.placeholder %>",
+        meta: guest_info,
         pageSize:'<%= theme.comment.valine.pageSize %>',
         avatar:'<%= theme.comment.valine.avatar %>',
-        lang:'<%= theme.comment.valine.lang %>'
+        lang:'<%= theme.comment.valine.lang %>',
+        visitor: <%= theme.valine_counter.enable %>
     });
 </script>

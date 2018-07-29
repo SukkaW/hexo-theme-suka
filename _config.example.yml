@@ -212,16 +212,40 @@ busuanzi:
     enable: true
     before: # html tag support
     after: Viewers # html tag support
-    divider: '|' # something like '|' ',' '·' , if you dont want any divider simply leave it blank, html tag support
+    divider: '|' # html tag supported, something like '|' ',' '·' even '<br>', if you dont want any divider simply leave it blank,
   site_pv:
     enable: false
     before: # html tag support
     after: Views # html tag support
-    divider: # something like '|' ',' '·'  , if you dont want any divider simply leave it blank, html tag support(<br>)
+    divider: # html tag supported, something like '|' ',' '·' even '<br>', if you dont want any divider simply leave it blank,
   # Post views analytics
   # will be show at post header info
   post_pv:
     enable: true
+    before: # html tag support
+    after: Views # html tag support
+
+# The counter by https://valine.js.org/visitor.html
+valine_counter:
+  # ATTENTION! You should use valine comment system to enable this feature!
+  enable: false
+  # By use config.url as id to count all site pv
+  site_pv:
+    enable: false
+    before: # html tag supported
+    after: # html tag supported
+    divider: # html tag supported, something like '|' ',' '·' even '<br>', if you dont want any divider simply leave it blank,
+  # Show pv for every post on index (Exprimental)
+  index_post_pv:
+    enable: false
+    before: # html tag supported
+    after: # html tag supported
+  # Show pv on post page
+  post_pv:
+    enable: false
+    before: # html tag supported
+    after: # html tag supported
+
 
 # ---------------------------------------------------------------
 # Expert Settings
