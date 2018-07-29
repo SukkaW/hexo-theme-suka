@@ -21,5 +21,9 @@
                 style: 'none'
             }) %>
         <% } %>
+        <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.index_post_pv.enable === true) ) { %>
+            <span class="suka-devide-dot"></span>
+            <%- partial('_plugin/valine-counter/index_post', {}, {cache: true}) %>
+        <% } %>
     </div>
 </div>
