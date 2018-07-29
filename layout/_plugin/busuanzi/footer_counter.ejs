@@ -1,0 +1,22 @@
+<% if(theme.busuanzi.site_uv.enable === true) { %>
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span><%- theme.busuanzi.site_uv.before %></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span><%- theme.busuanzi.site_uv.after %></span>
+        <% if(theme.busuanzi.site_uv.divider) { %>
+            <span><%- theme.busuanzi.site_uv.divider %></span>
+        <% } %>
+    </span>
+<% } %>
+<% if(theme.busuanzi.site_pv.enable === true) { %>
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span><%- theme.busuanzi.site_pv.before %></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span><%- theme.busuanzi.site_pv.after %></span>
+        <% if(theme.busuanzi.site_pv.divider) { %>
+            <span><%- theme.busuanzi.site_pv.divider %></span>
+        <% } %>
+    </span>
+<% } %>

@@ -208,9 +208,16 @@ busuanzi:
   enable: true
   # Site views analytics support either pv or uv
   # will be show at footer
-  site:
+  site_uv:
     enable: true
-    type: pv # pv | uv
+    before: # html tag support
+    after: Viewers # html tag support
+    divider: '|' # something like '|' ',' '·' , if you dont want any divider simply leave it blank, html tag support
+  site_pv:
+    enable: false
+    before: # html tag support
+    after: Views # html tag support
+    divider: # something like '|' ',' '·'  , if you dont want any divider simply leave it blank, html tag support(<br>)
   # Post views analytics
   # will be show at post header info
   post_pv:

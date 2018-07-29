@@ -14,9 +14,11 @@
         <% if(theme.busuanzi.enable === true) { %>
             <% if(theme.busuanzi.post_pv.enable === true) { %>
                 <!-- Busuanzi Post Views -->
-                <span id="busuanzi_container_page_pv" style="display: none">
+                <span id="busuanzi_container_page_pv" hidden>
                     <span class="suka-devide-dot"></span>
-                    <%- __('post.views', '<span id="busuanzi_value_page_pv"></span>') %>
+                    <span><%- theme.busuanzi.site_pv.before %></span>
+                    <span id="busuanzi_value_page_pv"></span>
+                    <span><%- theme.busuanzi.site_pv.after %></span>
                 </span>
             <% } %>
         <% } %>
