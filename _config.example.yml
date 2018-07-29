@@ -254,7 +254,8 @@ vendors:
 
 # Theme Version
 #   localStorage cache version
-verison: 0.2.0
+verison: 1.0.0
 old_verison:
+  - 0.2.0
   - 0.0.1
   - 0.1.0
