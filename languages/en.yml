@@ -28,12 +28,9 @@ post:
   author: "Author"
   permalink: "Link to this article"
   expired: "This article was last updated on %s days ago, and the information described in the article may have changed."
-  views: "%s Views"
   comment:
     load_disqus_button: "Read the comment (Make sure that disqus can load properly)"
     load_disqus_fully_button: "Load the fully comment (Make sure that disqus can load properly)"
     load_disqus_proxy_button: "Load the basic comment"
 counter:
   archive: "%d posts in total"
-  busuanzi_site_uv: "%s Viewers"
-  busuanzi_site_pv: "%s Views"

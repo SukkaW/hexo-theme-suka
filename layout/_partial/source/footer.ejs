@@ -7,14 +7,9 @@
     <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" async></script>
 <% } %>
 
-
 <% if(theme.busuanzi.enable === true) { %>
     <!-- Busuanzi -->
-    <% if (theme.vendors.busuanzi) { %>
-        <script src="<%= theme.vendors.busuanzi %>" async></script>
-    <% } else { %>
-        <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-    <% } %>
+    <%- partial('_plugin/busuanzi/import_js', {}, {cache: true}) %>
 <% } %>
 
 <!-- Comment -->
