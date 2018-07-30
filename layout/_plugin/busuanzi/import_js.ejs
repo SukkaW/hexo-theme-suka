@@ -4,8 +4,8 @@
     <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 <% } %>
 
-<% if ( (theme.busuanzi.site_uv.offset) || (theme.busuanzi.site_pv.offset) || ( (is_post()) && (page.busuanzi_offset) ) ) { %>
 <!-- Offset -->
+<% if (theme.busuanzi.site_uv.offset || theme.busuanzi.site_pv.offset || page.busuanzi_offset) { %>
 <script>
     var int = setInterval(fixCount, 50);
     function fixCount() {
@@ -29,7 +29,6 @@
         }
         <% } %>
 
-        <% if ( is_post() ) { %>
         <% if (page.busuanzi_offset) { %>
             var $$bsz_post_container_pv = document.getElementById('busuanzi_container_page_pv');
             var $$bsz_post_value_pv = document.getElementById('busuanzi_value_page_pv');
@@ -38,7 +37,6 @@
                 clearInterval(int);
                 $$bsz_post_value_pv.innerHTML = parseInt($$bsz_post_value_pv.innerHTML) + busuanziPostPVOffset;
             }
-        <% } %>
         <% } %>
     }
 </script>

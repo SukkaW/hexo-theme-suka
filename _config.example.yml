@@ -213,11 +213,13 @@ busuanzi:
     before: # html tag support
     after: Viewers # html tag support
     divider: '|' # html tag supported, something like '|' ',' '·' even '<br>', if you dont want any divider simply leave it blank,
+    offset: 0
   site_pv:
     enable: false
     before: # html tag support
     after: Views # html tag support
     divider: # html tag supported, something like '|' ',' '·' even '<br>', if you dont want any divider simply leave it blank,
+    offset: 0
   # Post views analytics
   # will be show at post header info
   post_pv:
