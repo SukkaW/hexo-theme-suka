@@ -6,8 +6,9 @@ git:
   quiet: true
 before_install:
   - npm set audit false
-  - cd ..
 install:
+  - npm i
+  - cd ..
   - git clone https://github.com/theme-suka/hexo-theme-unit-test.git suka-theme-test --depth=5
   - cd suka-theme-test
   - rm -rf .git
@@ -19,3 +20,6 @@ script:
   - ./build.sh
   - chmod +x ./deploy.sh
   - ./deploy.sh > /dev/null
+cache:
+  directories:
+    - /home/travis/build/SukkaW/hexo-theme-suka/node_modules
