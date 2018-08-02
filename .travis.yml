@@ -11,6 +11,7 @@ install:
   - cd ..
   - git clone https://github.com/theme-suka/hexo-theme-unit-test.git --depth=5
   - rm -rf hexo-theme-unit-test/.git
+  - mkdir -p suka-theme-test
   - cp -rf ./hexo-theme-unit-test/* ./suka-theme-test/
   - cd suka-theme-test
   - npm i > /dev/null
