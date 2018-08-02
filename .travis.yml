@@ -2,15 +2,19 @@ language: node_js
 node_js:
   - "10"
 git:
-  depth: 2
+  depth: 1
   quiet: true
 before_install:
+  - rm -rf .git
   - npm set audit false
 install:
-  - git clone https://github.com/theme-suka/hexo-theme-unit-test.git suka-theme-test --depth=5
+  - cd ..
+  - git clone https://github.com/theme-suka/hexo-theme-unit-test.git --depth=5
+  - rm -rf hexo-theme-unit-test/.git
+  - mkdir -p suka-theme-test
+  - mv -f hexo-theme-unit-test/* suka-theme-test
   - cd suka-theme-test
-  - rm -rf .git
-  - npm i
+  - npm i > /dev/null
   - chmod +x ./install-theme.sh
   - ./install-theme.sh
 script:
@@ -18,3 +22,7 @@ script:
   - ./build.sh
   - chmod +x ./deploy.sh
   - ./deploy.sh > /dev/null
+cache:
+  directories:
+    - /home/travis/build/SukkaW/suka-theme-test/themes/suka/node_modules
+    - /home/travis/build/SukkaW/suka-theme-test/node_modules
