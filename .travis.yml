@@ -6,12 +6,12 @@ git:
   quiet: true
 before_install:
   - npm set audit false
-  - readlink -f .
+  - cd ..
 install:
   - git clone https://github.com/theme-suka/hexo-theme-unit-test.git suka-theme-test --depth=5
   - cd suka-theme-test
   - rm -rf .git
-  - npm i
+  - npm i > /dev/null
   - chmod +x ./install-theme.sh
   - ./install-theme.sh
 script:
