@@ -7,8 +7,8 @@
     var guest_info = '<%= theme.comment.valine.guest_info %>'.split(',').filter(function(item){
         return GUEST_INFO.indexOf(item) > -1
     });
-    var notify = '<%= theme.comment.valine.notify %>' == true;
-    var verify = '<%= theme.comment.valine.verify %>' == true;
+    var notify = '<%= theme.comment.valine_notify %>' === 'true';
+    var verify = '<%= theme.comment.valine_verify %>' === 'true';
     new Valine({
         el: '#vcomments',
         notify: notify,
@@ -20,6 +20,7 @@
         pageSize:'<%= theme.comment.valine.pageSize %>',
         avatar:'<%= theme.comment.valine.avatar %>',
         lang:'<%= theme.comment.valine.lang %>',
+        guest_info: guest_info,
         visitor: <%= theme.valine_counter.enable %>
     });
 </script>
