@@ -14,7 +14,7 @@
             admin: ['<%= theme.comment.gitalk.owner %>'],
             // facebook-like distraction free mode
             distractionFreeMode: false,
-            id: '<%= page.permalink %>'
+            id: window.location.pathname
         })
    gitalk.render('gitalk-container')
 </script>
