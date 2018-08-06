@@ -4,7 +4,7 @@
     <% if (page.prev) { %>
         <li class="page-item page-prev">
             <a href="<%- url_for(page.prev_link) %>">
-                <span class="page-item-subtitle"><i class="icon icon-back"></i></span>
+                <span class="page-item-subtitle"><i class="icon icon-back" aria-hidden="true"></i></span>
                 <span class="page-item-title"><%= __('nav.prev_page') %></span>
             </a>
         </li>
@@ -13,7 +13,7 @@
         <li class="page-item page-next">
             <a href="<%- url_for(page.next_link) %>">
                 <span class="page-item-title"><%= __('nav.next_page') %></span>
-                <span class="page-item-subtitle"><i class="icon icon-forward"></i></span>
+                <span class="page-item-subtitle"><i class="icon icon-forward" aria-hidden="true"></i></span>
             </a>
         </li>
     <% } %>
