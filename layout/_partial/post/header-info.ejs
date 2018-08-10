@@ -1,7 +1,7 @@
 <h2 class="card-title h3 mb-2"><%- page.title %></h2>
 <div class="post-header-info">
     <p class="post-header-info-left text-gray">
-        <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>">
+        <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>" alt="<%= config.author %>'s Avatar">
         <span><%= date(page.date, config.date_format) %></span>
         <% if (page.categories && page.categories.length) { %>
             <span class="suka-devide-dot"></span>
@@ -11,14 +11,11 @@
                 style: 'none'
             }) %>
         <% } %>
-        <% if(theme.busuanzi.enable === true) { %>
-            <% if(theme.busuanzi.post_pv.enable === true) { %>
-                <!-- Busuanzi Post Views -->
-                <span id="busuanzi_container_page_pv" style="display: none">
-                    <span class="suka-devide-dot"></span>
-                    <%- __('post.views', '<span id="busuanzi_value_page_pv"></span>') %>
-                </span>
-            <% } %>
+        <% if ( (theme.busuanzi.enable === true) && (theme.busuanzi.post_pv.enable === true) ) { %>
+            <%- partial('_plugin/busuanzi/post-counter', {}, {cache: true}) %>
+        <% } %>
+        <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.post_pv.enable === true) ) { %>
+            <%- partial('_plugin/valine-counter/post', {}, {cache: true}) %>
         <% } %>
     </p>
     <div class="post-header-info-right">

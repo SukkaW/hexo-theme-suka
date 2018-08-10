@@ -1,0 +1,43 @@
+<% if (theme.vendors.busuanzi) { %>
+    <script src="<%= theme.vendors.busuanzi %>" async></script>
+<% } else { %>
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<% } %>
+
+<!-- Offset -->
+<% if (theme.busuanzi.site_uv.offset || theme.busuanzi.site_pv.offset || page.busuanzi_offset) { %>
+<script>
+    var int = setInterval(fixCount, 50);
+    function fixCount() {
+        <% if (theme.busuanzi.site_uv.offset) { %>
+        var $$bsz_site_container_uv = document.getElementById('busuanzi_container_site_uv');
+        var $$bsz_site_value_uv = document.getElementById('busuanzi_value_site_uv');
+        var busuanziSiteUVOffset = parseInt('<%= theme.busuanzi.site_uv.offset %>');
+        if ($$bsz_site_container_uv.ownerDocument.defaultView.getComputedStyle($$bsz_site_container_uv, null).display === 'inline') {
+            clearInterval(int);
+            $$bsz_site_value_uv.innerHTML = parseInt($$bsz_site_value_uv.innerHTML) + busuanziSiteUVOffset;
+        }
+        <% } %>
+
+        <% if (theme.busuanzi.site_pv.offset) { %>
+        var $$bsz_site_container_pv = document.getElementById('busuanzi_container_site_pv');
+        var $$bsz_site_value_pv = document.getElementById('busuanzi_value_site_pv');
+        var busuanziSitePVOffset = parseInt('<%= theme.busuanzi.site_pv.offset %>');
+        if ($$bsz_site_container_pv.ownerDocument.defaultView.getComputedStyle($$bsz_site_container_pv, null).display === 'inline') {
+            clearInterval(int);
+            $$bsz_site_value_pv.innerHTML = parseInt($$bsz_site_value_pv.innerHTML) + busuanziSitePVOffset;
+        }
+        <% } %>
+
+        <% if (page.busuanzi_offset) { %>
+            var $$bsz_post_container_pv = document.getElementById('busuanzi_container_page_pv');
+            var $$bsz_post_value_pv = document.getElementById('busuanzi_value_page_pv');
+            var busuanziPostPVOffset = parseInt('<%= page.busuanzi_offset %>');
+            if ($$bsz_post_container_pv.ownerDocument.defaultView.getComputedStyle($$bsz_post_container_pv, null).display === 'inline') {
+                clearInterval(int);
+                $$bsz_post_value_pv.innerHTML = parseInt($$bsz_post_value_pv.innerHTML) + busuanziPostPVOffset;
+            }
+        <% } %>
+    }
+</script>
+<% } %>

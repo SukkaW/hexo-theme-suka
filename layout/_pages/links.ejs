@@ -2,24 +2,25 @@
     <div class="link-container">
 
     <% if (site.data.links) { %>
-    <div class="link-list">
-    <% for (var i in site.data.links) { %>
-    <div class="link-item">
-        <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
-        <div class="card">
-            <div class="tile tile-centered">
-                <div class="link-img">
-                    <img src="<%= site.data.links[i].img %>">
-                </div>
-                <div class="tile-content link-content">
-                    <div class="tile-title link-title"><%= i %></div>
-                    <div class="tile-subtitle link-descr text-gray"><%- site.data.links[i].text %></div>
-                </div>
+        <div class="link-list">
+        <% for (var i in site.data.links) { %>
+            <div class="link-item">
+                <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
+                    <div class="card">
+                        <div class="tile tile-centered">
+                            <div class="link-img">
+                                <img src="<%= site.data.links[i].img %>" alt="<%= i %>">
+                            </div>
+                            <div class="tile-content link-content">
+                                <div class="tile-title link-title"><%= i %></div>
+                                <div class="tile-subtitle link-descr text-gray"><%- site.data.links[i].text %></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
+        <% } %>
         </div>
-    </div>
-    <% } %>
-    </div>
     <% } %>
     </div>
 </div>

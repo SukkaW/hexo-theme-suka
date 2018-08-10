@@ -1454,24 +1454,24 @@ a.timeline-tile-title span:hover {
 .link-list {
     padding: 0;
     margin: 0 auto;
-    max-width: 15rem;
+    max-width: 15.8rem;
 }
 
 @media screen and (min-width: 680px) {
     .link-list {
-        max-width: 32rem;
+        max-width: 33.2rem;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .link-list {
-        max-width: 48rem;
+        max-width: 49.8rem;
     }
 }
 
 @media screen and (min-width: 1340px) {
     .link-list {
-        max-width: 64rem;
+        max-width: 66.4rem;
     }
 }
 

@@ -13,7 +13,8 @@
             owner: '<%= theme.comment.gitalk.owner %>',
             admin: ['<%= theme.comment.gitalk.owner %>'],
             // facebook-like distraction free mode
-            distractionFreeMode: false
+            distractionFreeMode: false,
+            id: window.location.pathname
         })
    gitalk.render('gitalk-container')
 </script>

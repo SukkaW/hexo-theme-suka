@@ -1,8 +1,0 @@
-files:
-  - source: /languages/zh-CN.yml
-    translation: /languages/%two_letters_code%.%file_extension%
-    languages_mapping:
-      two_letters_code:
-        zh-TW: zh-TW
-        zh-HK: zh-HK
-        pt-BR: pt-BR

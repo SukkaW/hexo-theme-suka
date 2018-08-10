@@ -5,7 +5,7 @@
     <% if (page.prev) { %>
         <li class="page-item page-prev">
             <a href="<%- url_for(page.prev.path) %>">
-                <div class="page-item-title"><i class="icon icon-back"></i></div>
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
                 <div class="page-item-subtitle"><%= page.prev.title %></div>
             </a>
         </li>
@@ -15,7 +15,7 @@
     <% if (page.next) { %>
         <li class="page-item page-next">
             <a href="<%- url_for(page.next.path) %>">
-                <div class="page-item-title"><i class="icon icon-forward"></i></div>
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
                 <div class="page-item-subtitle"><%= page.next.title %></div>
             </a>
         </li>

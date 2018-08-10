@@ -6,7 +6,7 @@
         <a href="<%= url_for('archives/') %>" class="navbar-link"><%= __('archive') %></a>
     <% } %>
     <% if (theme.nav.search.use === true) { %>
-        <a href="<%= url_for(theme.nav.search.link) %>" class="navbar-link"><%= __('search.main') %></a>
+        <a href="<%= theme.nav.search.link %>" class="navbar-link"><%= __('search.main') %></a>
     <% } %>
     <% for (var i in theme.nav.pages){ %>
         <a href="<%= theme.nav.pages[i].link %>" class="navbar-link"><%= i %></a>
