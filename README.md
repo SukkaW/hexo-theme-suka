@@ -78,7 +78,7 @@ please read the [Dev Guide](https://theme.suka.moe/docs/en/dev/) before you star
 **Suka Theme** © [Sukka](https://github.com/SukkaW), Released under the [GPL-3.0](./LICENSE) License.<br>
 Authored and maintained by Sukka with help from contributors ([list](https://github.com/SukkaW/hexo-theme-suka/contributors)).
 
-> [Personal Website](https://suka.moe) · [Blog](https://blog.suka.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukaChannel](https://t.me/SukaChannel)
+> [Personal Website](https://suka.moe) · [Blog](https://blog.suka.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukkaChannel](https://t.me/SukkaChannel)
 
 ## License 许可证
 
