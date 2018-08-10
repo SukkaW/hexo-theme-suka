@@ -3,7 +3,7 @@ var pathFn = require('path');
 var fs = require('fs');
 var stringify = require('json-stringify-safe');
 
-var searchTmplSrc = pathFn.join(__dirname, '../../layout/_plugin/search/search-json.ejs');
+var searchTmplSrc = pathFn.join(__dirname, '../../layout/_plugin/search/local-search/search-json.ejs');
 var searchTmpl = ejs.compile(fs.readFileSync(searchTmplSrc, 'utf8'));
 
 module.exports = function (locals) {
