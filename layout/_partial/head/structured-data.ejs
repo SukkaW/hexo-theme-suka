@@ -1,5 +1,15 @@
 <% include variables.ejs %>
+<%
+var relative = theme.head.favicon.ico.indexOf('http') == -1;
 
+function suka_img_url_for(url) {
+    if (relative === true) {
+        return config.url + url_for(url).replace(config.root, '/');
+    } else {
+        return url;
+    }
+}
+%>
 <% if( (page.current === 1) && (is_home()) ) { %>
 <script type="application/ld+json">
 {
@@ -10,7 +20,7 @@
         "name": "<%= config.author %>",
         "image": {
             "@type": "ImageObject",
-            "url": "<%= theme.img.avatar %>"
+            "url": "<%= suka_img_url_for(theme.img.avatar) %>"
         },
         "description": "<%- theme.slogan %>"
     },
@@ -19,13 +29,13 @@
         "name": "<%= config.title %>",
         "logo": {
             "@type": "ImageObject",
-            "url": "<%= theme.head.high_res_favicon %>"
+            "url": "<%= suka_std_icon %>"
         }
     },
     "url": "<%- config.url %>",
     "image": {
         "@type": "ImageObject",
-        "url": "<%= theme.head.high_res_favicon %>"
+        "url": "<%= suka_std_icon %>"
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -49,7 +59,7 @@
     },
     "headline": "<%= suka_title %>",
     <% if(page.thumbnail) { %>
-    "image": "<%= page.thumbnail %>",
+    "image": "<%= suka_img_url_for(page.thumbnail) %>",
     <% } %>
     "datePublished": "<%= date_xml(page.date) %>",
     "dateModified": "<%= date_xml(page.updated) %>",
@@ -58,7 +68,7 @@
         "name": "<%= config.author %>",
         "image": {
             "@type": "ImageObject",
-            "url": "<%= theme.img.avatar %>"
+            "url": "<%= suka_img_url_for(theme.img.avatar) %>"
         },
         "description": "<%- theme.slogan %>"
     },
@@ -67,7 +77,7 @@
         "name": "<%= config.title %>",
         "logo": {
             "@type": "ImageObject",
-            "url": "<%= theme.head.high_res_favicon %>"
+            "url": "<%= suka_std_icon %>"
         }
     },
     "keywords": "<%= suka_tags %>",

@@ -1,11 +1,11 @@
 <%
 suka_share_icon = 'https://theme.suka.moe/demo/img/suka-favicon.png';
 
-const relative = theme.head.favicon.ico.indexOf('http') == -1;
+var relative = theme.head.favicon.ico.indexOf('http') == -1;
 
 function suka_share_img_url_for(url) {
     if (relative === true) {
-        return config.url + url_for(url);
+        return config.url + url_for(url).replace(config.root, '/');
     } else {
         return url;
     }
