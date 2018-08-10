@@ -1,21 +1,18 @@
-<% if(theme.analytics.google_site_id) { %>
+<% if (theme.analytics.google_site_id) { %>
     <%- partial('_plugin/analytics/google', {}, {cache: true}) %>
 <% } %>
-<% if(theme.analytics.gtags_site_id) { %>
+<% if (theme.analytics.gtags_site_id) { %>
     <%- partial('_plugin/analytics/gtags', {}, {cache: true}) %>
 <% } %>
-<% if(theme.analytics.baidu_site_id) { %>
+<% if (theme.analytics.baidu_site_id) { %>
     <%- partial('_plugin/analytics/baidu', {}, {cache: true}) %>
 <% } %>
-<% if(theme.analytics.cnzz_site_id) { %>
+<% if (theme.analytics.cnzz_site_id) { %>
     <%- partial('_plugin/analytics/cnzz', {}, {cache: true}) %>
 <% } %>
-<% if(theme.analytics.tencent_site_id) { %>
+<% if (theme.analytics.tencent_site_id) { %>
     <%- partial('_plugin/analytics/tencent', {}, {cache: true}) %>
 <% } %>
-<% if(theme.analytics.tencent_mta_id) { %>
+<% if (theme.analytics.tencent_mta_id) { %>
     <%- partial('_plugin/analytics/tencent-mta', {}, {cache: true}) %>
-<% } %>
-<% if(theme.analytics.51la_site_id) { %>
-    <%- partial('_plugin/analytics/51la', {}, {cache: true}) %>
 <% } %>
