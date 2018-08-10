@@ -201,6 +201,7 @@ analytics:
   gtags_site_id:
   baidu_site_id:
   cnzz_site_id:
+  tencent_site_id:
 
 # Views Analytics
 # The counter by https://busuanzi.ibruce.info
