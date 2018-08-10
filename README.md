@@ -21,6 +21,7 @@
 - [Documents 文档](#documents-文档)
 - [Contributing 贡献](#contributing-贡献)
 - [Changelog 更新日志](#changelog-更新日志)
+- [Todo 计划](#todo-计划)
 - [Maintainer 维护者](#maintainer-维护者)
 - [License 许可证](#license-许可证)
 - [Support 支持](#support-支持)
@@ -47,31 +48,38 @@ You can also read our [detailed installation instructions](https://theme.suka.mo
 
 你也可以阅读我们的 [详细安装说明](https://theme.suka.moe/docs/) 了解如何用其他方法下载「Suka」并启用。
 
-
 ## Documents 文档
 
 [Suka Theme Docs](https://theme.suka.moe/docs/en/)
 
-> ATTENTION! The English Version of Docs is still under construction!
+> ATTENTION! The English Version of Docs is still under construction!<br>But do not worry, I wrote the detailed explainations in config file's comment in English. So you can still configure the theme without difficulty. Any problem please feel free to open a new issue.
 
 [Suka 主题文档](https://theme.suka.moe/docs/)
+
+---
 
 [The source code of Docs](https://github.com/theme-suka/docs/)
 
 ## Contributing 贡献
 
-All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
-
+All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.<br>
 please read the [Dev Guide](https://theme.suka.moe/docs/en/dev/) before you start your contributing.
 
-欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。期待你的 Pull Request。
-
+欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。期待你的 Pull Request。<br>
 在参与贡献之前，请先阅读 [开发指南](https://theme.suka.moe/docs/dev/)。
 
 ## Changelog 更新日志
 
-[View our release notes](https://github.com/SukkaW/hexo-theme-suka/releases)
+[View our release notes](https://github.com/SukkaW/hexo-theme-suka/releases)<br>
 [阅读我们的更新日志](https://github.com/SukkaW/hexo-theme-suka/releases)
+
+## Todo 计划
+
+See [Repo's projects](https://github.com/SukkaW/hexo-theme-suka/projects) for details.
+
+在 [Repo's projects](https://github.com/SukkaW/hexo-theme-suka/projects) 查看关于 Todo 的详细信息
+
+> The Todo is written in Chinese
 
 ## Maintainer 维护者
 

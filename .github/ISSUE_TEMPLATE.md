@@ -13,6 +13,7 @@ ATTENTION: THE DOCS MIGHT UPDATE ANYTIME, AND BEFORE YOU OPEN A NEW ISSUE, CHECK
 **我确认我已经查看了** (选择时请使用 "x" 取代方括号中的空格)
 
 - [ ] [Hexo documentation | Hexo 文档](https://hexo.io/docs/)
+- [ ] [Suka Theme documentation | Suka Theme 文档](https://theme.suka.moe/docs/)
 - [ ] [Suka theme issues | Suka 主题的其它 issue](https://github.com/SukkaW/hexo-theme-suka/issues?utf8=%E2%9C%93&q=is%3Aissue)
 
 ----
@@ -37,7 +38,7 @@ ATTENTION: THE DOCS MIGHT UPDATE ANYTIME, AND BEFORE YOU OPEN A NEW ISSUE, CHECK
 
 ### Package dependencies Information
 ### 依赖包相关信息
-<!-- Paste output from `cat package.json`  (粘贴 `cat package.json` 输出的信息) -->
+<!-- Paste output from `cat package.json` both from site and theme dir  (分别从站点目录和主题目录下粘贴 `cat package.json` 输出的信息) -->
 
 
 ### Hexo version
@@ -78,8 +79,8 @@ ATTENTION: THE DOCS MIGHT UPDATE ANYTIME, AND BEFORE YOU OPEN A NEW ISSUE, CHECK
 
 ----
 
-### Demo site related with this issue)
-### 和 issue 有关的在线演示页面
+### Demo site related with this issue, JSFiddle and gist are welcomed.
+### 和 issue 有关的在线演示页面，推荐使用 JSFiddle 和 gist
 
 
 ### Link(s) to source code or any usefull link(s)
