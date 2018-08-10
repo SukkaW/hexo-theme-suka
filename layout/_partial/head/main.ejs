@@ -29,18 +29,8 @@
     <%- partial('_partial/head/open-graph') %>
 
     <!-- ### Analytics ### -->
-    <% if(theme.analytics.google_site_id) { %>
-        <%- partial('_plugin/analytics/google', {}, {cache: true}) %>
-    <% } %>
-    <% if(theme.analytics.gtags_site_id) { %>
-        <%- partial('_plugin/analytics/gtags', {}, {cache: true}) %>
-    <% } %>
-    <% if(theme.analytics.baidu_site_id) { %>
-        <%- partial('_plugin/analytics/baidu', {}, {cache: true}) %>
-    <% } %>
-    <% if(theme.analytics.cnzz_site_id) { %>
-        <%- partial('_plugin/analytics/cnzz', {}, {cache: true}) %>
-    <% } %>
+    <%- partial('_partial/head/analytics', {}, {cache: true}) %>
+
 
     <!-- ### Canonical link ### -->
     <link rel="canonical" href="<%= config.url + url_for(page.path).replace('index.html', '') %>">
