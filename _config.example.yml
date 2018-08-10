@@ -18,7 +18,10 @@ head:
     small:
     # 32x32 png
     medium: # /img/suka-favicon.png
+    # 180x180 png
     apple_touch_icon:
+    # 192x192 png
+    large:
     # svg icon
     safari_pinned_tab:
   # Color
