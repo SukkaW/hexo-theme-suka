@@ -1,0 +1,10 @@
+<!-- # Input # -->
+<div id="search-input">
+    <form class="input-group" autocomplete="off">
+        <input maxlength="80" type="search" id="search-field" name="s" class="form-input input-lg" placeholder="<%= __('search.placeholder') %>" required>
+        <button class="btn btn-primary input-group-btn btn-lg" type="submit"><%= __('search.main') %></button>
+    </form>
+</div>
+<!-- # Description & Output # -->
+<div id="search-result-info" hidden><%- __('search.num', '<span id="search-result-num"></span>')%></div>
+<div id="search-output"></div>
