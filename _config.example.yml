@@ -203,6 +203,7 @@ analytics:
   cnzz_site_id:
   tencent_site_id:
   tencent_mta_id:
+  51la_site_id:
 
 # Views Analytics
 # The counter by https://busuanzi.ibruce.info
