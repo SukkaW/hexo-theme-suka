@@ -253,6 +253,12 @@ valine_counter:
     before: # html tag supported
     after: # html tag supported
 
+# Search
+# Available value of "use":
+#     local | google | swiftype
+  use: local
+  # Swiftype
+  swiftype_key:
 
 # ---------------------------------------------------------------
 # Expert Settings
