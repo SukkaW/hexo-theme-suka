@@ -12,6 +12,11 @@
     <%- partial('_plugin/busuanzi/import_js') %>
 <% } %>
 
+<% if (theme.hanabi.enable === true) { %>
+    <!-- Hanabi -->
+    <%- partial('_plugin/highlight/hanabi/import_js', {}, {cache: true}) %>
+<% } %>
+
 <!-- Comment -->
 <% if (theme.comment.use){ %>
     <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: true}) %>
