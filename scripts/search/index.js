@@ -3,7 +3,6 @@
  * license: MIT
  */
 
-var merge = require('utils-merge');
 var pathFn = require('path');
 
 var config = hexo.config.suka_theme.search
