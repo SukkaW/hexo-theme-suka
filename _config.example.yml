@@ -287,7 +287,14 @@ hanabi:
 # Google Code Prettify
 prettify:
   enable: true
-  theme:
+  linenumber: true # We prefer to enable for avoiding some pretiffy's bugs.
+  # Prettify Theme
+  theme: github-v2 # It will not load any theme if you leave it blank
+  # You can only enable the Suka built in prettify theme here. Check the /source/lib/prettify/themes directories.
+  # The theme name is the css file name without `.min.css`, as [theme-name].min.css
+  #
+  # If you want to use other theme, you can leave that blank, and load your own theme by adding <link> tag using custom code.
+  # Learn how to use custom code here: https://theme.suka.moe/docs/en/expert/#Add-custom-code
 
 # ---------------------------------------------------------------
 # Expert Settings
@@ -303,6 +310,7 @@ prettify:
 vendors:
   # hexo-theme-suka
   # https://github.com/SukkaW/hexo-theme-suka
+  # You can check current the Suka Version Code at the end of theme config.
   suka:
     style_css:
     local_search_js:
@@ -329,6 +337,14 @@ vendors:
   # https://github.com/egoist/hanabi
   # Version: 0.4.0
   hanabi:
+  # Prettify Core
+  # Attention! It is NOT the `run_prettify.js`!
+  # Version: 0.1.0
+  prettify:
+  # Prettify Theme
+  # You can fill in any prettify theme you want here, and it will also override the prettify theme config below.
+  # Personally I prefer the theme here: https://github.com/jmblog/color-themes-for-google-code-prettify
+  prettify_theme:
 
 # Theme Version
 #   localStorage cache version

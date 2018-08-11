@@ -1,5 +1,9 @@
 <% if ( (is_post()) ) { %>
-    <link rel="stylesheet" href="<%- url_for('lib/prettify/prettify.css') %>">
+    <% if (theme.vendors.prettify_theme) { %>
+        <link rel="stylesheet" href="<%= theme.vendors.prettify_theme %>">
+    <% } else if (theme.prettify.theme) { %>
+        <link rel="stylesheet" href="<%- url_for('lib/prettify/themes/' + theme.prettify.theme + '.min.css') %>">
+    <% } %>
     <style>
         pre.prettyprint {
             padding: 4px 0 0 2px !important;
@@ -11,7 +15,7 @@
         }
 
         pre.prettyprint ol li {
-            background: none;
+            background: transparent;
         }
 
         .prettyprint li.L0,
@@ -24,7 +28,11 @@
         .prettyprint li.L7,
         .prettyprint li.L8,
         .prettyprint li.L9 {
-            padding-left: 1em;
+            <% if (theme.prettify.linenumber === true) { %>
+            list-style-type: decimal !important;
+            <% } else { %>
+            list-style-type: none !important;
+            <% } %>
         }
     </style>
 <% } %>
