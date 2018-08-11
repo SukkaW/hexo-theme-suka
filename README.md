@@ -42,6 +42,11 @@
 ```bash
 $ cd hexo
 $ git clone https://github.com/SukkaW/hexo-theme-suka themes/suka
+$ cat themes/suka/site_config.yml >> _config.yml
+$ cd themes/suka
+$ npm i
+$ cd ..
+$ cd ..
 ```
 
 You can also read our [detailed installation instructions](https://theme.suka.moe/docs/en/) if you want any other variant.
