@@ -17,6 +17,11 @@
     <%- partial('_plugin/highlight/hanabi/import_js', {}, {cache: true}) %>
 <% } %>
 
+<% if (theme.prettify.enable === true) { %>
+    <!-- prettify -->
+    <%- partial('_plugin/highlight/prettify/import_js') %>
+<% } %>
+
 <!-- Comment -->
 <% if (theme.comment.use){ %>
     <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: true}) %>

@@ -14,7 +14,13 @@
     <link rel="stylesheet" href="<%- url_for('css/style.min.css') %>">
 <% } %>
 
-<!-- prism.css -->
 <% if (config.suka_theme.prism.enable === true) { %>
+    <!-- prism.css -->
     <%- partial('_plugin/highlight/prism/common', {}, {cache: true}) %>
+<% } %>
+
+
+<% if (theme.prettify.enable === true) { %>
+    <!-- Prettify Theme -->
+    <%- partial('_plugin/highlight/prettify/theme', {}, {cache: true}) %>
 <% } %>

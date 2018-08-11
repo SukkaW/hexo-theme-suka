@@ -261,6 +261,34 @@ search:
   # Swiftype
   swiftype_key:
 
+# Code highlight
+# You can only enable one of them to avoid issues.
+# Also you need to disable all highlight option in hexo's site config.
+#   highlight:
+#     enable: false
+#     line_number: false
+#     auto_detect: false
+#     tab_replace: false
+#
+# Suka Theme has built in those code highlight: Prism | Hanabi | Prettify
+# Run `hexo clean` first after changing code highlight configuration.
+
+# Hanabi (https://github.com/egoist/hanabi)
+hanabi:
+  enable: false
+
+# Prism
+# Disable other code hightlight first and enable prism at site config:
+#    suka_theme:
+#      ...
+#      prism:
+#        enable: true
+
+# Google Code Prettify
+prettify:
+  enable: true
+  theme:
+
 # ---------------------------------------------------------------
 # Expert Settings
 # ---------------------------------------------------------------
@@ -299,6 +327,7 @@ vendors:
   busuanzi:
   # Hanabi
   # https://github.com/egoist/hanabi
+  # Version: 0.4.0
   hanabi:
 
 # Theme Version
