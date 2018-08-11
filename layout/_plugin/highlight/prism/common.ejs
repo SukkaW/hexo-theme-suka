@@ -1,0 +1,16 @@
+<% if( (is_post()) ) { %>
+    <!-- prism.line_number -->
+    <% if (config.suka_theme.prism.line_number === true) { %>
+        <% if (theme.vendors.prism.line_number) { %>
+            <link rel="stylesheet" href="<%= theme.vendors.prism.line_number %>">
+        <% } else { %>
+            <link rel="stylesheet" href="<%- url_for('lib/prism/prism-line-numbers.min.css') %>">
+        <% } %>
+    <% } %>
+    <!-- prism.theme -->
+    <% if (theme.vendors.prism.theme) { %>
+        <link rel="stylesheet" href="<%= theme.vendors.prism.theme %>">
+    <% } else { %>
+        <link rel="stylesheet" href="<%- url_for('lib/prism/prism-' + config.suka_theme.prism.theme + '.min.css') %>">
+    <% } %>
+<% } %>

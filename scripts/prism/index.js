@@ -77,6 +77,6 @@ function PrismPlugin(data) {
 }
 
 // Register prism plugin
-if (hexo.config.suka_theme.prism.enable === true) {
+if (config.enable === true) {
     hexo.extend.filter.register('after_post_render', PrismPlugin);
 }
