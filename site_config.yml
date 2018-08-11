@@ -1,0 +1,8 @@
+suka_theme:
+  search:
+    enable: true
+    path: search.json
+    field: post # Page | Post | All. Default post
+  prism:
+    line_number: true
+    theme: default
