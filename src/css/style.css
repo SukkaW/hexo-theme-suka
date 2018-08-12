@@ -893,13 +893,17 @@ a.category-link {
 }
 
 #post-content p,
-#post-content blockquote,
 #post-content ul,
 #post-content ol,
 #post-content dl,
 #post-content table,
 #post-content pre {
     margin-top: 0;
+    margin-bottom: 16px;
+}
+
+#post-content blockquote {
+    margin-top: 16px;
     margin-bottom: 16px;
 }
 
@@ -1117,8 +1121,11 @@ a.category-link {
     font-size: 95%;
     word-break: normal;
     white-space: pre;
-    background: transparent;
     border: 0;
+}
+
+#post-content pre:not(.highlight):not(.prettyprint) {
+    background: #f5f5f5;
 }
 
 #post-content .highlight {
