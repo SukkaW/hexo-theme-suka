@@ -1,0 +1,88 @@
+/*
+Description: Foundation 4 docs style for highlight.js
+Author: Dan Allen <dan.j.allen@gmail.com>
+Website: http://foundation.zurb.com/docs/
+Version: 1.0
+Date: 2013-04-02
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #eee; color: black;
+}
+
+.highlight .link,
+.highlight .emphasis,
+.highlight .attribute,
+.highlight .addition {
+  color: #070;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong,
+.highlight .string,
+.highlight .deletion {
+  color: #d14;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .quote,
+.highlight .comment {
+  color: #998;
+  font-style: italic;
+}
+
+.highlight .section,
+.highlight .title {
+  color: #900;
+}
+
+.highlight .class .highlight .title,
+.highlight .type {
+  color: #458;
+}
+
+.highlight .variable,
+.highlight .template-variable {
+  color: #336699;
+}
+
+.highlight .bullet {
+  color: #997700;
+}
+
+.highlight .meta {
+  color: #3344bb;
+}
+
+.highlight .code,
+.highlight .number,
+.highlight .literal,
+.highlight .keyword,
+.highlight .selector-tag {
+  color: #099;
+}
+
+.highlight .regexp {
+  background-color: #fff0ff;
+  color: #880088;
+}
+
+.highlight .symbol {
+  color: #990073;
+}
+
+.highlight .tag,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #007700;
+}

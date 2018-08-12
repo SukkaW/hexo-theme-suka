@@ -1,0 +1,70 @@
+/*
+Monokai style - ported by Luigi Maselli - http://grigio.org
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #272822; color: #ddd;
+}
+
+.highlight .tag,
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .strong,
+.highlight .name {
+  color: #f92672;
+}
+
+.highlight .code {
+  color: #66d9ef;
+}
+
+.highlight .class .highlight .title {
+  color: white;
+}
+
+.highlight .attribute,
+.highlight .symbol,
+.highlight .regexp,
+.highlight .link {
+  color: #bf79db;
+}
+
+.highlight .string,
+.highlight .bullet,
+.highlight .subst,
+.highlight .title,
+.highlight .section,
+.highlight .emphasis,
+.highlight .type,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #a6e22e;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .deletion,
+.highlight .meta {
+  color: #75715e;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .doctag,
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .selector-id {
+  font-weight: bold;
+}

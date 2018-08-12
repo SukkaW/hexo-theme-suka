@@ -1,0 +1,71 @@
+/*
+
+FAR Style (c) MajestiC <majestic2k@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #000080;
+}
+
+.highlight,
+.highlight .subst {
+  color: #0ff;
+}
+
+.highlight .string,
+.highlight .attribute,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .template-tag,
+.highlight .template-variable,
+.highlight .addition {
+  color: #ff0;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .section,
+.highlight .type,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .variable {
+  color: #fff;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .doctag,
+.highlight .deletion {
+  color: #888;
+}
+
+.highlight .number,
+.highlight .regexp,
+.highlight .literal,
+.highlight .link {
+  color: #0f0;
+}
+
+.highlight .meta {
+  color: #008080;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .title,
+.highlight .section,
+.highlight .name,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

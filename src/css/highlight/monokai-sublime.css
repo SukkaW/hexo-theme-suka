@@ -1,0 +1,83 @@
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.highlight,
+.highlight .tag,
+.highlight .subst {
+  color: #f8f8f2;
+}
+
+.highlight .strong,
+.highlight .emphasis {
+  color: #a8a8a2;
+}
+
+.highlight .bullet,
+.highlight .quote,
+.highlight .number,
+.highlight .regexp,
+.highlight .literal,
+.highlight .link {
+  color: #ae81ff;
+}
+
+.highlight .code,
+.highlight .title,
+.highlight .section,
+.highlight .selector-class {
+  color: #a6e22e;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .name,
+.highlight .attr {
+  color: #f92672;
+}
+
+.highlight .symbol,
+.highlight .attribute {
+  color: #66d9ef;
+}
+
+.highlight .params,
+.highlight .class .highlight .title {
+  color: #f8f8f2;
+}
+
+.highlight .string,
+.highlight .type,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .selector-id,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-variable {
+  color: #e6db74;
+}
+
+.highlight .comment,
+.highlight .deletion,
+.highlight .meta {
+  color: #75715e;
+}

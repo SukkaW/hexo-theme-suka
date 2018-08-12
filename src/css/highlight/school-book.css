@@ -1,0 +1,72 @@
+/*
+
+School Book style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 15px 0.5em 0.5em 30px;
+  font-size: 11px;
+  line-height:16px;
+}
+
+pre{
+  background:#f6f6ae url(./school-book.png);
+  border-top: solid 2px #d2e8b9;
+  border-bottom: solid 1px #d2e8b9;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal {
+  color:#005599;
+  font-weight:bold;
+}
+
+.highlight,
+.highlight .subst {
+  color: #3e5915;
+}
+
+.highlight .string,
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .attribute,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable,
+.highlight .link {
+  color: #2c009f;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .deletion,
+.highlight .meta {
+  color: #e60415;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .doctag,
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .name,
+.highlight .selector-id,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

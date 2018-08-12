@@ -1,0 +1,77 @@
+/*
+
+Darcula color scheme from the JetBrains family of IDEs
+
+*/
+
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #2b2b2b;
+}
+
+.highlight {
+  color: #bababa;
+}
+
+.highlight .strong,
+.highlight .emphasis {
+  color: #a8a8a2;
+}
+
+.highlight .bullet,
+.highlight .quote,
+.highlight .link,
+.highlight .number,
+.highlight .regexp,
+.highlight .literal {
+  color: #6896ba;
+}
+
+.highlight .code,
+.highlight .selector-class {
+  color: #a6e22e;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .section,
+.highlight .attribute,
+.highlight .name,
+.highlight .variable {
+  color: #cb7832;
+}
+
+.highlight .params {
+  color: #b9b9b9;
+}
+
+.highlight .string {
+  color: #6a8759;
+}
+
+.highlight .subst,
+.highlight .type,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .symbol,
+.highlight .selector-id,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .template-tag,
+.highlight .template-variable,
+.highlight .addition {
+  color: #e0c46c;
+}
+
+.highlight .comment,
+.highlight .deletion,
+.highlight .meta {
+  color: #7f7f7f;
+}

@@ -1,0 +1,83 @@
+/*
+ * Hopscotch
+ * by Jan T. Sott
+ * https://github.com/idleberg/Hopscotch
+ *
+ * This work is licensed under the Creative Commons CC0 1.0 Universal License
+ */
+
+/* Comment */
+.highlight .comment,
+.highlight .quote {
+  color: #989498;
+}
+
+/* Red */
+.highlight .variable,
+.highlight .template-variable,
+.highlight .attribute,
+.highlight .tag,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .regexp,
+.highlight .link,
+.highlight .deletion {
+  color: #dd464c;
+}
+
+/* Orange */
+.highlight .number,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .literal,
+.highlight .type,
+.highlight .params {
+  color: #fd8b19;
+}
+
+/* Yellow */
+.highlight .class .highlight .title {
+  color: #fdcc59;
+}
+
+/* Green */
+.highlight .string,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .addition {
+  color: #8fc13e;
+}
+
+/* Aqua */
+.highlight .meta {
+  color: #149b93;
+}
+
+/* Blue */
+.highlight .function,
+.highlight .section,
+.highlight .title {
+  color: #1290bf;
+}
+
+/* Purple */
+.highlight .keyword,
+.highlight .selector-tag {
+  color: #c85e7c;
+}
+
+.highlight {
+  display: block;
+  background: #322931;
+  color: #b9b5b8;
+  padding: 0.5em;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

@@ -1,0 +1,69 @@
+/* Base16 Atelier Seaside Light - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/seaside) */
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
+
+/* Atelier-Seaside Comment */
+.highlight .comment,
+.highlight .quote {
+  color: #687d68;
+}
+
+/* Atelier-Seaside Red */
+.highlight .variable,
+.highlight .template-variable,
+.highlight .attribute,
+.highlight .tag,
+.highlight .name,
+.highlight .regexp,
+.highlight .link,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #e6193c;
+}
+
+/* Atelier-Seaside Orange */
+.highlight .number,
+.highlight .meta,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .literal,
+.highlight .type,
+.highlight .params {
+  color: #87711d;
+}
+
+/* Atelier-Seaside Green */
+.highlight .string,
+.highlight .symbol,
+.highlight .bullet {
+  color: #29a329;
+}
+
+/* Atelier-Seaside Blue */
+.highlight .title,
+.highlight .section {
+  color: #3d62f5;
+}
+
+/* Atelier-Seaside Purple */
+.highlight .keyword,
+.highlight .selector-tag {
+  color: #ad2bee;
+}
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  background: #f4fbf4;
+  color: #5e6e5e;
+  padding: 0.5em;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

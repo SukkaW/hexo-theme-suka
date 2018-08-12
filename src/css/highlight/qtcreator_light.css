@@ -1,0 +1,83 @@
+/*
+
+Qt Creator light color scheme
+
+*/
+
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #ffffff;
+}
+
+.highlight,
+.highlight .subst,
+.highlight .tag,
+.highlight .title {
+  color: #000000;
+}
+
+.highlight .strong,
+.highlight .emphasis {
+  color: #000000;
+}
+
+.highlight .bullet,
+.highlight .quote,
+.highlight .number,
+.highlight .regexp,
+.highlight .literal {
+  color: #000080;
+}
+
+.highlight .code
+.highlight .selector-class {
+  color: #800080;
+}
+
+.highlight .emphasis,
+.highlight .stronge,
+.highlight .type {
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .function,
+.highlight .section,
+.highlight .symbol,
+.highlight .name {
+  color: #808000;
+}
+
+.highlight .attribute {
+  color: #800000;
+}
+
+.highlight .variable,
+.highlight .params,
+.highlight .class .highlight .title {
+  color: #0055AF;
+}
+
+.highlight .string,
+.highlight .selector-id,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .type,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .template-tag,
+.highlight .template-variable,
+.highlight .addition,
+.highlight .link {
+  color: #008000;
+}
+
+.highlight .comment,
+.highlight .meta,
+.highlight .deletion {
+  color: #008000;
+}

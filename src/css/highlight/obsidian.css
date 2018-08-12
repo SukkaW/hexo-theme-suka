@@ -1,0 +1,88 @@
+/**
+ * Obsidian style
+ * ported by Alexander Marenin (http://github.com/ioncreature)
+ */
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #282b2e;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .selector-id {
+  color: #93c763;
+}
+
+.highlight .number {
+  color: #ffcd22;
+}
+
+.highlight {
+  color: #e0e2e4;
+}
+
+.highlight .attribute {
+  color: #668bb0;
+}
+
+.highlight .code,
+.highlight .class .highlight .title,
+.highlight .section {
+  color: white;
+}
+
+.highlight .regexp,
+.highlight .link {
+  color: #d39745;
+}
+
+.highlight .meta {
+  color: #557182;
+}
+
+.highlight .tag,
+.highlight .name,
+.highlight .bullet,
+.highlight .subst,
+.highlight .emphasis,
+.highlight .type,
+.highlight .built_in,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #8cbbad;
+}
+
+.highlight .string,
+.highlight .symbol {
+  color: #ec7600;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .deletion {
+  color: #818e96;
+}
+
+.highlight .selector-class {
+  color: #A082BD
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .doctag,
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .name,
+.highlight .strong {
+  font-weight: bold;
+}

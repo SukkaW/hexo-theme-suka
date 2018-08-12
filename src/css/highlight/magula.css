@@ -1,0 +1,70 @@
+/*
+Description: Magula style for highligh.js
+Author: Ruslan Keba <rukeba@gmail.com>
+Website: http://rukeba.com/
+Version: 1.0
+Date: 2009-01-03
+Music: Aphex Twin / Xtal
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background-color: #f4f4f4;
+}
+
+.highlight,
+.highlight .subst {
+  color: black;
+}
+
+.highlight .string,
+.highlight .title,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .attribute,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #050;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #777;
+}
+
+.highlight .number,
+.highlight .regexp,
+.highlight .literal,
+.highlight .type,
+.highlight .link {
+  color: #800;
+}
+
+.highlight .deletion,
+.highlight .meta {
+  color: #00e;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .doctag,
+.highlight .title,
+.highlight .section,
+.highlight .built_in,
+.highlight .tag,
+.highlight .name {
+  font-weight: bold;
+  color: navy;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

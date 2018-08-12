@@ -1,0 +1,101 @@
+/*
+
+grayscale style (c) MY Sun <simonmysun@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #fff;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #777;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.highlight .number,
+.highlight .literal {
+  color: #777;
+}
+
+.highlight .string,
+.highlight .doctag,
+.highlight .formula {
+  color: #333;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQIW2O8e/fufwYGBgZBQUEQxcCIIfDu3Tuwivfv30NUoAsAALHpFMMLqZlPAAAAAElFTkSuQmCC) repeat;
+}
+
+.highlight .title,
+.highlight .section,
+.highlight .selector-id {
+  color: #000;
+  font-weight: bold;
+}
+
+.highlight .subst {
+  font-weight: normal;
+}
+
+.highlight .class .highlight .title,
+.highlight .type,
+.highlight .name {
+  color: #333;
+  font-weight: bold;
+}
+
+.highlight .tag {
+  color: #333;
+}
+
+.highlight .regexp {
+    color: #333;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAN37979r6yszIgujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQDexSef15DBCwAAAABJRU5ErkJggg==) repeat;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .link {
+  color: #000;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAO7d+/+z4gsBhJwdXVlhAvCBECKwIIwAbhKZBUwBQA6hBpm5efZsgAAAABJRU5ErkJggg==) repeat;
+}
+
+.highlight .built_in,
+.highlight .builtin-name {
+  color: #000;
+  text-decoration: underline;
+}
+
+.highlight .meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.highlight .deletion {
+  color: #fff;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAE0lEQVQIW2MMDQ39zzhz5kwIAQAyxweWgUHd1AAAAABJRU5ErkJggg==) repeat;
+}
+
+.highlight .addition {
+  color: #000;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAALUlEQVQYV2N89+7dfwYk8P79ewZBQUFkIQZGOiu6e/cuiptQHAPl0NtNxAQBAM97Oejj3Dg7AAAAAElFTkSuQmCC) repeat;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

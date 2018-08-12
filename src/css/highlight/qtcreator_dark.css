@@ -1,0 +1,83 @@
+/*
+
+Qt Creator dark color scheme
+
+*/
+
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #000000;
+}
+
+.highlight,
+.highlight .subst,
+.highlight .tag,
+.highlight .title {
+  color: #aaaaaa;
+}
+
+.highlight .strong,
+.highlight .emphasis {
+  color: #a8a8a2;
+}
+
+.highlight .bullet,
+.highlight .quote,
+.highlight .number,
+.highlight .regexp,
+.highlight .literal {
+  color: #ff55ff;
+}
+
+.highlight .code
+.highlight .selector-class {
+  color: #aaaaff;
+}
+
+.highlight .emphasis,
+.highlight .stronge,
+.highlight .type {
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .function,
+.highlight .section,
+.highlight .symbol,
+.highlight .name {
+  color: #ffff55;
+}
+
+.highlight .attribute {
+  color: #ff5555;
+}
+
+.highlight .variable,
+.highlight .params,
+.highlight .class .highlight .title {
+  color: #8888ff;
+}
+
+.highlight .string,
+.highlight .selector-id,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .type,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .template-tag,
+.highlight .template-variable,
+.highlight .addition,
+.highlight .link {
+  color: #ff55ff;
+}
+
+.highlight .comment,
+.highlight .meta,
+.highlight .deletion {
+  color: #55ffff;
+}
