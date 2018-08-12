@@ -1,6 +1,11 @@
 # ---------------------------------------------------------------
 # !!ATTENTION!!
-# There are some pivotal config which should be configured in site config!
+# ---------------------------------------------------------------
+# There are two config file in Hexo Project, one in the root directory of your Hexo Project and another in the theme directory.
+# For convenience of description, the former is referred to as the site config and the latter as the theme config.
+#
+# There are some pivotal config in `site_config.yml` in Suka Theme directory.
+# You should copy them and paste them to the end of your site config file!
 # Read the documents for more info.
 # ---------------------------------------------------------------
 
@@ -208,6 +213,7 @@ analytics:
   tencent_mta_id:
 
 # Views Analytics
+# Busuanzi
 # The counter by https://busuanzi.ibruce.info
 busuanzi:
   enable: true
@@ -242,7 +248,7 @@ valine_counter:
     before: # html tag supported
     after: # html tag supported
     divider: # html tag supported, something like '|' ',' '·' even '<br>', if you dont want any divider simply leave it blank,
-  # Show pv for every post on index (Exprimental)
+  # Show pv for each post on index (Exprimental)
   index_post_pv:
     enable: false
     before: # html tag supported
@@ -263,30 +269,66 @@ search:
 
 # Code highlight
 # You can only enable one of them to avoid issues.
-# Also you need to disable all highlight option in hexo's site config.
+# Suka support hexo built in preprocess highlight.js, and Suka Theme has various theme for you to choose.
+# Suka Theme has also built in those code highlight: Hanabi | Prism | Prettify , you can config below.
+# Run `hexo clean` first after changing code highlight configuration.
+
+# Hexo built in highlight
+# To use hexo built in highlight, you need to disable all other highlight option.
+# Then enable Hexo highlight option in site config.
+#
+#   highlight:
+#     enable: true
+#
+highlight:
+  theme: github
+  # You can only enable the Suka built in prettify theme here. Check the /source/css/highlight directories.
+  # The theme name is the css file name without `.min.css`, as [theme-name].min.css
+
+# Hanabi (https://github.com/egoist/hanabi)
+# To use hanabi, you need to disable all highlight option in hexo's site config:
+#
 #   highlight:
 #     enable: false
 #     line_number: false
 #     auto_detect: false
 #     tab_replace: false
 #
-# Suka Theme has built in those code highlight: Prism | Hanabi | Prettify
-# Run `hexo clean` first after changing code highlight configuration.
-
-# Hanabi (https://github.com/egoist/hanabi)
 hanabi:
   enable: false
 
 # Prism
-# Disable other code hightlight first and enable prism at site config:
-#    suka_theme:
-#      ...
-#      prism:
-#        enable: true
+# To use prism, you need to disable all highlight option in hexo's site config.
+#
+#   highlight:
+#     enable: false
+#     line_number: false
+#     auto_detect: false
+#     tab_replace: false
+#
+# Then you need to disable other code hightlight first, and enable prism at site config:
+#
+#     suka_theme:
+#       ...
+#       prism:
+#         enable: true
+#         line_number: true # Enable line number or not
+#         theme: default
+#
+# You can only enable the Suka built in prism theme here. Check the /source/lib/prism directories.
+# The theme name is the css file name without `.min.css` and `prism-`, as prism-[theme-name].min.css
 
 # Google Code Prettify
+# To use prettify, you need to disable all highlight option in hexo's site config.
+#
+#   highlight:
+#     enable: false
+#     line_number: false
+#     auto_detect: false
+#     tab_replace: false
+#
 prettify:
-  enable: true
+  enable: false
   linenumber: true # We prefer to enable for avoiding some pretiffy's bugs.
   # Prettify Theme
   theme: github-v2 # It will not load any theme if you leave it blank
@@ -315,6 +357,8 @@ vendors:
     style_css:
     local_search_js:
     hanabi_browser_js:
+    highlight_theme:
+    # You can fill in any suka built in highlight.js theme you want here, and it will override the prism theme config before.
   # Spectre.css
   # https://picturepan2.github.io/spectre/
   # Version: 0.5.3
@@ -325,6 +369,7 @@ vendors:
   # Prism Version: 1.15.0 | Prism Theme Version: 1.0.1
   prism:
     theme:
+    # You can fill in any prism theme you want here, and it will override the prism theme config in site config.
     line_number:
   # Lazyload
   # https://github.com/verlok/lazyload
@@ -342,7 +387,7 @@ vendors:
   # Version: 0.1.0
   prettify:
   # Prettify Theme
-  # You can fill in any prettify theme you want here, and it will also override the prettify theme config below.
+  # You can fill in any prettify theme you want here, and it will override the prettify theme config before.
   # Personally I prefer the theme here: https://github.com/jmblog/color-themes-for-google-code-prettify
   prettify_theme:
 
