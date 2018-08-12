@@ -1,5 +1,9 @@
 <% if ( (is_post()) ) { %>
-    <script src="<%- url_for('lib/prettify/prettify.js') %>"></script>
+    <% if (theme.vendors.prettify) { %>
+        <script src="<%= theme.vendors.prettify %>"></script>
+    <% } else { %>
+        <script src="<%- url_for('lib/prettify/prettify.js') %>"></script>
+    <% } %>
     <script>
         for (var i = 0; i < (document.querySelectorAll('pre') || []).length; i += 1) {
             document.querySelectorAll('pre')[i].classList.add('prettyprint');
