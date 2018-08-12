@@ -16,15 +16,15 @@
 
 <% if (config.suka_theme.prism.enable === true) { %>
     <!-- prism.css -->
-    <%- partial('_plugin/highlight/prism/common', {}, {cache: true}) %>
+    <%- partial('_plugin/highlight/prism/common') %>
 <% } %>
 
 <% if (theme.prettify.enable === true) { %>
     <!-- Prettify Theme -->
-    <%- partial('_plugin/highlight/prettify/theme', {}, {cache: true}) %>
+    <%- partial('_plugin/highlight/prettify/theme') %>
 <% } %>
 
 <% if (config.highlight.enable === true) { %>
     <!-- Prettify Theme -->
-    <%- partial('_plugin/highlight/hexo-hljs/theme', {}, {cache: true}) %>
+    <%- partial('_plugin/highlight/hexo-hljs/theme') %>
 <% } %>
