@@ -1,0 +1,76 @@
+/*
+
+Dracula Theme v1.2.0
+
+https://github.com/zenorocha/dracula-theme
+
+Copyright 2015, All rights reserved
+
+Code licensed under the MIT license
+http://zenorocha.mit-license.org
+
+@author Éverton Ribeiro <nuxlli@gmail.com>
+@author Zeno Rocha <hi@zenorocha.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #282a36;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .section,
+.highlight .link {
+  color: #8be9fd;
+}
+
+.highlight .function .highlight .keyword {
+  color: #ff79c6;
+}
+
+.highlight,
+.highlight .subst {
+  color: #f8f8f2;
+}
+
+.highlight .string,
+.highlight .title,
+.highlight .name,
+.highlight .type,
+.highlight .attribute,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #f1fa8c;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .deletion,
+.highlight .meta {
+  color: #6272a4;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .title,
+.highlight .section,
+.highlight .doctag,
+.highlight .type,
+.highlight .name,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

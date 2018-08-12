@@ -1,0 +1,96 @@
+/*
+
+PureBASIC native IDE style ( version 1.0 - April 2016 )
+
+by Tristano Ajmone <tajmone@gmail.com>
+
+Public Domain
+
+NOTE_1:  PureBASIC code syntax highlighting only applies the following classes:
+      .highlight .comment
+      .highlight .function
+      .highlight .keywords
+      .highlight .string
+      .highlight .symbol
+
+    Other classes are added here for the benefit of styling other languages with the look and feel of PureBASIC native IDE style.
+    If you need to customize a stylesheet for PureBASIC only, remove all non-relevant classes -- PureBASIC-related classes are followed by
+    a "--- used for PureBASIC ... ---" comment on same line.
+
+NOTE_2:  Color names provided in comments were derived using "Name that Color" online tool:
+      http://chir.ag/projects/name-that-color
+*/
+
+.highlight { /* Common set of rules required by highlight.js (don'r remove!) */
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #FFFFDF; /* Half and Half (approx.) */
+/* --- Uncomment to add PureBASIC native IDE styled font!
+  font-family: Consolas;
+*/
+}
+
+.highlight, /* --- used for PureBASIC base color --- */
+.highlight .type,  /* --- used for PureBASIC Procedures return type --- */
+.highlight .function, /* --- used for wrapping PureBASIC Procedures definitions --- */
+.highlight .name,
+.highlight .number,
+.highlight .attr,
+.highlight .params,
+.highlight .subst {
+  color: #000000; /* Black */
+}
+
+.highlight .comment, /* --- used for PureBASIC Comments --- */
+.highlight .regexp,
+.highlight .section,
+.highlight .selector-pseudo,
+.highlight .addition {
+  color: #00AAAA; /* Persian Green (approx.) */
+}
+
+.highlight .title, /* --- used for PureBASIC Procedures Names --- */
+.highlight .tag,
+.highlight .variable,
+.highlight .code  {
+  color: #006666; /* Blue Stone (approx.) */
+}
+
+.highlight .keyword, /* --- used for PureBASIC Keywords --- */
+.highlight .class,
+.highlight .meta-keyword,
+.highlight .selector-class,
+.highlight .built_in,
+.highlight .builtin-name {
+  color: #006666; /* Blue Stone (approx.) */
+  font-weight: bold;
+}
+
+.highlight .string, /* --- used for PureBASIC Strings --- */
+.highlight .selector-attr {
+  color: #0080FF; /* Azure Radiance (approx.) */
+}
+
+.highlight .symbol, /* --- used for PureBASIC Constants --- */
+.highlight .link,
+.highlight .deletion,
+.highlight .attribute {
+  color: #924B72; /* Cannon Pink (approx.) */
+}
+
+.highlight .meta,
+.highlight .literal,
+.highlight .selector-id {
+  color: #924B72; /* Cannon Pink (approx.) */
+  font-weight: bold;
+}
+
+.highlight .strong,
+.highlight .name {
+  font-weight: bold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

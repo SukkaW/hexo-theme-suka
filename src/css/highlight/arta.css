@@ -1,0 +1,73 @@
+/*
+Date: 17.V.2011
+Author: pumbur <pumbur@pumbur.net>
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #222;
+}
+
+.highlight,
+.highlight .subst {
+  color: #aaa;
+}
+
+.highlight .section {
+  color: #fff;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .meta {
+  color: #444;
+}
+
+.highlight .string,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .regexp {
+  color: #ffcc33;
+}
+
+.highlight .number,
+.highlight .addition {
+  color: #00cc66;
+}
+
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .literal,
+.highlight .type,
+.highlight .template-variable,
+.highlight .attribute,
+.highlight .link {
+  color: #32aaee;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #6644aa;
+}
+
+.highlight .title,
+.highlight .variable,
+.highlight .deletion,
+.highlight .template-tag {
+  color: #bb1166;
+}
+
+.highlight .section,
+.highlight .doctag,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

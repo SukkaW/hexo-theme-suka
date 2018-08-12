@@ -1,0 +1,17 @@
+/*!
+ * Agate by Taufik Nurrohman <https://github.com/tovic>
+ * ----------------------------------------------------
+ *
+ * #ade5fc
+ * #a2fca2
+ * #c6b4f0
+ * #d36363
+ * #fcc28c
+ * #fc9b9b
+ * #ffa
+ * #fff
+ * #333
+ * #62c8f3
+ * #888
+ *
+ */.highlight{display:block;overflow-x:auto;padding:.5em;background:#333;color:#fff}.highlight .name,.highlight .strong{font-weight:700}.highlight .code,.highlight .emphasis{font-style:italic}.highlight .tag{color:#62c8f3}.highlight .selector-class,.highlight .selector-id,.highlight .template-variable,.highlight .variable{color:#ade5fc}.highlight .bullet,.highlight .string{color:#a2fca2}.highlight .attribute,.highlight .built_in,.highlight .builtin-name,.highlight .quote,.highlight .section,.highlight .title,.highlight .type{color:#ffa}.highlight .bullet,.highlight .number,.highlight .symbol{color:#d36363}.highlight .keyword,.highlight .literal,.highlight .selector-tag{color:#fcc28c}.highlight .code,.highlight .comment,.highlight .deletion{color:#888}.highlight .link,.highlight .regexp{color:#c6b4f0}.highlight .meta{color:#fc9b9b}.highlight .deletion{background-color:#fc9b9b;color:#333}.highlight .addition{background-color:#a2fca2;color:#333}.highlight a{color:inherit}.highlight a:focus,.highlight a:hover{color:inherit;text-decoration:underline}

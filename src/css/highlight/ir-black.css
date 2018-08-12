@@ -1,0 +1,73 @@
+/*
+  IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #000;
+  color: #f8f8f8;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .meta {
+  color: #7c7c7c;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .tag,
+.highlight .name {
+  color: #96cbfe;
+}
+
+.highlight .attribute,
+.highlight .selector-id {
+  color: #ffffb6;
+}
+
+.highlight .string,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .addition {
+  color: #a8ff60;
+}
+
+.highlight .subst {
+  color: #daefa3;
+}
+
+.highlight .regexp,
+.highlight .link {
+  color: #e9c062;
+}
+
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .doctag {
+  color: #ffffb6;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .literal {
+  color: #c6c5fe;
+}
+
+.highlight .number,
+.highlight .deletion {
+  color:#ff73fd;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

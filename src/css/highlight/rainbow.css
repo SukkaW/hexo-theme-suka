@@ -1,0 +1,85 @@
+/*
+
+Style with support for rainbow parens
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #474949;
+  color: #d1d9e1;
+}
+
+
+.highlight .comment,
+.highlight .quote {
+  color: #969896;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .type,
+.highlight .addition {
+  color: #cc99cc;
+}
+
+.highlight .number,
+.highlight .selector-attr,
+.highlight .selector-pseudo {
+  color: #f99157;
+}
+
+.highlight .string,
+.highlight .doctag,
+.highlight .regexp {
+  color: #8abeb7;
+}
+
+.highlight .title,
+.highlight .name,
+.highlight .section,
+.highlight .built_in {
+  color: #b5bd68;
+}
+
+.highlight .variable,
+.highlight .template-variable,
+.highlight .selector-id,
+.highlight .class .highlight .title {
+   color: #ffcc66;
+}
+
+.highlight .section,
+.highlight .name,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .subst,
+.highlight .meta,
+.highlight .link {
+  color: #f99157;
+}
+
+.highlight .deletion {
+  color: #dc322f;
+}
+
+.highlight .formula {
+  background: #eee8d5;
+}
+
+.highlight .attr,
+.highlight .attribute {
+  color: #81a2be;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

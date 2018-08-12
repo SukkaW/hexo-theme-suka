@@ -1,0 +1,84 @@
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #002b36;
+  color: #839496;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #586e75;
+}
+
+/* Solarized Green */
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .addition {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.highlight .number,
+.highlight .string,
+.highlight .meta .highlight .meta-string,
+.highlight .literal,
+.highlight .doctag,
+.highlight .regexp {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.highlight .title,
+.highlight .section,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.highlight .attribute,
+.highlight .attr,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .class .highlight .title,
+.highlight .type {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.highlight .symbol,
+.highlight .bullet,
+.highlight .subst,
+.highlight .meta,
+.highlight .meta .highlight .keyword,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .link {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.highlight .built_in,
+.highlight .deletion {
+  color: #dc322f;
+}
+
+.highlight .formula {
+  background: #073642;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

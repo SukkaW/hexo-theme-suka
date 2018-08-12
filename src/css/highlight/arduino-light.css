@@ -1,0 +1,88 @@
+/*
+
+Arduino® Light Theme - Stefania Mellai <s.mellai@arduino.cc>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #FFFFFF;
+}
+
+.highlight,
+.highlight .subst {
+  color: #434f54;
+}
+
+.highlight .keyword,
+.highlight .attribute,
+.highlight .selector-tag,
+.highlight .doctag,
+.highlight .name {
+  color: #00979D;
+}
+
+.highlight .built_in,
+.highlight .literal,
+.highlight .bullet,
+.highlight .code,
+.highlight .addition {
+  color: #D35400;
+}
+
+.highlight .regexp,
+.highlight .symbol,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .link,
+.highlight .selector-attr,
+.highlight .selector-pseudo {
+  color: #00979D;
+}
+
+.highlight .type,
+.highlight .string,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .quote,
+.highlight .template-tag,
+.highlight .deletion {
+  color: #005C5F;
+}
+
+.highlight .title,
+.highlight .section {
+  color: #880000;
+  font-weight: bold;
+}
+
+.highlight .comment {
+  color: rgba(149,165,166,.8);
+}
+
+.highlight .meta-keyword {
+  color: #728E00;
+}
+
+.highlight .meta {
+  color: #728E00;
+  color: #434f54;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .function {
+  color: #728E00;
+}
+
+.highlight .number {
+  color: #8A7B52;  
+}

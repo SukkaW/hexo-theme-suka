@@ -1,0 +1,64 @@
+/*
+
+Brown Paper style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background:#b7a68e url(./brown-papersq.png);
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal {
+  color:#005599;
+  font-weight:bold;
+}
+
+.highlight,
+.highlight .subst {
+  color: #363c69;
+}
+
+.highlight .string,
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .attribute,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .built_in,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable,
+.highlight .link,
+.highlight .name {
+  color: #2c009f;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .meta,
+.highlight .deletion {
+  color: #802022;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .doctag,
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .name,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

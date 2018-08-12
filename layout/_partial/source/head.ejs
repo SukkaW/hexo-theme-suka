@@ -19,8 +19,12 @@
     <%- partial('_plugin/highlight/prism/common', {}, {cache: true}) %>
 <% } %>
 
-
 <% if (theme.prettify.enable === true) { %>
     <!-- Prettify Theme -->
     <%- partial('_plugin/highlight/prettify/theme', {}, {cache: true}) %>
+<% } %>
+
+<% if (config.highlight.enable === true) { %>
+    <!-- Prettify Theme -->
+    <%- partial('_plugin/highlight/hexo-hljs/theme', {}, {cache: true}) %>
 <% } %>
