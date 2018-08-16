@@ -259,6 +259,9 @@ valine_counter:
     before: # html tag supported
     after: # html tag supported
 
+# ---------------------------------------------------------------
+# Plugin Settings
+# ---------------------------------------------------------------
 # Search
 # Available value of "use":
 #     local | google | swiftype
