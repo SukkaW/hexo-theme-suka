@@ -1400,6 +1400,11 @@ a.timeline-tile-title span:hover {
     box-shadow: 0 0 0 .08rem rgba(0, 0, 0, .2);
 }
 
+#search-input .st-default-search-input {
+    background: none;
+    padding: 0 .6rem;
+}
+
 #search-output {
     min-height: 20rem;
     margin-bottom: 2rem;
