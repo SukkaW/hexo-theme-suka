@@ -6,7 +6,7 @@
 > 现代 · 强大 · 简洁
 
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/Version-1.0.1-5755d9.svg?style=flat-square"/>
+<img alt="Version" src="https://img.shields.io/badge/Version-1.1.0-5755d9.svg?style=flat-square"/>
 <a href="https://suka.moe" target="_blank"><img alt="Author" src="https://img.shields.io/badge/Author-Sukka-b68469.svg?style=flat-square"/></a>
 <a href="https://hexo.io" target="_blank"><img alt="Hexo" src="https://img.shields.io/badge/hexo-3.5+-0e83cd.svg?style=flat-square"/></a>
 <a href="https://nodejs.org/" target="_blank"><img alt="node.js" src="https://img.shields.io/badge/node.js-8.0%2B-43853d.svg?style=flat-square"/></a>
@@ -42,6 +42,11 @@
 ```bash
 $ cd hexo
 $ git clone https://github.com/SukkaW/hexo-theme-suka themes/suka
+$ cat themes/suka/site_config.yml >> _config.yml
+$ cd themes/suka
+$ npm i
+$ cd ..
+$ cd ..
 ```
 
 You can also read our [detailed installation instructions](https://theme.suka.moe/docs/en/) if you want any other variant.

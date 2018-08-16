@@ -3,33 +3,26 @@
         <!-- # Title # -->
         <h2 class="page-title"><%= __('search.main') %></h2>
 
-        <!-- # Input # -->
-        <div id="search-input">
-            <form class="input-group" autocomplete="off">
-                <input maxlength="80" type="search" id="search-field" name="s" class="form-input input-lg" placeholder="<%= __('search.placeholder') %>" required>
-                <button class="btn btn-primary input-group-btn btn-lg"><%= __('search.main') %></button>
-            </form>
-        </div>
+        <% if (theme.search.use === 'google') { %>
+            <%- partial('_plugin/search/google/main') %>
+        <% } %>
 
-        <!-- # Description & Output # -->
-        <div id="search-result-info" hidden><%- __('search.num', '<span id="search-result-num"></span>')%></div>
+        <% if (theme.search.use === 'local') { %>
+            <%- partial('_plugin/search/local-search/main') %>
+        <% } %>
 
-        <div id="search-output"></div>
+        <% if (theme.search.use === 'swiftype') { %>
+            <%- partial('_plugin/search/swiftype/main') %>
+        <% } %>
+
 
     </div>
 </div>
 
-<!-- load local-search -->
-<% if (theme.vendors.suka.local_search_js) { %>
-    <script src="<%= theme.vendors.suka.local_search_js %>"></script>
-<% } else { %>
-    <script src="<%- url_for('js/local-search.min.js') %>"></script>
+<% if (theme.search.use === 'local') { %>
+    <%- partial('_plugin/search/local-search/common') %>
 <% } %>
 
-<script>
-searchFunc('<%= url_for(config.suka_theme.search.path) %>');
-var searchNoResult = '';
-searchNoResult += '<div class="search-noresult"><span><%= __('search.noresult') %>'
-searchNoResult += '<br><%= __('search.trygoogle') %>&nbsp;:&nbsp;</span>'
-searchNoResult += '<a href="https://www.google.com/search?&q=' + searchQuery.s + '%20site:<%= config.url %>" target="_blank">' + searchQuery.s + '&nbsp;site:<%= config.url %></a></div>'
-</script>
+<% if (theme.search.use === 'swiftype') { %>
+    <%- partial('_plugin/search/swiftype/common') %>
+<% } %>

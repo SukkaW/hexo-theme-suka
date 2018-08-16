@@ -1,0 +1,106 @@
+/*
+
+Railscasts-like style (c) Visoft, Inc. (Damien White)
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #232323;
+  color: #e6e1dc;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #bc9458;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag {
+  color: #c26230;
+}
+
+.highlight .string,
+.highlight .number,
+.highlight .regexp,
+.highlight .variable,
+.highlight .template-variable {
+  color: #a5c261;
+}
+
+.highlight .subst {
+  color: #519f50;
+}
+
+.highlight .tag,
+.highlight .name {
+  color: #e8bf6a;
+}
+
+.highlight .type {
+  color: #da4939;
+}
+
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .attr,
+.highlight .link {
+  color: #6d9cbe;
+}
+
+.highlight .params {
+  color: #d0d0ff;
+}
+
+.highlight .attribute {
+  color: #cda869;
+}
+
+.highlight .meta {
+  color: #9b859d;
+}
+
+.highlight .title,
+.highlight .section {
+  color: #ffc66d;
+}
+
+.highlight .addition {
+  background-color: #144212;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.highlight .deletion {
+  background-color: #600;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.highlight .selector-class {
+  color: #9b703f;
+}
+
+.highlight .selector-id {
+  color: #8b98ab;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .link {
+  text-decoration: underline;
+}

@@ -5,6 +5,9 @@
 <% if (theme.head.favicon.apple_touch_icon) { %>
     <link rel="apple-touch-icon" sizes="180x180" href="<%- url_for(theme.head.favicon.apple_touch_icon) %>">
 <% } %>
+<% if (theme.head.favicon.large) { %>
+    <link rel="icon" type="image/png" sizes="192x192" href="<%- url_for(theme.head.favicon.large) %>">
+<% } %>
 <% if (theme.head.favicon.medium) { %>
     <link rel="icon" type="image/png" sizes="32x32" href="<%- url_for(theme.head.favicon.medium) %>">
 <% } %>

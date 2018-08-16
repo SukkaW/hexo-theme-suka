@@ -1,0 +1,66 @@
+/*
+Date: 24 Fev 2015
+Author: Pedro Oliveira <kanytu@gmail . com>
+*/
+
+.highlight {
+  color: #a9b7c6;
+  background: #282b2e;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.highlight .number,
+.highlight .literal,
+.highlight .symbol,
+.highlight .bullet {
+  color: #6897BB;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .deletion {
+  color: #cc7832;
+}
+
+.highlight .variable,
+.highlight .template-variable,
+.highlight .link {
+  color: #629755;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #808080;
+}
+
+.highlight .meta {
+  color: #bbb529;
+}
+
+.highlight .string,
+.highlight .attribute,
+.highlight .addition {
+  color: #6A8759;
+}
+
+.highlight .section,
+.highlight .title,
+.highlight .type {
+  color: #ffc66d;
+}
+
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #e8bf6a;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

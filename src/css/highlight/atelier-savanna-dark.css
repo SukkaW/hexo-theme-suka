@@ -1,0 +1,84 @@
+/* Base16 Atelier Savanna Dark - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/savanna) */
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
+
+/* Atelier-Savanna Comment */
+.highlight .comment,
+.highlight .quote {
+  color: #78877d;
+}
+
+/* Atelier-Savanna Red */
+.highlight .variable,
+.highlight .template-variable,
+.highlight .attribute,
+.highlight .tag,
+.highlight .name,
+.highlight .regexp,
+.highlight .link,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #b16139;
+}
+
+/* Atelier-Savanna Orange */
+.highlight .number,
+.highlight .meta,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .literal,
+.highlight .type,
+.highlight .params {
+  color: #9f713c;
+}
+
+/* Atelier-Savanna Green */
+.highlight .string,
+.highlight .symbol,
+.highlight .bullet {
+  color: #489963;
+}
+
+/* Atelier-Savanna Blue */
+.highlight .title,
+.highlight .section {
+  color: #478c90;
+}
+
+/* Atelier-Savanna Purple */
+.highlight .keyword,
+.highlight .selector-tag {
+  color: #55859b;
+}
+
+.highlight .deletion,
+.highlight .addition {
+  color: #171c19;
+  display: inline-block;
+  width: 100%;
+}
+
+.highlight .deletion {
+  background-color: #b16139;
+}
+
+.highlight .addition {
+  background-color: #489963;
+}
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  background: #171c19;
+  color: #87928a;
+  padding: 0.5em;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

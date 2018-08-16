@@ -1,0 +1,7 @@
+<% if ( (is_post()) ) { %>
+    <% if (theme.vendors.suka.highlight_theme) { %>
+        <link rel="stylesheet" href="<%= theme.vendors.suka.highlight_theme %>">
+    <% } else if (theme.highlight.theme) { %>
+        <link rel="stylesheet" href="<%- url_for('css/highlight/' + theme.highlight.theme + '.min.css') %>">
+    <% } %>
+<% } %>

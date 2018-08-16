@@ -893,7 +893,6 @@ a.category-link {
 }
 
 #post-content p,
-#post-content blockquote,
 #post-content ul,
 #post-content ol,
 #post-content dl,
@@ -901,6 +900,15 @@ a.category-link {
 #post-content pre {
     margin-top: 0;
     margin-bottom: 16px;
+}
+
+#post-content blockquote {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#post-content table:not(.highlight) {
+    margin-bottom: 0;
 }
 
 #post-content hr {
@@ -1072,6 +1080,10 @@ a.category-link {
     border-top: 1px solid #c6cbd1;
 }
 
+#post-content table tr:not(.highlight) {
+    background-color: transparent;
+}
+
 #post-content table tr:nth-child(2n) {
     background-color: #f6f8fa;
 }
@@ -1109,8 +1121,11 @@ a.category-link {
     font-size: 95%;
     word-break: normal;
     white-space: pre;
-    background: transparent;
     border: 0;
+}
+
+#post-content pre:not(.highlight):not(.prettyprint) {
+    background: #f5f5f5;
 }
 
 #post-content .highlight {
@@ -1383,6 +1398,11 @@ a.timeline-tile-title span:hover {
 #search-input .form-input:focus {
     border-color: rgba(0, 0, 0, .4);
     box-shadow: 0 0 0 .08rem rgba(0, 0, 0, .2);
+}
+
+#search-input .st-default-search-input {
+    background: none;
+    padding: 0 .6rem;
 }
 
 #search-output {

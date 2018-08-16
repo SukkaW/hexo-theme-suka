@@ -1,0 +1,93 @@
+/*
+
+XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fff;
+  color: black;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #006a00;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal {
+  color: #aa0d91;
+}
+
+.highlight .name {
+  color: #008;
+}
+
+.highlight .variable,
+.highlight .template-variable {
+  color: #660;
+}
+
+.highlight .string {
+  color: #c41a16;
+}
+
+.highlight .regexp,
+.highlight .link {
+  color: #080;
+}
+
+.highlight .title,
+.highlight .tag,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .number,
+.highlight .meta {
+  color: #1c00cf;
+}
+
+.highlight .section,
+.highlight .class .highlight .title,
+.highlight .type,
+.highlight .attr,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .params {
+  color: #5c2699;
+}
+
+.highlight .attribute,
+.highlight .subst {
+  color: #000;
+}
+
+.highlight .formula {
+  background-color: #eee;
+  font-style: italic;
+}
+
+.highlight .addition {
+  background-color: #baeeba;
+}
+
+.highlight .deletion {
+  background-color: #ffc8bd;
+}
+
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #9b703f;
+}
+
+.highlight .doctag,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

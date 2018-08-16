@@ -1,0 +1,14 @@
+<!-- import load local-search -->
+<% if (theme.vendors.suka.local_search_js) { %>
+    <script src="<%= theme.vendors.suka.local_search_js %>"></script>
+<% } else { %>
+    <script src="<%- url_for('js/local-search.min.js') %>"></script>
+<% } %>
+
+<script>
+searchFunc('<%= url_for(config.suka_theme.search.path) %>');
+var searchNoResult = '';
+searchNoResult += '<div class="search-noresult"><span><%= __('search.noresult') %>'
+searchNoResult += '<br><%= __('search.trygoogle') %>&nbsp;:&nbsp;</span>'
+searchNoResult += '<a href="https://www.google.com/search?&q=' + searchQuery.s + '%20site:<%= config.url %>" target="_blank">' + searchQuery.s + '&nbsp;site:<%= config.url %></a></div>'
+</script>

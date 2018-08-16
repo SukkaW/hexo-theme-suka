@@ -1,0 +1,83 @@
+/*
+
+Pojoaque Style by Jason Tate
+http://web-cms-designs.com/ftopict-10-pojoaque-style-for-highlight-js-code-highlighter.html
+Based on Solarized Style from http://ethanschoonover.com/solarized
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #dccf8f;
+  background: url(./pojoaque.jpg) repeat scroll left top #181914;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #586e75;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .addition {
+  color: #b64926;
+}
+
+.highlight .number,
+.highlight .string,
+.highlight .doctag,
+.highlight .regexp {
+  color: #468966;
+}
+
+.highlight .title,
+.highlight .section,
+.highlight .built_in,
+.highlight .name {
+  color: #ffb03b;
+}
+
+.highlight .variable,
+.highlight .template-variable,
+.highlight .class .highlight .title,
+.highlight .type,
+.highlight .tag {
+  color: #b58900;
+}
+
+.highlight .attribute {
+  color: #b89859;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .link,
+.highlight .subst,
+.highlight .meta {
+  color: #cb4b16;
+}
+
+.highlight .deletion {
+  color: #dc322f;
+}
+
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #d3a60c;
+}
+
+.highlight .formula {
+  background: #073642;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

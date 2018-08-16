@@ -3,10 +3,13 @@
  * license: MIT
  */
 
-var merge = require('utils-merge');
 var pathFn = require('path');
 
 var config = hexo.config.suka_theme.search
+
+if (hexo.config.suka_theme.search.enable !== true) {
+    return;
+}
 
 // Set default search path
 if (!config.path) {

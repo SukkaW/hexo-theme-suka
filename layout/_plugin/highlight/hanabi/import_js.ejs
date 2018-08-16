@@ -1,0 +1,13 @@
+<!-- Import Hanabi -->
+<% if (theme.vendors.hanabi) { %>
+    <script src="<%= theme.vendors.hanabi %>"></script>
+<% } else { %>
+    <script src="<%- url_for('lib/hanabi/hanabi.min.js') %>"></script>
+<% } %>
+
+<!-- Import Hanabi Broswser -->
+<% if (theme.vendors.suka.hanabi_browser_js) { %>
+    <script src="<%= theme.vendors.suka.hanabi_browser_js %>"></script>
+<% } else { %>
+    <script src="<%- url_for('js/hanabi-browser.min.js') %>"></script>
+<% } %>

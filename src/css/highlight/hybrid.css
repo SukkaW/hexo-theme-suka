@@ -1,0 +1,102 @@
+/*
+
+vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
+
+*/
+
+/*background color*/
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1d1f21;
+}
+
+/*selection color*/
+.highlight::selection,
+.highlight span::selection {
+  background: #373b41;
+}
+
+.highlight::-moz-selection,
+.highlight span::-moz-selection {
+  background: #373b41;
+}
+
+/*foreground color*/
+.highlight {
+  color: #c5c8c6;
+}
+
+/*color: fg_yellow*/
+.highlight .title,
+.highlight .name {
+  color: #f0c674;
+}
+
+/*color: fg_comment*/
+.highlight .comment,
+.highlight .meta,
+.highlight .meta .highlight .keyword {
+  color: #707880;
+}
+
+/*color: fg_red*/
+.highlight .number,
+.highlight .symbol,
+.highlight .literal,
+.highlight .deletion,
+.highlight .link {
+ color: #cc6666
+}
+
+/*color: fg_green*/
+.highlight .string,
+.highlight .doctag,
+.highlight .addition,
+.highlight .regexp,
+.highlight .selector-attr,
+.highlight .selector-pseudo {
+  color: #b5bd68;
+}
+
+/*color: fg_purple*/
+.highlight .attribute,
+.highlight .code,
+.highlight .selector-id {
+ color: #b294bb;
+}
+
+/*color: fg_blue*/
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .bullet,
+.highlight .tag {
+ color: #81a2be;
+}
+
+/*color: fg_aqua*/
+.highlight .subst,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #8abeb7;
+}
+
+/*color: fg_orange*/
+.highlight .type,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .quote,
+.highlight .section,
+.highlight .selector-class {
+  color: #de935f;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
