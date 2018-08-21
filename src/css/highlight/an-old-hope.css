@@ -1,0 +1,89 @@
+/* 
+
+An Old Hope – Star Wars Syntax (c) Gustavo Costa <gusbemacbe@gmail.com>
+Original theme - Ocean Dark Theme – by https://github.com/gavsiu
+Based on Jesse Leite's Atom syntax theme 'An Old Hope' – https://github.com/JesseLeite/an-old-hope-syntax-atom
+
+*/
+
+/* Death Star Comment */
+.highlight .comment,
+.highlight .quote 
+{
+  color: #B6B18B;
+}
+
+/* Darth Vader */
+.highlight .variable,
+.highlight .template-variable,
+.highlight .tag,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .regexp,
+.highlight .deletion 
+{
+  color: #EB3C54;
+}
+
+/* Threepio */
+.highlight .number,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .literal,
+.highlight .type,
+.highlight .params,
+.highlight .meta,
+.highlight .link 
+{
+  color: #E7CE56;
+}
+
+/* Luke Skywalker */
+.highlight .attribute 
+{
+  color: #EE7C2B;
+}
+
+/* Obi Wan Kenobi */
+.highlight .string,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .addition 
+{
+  color: #4FB4D7;
+}
+
+/* Yoda */
+.highlight .title,
+.highlight .section 
+{
+  color: #78BB65;
+}
+
+/* Mace Windu */
+.highlight .keyword,
+.highlight .selector-tag 
+{
+  color: #B45EA4;
+}
+
+/* Millenium Falcon */
+.highlight 
+{
+  display: block;
+  overflow-x: auto;
+  background: #1C1D21;
+  color: #c0c5ce;
+  padding: 0.5em;
+}
+
+.highlight .emphasis 
+{
+  font-style: italic;
+}
+
+.highlight .strong 
+{
+  font-weight: bold;
+}
