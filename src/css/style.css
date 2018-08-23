@@ -690,7 +690,6 @@ a.category-link {
 #post-content code,
 #post-content .highlight span,
 #post-content .highlight code,
-#post-content kbd,
 #post-content pre {
     font-family: "SF Mono", "Segoe UI Mono", Consolas, "Roboto Mono", "Liberation Mono", Menlo, Courier, 'Courier New', monospace !important;
     /* It was the same as SukkaW's IDE font-family set */
@@ -933,20 +932,6 @@ a.category-link {
     margin-bottom: 0;
 }
 
-#post-content kbd {
-    display: inline-block;
-    padding: 3px 5px;
-    font-size: 11px;
-    line-height: 10px;
-    color: #444d56;
-    vertical-align: middle;
-    background-color: #fafbfc;
-    border: solid 1px #c6cbd1;
-    border-bottom-color: #959da5;
-    border-radius: 3px;
-    box-shadow: inset 0 -1px 0 #959da5;
-}
-
 #post-content h1,
 #post-content h2,
 #post-content h3,
@@ -1124,7 +1109,7 @@ a.category-link {
     border: 0;
 }
 
-#post-content pre:not(.highlight):not(.prettyprint) {
+#post-content>pre:not(.highlight):not(.prettyprint) {
     background: #f5f5f5;
 }
 
@@ -1202,7 +1187,7 @@ a.category-link {
 /* Fix for highlight */
 
 #post-content figure.highlight {
-    margin: .5rem;
+    margin: .5rem 0;
 }
 
 #post-content .highlight td {
