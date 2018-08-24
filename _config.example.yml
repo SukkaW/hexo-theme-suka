@@ -78,6 +78,8 @@ uiux:
   primary_color:
   # Background color
   bg_color:
+  # gallery img max-height
+  gallery_height: 350
 
 img:
   avatar: '/img/default_avatar.png'
