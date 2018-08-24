@@ -377,13 +377,33 @@ template {
  * License: GPL-3.0
  */
 
+body,
+html {
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased;
+}
+
 body {
     background: #242629
 }
 
-.m-p-g {
-    max-width: 860px;
-    margin: 0 auto
+/* Scrollbar */
+
+html *::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+    background: rgba(255, 255, 255, .4);
+}
+
+@media (min-width: 1024px) {
+    html *::-webkit-scrollbar {
+        width: 8px;
+        height: 6px;
+    }
+}
+
+html *::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .7);
 }
 
 .m-p-g__thumbs-img {

@@ -1,24 +1,46 @@
 <!-- ### Footer JS Import ### -->
 
+<!-- gallery.js -->
+<% if (page.layout === 'gallery') { %>
+    <% if (theme.vendors.suka.gallery_js) { %>
+        <script src="<%= theme.vendors.suka.gallery_js %>"></script>
+    <% } else { %>
+        <script src="<%- url_for('js/gallery.min.js') %>"></script>
+    <% } %>
+<% } %>
+
 <script>
 window.lazyLoadOptions = {
     elements_selector: ".lazyload",
     threshold: 50
 };
 
-/* Copyright */
-var copyrightNow = new Date().getFullYear();
-var copyrightContent = document.querySelector('span[data-year]')
-<% if (theme.footer.copyright_since > 0) { %>
-    copyrightSince = <%= theme.footer.copyright_since %>;
-    if (copyrightSince === copyrightNow) {
-        copyrightContent.textContent = copyrightNow
-    } else {
-        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
-    }
+<% if (page.layout === 'gallery') { %>
+
+    var elem = document.getElementById("gallery-container")
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var gallery = new MaterialPhotoGallery(elem);
+    });
+
 <% } else { %>
-    copyrightContent.textContent = copyrightNow
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    <% if (theme.footer.copyright_since > 0) { %>
+        copyrightSince = <%= theme.footer.copyright_since %>;
+        if (copyrightSince === copyrightNow) {
+            copyrightContent.textContent = copyrightNow
+        } else {
+            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+        }
+    <% } else { %>
+        copyrightContent.textContent = copyrightNow
+    <% } %>
+
 <% } %>
+
 /* Cnosole Log */
 console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme.verison %> %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
 </script>
@@ -28,15 +50,6 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
     <script src="<%= theme.vendors.lazyload %>" async></script>
 <% } else { %>
     <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" async></script>
-<% } %>
-
-<!-- gallery.js -->
-<% if (page.layout === 'gallery') { %>
-    <% if (theme.vendors.suka.gallery_js) { %>
-        <script src="<%= theme.vendors.suka.gallery_js %>" async></script>
-    <% } else { %>
-        <script src="<%- url_for('js/gallery.min.js') %>" async></script>
-    <% } %>
 <% } %>
 
 <% if(theme.busuanzi.enable === true) { %>
