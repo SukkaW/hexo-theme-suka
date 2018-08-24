@@ -30,6 +30,15 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
     <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" async></script>
 <% } %>
 
+<!-- gallery.js -->
+<% if (page.layout === 'gallery') { %>
+    <% if (theme.vendors.suka.gallery_js) { %>
+        <script src="<%= theme.vendors.suka.gallery_js %>" async></script>
+    <% } else { %>
+        <script src="<%- url_for('js/gallery.min.js') %>" async></script>
+    <% } %>
+<% } %>
+
 <% if(theme.busuanzi.enable === true) { %>
     <!-- Busuanzi -->
     <%- partial('_plugin/busuanzi/import_js') %>
@@ -46,8 +55,10 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 <% } %>
 
 <!-- Comment -->
-<% if (theme.comment.use){ %>
-    <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: true}) %>
+<% if (theme.comment.use) { %>
+    <% if ( (is_post()) ) { %>
+        <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: true}) %>
+    <% } %>
 <% } %>
 
 <!-- ### Custom Footer ### -->

@@ -4,11 +4,15 @@
     <%- partial('_partial/head/main') %>
 
     <body>
-        <!-- ### Main content ### -->
-        <%- partial('_partial/header', {}, {cache: true}) %>
-        <%- body %>
-        <!-- ### Footer ### -->
-        <%- partial('_partial/footer', {}, {cache: true}) %>
+        <% if (page.layout !== 'gallery') { %>
+            <!-- ### Main content ### -->
+            <%- partial('_partial/header', {}, {cache: true}) %>
+
+            <%- body %>
+            <!-- ### Footer ### -->
+            <%- partial('_partial/footer', {}, {cache: true}) %>
+        <% } %>
+
         <!-- ### Import File ### -->
         <%- partial('_partial/source/footer') %>
     </body>
