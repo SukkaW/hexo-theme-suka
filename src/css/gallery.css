@@ -712,10 +712,12 @@ img.mfp-img {
 }
 
 .mfp-figure small {
-    color: #BDBDBD;
+    color: #eee;
+    opacity: .8;
     display: block;
-    font-size: 12px;
+    font-size: 80%;
     line-height: 14px;
+    font-weight: 500;
 }
 
 .mfp-figure figure {
@@ -830,11 +832,11 @@ html:not(.touch) .gallery-image figcaption,
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-size: 14px;
+    font-size: 18px;
     color: rgba(255, 255, 255, 0);
     padding: 1em;
     transition: all 0.2s ease;
-    font-weight: 500;
+    font-weight: 600;
     max-width: calc(100% - 9em);
     line-height: 1.25;
     text-align: center;
@@ -994,6 +996,13 @@ html:not(.touch) .gallery-image:hover:after {
 .touch .gallery-image figcaption {
     top: auto;
     bottom: 2em;
+}
+
+.gallery-image figcaption small {
+    opacity: .8;
+    font-size: 80%;
+    line-height: 14px;
+    font-weight: 500;
 }
 
 .mfp-with-zoom .mfp-container,

@@ -1,14 +1,5 @@
 <!-- ### Footer JS Import ### -->
 
-<!-- gallery.js -->
-<% if (page.layout === 'gallery') { %>
-    <% if (theme.vendors.suka.gallery_js) { %>
-        <script src="<%= theme.vendors.suka.gallery_js %>"></script>
-    <% } else { %>
-        <script src="<%- url_for('js/gallery.min.js') %>"></script>
-    <% } %>
-<% } %>
-
 <script>
 window.lazyLoadOptions = {
     elements_selector: ".lazyload",
@@ -57,6 +48,15 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 <% if (theme.prettify.enable === true) { %>
     <!-- prettify -->
     <%- partial('_plugin/highlight/prettify/import_js') %>
+<% } %>
+
+<!-- gallery.js -->
+<% if (page.layout === 'gallery') { %>
+    <% if (theme.vendors.suka.gallery_js) { %>
+        <script src="<%= theme.vendors.suka.gallery_js %>"></script>
+    <% } else { %>
+        <script src="<%- url_for('js/gallery.min.js') %>"></script>
+    <% } %>
 <% } %>
 
 <!-- Comment -->

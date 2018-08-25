@@ -13496,7 +13496,8 @@ window.Modernizr = (function (window, document, undefined) {
         image: {
             verticalFit: true,
             titleSrc: function (item) {
-                return item.el.find('figcaption').text() || item.el.attr('title');
+                // return item.el.find('figcaption').html() || item.el.attr('title');
+                return item.el.attr('title') + "<br><small>" + item.el.attr('data-descr') + "</small>";
             }
         },
         zoom: {
@@ -13515,5 +13516,5 @@ window.Modernizr = (function (window, document, undefined) {
             return true;
         }
     });
-
 }).call(this);
+

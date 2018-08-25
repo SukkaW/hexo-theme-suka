@@ -1,12 +1,12 @@
-<div class="m-p-g" id="gallery-container">
-    <div class="m-p-g__thumbs" data-google-image-layout data-max-height="<%= theme.uiux.gallery_height %>">
-        <% if (site.data.gallery) { %>
-            <% for (var i in site.data.gallery) { %>
-                <img src="<%= site.data.gallery[i].thumb %>" data-full="<%= site.data.gallery[i].full %>" class="m-p-g__thumbs-img" alt="<%= i %>">
-            <% } %>
+<article class="gallery">
+    <% if (site.data.gallery) { %>
+        <% for (var i in site.data.gallery) { %>
+            <a class="gallery-link" href="<%= site.data.gallery[i].full %>" title="<%= i %>" data-descr="<%= site.data.gallery[i].descr %>">
+                <figure class="gallery-image">
+                    <img src="<%= site.data.gallery[i].thumb %>" rel="<%= i %>" width="100%">
+                    <figcaption><%= i %><br><small><%= site.data.gallery[i].descr %></small></figcaption>
+                </figure>
+            </a>
         <% } %>
-    </div>
-
-    <div class="m-p-g__fullscreen"></div>
-</div>
-
+    <% } %>
+</article>
