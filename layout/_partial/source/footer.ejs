@@ -15,15 +15,7 @@ window.lazyLoadOptions = {
     threshold: 50
 };
 
-<% if (page.layout === 'gallery') { %>
-
-    var elem = document.getElementById("gallery-container")
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var gallery = new MaterialPhotoGallery(elem);
-    });
-
-<% } else { %>
+<% if (page.layout !== 'gallery') { %>
 
     /* Copyright */
     var copyrightNow = new Date().getFullYear();
