@@ -1,0 +1,6 @@
+<!-- gallery.css -->
+<% if (theme.vendors.suka.gallery_css) { %>
+    <link rel="stylesheet" href="<%= theme.vendors.suka.gallery_css %>">
+<% } else { %>
+    <link rel="stylesheet" href="<%- url_for('css/gallery.min.css') %>">
+<% } %>
