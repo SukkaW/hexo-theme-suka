@@ -1,0 +1,87 @@
+/*
+
+Lightfair style (c) Tristian Kelly <tristian.kelly560@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.highlight .name {
+    color:#01a3a3;
+}
+
+.highlight .tag,.highlight .meta {
+    color:#778899;
+}
+
+.highlight,
+.highlight .subst {
+    color: #444
+}
+
+.highlight .comment {
+    color: #888888
+}
+
+.highlight .keyword,
+.highlight .attribute,
+.highlight .selector-tag,
+.highlight .meta-keyword,
+.highlight .doctag,
+.highlight .name {
+    font-weight: bold
+}
+
+.highlight .type,
+.highlight .string,
+.highlight .number,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .quote,
+.highlight .template-tag,
+.highlight .deletion {
+    color: #4286f4
+}
+
+.highlight .title,
+.highlight .section {
+    color: #4286f4;
+    font-weight: bold
+}
+
+.highlight .regexp,
+.highlight .symbol,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .link,
+.highlight .selector-attr,
+.highlight .selector-pseudo {
+    color: #BC6060
+}
+
+.highlight .literal {
+    color: #62bcbc
+}
+
+.highlight .built_in,
+.highlight .bullet,
+.highlight .code,
+.highlight .addition {
+    color: #25c6c6
+}
+
+.highlight .meta-string {
+    color: #4d99bf
+}
+
+.highlight .emphasis {
+    font-style: italic
+}
+
+.highlight .strong {
+    font-weight: bold
+}
