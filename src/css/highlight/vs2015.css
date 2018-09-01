@@ -1,0 +1,115 @@
+/*
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1E1E1E;
+  color: #DCDCDC;
+}
+
+.highlight .keyword,
+.highlight .literal,
+.highlight .symbol,
+.highlight .name {
+  color: #569CD6;
+}
+.highlight .link {
+  color: #569CD6;
+  text-decoration: underline;
+}
+
+.highlight .built_in,
+.highlight .type {
+  color: #4EC9B0;
+}
+
+.highlight .number,
+.highlight .class {
+  color: #B8D7A3;
+}
+
+.highlight .string,
+.highlight .meta-string {
+  color: #D69D85;
+}
+
+.highlight .regexp,
+.highlight .template-tag {
+  color: #9A5334;
+}
+
+.highlight .subst,
+.highlight .function,
+.highlight .title,
+.highlight .params,
+.highlight .formula {
+  color: #DCDCDC;
+}
+
+.highlight .comment,
+.highlight .quote {
+  color: #57A64A;
+  font-style: italic;
+}
+
+.highlight .doctag {
+  color: #608B4E;
+}
+
+.highlight .meta,
+.highlight .meta-keyword,
+.highlight .tag {
+  color: #9B9B9B;
+}
+
+.highlight .variable,
+.highlight .template-variable {
+  color: #BD63C5;
+}
+
+.highlight .attr,
+.highlight .attribute,
+.highlight .builtin-name {
+  color: #9CDCFE;
+}
+
+.highlight .section {
+  color: gold;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
+/*.highlight .code {
+  font-family:'Monospace';
+}*/
+
+.highlight .bullet,
+.highlight .selector-tag,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .selector-attr,
+.highlight .selector-pseudo {
+  color: #D7BA7D;
+}
+
+.highlight .addition {
+  background-color: #144212;
+  display: inline-block;
+  width: 100%;
+}
+
+.highlight .deletion {
+  background-color: #600;
+  display: inline-block;
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+<article class="gallery">
+    <% if (site.data.gallery) { %>
+        <% for (var i in site.data.gallery) { %>
+            <a class="gallery-link" href="<%= site.data.gallery[i].full %>" title="<%= i %>" data-descr="<%= site.data.gallery[i].descr %>">
+                <figure class="gallery-image">
+                    <img src="<%= site.data.gallery[i].thumb %>" rel="<%= i %>" width="100%">
+                    <figcaption><%= i %><br><small><%= site.data.gallery[i].descr %></small></figcaption>
+                </figure>
+            </a>
+        <% } %>
+    <% } %>
+</article>
