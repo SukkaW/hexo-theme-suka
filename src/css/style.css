@@ -401,6 +401,7 @@ header .divider {
 
 .post-entry .card-body {
     padding-top: .4rem;
+    font-size: .75rem;
 }
 
 .post-entry .text-gray a {
