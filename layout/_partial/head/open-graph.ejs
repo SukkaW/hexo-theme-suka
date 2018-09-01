@@ -4,7 +4,7 @@
 
 <meta property="og:type" content="blog">
 <meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '') %>">
-<meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= url_for(theme.head.high_res_favicon) %><% } %>">
+<meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_std_icon %><% } %>">
 
 <% if (suka_descr) { %><meta property="og:description" content="<%= suka_descr %>"><% } %>
 
