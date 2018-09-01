@@ -644,14 +644,14 @@ a.category-link {
  */
 
 #post-card .card-body {
-    padding: 1.2rem
+    padding: 1.2rem .8rem;
 }
 
 #post-content {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     line-height: 1.5;
-    font-size: .8rem;
+    font-size: .75rem;
     word-wrap: break-word;
     padding-top: 0;
     padding-bottom: 1.8rem;
