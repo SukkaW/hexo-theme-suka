@@ -111,6 +111,12 @@ Thanks jsDelivr for providing Public CDN service.
 
 [![](https://data.jsdelivr.com/v1/package/gh/sukkaw/hexo-theme-suka/badge)](https://www.jsdelivr.com/package/gh/sukkaw/hexo-theme-suka)
 
+<a href="https://picturepan2.github.io/spectre">
+  <img src="https://picturepan2.github.io/spectre/img/spectre-logo.svg" width="72" height="72">
+</a>
+
+> Spectre.css is a lightweight, responsive and modern CSS framework.
+
 ## Render 渲染
 
 ![](https://i.loli.net/2018/07/27/5b5b2b53359fc.png)
