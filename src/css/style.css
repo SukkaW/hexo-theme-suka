@@ -1017,7 +1017,7 @@ a.category-link {
 }
 
 #post-content li {
-    word-wrap: break-all;
+    word-wrap: break-word;
 }
 
 #post-content li>p {
@@ -1206,6 +1206,12 @@ a.category-link {
 
 #post-content .highlight table tr {
     border: none;
+}
+
+/* Fix for Prettify */
+
+#post-content .prettyprint ol {
+    margin: 0;
 }
 
 /**
