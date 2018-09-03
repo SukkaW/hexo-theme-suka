@@ -1112,6 +1112,7 @@ a.category-link {
 
 #post-content>pre:not(.highlight):not(.prettyprint) {
     background: #f5f5f5;
+    padding-left: 1em;
 }
 
 #post-content .highlight {
@@ -1125,15 +1126,13 @@ a.category-link {
 
 #post-content .highlight pre,
 #post-content pre {
-    padding: 14px;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
     border-radius: 3px;
-}
-
-#post-content pre.line-numbers {
-    padding-left: 3.6em;
 }
 
 #post-content pre code {
@@ -1189,6 +1188,15 @@ a.category-link {
 
 #post-content figure.highlight {
     margin: .5rem 0;
+}
+
+#post-content figure.highlight pre {
+    margin: .5rem 0;
+    padding: 0 0 0 10px;
+}
+
+#post-content figure.highlight pre span.line {
+    padding: 0 10px 0 0;
 }
 
 #post-content .highlight td {
