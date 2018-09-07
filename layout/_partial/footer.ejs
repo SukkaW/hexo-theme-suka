@@ -16,10 +16,10 @@
     <!-- footer develop info -->
     <p class="footer-develop mb-0">
         <% if (theme.busuanzi.enable === true) { %>
-            <%- partial('_plugin/busuanzi/footer_counter', {}, {cache: true}) %>
+            <%- partial('_plugin/busuanzi/footer_counter', {}, {cache: theme.fragment_cache}) %>
         <% } %>
         <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.site_pv.enable === true) ) { %>
-            <%- partial('_plugin/valine-counter/footer', {}, {cache: true}) %>
+            <%- partial('_plugin/valine-counter/footer', {}, {cache: theme.fragment_cache}) %>
         <% } %>
         Powered by&nbsp;<!--
          --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--

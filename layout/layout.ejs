@@ -9,10 +9,10 @@
             <%- partial('_pages/gallery') %>
         <% } else { %>
             <!-- ### Main content ### -->
-            <%- partial('_partial/header', {}, {cache: true}) %>
+            <%- partial('_partial/header', {}, {cache: theme.fragment_cache}) %>
             <%- body %>
             <!-- ### Footer ### -->
-            <%- partial('_partial/footer', {}, {cache: true}) %>
+            <%- partial('_partial/footer', {}, {cache: theme.fragment_cache}) %>
         <% } %>
 
         <!-- ### Import File ### -->

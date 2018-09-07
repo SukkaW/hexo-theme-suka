@@ -14,10 +14,10 @@
             }) %>
         <% } %>
         <% if ( (theme.busuanzi.enable === true) && (theme.busuanzi.post_pv.enable === true) ) { %>
-            <%- partial('_plugin/busuanzi/post-counter', {}, {cache: true}) %>
+            <%- partial('_plugin/busuanzi/post-counter', {}, {cache: theme.fragment_cache}) %>
         <% } %>
         <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.post_pv.enable === true) ) { %>
-            <%- partial('_plugin/valine-counter/post', {}, {cache: true}) %>
+            <%- partial('_plugin/valine-counter/post', {}, {cache: theme.fragment_cache}) %>
         <% } %>
     </p>
     <div class="post-header-info-right">

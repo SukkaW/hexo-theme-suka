@@ -42,7 +42,7 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 
 <% if (theme.hanabi.enable === true) { %>
     <!-- Hanabi -->
-    <%- partial('_plugin/highlight/hanabi/import_js', {}, {cache: true}) %>
+    <%- partial('_plugin/highlight/hanabi/import_js', {}, {cache: theme.fragment_cache}) %>
 <% } %>
 
 <% if (theme.prettify.enable === true) { %>
@@ -62,7 +62,7 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 <!-- Comment -->
 <% if (theme.comment.use) { %>
     <% if ( (is_post()) ) { %>
-        <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: true}) %>
+        <%- partial('_plugin/comment/' + theme.comment.use + '/common', {}, {cache: theme.fragment_cache}) %>
     <% } %>
 <% } %>
 
