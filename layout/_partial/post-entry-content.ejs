@@ -4,15 +4,17 @@
 </div>
 <% } %>
 <div class="card-body">
+    <p class="mb-0">
     <% if(post.excerpt) {%>
         <%- strip_html(post.excerpt) %>
     <% } else { %>
         <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
     <% } %><a href="<%= url_for(post.path) %>"><%= __('post.continue') %></a>
+    </p>
 </div>
-<div class="card-footer">
+
     <!-- Date & Category -->
-    <div class="post-entry-info text-gray">
+    <div class="card-footer post-entry-info text-gray">
         <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>" alt="<%= config.author %>'s Avatar">
         <time><%= date(post.date, config.date_format) %></time>
         <% if (post.categories && post.categories.length) { %>
@@ -28,4 +30,3 @@
             <%- partial('_plugin/valine-counter/index_post', {}, {cache: theme.fragment_cache}) %>
         <% } %>
     </div>
-</div>
