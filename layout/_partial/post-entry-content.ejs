@@ -1,6 +1,8 @@
+<% if (post.title) { %>
 <div class="card-header">
     <h2 class="h5 mb-0"><a class="card-title" href="<%= url_for(post.path) %>"><%- post.title %></a></h2>
 </div>
+<% } %>
 <div class="card-body">
     <% if(post.excerpt) {%>
         <%- strip_html(post.excerpt) %>
