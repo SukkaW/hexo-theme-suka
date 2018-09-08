@@ -1122,6 +1122,7 @@ a.category-link {
 #post-content .highlight pre {
     margin-bottom: 0;
     word-break: normal;
+    background: transparent !important;
 }
 
 #post-content .highlight pre,
