@@ -400,7 +400,8 @@ header .divider {
 }
 
 .post-entry .card-body {
-    padding-top: .4rem;
+    padding-top: .6rem;
+    font-size: .75rem;
 }
 
 .post-entry .text-gray a {
@@ -503,7 +504,7 @@ header .divider {
 }
 
 #post-card .card-header {
-    padding: 1.2rem 1.2rem 2rem;
+    padding: .8rem 1.2rem 2rem;
     border-bottom: .05rem solid #ddd;
 }
 
@@ -643,13 +644,13 @@ a.category-link {
  */
 
 #post-card .card-body {
-    padding: 1.2rem
+    padding: 1.2rem .8rem;
 }
 
 #post-content {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    line-height: 1.5;
+    line-height: 1.7;
     font-size: .8rem;
     word-wrap: break-word;
     padding-top: 0;
@@ -1016,7 +1017,7 @@ a.category-link {
 }
 
 #post-content li {
-    word-wrap: break-all;
+    word-wrap: break-word;
 }
 
 #post-content li>p {
@@ -1111,6 +1112,7 @@ a.category-link {
 
 #post-content>pre:not(.highlight):not(.prettyprint) {
     background: #f5f5f5;
+    padding-left: 1em;
 }
 
 #post-content .highlight {
@@ -1120,19 +1122,18 @@ a.category-link {
 #post-content .highlight pre {
     margin-bottom: 0;
     word-break: normal;
+    background: transparent !important;
 }
 
 #post-content .highlight pre,
 #post-content pre {
-    padding: 14px;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
     border-radius: 3px;
-}
-
-#post-content pre.line-numbers {
-    padding-left: 3.6em;
 }
 
 #post-content pre code {
@@ -1190,6 +1191,15 @@ a.category-link {
     margin: .5rem 0;
 }
 
+#post-content figure.highlight pre {
+    margin: .5rem 0;
+    padding: 0 0 0 10px;
+}
+
+#post-content figure.highlight pre span.line {
+    padding: 0 10px 0 0;
+}
+
 #post-content .highlight td {
     padding: 0;
     border: none;
@@ -1197,6 +1207,12 @@ a.category-link {
 
 #post-content .highlight table tr {
     border: none;
+}
+
+/* Fix for Prettify */
+
+#post-content .prettyprint ol {
+    margin: 0;
 }
 
 /**

@@ -1,4 +1,4 @@
-<section class="navbar-section text-center">
+<nav class="navbar-section text-center">
     <% if (theme.nav.home.use === true) { %>
         <a href="<%= url_for('/') %>" class="navbar-link"><%= __('home') %></a>
     <% } %>
@@ -12,9 +12,9 @@
         <a href="<%= theme.nav.pages[i].link %>" class="navbar-link"><%= i %></a>
     <% } %>
     <% if (theme.nav.share.use === true) { %>
-        <%- partial('_partial/menu/index-share', {}, {cache: true}) %>
+        <%- partial('_partial/menu/index-share', {}, {cache: theme.fragment_cache}) %>
     <% } %>
     <% if (theme.nav.rss.use === true) { %>
         <a href="<%= url_for(config.feed.path) %>" target="_blank" class="navbar-link">RSS</a>
     <% } %>
-</section>
+</nav>

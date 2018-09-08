@@ -55,11 +55,19 @@ function suka_img_url_for(url) {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "<%- config.url %>"
+        "@id": "<%= page.permalink %>"
     },
     "headline": "<%= suka_title %>",
     <% if(page.thumbnail) { %>
-    "image": "<%= suka_img_url_for(page.thumbnail) %>",
+    "image": {
+        "@type": "ImageObject",
+        "url": "<%= suka_img_url_for(page.thumbnail) %>"
+    },
+    <% } else { %>
+    "image": {
+        "@type": "ImageObject",
+        "url": "<%= suka_std_icon %>"
+    },
     <% } %>
     "datePublished": "<%= date_xml(page.date) %>",
     "dateModified": "<%= date_xml(page.updated) %>",

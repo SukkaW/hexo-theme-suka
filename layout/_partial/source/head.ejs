@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre.min.css') %>">
 <% } %>
 
-<%- partial('_partial/head/config_style', {}, {cache: true}) %>
+<%- partial('_partial/head/config_style', {}, {cache: theme.fragment_cache}) %>
 
 <!-- style.css -->
 <% if (theme.vendors.suka.style_css) { %>
