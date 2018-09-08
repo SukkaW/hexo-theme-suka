@@ -1,17 +1,15 @@
 <% if (post.title) { %>
-<div class="card-header">
-    <h2 class="h5 mb-0"><a class="card-title" href="<%= url_for(post.path) %>"><%- post.title %></a></h2>
-</div>
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="<%= url_for(post.path) %>"><%- post.title %></a></h2>
 <% } %>
-<div class="card-body">
-    <p class="mb-0">
+
+<p class="mb-0 card-body">
     <% if(post.excerpt) {%>
         <%- strip_html(post.excerpt) %>
     <% } else { %>
         <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
     <% } %><a href="<%= url_for(post.path) %>"><%= __('post.continue') %></a>
-    </p>
-</div>
+</p>
+
 
     <!-- Date & Category -->
     <div class="card-footer post-entry-info text-gray">
