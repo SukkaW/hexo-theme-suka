@@ -1,0 +1,6 @@
+<!-- vanilla-lazyload -->
+<% if (theme.vendors.lazyload) { %>
+    <link rel="preload" href="<%= theme.vendors.lazyload %>" as="script">
+<% } else { %>
+    <link rel="preload" href="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" as="script">
+<% } %>
