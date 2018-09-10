@@ -21,3 +21,11 @@
 <% } else { %>
     <meta property="og:type" content="blog">
 <% } %>
+
+<% if (theme.comment.use === 'facebook') { %>
+    <% if (theme.comment.facebook.admin_fb_appid) { %>
+        <meta property="fb:app_id" content="<%= theme.comment.facebook.admin_fb_appid %>">
+    <% } else if (theme.comment.facebook.admin_fb_username) %>
+        <meta property="fb:admins" content="<%= theme.comment.facebook.admin_fb_username %>">
+    <% } %>
+<% } %>
