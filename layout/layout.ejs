@@ -8,6 +8,14 @@
             <!-- ## Gallery ## -->
             <%- partial('_pages/gallery') %>
         <% } else { %>
+
+            <% if (theme.comment.use === 'facebook') { %>
+                <% if ( (is_post()) ) { %>
+                    <!-- Facebook SDK -->
+                    <%- partial('_plugin/comment/facebook/common_head', {}, {cache: theme.fragment_cache}) %>
+                <% } %>
+            <% } %>
+
             <!-- ### Main content ### -->
             <%- partial('_partial/header', {}, {cache: theme.fragment_cache}) %>
             <%- body %>

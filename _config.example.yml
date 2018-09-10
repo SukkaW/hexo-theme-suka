@@ -153,7 +153,7 @@ toc:
 # ---------------------------------------------------------------
 # Comment Systems
 # Available value of "use":
-#     disqus | disqus_proxy | disqus_click | changyan | livere | gitment | gitalk | valine
+#     disqus | disqus_proxy | disqus_click | changyan | livere | gitment | gitalk | valine | facebook
 # If you want to use gitment or gitalk,you should get the client_id and client_secret form https://github.com/settings/applications/new
 # If you want to use valine,you should get the app_id and app_key form https://leancloud.cn , more setting please see https://valine.js.org
 comment:
@@ -201,6 +201,16 @@ comment:
     firebase_messaging_sender_id:
     theme: light # light or dark
     locale: en # en or zh-CN
+  facebook:
+    colorschme: light # light | dark
+    numposts: 10
+    orderby: social # social | reverse_time | time
+    # You can only fill in one of them below when configuring.
+    # If you fill in both of them then appid method will be used.
+    # Read facebook developer documents for more info:
+    # https://developers.facebook.com/docs/plugins/comments/#moderation-setup-instructions
+    admin_fb_appid:
+    admin_fb_username: # Currently "Suka" don't support more than one admin. You can open a new issue if you really need one.
 
 # Site Analytics
 # Suka theme has a built in Baidu's, Google's website analytics and CNZZ's analytics service
