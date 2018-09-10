@@ -27,8 +27,9 @@
 
     suka_tags = theme.head.keywords;
     if (page.tags && page.tags.each) {
+        suka_tags += ',';
         page.tags.each(function(tag) {
-            suka_tags = ',' + tag.name;
+            suka_tags += tag.name;
         })
     }
 
