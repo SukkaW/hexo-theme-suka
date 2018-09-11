@@ -5,7 +5,7 @@
 
 <% if (config.language) { %><meta property="og:locale" content="<%- config.language %>"><% } %>
 
-<meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '') %>">
+<meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>">
 <meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_std_icon %><% } %>">
 
 <% if (suka_descr) { %><meta property="og:description" content="<%= suka_descr %>"><% } %>
@@ -25,7 +25,7 @@
 <% if (theme.comment.use === 'facebook') { %>
     <% if (theme.comment.facebook.admin_fb_appid) { %>
         <meta property="fb:app_id" content="<%= theme.comment.facebook.admin_fb_appid %>">
-    <% } else if (theme.comment.facebook.admin_fb_username) %>
+    <% } else if (theme.comment.facebook.admin_fb_username) { %>
         <meta property="fb:admins" content="<%= theme.comment.facebook.admin_fb_username %>">
     <% } %>
 <% } %>
