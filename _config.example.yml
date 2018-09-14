@@ -349,7 +349,7 @@ prettify:
   # The theme name is the css file name without `.min.css`, as [theme-name].min.css
   #
   # If you want to use other theme, you can leave that blank, and load your own theme by adding <link> tag using custom code.
-  # Learn how to use custom code here: https://theme.suka.moe/docs/en/expert/#Add-custom-code
+  # Learn how to use custom code here: https://theme-suka.github.io/docs/en/expert/#Add-custom-code
 
 # ---------------------------------------------------------------
 # Expert Settings

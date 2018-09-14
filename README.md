@@ -1,6 +1,6 @@
 ![](https://i.loli.net/2018/07/27/5b5b2eee0dc9b.png)
 
-# <div align="center"><a title="Go to homepage" href="https://theme.suka.moe"><img align="center" alt="S" width="56" height="56" src="https://i.loli.net/2018/07/27/5b5b32fb7963f.png"></a>u k a</div>
+# <div align="center"><a title="Go to homepage" href="https://theme-suka.github.io"><img align="center" alt="S" width="56" height="56" src="https://i.loli.net/2018/07/27/5b5b32fb7963f.png"></a>u k a</div>
 
 > Modern · Powerful · Simple  
 > 现代 · 强大 · 简洁
@@ -35,7 +35,7 @@
 ## Demo 演示
 
 - [Sukka's Blog](https://blog.suka.moe)
-- [Suka Theme Demo](https://theme.suka.moe/demo/)
+- [Suka Theme Demo](https://theme-suka.github.io/demo/)
 
 ## Install 安装
 
@@ -49,17 +49,17 @@ $ cd ..
 $ cd ..
 ```
 
-You can also read our [detailed installation instructions](https://theme.suka.moe/docs/en/) if you want any other variant.
+You can also read our [detailed installation instructions](https://theme-suka.github.io/docs/en/) if you want any other variant.
 
-你也可以阅读我们的 [详细安装说明](https://theme.suka.moe/docs/) 了解如何用其他方法下载「Suka」并启用。
+你也可以阅读我们的 [详细安装说明](https://theme-suka.github.io/docs/) 了解如何用其他方法下载「Suka」并启用。
 
 ## Documents 文档
 
-[Suka Theme Docs](https://theme.suka.moe/docs/en/)
+[Suka Theme Docs](https://theme-suka.github.io/docs/en/)
 
 > ATTENTION! The English Version of Docs is still under construction!<br>But do not worry, I wrote the detailed explainations in config file's comment in English. So you can still configure the theme without difficulty. Any problem please feel free to open a new issue.
 
-[Suka 主题文档](https://theme.suka.moe/docs/)
+[Suka 主题文档](https://theme-suka.github.io/docs/)
 
 ---
 
@@ -68,10 +68,10 @@ You can also read our [detailed installation instructions](https://theme.suka.mo
 ## Contributing 贡献
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.<br>
-please read the [Dev Guide](https://theme.suka.moe/docs/en/dev/) before you start your contributing.
+please read the [Dev Guide](https://theme-suka.github.io/docs/en/dev/) before you start your contributing.
 
 欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。期待你的 Pull Request。<br>
-在参与贡献之前，请先阅读 [开发指南](https://theme.suka.moe/docs/dev/)。
+在参与贡献之前，请先阅读 [开发指南](https://theme-suka.github.io/docs/dev/)。
 
 ## Changelog 更新日志
 

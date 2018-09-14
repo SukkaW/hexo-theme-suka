@@ -13,7 +13,7 @@ ATTENTION: THE DOCS MIGHT UPDATE ANYTIME, AND BEFORE YOU OPEN A NEW ISSUE, CHECK
 **我确认我已经查看了** (选择时请使用 "x" 取代方括号中的空格)
 
 - [ ] [Hexo documentation | Hexo 文档](https://hexo.io/docs/)
-- [ ] [Suka Theme documentation | Suka Theme 文档](https://theme.suka.moe/docs/)
+- [ ] [Suka Theme documentation | Suka Theme 文档](https://theme-suka.github.io/docs/)
 - [ ] [Suka theme issues | Suka 主题的其它 issue](https://github.com/SukkaW/hexo-theme-suka/issues?utf8=%E2%9C%93&q=is%3Aissue)
 
 ----
