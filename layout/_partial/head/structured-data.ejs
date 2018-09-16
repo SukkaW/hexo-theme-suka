@@ -22,7 +22,7 @@ function suka_img_url_for(url) {
             "@type": "ImageObject",
             "url": "<%= suka_img_url_for(theme.img.avatar) %>"
         },
-        "description": "<%- theme.slogan %>"
+        "description": "<%- theme.uiux.slogan %>"
     },
     "publisher": {
         "@type": "Organization",
@@ -33,6 +33,7 @@ function suka_img_url_for(url) {
         }
     },
     "url": "<%- config.url %>",
+    "logo": "<%= suka_std_icon %>",
     "image": {
         "@type": "ImageObject",
         "url": "<%= suka_std_icon %>"
@@ -59,7 +60,9 @@ function suka_img_url_for(url) {
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
+    "url": "<%= page.permalink %>",
     "@type": "BlogPosting",
+    "logo": "<%= suka_std_icon %>",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "<%= page.permalink %>"
@@ -85,7 +88,7 @@ function suka_img_url_for(url) {
             "@type": "ImageObject",
             "url": "<%= suka_img_url_for(theme.img.avatar) %>"
         },
-        "description": "<%- theme.slogan %>"
+        "description": "<%- theme.uiux.slogan %>"
     },
     "publisher": {
         "@type": "Organization",
