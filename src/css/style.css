@@ -674,10 +674,6 @@ a.category-link {
     outline-width: 0;
 }
 
-#post-content strong {
-    font-weight: bolder;
-}
-
 #post-content code,
 #post-content .highlight span,
 #post-content .highlight code,
@@ -687,12 +683,6 @@ a.category-link {
     /* Override Spectre.css font-family for zh-CN */
 }
 
-#post-content hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-    border-bottom-color: #eee;
-}
 
 #post-content input {
     margin: 0;
@@ -742,61 +732,38 @@ a.category-link {
 
 /* H1-H6 */
 
-#post-content h1,
-#post-content h2,
-#post-content h3,
-#post-content h4,
-#post-content h5,
-#post-content h6 {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 #post-content h1 {
     padding-bottom: 0.3em;
     font-size: 2em;
-    font-weight: 600;
     border-bottom: 1px solid #eaecef;
 }
 
 #post-content h2 {
     padding-bottom: 0.3em;
     font-size: 1.5em;
-    font-weight: 600;
     border-bottom: 1px solid #eaecef;
 }
 
 #post-content h3 {
     font-size: 1.25em;
-    font-weight: 600;
 }
 
 #post-content h4 {
     font-size: 1em;
-    font-weight: 600;
 }
 
 #post-content h5 {
     font-size: 0.875em;
-    font-weight: 600;
 }
 
 #post-content h6 {
     font-size: 0.85em;
-    font-weight: 600;
     color: #626569;
 }
 
 #post-content p {
     margin-top: 0;
     margin-bottom: 10px;
-}
-
-#post-content ul,
-#post-content ol {
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 #post-content ol ol,
@@ -813,10 +780,6 @@ a.category-link {
 
 #post-content dd {
     margin-left: 0;
-}
-
-#post-content code {
-    font-size: 12px;
 }
 
 #post-content pre {
@@ -880,6 +843,7 @@ a.category-link {
 }
 
 #post-content hr {
+    box-sizing: content-box;
     height: .1em;
     padding: 0;
     overflow: hidden;
@@ -951,6 +915,9 @@ a.category-link {
 
 #post-content ul,
 #post-content ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: .7rem;
 }
 
