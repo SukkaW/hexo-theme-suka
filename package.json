@@ -28,9 +28,8 @@
     "eslint": "^5.5.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^3.9.4",
-    "gulp-rename": "^1.4.0",
     "gulp-clean-css": "^3.10.0",
+    "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.1",
     "sass-lint": "^1.12.1"
   },
