@@ -1,3 +1,5 @@
+<% include variables.ejs %>
+
 <head>
     <meta charset="utf-8">
     <!--
@@ -11,10 +13,46 @@
     <%- partial('_partial/head/dns-prefetch', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### Preload ### -->
-    <%- partial('_partial/source/preload') %>
+    <!-- vanilla-lazyload -->
+    <% if (theme.vendors.lazyload) { %>
+        <link rel="preload" href="<%= theme.vendors.lazyload %>" as="script">
+    <% } else { %>
+        <link rel="preload" href="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" as="script">
+    <% } %>
+
+    <% if(theme.busuanzi.enable === true) { %>
+        <!-- Busuanzi -->
+        <%- partial('_plugin/busuanzi/preload', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
+
+    <% if (theme.hanabi.enable === true) { %>
+        <!-- Hanabi -->
+        <%- partial('_plugin/highlight/hanabi/preload', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
 
     <!-- ### Meta & Title & Info ### -->
-    <%- partial('_partial/head/meta') %>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <!-- Title -->
+    <title><% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %></title>
+
+    <!-- favicon -->
+    <%- partial('_partial/head/favicon', {}, {cache: theme.fragment_cache}) %>
+
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Description -->
+    <% if (suka_descr) { %><meta name="description" content="<%= suka_descr %>"><% } %>
+
+    <!-- Keywords -->
+    <% if (suka_tags) { %><meta name="keywords" content="<%= suka_tags %>"><% } %>
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <!-- ### Import File ### -->
     <% if (page.layout === 'gallery') { %>
@@ -33,7 +71,35 @@
     <%- partial('_partial/head/webapp', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <%- partial('_partial/head/open-graph') %>
+    <meta property="og:title" content="<% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %>">
+    <meta property="og:site_name" content="<%= config.title %>">
+    
+    <% if (config.language) { %><meta property="og:locale" content="<%- config.language %>"><% } %>
+    
+    <meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>">
+    <meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_std_icon %><% } %>">
+    
+    <% if (suka_descr) { %><meta property="og:description" content="<%= suka_descr %>"><% } %>
+    
+    <meta name="twitter:card" content="<% if (page.thumbnail) { %>summary_large_image<% } else { %>summary<% } %>">
+    
+    <% if( (is_post()) ) { %>
+        <meta property="og:type" content="article">
+        <meta property="article:published_time" content="<%= date_xml(page.date) %>">
+        <meta property="article:modified_time" content="<%= date_xml(page.date) %>">
+        <meta property="article:author" content="<%= config.author %>">
+        <% if (suka_tags) { %><meta property="og:article:tag" content="<%= suka_tags %>"><% } %>
+    <% } else { %>
+        <meta property="og:type" content="blog">
+    <% } %>
+    
+    <% if (theme.comment.use === 'facebook') { %>
+        <% if (theme.comment.facebook.admin_fb_appid) { %>
+            <meta property="fb:app_id" content="<%= theme.comment.facebook.admin_fb_appid %>">
+        <% } else if (theme.comment.facebook.admin_fb_username) { %>
+            <meta property="fb:admins" content="<%= theme.comment.facebook.admin_fb_username %>">
+        <% } %>
+    <% } %>
 
     <!-- ### Analytics ### -->
     <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
