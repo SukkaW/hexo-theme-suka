@@ -16,12 +16,14 @@ install:
   - cd suka-theme-test
   - npm i > /dev/null
   - chmod +x ./install-theme.sh
+  - chmod +x ./perf-test.sh
   - ./install-theme.sh
 script:
   - chmod +x ./build.sh
   - ./build.sh
   - chmod +x ./deploy.sh
   - ./deploy.sh > /dev/null
+  - ./perf-test.sh
 cache:
   directories:
   - /home/travis/build/SukkaW/suka-theme-test/themes/suka/node_modules
