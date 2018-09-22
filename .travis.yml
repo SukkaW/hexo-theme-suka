@@ -19,10 +19,7 @@ install:
   - chmod +x ./perf-test.sh
   - ./install-theme.sh
 script:
-  - chmod +x ./build.sh
-  - ./build.sh
-  - chmod +x ./deploy.sh
-  - ./deploy.sh > /dev/null
+  - \cp -f ./theme_config.yml themes/suka/_config.yml
   - ./perf-test.sh
 cache:
   directories:
