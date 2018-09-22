@@ -22,12 +22,11 @@
         suka_descr = '';
     }
     
-    if (page.categories && page.categories.length) {
-        count = page.categories.length
-        page.categories.forEach(function(category, index) {
-            suka_descr += category.name + ' ',
+    if (page.categories && page.categories.each) {
+        page.categories.each(function(category) {
+            suka_descr += category.name + ' ';
         });
-        suka_descr += ' - ',
+        suka_descr += '- ';
     }
     
     if (page.description) {
