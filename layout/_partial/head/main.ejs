@@ -58,7 +58,38 @@
     <% if (page.layout === 'gallery') { %>
         <%- partial('_partial/source/head_gallery') %>
     <% } else { %>
-        <%- partial('_partial/source/head') %>
+
+    <!-- spectre.css -->
+    <% if (theme.vendors.spectre.spectre_css) { %>
+        <link rel="stylesheet" href="<%= theme.vendors.spectre.spectre_css %>">
+    <% } else { %>
+        <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre.min.css') %>">
+    <% } %>
+
+    <%- partial('_partial/head/config_style', {}, {cache: theme.fragment_cache}) %>
+
+    <!-- style.css -->
+    <% if (theme.vendors.suka.style_css) { %>
+        <link rel="stylesheet" href="<%= theme.vendors.suka.style_css %>">
+    <% } else { %>
+        <link rel="stylesheet" href="<%- url_for('css/style.min.css') %>">
+    <% } %>
+
+    <% if (config.suka_theme.prism.enable === true) { %>
+        <!-- prism.css -->
+        <%- partial('_plugin/highlight/prism/common') %>
+    <% } %>
+
+    <% if (theme.prettify.enable === true) { %>
+        <!-- Prettify Theme -->
+        <%- partial('_plugin/highlight/prettify/theme') %>
+    <% } %>
+
+    <% if (config.highlight.enable === true) { %>
+        <!-- Prettify Theme -->
+        <%- partial('_plugin/highlight/hexo-hljs/theme') %>
+    <% } %>
+
     <% } %>
 
     <!-- ### Site Verification ### -->
@@ -102,7 +133,24 @@
     <% } %>
 
     <!-- ### Analytics ### -->
-    <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
+    <% if (theme.analytics.google_site_id) { %>
+        <%- partial('_plugin/analytics/google', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
+    <% if (theme.analytics.gtags_site_id) { %>
+        <%- partial('_plugin/analytics/gtags', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
+    <% if (theme.analytics.baidu_site_id) { %>
+        <%- partial('_plugin/analytics/baidu', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
+    <% if (theme.analytics.cnzz_site_id) { %>
+        <%- partial('_plugin/analytics/cnzz', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
+    <% if (theme.analytics.tencent_site_id) { %>
+        <%- partial('_plugin/analytics/tencent', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
+    <% if (theme.analytics.tencent_mta_id) { %>
+        <%- partial('_plugin/analytics/tencent-mta', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
 
 
     <!-- ### Canonical link ### -->
