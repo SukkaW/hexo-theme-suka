@@ -21,12 +21,13 @@
     } else {
         suka_descr = '';
     }
-    
-    if (page.categories && page.categories.each) {
-        page.categories.each(function(category) {
-            suka_descr += category.name + ' ';
-        });
-        suka_descr += '- ';
+    if (page.categories && page.categories.length) {
+        if (page.categories.each) {
+            page.categories.each(function(category) {
+                suka_descr += category.name + ' ';
+            });
+            suka_descr += '- ';
+        }
     }
     
     if (page.description) {
