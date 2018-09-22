@@ -1,15 +1,3 @@
-<% include variables.ejs %>
-<%
-var relative = theme.head.favicon.ico.indexOf('http') == -1;
-
-function suka_img_url_for(url) {
-    if (relative === true) {
-        return config.url + url_for(url).replace(config.root, '/');
-    } else {
-        return url;
-    }
-}
-%>
 <% if ( is_home() ) { %>
 <script type="application/ld+json">
 {
@@ -20,7 +8,7 @@ function suka_img_url_for(url) {
         "name": "<%= config.author %>",
         "image": {
             "@type": "ImageObject",
-            "url": "<%= suka_img_url_for(theme.img.avatar) %>"
+            "url": "<%= suka_full_url_for(theme.img.avatar) %>"
         },
         "description": "<%- theme.uiux.slogan %>"
     },
@@ -29,14 +17,14 @@ function suka_img_url_for(url) {
         "name": "<%= config.title %>",
         "logo": {
             "@type": "ImageObject",
-            "url": "<%= suka_std_icon %>"
+            "url": "<%= suka_icon() %>"
         }
     },
     "url": "<%- config.url %>",
-    "logo": "<%= suka_std_icon %>",
+    "logo": "<%= suka_icon() %>",
     "image": {
         "@type": "ImageObject",
-        "url": "<%= suka_std_icon %>"
+        "url": "<%= suka_icon() %>"
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -45,7 +33,7 @@ function suka_img_url_for(url) {
     <% if ( (theme.search.use === "local") || (theme.nav.search.link) ) { %>
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "<%= suka_img_url_for(theme.nav.search.link) %>?s={search_term_string}",
+        "target": "<%= suka_full_url_for(theme.nav.search.link) %>?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     <% } %>
@@ -62,7 +50,7 @@ function suka_img_url_for(url) {
     "@context": "http://schema.org",
     "url": "<%= page.permalink %>",
     "@type": "BlogPosting",
-    "logo": "<%= suka_std_icon %>",
+    "logo": "<%= suka_icon() %>",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "<%= page.permalink %>"
@@ -71,12 +59,12 @@ function suka_img_url_for(url) {
     <% if(page.thumbnail) { %>
     "image": {
         "@type": "ImageObject",
-        "url": "<%= suka_img_url_for(page.thumbnail) %>"
+        "url": "<%= suka_full_url_for(page.thumbnail) %>"
     },
     <% } else { %>
     "image": {
         "@type": "ImageObject",
-        "url": "<%= suka_std_icon %>"
+        "url": "<%= suka_icon() %>"
     },
     <% } %>
     "datePublished": "<%= date_xml(page.date) %>",
@@ -86,7 +74,7 @@ function suka_img_url_for(url) {
         "name": "<%= config.author %>",
         "image": {
             "@type": "ImageObject",
-            "url": "<%= suka_img_url_for(theme.img.avatar) %>"
+            "url": "<%= suka_full_url_for(theme.img.avatar) %>"
         },
         "description": "<%- theme.uiux.slogan %>"
     },
@@ -95,13 +83,13 @@ function suka_img_url_for(url) {
         "name": "<%= config.title %>",
         "logo": {
             "@type": "ImageObject",
-            "url": "<%= suka_std_icon %>"
+            "url": "<%= suka_icon() %>"
         }
     },
     <% if ( (theme.search.use === "local") || (theme.nav.search.link) ) { %>
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "<%= suka_img_url_for(theme.nav.search.link) %>?s={search_term_string}",
+        "target": "<%= suka_full_url_for(theme.nav.search.link) %>?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     <% } %>

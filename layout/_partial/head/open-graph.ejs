@@ -1,12 +1,10 @@
-<% include variables.ejs %>
-
 <meta property="og:title" content="<%= suka_title() %><%= config.title %>">
 <meta property="og:site_name" content="<%= config.title %>">
 
 <% if (config.language) { %><meta property="og:locale" content="<%- config.language %>"><% } %>
 
 <meta property="og:url" content="<%= suka_full_url_for(page.path).replace('index.html', '') %>">
-<meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_std_icon %><% } %>">
+<meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>">
 
 <meta property="og:description" content="<%= suka_descr() %>">
 

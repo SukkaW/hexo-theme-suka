@@ -67,3 +67,20 @@ hexo.extend.helper.register('suka_full_url_for', function (url) {
         return url;
     }
 });
+
+hexo.extend.helper.register('suka_icon', function () {
+    suka_std_icon = 'https://theme-suka.github.io/demo/img/suka-favicon.png';
+    if (this.theme.head.favicon.large) {
+        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.large).replace(this.config.root, '/');
+    } else if (this.theme.head.favicon.apple_touch_icon) {
+        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.apple_touch_icon).replace(this.config.root, '/');
+    } else if (this.theme.head.favicon.medium) {
+        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.medium).replace(this.config.root, '/');
+    } else if (this.theme.head.favicon.small) {
+        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.small).replace(this.config.root, '/');
+    } else if (this.theme.head.favicon.ico) {
+        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.ico).replace(this.config.root, '/');
+    }
+
+    return suka_std_icon;
+});
