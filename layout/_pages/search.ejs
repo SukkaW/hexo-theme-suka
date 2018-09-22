@@ -20,9 +20,9 @@
 </div>
 
 <% if (theme.search.use === 'local') { %>
-    <%- partial('_plugin/search/local-search/common') %>
+    <%- partial('_plugin/search/local-search/common', {}, {cache: theme.fragment_cache}) %>
 <% } %>
 
 <% if (theme.search.use === 'swiftype') { %>
-    <%- partial('_plugin/search/swiftype/common') %>
+    <%- partial('_plugin/search/swiftype/common'), {}, {cache: theme.fragment_cache} %>
 <% } %>
