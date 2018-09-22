@@ -37,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
     <!-- Title -->
-    <title><% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %></title>
+    <title><%= suka_title() %><%= config.title %></title>
 
     <!-- favicon -->
     <%- partial('_partial/head/favicon', {}, {cache: theme.fragment_cache}) %>
@@ -45,10 +45,10 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- Description -->
-    <% if (suka_descr) { %><meta name="description" content="<%= suka_descr %>"><% } %>
+    <meta name="description" content="<%= suka_descr() %>">
 
     <!-- Keywords -->
-    <% if (suka_tags) { %><meta name="keywords" content="<%= suka_tags %>"><% } %>
+    <meta name="keywords" content="<%= suka_tags() %>">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
     <meta http-equiv="Cache-Control" content="no-transform" />
@@ -102,7 +102,7 @@
     <%- partial('_partial/head/webapp', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="<% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %>">
+    <meta property="og:title" content="<%= suka_title() %><%= config.title %>">
     <meta property="og:site_name" content="<%= config.title %>">
     
     <% if (config.language) { %><meta property="og:locale" content="<%- config.language %>"><% } %>
@@ -110,7 +110,7 @@
     <meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>">
     <meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_std_icon %><% } %>">
     
-    <% if (suka_descr) { %><meta property="og:description" content="<%= suka_descr %>"><% } %>
+    <meta property="og:description" content="<%= suka_descr() %>">
     
     <meta name="twitter:card" content="<% if (page.thumbnail) { %>summary_large_image<% } else { %>summary<% } %>">
 
@@ -119,7 +119,7 @@
         <meta property="article:published_time" content="<%= date_xml(page.date) %>">
         <meta property="article:modified_time" content="<%= date_xml(page.date) %>">
         <meta property="article:author" content="<%= config.author %>">
-        <% if (suka_tags) { %><meta property="og:article:tag" content="<%= suka_tags %>"><% } %>
+        <meta property="og:article:tag" content="<%= suka_tags() %>">
     <% } else { %>
         <meta property="og:type" content="blog">
     <% } %>
