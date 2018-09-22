@@ -49,8 +49,8 @@ function suka_img_url_for(url) {
         "query-input": "required name=search_term_string"
     },
     <% } %>
-    "keywords": "<%= suka_tags %>",
-    "description": "<%= suka_descr %>"
+    "keywords": "<%= suka_tags() %>",
+    "description": "<%= suka_descr() %>"
 }
 </script>
 <% } %>
@@ -67,7 +67,7 @@ function suka_img_url_for(url) {
         "@type": "WebPage",
         "@id": "<%= page.permalink %>"
     },
-    "headline": "<%= suka_title %>",
+    "headline": "<%= suka_title() %><%= config.title %>",
     <% if(page.thumbnail) { %>
     "image": {
         "@type": "ImageObject",
@@ -105,8 +105,8 @@ function suka_img_url_for(url) {
         "query-input": "required name=search_term_string"
     },
     <% } %>
-    "keywords": "<%= suka_tags %>",
-    "description": "<%= suka_descr %>"
+    "keywords": "<%= suka_tags() %>",
+    "description": "<%= suka_descr() %>"
 }
 </script>
 <% } %>
