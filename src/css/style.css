@@ -622,6 +622,7 @@ a.category-link {
     border-left: 3px solid #F44336;
     background-color: #F5F5F5;
     list-style: none;
+    word-break: break-all;
 }
 
 #post-card .post-expired-notify {
