@@ -1,11 +1,9 @@
-<% include variables.ejs %>
-
 <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
 <!-- Title -->
-<title><% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %></title>
+<title><%= suka_title() %><%= config.title %></title>
 
 <!-- favicon -->
 <%- partial('_partial/head/favicon', {}, {cache: theme.fragment_cache}) %>
@@ -13,10 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 
 <!-- Description -->
-<% if (suka_descr) { %><meta name="description" content="<%= suka_descr %>"><% } %>
+<meta name="description" content="<%= suka_descr() %>">
 
 <!-- Keywords -->
-<% if (suka_tags) { %><meta name="keywords" content="<%= suka_tags %>"><% } %>
+<meta name="keywords" content="<%= suka_tags() %>">
 
 <!-- Disable Fucking Bloody Baidu Tranformation -->
 <meta http-equiv="Cache-Control" content="no-transform" />

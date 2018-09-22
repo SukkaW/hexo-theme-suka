@@ -1,12 +1,10 @@
-<% include variables.ejs %>
-
 <div class="dropdown dropdown-right">
 <a class="dropdown-toggle" tabindex="0"><%= __('share.post') %></a>
 <ul class="menu share-menu">
     <!-- Share Weibo -->
     <% if(theme.sns_share.weibo === true) { %>
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= page.title %>&url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>&pic=<%- suka_share_icon %>&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toWeibo') %></a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= page.title %>&url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>&pic=<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toWeibo') %></a>
     </li>
     <% } %>
 
@@ -41,7 +39,7 @@
     <!-- Share QQ -->
     <% if(theme.sns_share.qq === true) { %>
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%- config.title %>&title=<%- config.title %>&summary=<%= config.description %>&pics=<%- suka_share_icon %>&url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>" target="_blank" rel="noopener noreferrer nofollow"> <%= __('share.toQQ') %></a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%- config.title %>&title=<%- config.title %>&summary=<%= config.description %>&pics=<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>&url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>" target="_blank" rel="noopener noreferrer nofollow"> <%= __('share.toQQ') %></a>
     </li>
     <% } %>
 
