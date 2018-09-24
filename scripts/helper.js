@@ -18,6 +18,8 @@ hexo.extend.helper.register('suka_title', function () {
 
     if (suka_title) {
         return suka_title + ' | ';
+    } else {
+        return '';
     }
 });
 
@@ -38,6 +40,8 @@ hexo.extend.helper.register('suka_descr', function () {
 
     if (suka_descr) {
         return suka_descr;
+    } else {
+        return '';
     }
 });
 
@@ -56,6 +60,8 @@ hexo.extend.helper.register('suka_tags', function () {
 
     if (suka_tags) {
         return suka_tags;
+    } else {
+        return '';
     }
 });
 
