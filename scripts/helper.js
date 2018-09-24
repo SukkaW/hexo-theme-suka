@@ -1,5 +1,5 @@
 hexo.extend.helper.register('suka_title', function () {
-    suka_title = this.page.title;
+    var suka_title = this.page.title;
     if (this.is_archive()) {
         suka_title = this.__('archive');
         if (this.is_month()) {
@@ -25,9 +25,9 @@ hexo.extend.helper.register('suka_title', function () {
 
 hexo.extend.helper.register('suka_descr', function () {
     if (this.config.description) {
-        suka_descr = this.config.description;
+        var suka_descr = this.config.description;
     } else {
-        suka_descr = '';
+        var suka_descr = '';
     }
 
     if (this.page.description) {
@@ -47,9 +47,9 @@ hexo.extend.helper.register('suka_descr', function () {
 
 hexo.extend.helper.register('suka_tags', function () {
     if (this.theme.head.keywords) {
-        suka_tags = this.theme.head.keywords;
+        var suka_tags = this.theme.head.keywords;
     } else {
-        suka_tags = '';
+        var suka_tags = '';
     }
 
     if (this.page.tags && this.page.tags.length) {
@@ -75,7 +75,7 @@ hexo.extend.helper.register('suka_full_url_for', function (url) {
 });
 
 hexo.extend.helper.register('suka_icon', function () {
-    suka_std_icon = 'https://theme-suka.github.io/demo/img/suka-favicon.png';
+    var suka_std_icon = 'https://theme-suka.github.io/demo/img/suka-favicon.png';
     if (this.theme.head.favicon.large) {
         suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.large).replace(this.config.root, '/');
     } else if (this.theme.head.favicon.apple_touch_icon) {
