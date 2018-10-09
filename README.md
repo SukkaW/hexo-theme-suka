@@ -38,7 +38,7 @@
 
 ## Demo 演示
 
-- [Sukka's Blog](https://blog.suka.moe)
+- [Sukka's Blog](https://blog.skk.moe)
 - [Suka Theme Demo](https://theme-suka.github.io/demo/)
 
 ## Install 安装
@@ -95,7 +95,7 @@ See [Repo's projects](https://github.com/SukkaW/hexo-theme-suka/projects) for de
 **Suka Theme** © [Sukka](https://github.com/SukkaW), Released under the [GPL-3.0](./LICENSE) License.<br>
 Authored and maintained by Sukka with help from contributors ([list](https://github.com/SukkaW/hexo-theme-suka/contributors)).
 
-> [Personal Website](https://suka.moe) · [Blog](https://blog.suka.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukkaChannel](https://t.me/SukkaChannel)
+> [Personal Website](https://skk.moe) · [Blog](https://blog.skk.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukkaChannel](https://t.me/SukkaChannel)
 
 ## License 许可证
 
