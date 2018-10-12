@@ -1,13 +1,13 @@
 ![](https://i.loli.net/2018/07/27/5b5b2eee0dc9b.png)
 
-# <div align="center"><a title="Go to homepage" href="https://theme-suka.github.io"><img align="center" alt="S" width="56" height="56" src="https://i.loli.net/2018/07/27/5b5b32fb7963f.png"></a>u k a</div>
+# <div align="center"><a title="Go to homepage" href="https://theme-suka.skk.moe"><img align="center" alt="S" width="56" height="56" src="https://i.loli.net/2018/07/27/5b5b32fb7963f.png"></a>u k a</div>
 
 > Modern · Powerful · Simple  
 > 现代 · 强大 · 简洁
 
 <p align="center">
 <img alt="Version" src="https://img.shields.io/badge/Version-1.2.0-5755d9.svg?style=flat-square"/>
-<a href="https://suka.moe" target="_blank"><img alt="Author" src="https://img.shields.io/badge/Author-Sukka-b68469.svg?style=flat-square"/></a>
+<a href="https://skk.moe" target="_blank"><img alt="Author" src="https://img.shields.io/badge/Author-Sukka-b68469.svg?style=flat-square"/></a>
 <a href="https://hexo.io" target="_blank"><img alt="Hexo" src="https://img.shields.io/badge/hexo-3.5+-0e83cd.svg?style=flat-square"/></a>
 <a href="https://nodejs.org/" target="_blank"><img alt="node.js" src="https://img.shields.io/badge/node.js-8.0%2B-43853d.svg?style=flat-square"/></a>
 <a href="https://travis-ci.org/SukkaW/hexo-theme-suka"><img alt="Build Status" src="https://img.shields.io/travis/SukkaW/hexo-theme-suka.svg?style=flat-square"/></a>
@@ -36,8 +36,8 @@
 
 ## Demo 演示
 
-- [Sukka's Blog](https://blog.suka.moe)
-- [Suka Theme Demo](https://theme-suka.github.io/demo/)
+- [Sukka's Blog](https://blog.skk.moe)
+- [Suka Theme Demo](https://theme-suka.skk.moe/demo/)
 
 ## Install 安装
 
@@ -51,17 +51,17 @@ $ cd ..
 $ cd ..
 ```
 
-You can also read our [detailed installation instructions](https://theme-suka.github.io/docs/en/) if you want any other variant.
+You can also read our [detailed installation instructions](https://theme-suka.skk.moe/docs/en/) if you want any other variant.
 
-你也可以阅读我们的 [详细安装说明](https://theme-suka.github.io/docs/) 了解如何用其他方法下载「Suka」并启用。
+你也可以阅读我们的 [详细安装说明](https://theme-suka.skk.moe/docs/) 了解如何用其他方法下载「Suka」并启用。
 
 ## Documents 文档
 
-[Suka Theme Docs](https://theme-suka.github.io/docs/en/)
+[Suka Theme Docs](https://theme-suka.skk.moe/docs/en/)
 
 > ATTENTION! The English Version of Docs is still under construction!<br>But do not worry, I wrote the detailed explainations in config file's comment in English. So you can still configure the theme without difficulty. Any problem please feel free to open a new issue.
 
-[Suka 主题文档](https://theme-suka.github.io/docs/)
+[Suka 主题文档](https://theme-suka.skk.moe/docs/)
 
 ---
 
@@ -70,10 +70,10 @@ You can also read our [detailed installation instructions](https://theme-suka.gi
 ## Contributing 贡献
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.<br>
-please read the [Dev Guide](https://theme-suka.github.io/docs/en/dev/) before you start your contributing.
+please read the [Dev Guide](https://theme-suka.skk.moe/docs/en/dev/) before you start your contributing.
 
 欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。期待你的 Pull Request。<br>
-在参与贡献之前，请先阅读 [开发指南](https://theme-suka.github.io/docs/dev/)。
+在参与贡献之前，请先阅读 [开发指南](https://theme-suka.skk.moe/docs/dev/)。
 
 ## Changelog 更新日志
 
@@ -93,7 +93,7 @@ See [Repo's projects](https://github.com/SukkaW/hexo-theme-suka/projects) for de
 **Suka Theme** © [Sukka](https://github.com/SukkaW), Released under the [GPL-3.0](./LICENSE) License.<br>
 Authored and maintained by Sukka with help from contributors ([list](https://github.com/SukkaW/hexo-theme-suka/contributors)).
 
-> [Personal Website](https://suka.moe) · [Blog](https://blog.suka.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukkaChannel](https://t.me/SukkaChannel)
+> [Personal Website](https://skk.moe) · [Blog](https://blog.skk.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukkaChannel](https://t.me/SukkaChannel)
 
 ## License 许可证
 

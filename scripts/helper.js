@@ -75,7 +75,7 @@ hexo.extend.helper.register('suka_full_url_for', function (url) {
 });
 
 hexo.extend.helper.register('suka_icon', function () {
-    var suka_std_icon = 'https://theme-suka.github.io/demo/img/suka-favicon.png';
+    var suka_std_icon = 'https://theme-suka.skk.moe/demo/img/suka-favicon.png';
     if (this.theme.head.favicon.large) {
         suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.large).replace(this.config.root, '/');
     } else if (this.theme.head.favicon.apple_touch_icon) {
