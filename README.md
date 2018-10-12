@@ -10,8 +10,10 @@
 <a href="https://skk.moe" target="_blank"><img alt="Author" src="https://img.shields.io/badge/Author-Sukka-b68469.svg?style=flat-square"/></a>
 <a href="https://hexo.io" target="_blank"><img alt="Hexo" src="https://img.shields.io/badge/hexo-3.5+-0e83cd.svg?style=flat-square"/></a>
 <a href="https://nodejs.org/" target="_blank"><img alt="node.js" src="https://img.shields.io/badge/node.js-8.0%2B-43853d.svg?style=flat-square"/></a>
+<br>
 <a href="https://travis-ci.org/SukkaW/hexo-theme-suka"><img alt="Build Status" src="https://img.shields.io/travis/SukkaW/hexo-theme-suka.svg?style=flat-square"/></a>
 <a href="https://www.codacy.com/app/SukkaW/hexo-theme-suka" target="_blank"><img alt="Codacy Badge" src="https://img.shields.io/codacy/grade/273f45610882413aad88396e06bfa6ec.svg?style=flat-square"></a>
+<a href="https://david-dm.org/SukkaW/hexo-theme-suka" target="_blank"><img alt="Dependency Status" src="https://img.shields.io/david/SukkaW/hexo-theme-suka.svg?style=flat-square"></a>
 <a href="https://david-dm.org/SukkaW/hexo-theme-suka#info=devDependencies" target="_blank"><img alt="devDependency Status" src="https://img.shields.io/david/dev/SukkaW/hexo-theme-suka.svg?style=flat-square"></a>
 </p>
 
@@ -38,6 +40,7 @@
 
 - [Sukka's Blog](https://blog.skk.moe)
 - [Suka Theme Demo](https://theme-suka.skk.moe/demo/)
+
 
 ## Install 安装
 
