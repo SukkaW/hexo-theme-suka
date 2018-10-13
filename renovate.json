@@ -18,5 +18,8 @@
     ],
     "baseBranches": [
         "canary"
-    ]
+    ],
+    "commitMessageAction": "update",
+    "semanticCommits": true,
+    "semanticCommitType": "chore"
 }
