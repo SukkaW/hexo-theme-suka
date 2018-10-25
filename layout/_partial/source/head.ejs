@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="<%- url_for('css/style.min.css') %>">
 <% } %>
 
+<% if (theme.comment.use === 'disqusjs') { %>
+    <% if ( (is_post()) ) { %>
+        <!-- Import DisqusJS Default Theme -->
+        <%- partial('_plugin/comment/disqusjs/common_head', {}, {cache: theme.fragment_cache}) %>
+    <% } %>
+<% } %>
+
 <% if (config.suka_theme.prism.enable === true) { %>
     <!-- prism.css -->
     <%- partial('_plugin/highlight/prism/common') %>
