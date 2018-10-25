@@ -153,17 +153,13 @@ toc:
 # ---------------------------------------------------------------
 # Comment Systems
 # Available value of "use":
-#     disqus | disqus_proxy | disqus_click | changyan | livere | gitment | gitalk | valine | facebook
+#     disqus | disqusjs | disqus_click | changyan | livere | gitment | gitalk | valine | facebook
 # If you want to use gitment or gitalk,you should get the client_id and client_secret form https://github.com/settings/applications/new
 # If you want to use valine,you should get the app_id and app_key form https://leancloud.cn , more setting please see https://valine.js.org
 comment:
   use:
   disqus:
     shortname: # disqus shortname
-  disqus_proxy:
-    shortname:
-    apikey: E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F # The pubkey of your application
-    proxy: https://cors-anywhere.herokuapp.com/disqus.com/api/3.0/ # The proxy of https://disqus.com/api/3.0/
   changyan:
     appid:
     conf:
