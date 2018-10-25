@@ -154,12 +154,20 @@ toc:
 # Comment Systems
 # Available value of "use":
 #     disqus | disqusjs | disqus_click | changyan | livere | gitment | gitalk | valine | facebook
-# If you want to use gitment or gitalk,you should get the client_id and client_secret form https://github.com/settings/applications/new
-# If you want to use valine,you should get the app_id and app_key form https://leancloud.cn , more setting please see https://valine.js.org
+# If you want to use DisqusJS for better disqus exprience in China, please read https://github.com/SukkaW/DisqusJS#readme
+# If you want to use gitment or gitalk, you should get the client_id and client_secret form https://github.com/settings/applications/new
+# If you want to use valine, you should get the app_id and app_key form https://leancloud.cn , more setting please see https://valine.js.org
 comment:
   use:
   disqus:
     shortname: # disqus shortname
+  disqusjs:
+    shortname:
+    siteName:
+    api:
+    apikey:
+    admin:
+    adminLabel:
   changyan:
     appid:
     conf:

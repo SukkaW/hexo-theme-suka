@@ -2,13 +2,19 @@
 
 <script>
 var dsqjs = new DisqusJS({
-    shortname: '',
-    siteName: '',
-    identifier: '',
-    url: '',
-    api: '',
-    apikey: '',
-    admin: '',
-    adminLabel: ''
+    shortname: '<%= theme.comment.disqusjs.shortname %>',
+    <% if (theme.comment.disqusjs.siteName) { %>
+    siteName: '<%= theme.comment.disqusjs.siteName %>',
+    <% } %>
+    identifier: '<%= page.permalink %>',
+    url: '<%= page.permalink %>',
+    api: '<%= theme.comment.disqusjs.api %>',
+    apikey: '<%= theme.comment.disqusjs.apikey %>',
+    <% if (theme.comment.disqusjs.admin) { %>
+    admin: '<%= theme.comment.disqusjs.admin %>',
+    <% } %>
+    <% if (theme.comment.disqusjs.adminLabel) { %>
+    adminLabel: '<%= theme.comment.disqusjs.adminLabel %>'
+    <% } %>
 });
 </script>
