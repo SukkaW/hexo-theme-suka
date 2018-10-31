@@ -96,7 +96,7 @@ See [Repo's projects](https://github.com/SukkaW/hexo-theme-suka/projects) for de
 **Suka Theme** © [Sukka](https://github.com/SukkaW), Released under the [GPL-3.0](./LICENSE) License.<br>
 Authored and maintained by Sukka with help from contributors ([list](https://github.com/SukkaW/hexo-theme-suka/contributors)).
 
-> [Personal Website](https://skk.moe) · [Blog](https://blog.skk.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukkaChannel](https://t.me/SukkaChannel)
+> [Personal Website](https://skk.moe) · [Blog](https://blog.skk.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukkaChannel](https://t.me/SukkaChannel) · Twitter [@isukkaw](https://twitter.com/isukkaw) · Keybase [@sukka](https://keybase.io/sukka)
 
 ## License 许可证
 
@@ -115,6 +115,7 @@ Open sourced under the GPL v3.0 license.
 Thanks jsDelivr for providing Public CDN service.
 
 [![](https://data.jsdelivr.com/v1/package/gh/sukkaw/hexo-theme-suka/badge)](https://www.jsdelivr.com/package/gh/sukkaw/hexo-theme-suka)
+
 
 <a href="https://picturepan2.github.io/spectre">
   <img src="https://picturepan2.github.io/spectre/img/spectre-logo.svg" width="72" height="72">
