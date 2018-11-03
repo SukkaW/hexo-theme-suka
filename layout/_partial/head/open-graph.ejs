@@ -1,22 +1,29 @@
-<% include variables.ejs %>
+<meta property="og:title" content="<%= suka_title() %><%= config.title %>">
+<meta property="og:site_name" content="<%= config.title %>">
 
-<meta property="og:title" content="<% if (suka_title) { %><%= suka_title + ' | ' %><% } %><%= config.title %>">
+<% if (config.language) { %><meta property="og:locale" content="<%- config.language %>"><% } %>
 
-<meta property="og:type" content="blog">
-<meta property="og:url" content="<%= config.url + url_for(page.path).replace('index.html', '') %>">
-<meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_std_icon %><% } %>">
+<meta property="og:url" content="<%= suka_full_url_for(page.path).replace('index.html', '') %>">
+<meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>">
 
-<% if (suka_descr) { %><meta property="og:description" content="<%= suka_descr %>"><% } %>
-
-<% if (suka_tags) { %>
-    <meta property="og:article:tag" content="<%= suka_tags %>">
-<% } %>
+<meta property="og:description" content="<%= suka_descr() %>">
 
 <meta name="twitter:card" content="<% if (page.thumbnail) { %>summary_large_image<% } else { %>summary<% } %>">
 
 <% if( (is_post()) ) { %>
+    <meta property="og:type" content="article">
     <meta property="article:published_time" content="<%= date_xml(page.date) %>">
     <meta property="article:modified_time" content="<%= date_xml(page.date) %>">
+    <meta property="article:author" content="<%= config.author %>">
+    <meta property="og:article:tag" content="<%= suka_tags() %>"> 
+<% } else { %>
+    <meta property="og:type" content="blog">
 <% } %>
 
-<% if(config.language) { %><meta property="og:locale" content="<%- config.language %>"><% } %>
+<% if (theme.comment.use === 'facebook') { %>
+    <% if (theme.comment.facebook.admin_fb_appid) { %>
+        <meta property="fb:app_id" content="<%= theme.comment.facebook.admin_fb_appid %>">
+    <% } else if (theme.comment.facebook.admin_fb_username) { %>
+        <meta property="fb:admins" content="<%= theme.comment.facebook.admin_fb_username %>">
+    <% } %>
+<% } %>

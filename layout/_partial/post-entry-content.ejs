@@ -13,7 +13,7 @@
 
     <!-- Date & Category -->
     <div class="card-footer post-entry-info text-gray">
-        <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>" alt="<%= config.author %>'s Avatar">
+        <img class="author-thumb lazyload" data-src="<%= url_for(theme.img.avatar) %>" alt="<%= config.author %>'s Avatar">
         <time><%= date(post.date, config.date_format) %></time>
         <% if (post.categories && post.categories.length) { %>
             <span class="suka-devide-dot"></span>

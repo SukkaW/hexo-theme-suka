@@ -3,7 +3,7 @@
 <% } %>
 <div class="post-header-info">
     <p class="post-header-info-left text-gray">
-        <img class="author-thumb" src="<%= url_for(theme.img.avatar) %>" alt="<%= config.author %>'s Avatar">
+        <img class="author-thumb lazyload" data-src="<%= url_for(theme.img.avatar) %>" alt="<%= config.author %>'s Avatar">
         <span><%= date(page.date, config.date_format) %></span>
         <% if (page.categories && page.categories.length) { %>
             <span class="suka-devide-dot"></span>

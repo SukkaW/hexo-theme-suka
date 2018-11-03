@@ -1,0 +1,11 @@
+<%
+if (site.data.footer) {
+    for (var i in site.data.footer) {
+        if(Array.isArray(site.data.footer[i])) { %>
+            <%- site.data.footer[i].join('') %>
+        <% } else { %>
+            <%- site.data.footer[i] %>
+        <% }
+    }
+}
+%>

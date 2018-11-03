@@ -1,0 +1,9 @@
+<% if(theme.busuanzi.enable === true) { %>
+    <!-- Busuanzi -->
+    <%- partial('_plugin/busuanzi/preload', {}, {cache: theme.fragment_cache}) %>
+<% } %>
+
+<% if (theme.hanabi.enable === true) { %>
+    <!-- Hanabi -->
+    <%- partial('_plugin/highlight/hanabi/preload', {}, {cache: theme.fragment_cache}) %>
+<% } %>

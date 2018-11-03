@@ -1,53 +1,52 @@
-<% include variables.ejs %>
 <div class="dropdown dropdown-right">
 <a class="dropdown-toggle" tabindex="0"><%= __('share.post') %></a>
 <ul class="menu share-menu">
     <!-- Share Weibo -->
     <% if(theme.sns_share.weibo === true) { %>
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= page.title %>&url=<%= config.url + url_for(path) %>&pic=<%- suka_share_icon %>&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toWeibo') %></a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= page.title %>&url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>&pic=<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toWeibo') %></a>
     </li>
     <% } %>
 
     <!-- Share Twitter -->
     <% if(theme.sns_share.twitter === true) { %>
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=<%= page.title %>&url=<%= config.url + url_for(path) %>&via=<%= config.author %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toTwitter') %></a>
+        <a href="https://twitter.com/intent/tweet?text=<%= page.title %>&url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>&via=<%= config.author %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toTwitter') %></a>
     </li>
     <% } %>
 
     <!-- Share Facebook -->
     <% if(theme.sns_share.facebook === true) { %>
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=<%= config.url + url_for(path) %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toFacebook') %></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toFacebook') %></a>
     </li>
     <% } %>
 
     <!-- Share Google+ -->
     <% if(theme.sns_share.googleplus === true) { %>
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=<%= config.url + url_for(path) %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toGplus') %></a>
+        <a href="https://plus.google.com/share?url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toGplus') %></a>
     </li>
     <% } %>
 
     <!-- Share LinkedIn -->
     <% if(theme.sns_share.linkedin === true) { %>
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%- config.url %>&title=<%- config.title %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toLinkedIn') %></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>&title=<%- config.title %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toLinkedIn') %></a>
     </li>
     <% } %>
 
     <!-- Share QQ -->
     <% if(theme.sns_share.qq === true) { %>
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%- config.title %>&title=<%- config.title %>&summary=<%= config.description %>&pics=<%- suka_share_icon %>&url=<%- config.url %>" target="_blank" rel="noopener noreferrer nofollow"> <%= __('share.toQQ') %></a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%- config.title %>&title=<%- config.title %>&summary=<%= config.description %>&pics=<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>&url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>" target="_blank" rel="noopener noreferrer nofollow"> <%= __('share.toQQ') %></a>
     </li>
     <% } %>
 
     <!-- Share Telegram -->
     <% if(theme.sns_share.telegram === true) { %>
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=<%- config.url %>&text=<%- config.title %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toTelegram') %></a>
+        <a href="https://t.me/share/url?url=<%= config.url + url_for(page.path).replace('index.html', '').replace(config.root, '/') %>&text=<%- config.title %>" target="_blank" rel="noopener noreferrer nofollow"><%= __('share.toTelegram') %></a>
     </li>
     <% } %>
 

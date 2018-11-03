@@ -4,8 +4,6 @@ let cleanCSS = require('gulp-clean-css');
 let uglify = require('gulp-uglify');
 let rename = require("gulp-rename");
 
-var pkg = require('./package.json');
-
 var configs = {
   autoprefixer: {
       browsers: [

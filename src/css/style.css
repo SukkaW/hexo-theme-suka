@@ -622,6 +622,7 @@ a.category-link {
     border-left: 3px solid #F44336;
     background-color: #F5F5F5;
     list-style: none;
+    word-break: break-all;
 }
 
 #post-card .post-expired-notify {
@@ -644,7 +645,13 @@ a.category-link {
  */
 
 #post-card .card-body {
-    padding: 1.2rem .8rem;
+    padding: 1.2rem 1rem;
+}
+
+@media screen and (min-width: 481px) {
+    #post-card .card-body {
+        padding: 1.2rem .8rem;
+    }
 }
 
 #post-content {
@@ -663,53 +670,26 @@ a.category-link {
     fill: currentColor;
 }
 
-#post-content a {
-    background-color: transparent;
-}
-
 #post-content a:active,
 #post-content a:hover {
     outline-width: 0;
-}
-
-#post-content strong {
-    font-weight: inherit;
-}
-
-#post-content strong {
-    font-weight: bolder;
-}
-
-#post-content h1 {
-    margin: 0.67em 0;
-}
-
-#post-content img {
-    border-style: none;
 }
 
 #post-content code,
 #post-content .highlight span,
 #post-content .highlight code,
 #post-content pre {
-    font-family: "SF Mono", "Segoe UI Mono", Consolas, "Roboto Mono", "Liberation Mono", Menlo, Courier, 'Courier New', monospace !important;
-    /* It was the same as SukkaW's IDE font-family set */
+    font-family: Consolas, "Panic Sans","DejaVu Sans Mono", "Bitstream Vera Sans Mono", Menlo, "Microsoft Yahei", monospace !important;
     /* Override Spectre.css font-family for zh-CN */
 }
 
-#post-content hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-}
 
 #post-content input {
-    font: inherit;
     margin: 0;
-}
-
-#post-content input {
     overflow: visible;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 #post-content [type="checkbox"] {
@@ -721,13 +701,8 @@ a.category-link {
     box-sizing: border-box;
 }
 
-#post-content input {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-
 #post-content a {
+    background-color: transparent;
     text-decoration: none;
 }
 
@@ -737,15 +712,6 @@ a.category-link {
 
 #post-content strong {
     font-weight: 600;
-}
-
-#post-content hr {
-    height: 0;
-    margin: 15px 0;
-    overflow: hidden;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #dfe2e5;
 }
 
 #post-content hr::before {
@@ -759,11 +725,6 @@ a.category-link {
     content: "";
 }
 
-#post-content table {
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-
 #post-content td,
 #post-content th {
     padding: 0;
@@ -771,60 +732,38 @@ a.category-link {
 
 /* H1-H6 */
 
-#post-content h1,
-#post-content h2,
-#post-content h3,
-#post-content h4,
-#post-content h5,
-#post-content h6 {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 #post-content h1 {
-    font-size: 1.4rem;
-    font-weight: 600;
+    padding-bottom: 0.3em;
+    font-size: 2em;
+    border-bottom: 1px solid #eaecef;
 }
 
 #post-content h2 {
-    font-size: 1.2rem;
-    font-weight: 600;
+    padding-bottom: 0.3em;
+    font-size: 1.5em;
+    border-bottom: 1px solid #eaecef;
 }
 
 #post-content h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-size: 1.25em;
 }
 
 #post-content h4 {
-    font-size: .95rem;
-    font-weight: 600;
+    font-size: 1em;
 }
 
 #post-content h5 {
-    font-size: .85rem;
-    font-weight: 600;
+    font-size: 0.875em;
 }
 
 #post-content h6 {
-    font-size: .75rem;
-    font-weight: 600;
+    font-size: 0.85em;
+    color: #626569;
 }
 
 #post-content p {
     margin-top: 0;
     margin-bottom: 10px;
-}
-
-#post-content blockquote {
-    margin: 0;
-}
-
-#post-content ul,
-#post-content ol {
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 #post-content ol ol,
@@ -843,14 +782,11 @@ a.category-link {
     margin-left: 0;
 }
 
-#post-content code {
-    font-size: 12px;
-}
-
 #post-content pre {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 12px;
+    word-wrap: normal;
 }
 
 #post-content .octicon {
@@ -902,24 +838,24 @@ a.category-link {
     margin-bottom: 16px;
 }
 
-#post-content blockquote {
-    margin-top: 16px;
-    margin-bottom: 16px;
-}
-
 #post-content table:not(.highlight) {
     margin-bottom: 0;
 }
 
 #post-content hr {
+    box-sizing: content-box;
     height: .1em;
     padding: 0;
+    overflow: hidden;
     margin: .8rem 0;
+    background: transparent;
     background-color: #e1e4e8;
+    border-bottom: 1px solid #dfe2e5;
     border: 0;
 }
 
 #post-content blockquote {
+    margin: 16px 0;
     padding: 0 1em;
     color: #6a737d;
     border-left: .25em solid #dfe2e5;
@@ -974,37 +910,11 @@ a.category-link {
     visibility: visible;
 }
 
-#post-content h1 {
-    padding-bottom: 0.3em;
-    font-size: 2em;
-    border-bottom: 1px solid #eaecef;
-}
-
-#post-content h2 {
-    padding-bottom: 0.3em;
-    font-size: 1.5em;
-    border-bottom: 1px solid #eaecef;
-}
-
-#post-content h3 {
-    font-size: 1.25em;
-}
-
-#post-content h4 {
-    font-size: 1em;
-}
-
-#post-content h5 {
-    font-size: 0.875em;
-}
-
-#post-content h6 {
-    font-size: 0.85em;
-    color: #626569;
-}
-
 #post-content ul,
 #post-content ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: .7rem;
 }
 
@@ -1046,6 +956,8 @@ a.category-link {
 }
 
 #post-content table {
+    border-spacing: 0;
+    border-collapse: collapse;
     display: block;
     width: 100%;
     overflow: auto;
@@ -1076,6 +988,7 @@ a.category-link {
 
 #post-content img {
     max-width: 100%;
+    border-style: none;
     box-sizing: content-box;
     background-color: #fff;
 }
@@ -1089,16 +1002,11 @@ a.category-link {
 }
 
 #post-content code {
-    padding: 0.2em 0.4em;
     margin: 0;
-    font-size: 85%;
-    background-color: rgba(27, 31, 35, 0.05);
+    font-size: 80%;
+    background-color: #eee;
     color: inherit;
     border-radius: 3px;
-}
-
-#post-content pre {
-    word-wrap: normal;
 }
 
 #post-content pre>code {
@@ -1179,10 +1087,6 @@ a.category-link {
 #post-content .task-list-item input {
     margin: 0 0.2em 0.25em -1.6em;
     vertical-align: middle;
-}
-
-#post-content hr {
-    border-bottom-color: #eee;
 }
 
 /* Fix for highlight */

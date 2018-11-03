@@ -153,17 +153,21 @@ toc:
 # ---------------------------------------------------------------
 # Comment Systems
 # Available value of "use":
-#     disqus | disqus_proxy | disqus_click | changyan | livere | gitment | gitalk | valine
-# If you want to use gitment or gitalk,you should get the client_id and client_secret form https://github.com/settings/applications/new
-# If you want to use valine,you should get the app_id and app_key form https://leancloud.cn , more setting please see https://valine.js.org
+#     disqus | disqusjs | disqus_click | changyan | livere | gitment | gitalk | valine | facebook
+# If you want to use DisqusJS for better disqus exprience in China, please read https://github.com/SukkaW/DisqusJS#readme
+# If you want to use gitment or gitalk, you should get the client_id and client_secret form https://github.com/settings/applications/new
+# If you want to use valine, you should get the app_id and app_key form https://leancloud.cn , more setting please see https://valine.js.org
 comment:
   use:
   disqus:
     shortname: # disqus shortname
-  disqus_proxy:
+  disqusjs:
     shortname:
-    apikey: E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F # The pubkey of your application
-    proxy: https://cors-anywhere.herokuapp.com/disqus.com/api/3.0/ # The proxy of https://disqus.com/api/3.0/
+    siteName:
+    api:
+    apikey:
+    admin:
+    adminLabel:
   changyan:
     appid:
     conf:
@@ -201,6 +205,16 @@ comment:
     firebase_messaging_sender_id:
     theme: light # light or dark
     locale: en # en or zh-CN
+  facebook:
+    colorschme: light # light | dark
+    numposts: 10
+    orderby: social # social | reverse_time | time
+    # You can only fill in one of them below when configuring.
+    # If you fill in both of them then appid method will be used.
+    # Read facebook developer documents for more info:
+    # https://developers.facebook.com/docs/plugins/comments/#moderation-setup-instructions
+    admin_fb_appid:
+    admin_fb_username: # Currently "Suka" don't support more than one admin. You can open a new issue if you really need one.
 
 # Site Analytics
 # Suka theme has a built in Baidu's, Google's website analytics and CNZZ's analytics service
@@ -339,7 +353,7 @@ prettify:
   # The theme name is the css file name without `.min.css`, as [theme-name].min.css
   #
   # If you want to use other theme, you can leave that blank, and load your own theme by adding <link> tag using custom code.
-  # Learn how to use custom code here: https://theme.suka.moe/docs/en/expert/#Add-custom-code
+  # Learn how to use custom code here: https://theme-suka.skk.moe/docs/en/expert/#Add-custom-code
 
 # ---------------------------------------------------------------
 # Expert Settings
@@ -399,7 +413,7 @@ vendors:
 fragment_cache: false
 # Theme Version
 #   localStorage cache version
-verison: 1.2.0
+verison: 1.3.0
 old_verison:
   - 0.2.0
   - 0.0.1
@@ -408,3 +422,4 @@ old_verison:
   - 1.0.1
   - 1.1.0
   - 1.1.1
+  - 1.2.0

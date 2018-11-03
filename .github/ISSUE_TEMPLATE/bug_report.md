@@ -1,3 +1,9 @@
+---
+name: Bug report
+about: Create a report to help us improve
+
+---
+
 <!--
 IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION OR YOU DON'T READ THE DOCS AND CONFIGURE YOUR CONFIG CAREFULLY 】WE MIGHT CLOSE YOUR ISSUE WITHOUT INVESTIGATING
 
@@ -15,16 +21,6 @@ ATTENTION: THE DOCS MIGHT UPDATE ANYTIME, AND BEFORE YOU OPEN A NEW ISSUE, CHECK
 - [ ] [Hexo documentation | Hexo 文档](https://hexo.io/docs/)
 - [ ] [Suka Theme documentation | Suka Theme 文档](https://theme-suka.skk.moe/docs/)
 - [ ] [Suka theme issues | Suka 主题的其它 issue](https://github.com/SukkaW/hexo-theme-suka/issues?utf8=%E2%9C%93&q=is%3Aissue)
-
-----
-
-## I'm submitting a  (check one with "x")
-
-## 我正在申请  (选择时请使用 "x" 取代方括号中的空格)
-
-- [ ] bug report | 反馈一个 Bug
-- [ ] feature request | 申请添加新的特性或功能
-- [ ] support request | 请求技术支持
 
 ----
 
