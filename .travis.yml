@@ -22,6 +22,6 @@ script:
   - ./deploy.sh > /dev/null
 cache:
   directories:
-  - /home/travis/build/SukkaW/suka-theme-test/themes/suka/node_modules
-  - /home/travis/build/SukkaW/suka-theme-test/node_modules
+  - themes/suka/node_modules
+  - node_modules
   timeout: 60
