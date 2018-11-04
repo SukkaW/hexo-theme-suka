@@ -7,16 +7,13 @@ git:
 before_install:
   - rm -rf .git
   - npm set audit false
-install:
   - cd ..
   - git clone https://github.com/theme-suka/hexo-theme-unit-test.git --depth=2
   - rm -rf hexo-theme-unit-test/.git
-  - mkdir -p suka-theme-test
-  - mv -f hexo-theme-unit-test/* suka-theme-test
-  - cd suka-theme-test
+  - cd hexo-theme-unit-test
+install:
   - npm i > /dev/null
   - chmod +x ./install-theme.sh
-  - chmod +x ./perf-test.sh
   - ./install-theme.sh
 script:
   - chmod +x ./build.sh
