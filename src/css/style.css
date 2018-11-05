@@ -535,11 +535,12 @@ header .divider {
     font-weight: 400;
     letter-spacing: 0;
     font-size: .7rem;
-    line-height: 1.2rem;
+    line-height: 1.3;
 }
 
 a.post-categories-list-item,
 a.post-tags-list-item {
+    display: inline-block;
     font-size: .6rem;
     border: 1px solid #c2c2c2;
     color: #535d72;
