@@ -839,10 +839,6 @@ a.category-link {
     margin-bottom: 16px;
 }
 
-#post-content table:not(.highlight) {
-    margin-bottom: 0;
-}
-
 #post-content hr {
     box-sizing: content-box;
     height: .1em;
