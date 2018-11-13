@@ -23,7 +23,6 @@ script:
   - ./build.sh
   - chmod +x ./deploy.sh
   - ./deploy.sh > /dev/null
-  - ./perf-test.sh
 cache:
   directories:
   - /home/travis/build/SukkaW/suka-theme-test/themes/suka/node_modules
