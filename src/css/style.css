@@ -1019,6 +1019,10 @@ a.category-link {
     margin-bottom: 16px;
 }
 
+#post-content .highlight table {
+    margin-bottom: 0;
+}
+
 #post-content .highlight pre {
     margin-bottom: 0;
     word-break: normal;
