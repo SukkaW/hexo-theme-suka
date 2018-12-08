@@ -535,11 +535,12 @@ header .divider {
     font-weight: 400;
     letter-spacing: 0;
     font-size: .7rem;
-    line-height: 1.2rem;
+    line-height: 1.3;
 }
 
 a.post-categories-list-item,
 a.post-tags-list-item {
+    display: inline-block;
     font-size: .6rem;
     border: 1px solid #c2c2c2;
     color: #535d72;
@@ -582,7 +583,7 @@ a.category-link {
 }
 
 #post-toc>ol {
-    margin-left: 1.5rem;
+    margin-left: 2rem;
     max-width: 8rem;
     position: fixed;
     z-index: 0;
@@ -645,13 +646,9 @@ a.category-link {
  */
 
 #post-card .card-body {
-    padding: 1.2rem 1rem;
-}
-
-@media screen and (min-width: 481px) {
-    #post-card .card-body {
-        padding: 1.2rem .8rem;
-    }
+    padding: 1.2rem 0;
+    margin: 0 auto;
+    max-width: 92%;
 }
 
 #post-content {
@@ -679,10 +676,9 @@ a.category-link {
 #post-content .highlight span,
 #post-content .highlight code,
 #post-content pre {
-    font-family: Consolas, "Panic Sans","DejaVu Sans Mono", "Bitstream Vera Sans Mono", Menlo, "Microsoft Yahei", monospace !important;
+    font-family: Consolas, "Panic Sans", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Menlo, "Microsoft Yahei", monospace !important;
     /* Override Spectre.css font-family for zh-CN */
 }
-
 
 #post-content input {
     margin: 0;
@@ -836,10 +832,6 @@ a.category-link {
 #post-content pre {
     margin-top: 0;
     margin-bottom: 16px;
-}
-
-#post-content table:not(.highlight) {
-    margin-bottom: 0;
 }
 
 #post-content hr {
@@ -1025,6 +1017,10 @@ a.category-link {
 
 #post-content .highlight {
     margin-bottom: 16px;
+}
+
+#post-content .highlight table {
+    margin-bottom: 0;
 }
 
 #post-content .highlight pre {
