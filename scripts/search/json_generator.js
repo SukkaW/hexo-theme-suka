@@ -15,11 +15,11 @@ module.exports = function (locals) {
     let posts,
         pages;
 
-    if (searchfield.trim() != '') {
+    if (searchfield.trim() !== '') {
         searchfield = searchfield.trim();
-        if (searchfield == 'post') {
+        if (searchfield === 'post') {
             posts = locals.posts.sort('-date');
-        } else if (searchfield == 'page') {
+        } else if (searchfield === 'page') {
             pages = locals.pages;
         } else {
             posts = locals.posts.sort('-date');
@@ -29,11 +29,11 @@ module.exports = function (locals) {
         posts = locals.posts.sort('-date');
     }
 
-    var json = template({
-        config: config,
-        posts: posts,
-        pages: pages,
-        stringify: stringify,
+    let json = template({
+        config,
+        posts,
+        pages,
+        stringify,
         feed_url: config.root + searchConfig.path,
     });
 

@@ -1,33 +1,34 @@
-hexo.extend.helper.register('suka_title', function () {
-    var suka_title = this.page.title;
+hexo.extend.helper.register('suka_title', function() {
+    let suka_title = this.page.title;
     if (this.is_archive()) {
         suka_title = this.__('archive');
         if (this.is_month()) {
-            suka_title += ': ' + this.page.year + '-' + this.page.month;
+            suka_title += `: ${this.page.year}-${this.page.month}`;
         }
         else if (this.is_year()) {
-            suka_title += ': ' + this.page.year;
+            suka_title += `: ${this.page.year}`;
         }
     }
     else if (this.is_category()) {
-        suka_title = this.__('category') + ': ' + this.page.category;
+        suka_title = `${this.__('category')}: ${this.page.category}`;
     }
     else if (this.is_tag()) {
-        suka_title = this.__('tag') + ': ' + this.page.tag;
+        suka_title = `${this.__('tag')}: ${this.page.tag}`;
     }
 
     if (suka_title) {
-        return suka_title + ' | ';
+        return `${suka_title} | `;
     } else {
         return '';
     }
 });
 
 hexo.extend.helper.register('suka_descr', function () {
+    let suka_descr;
     if (this.config.description) {
-        var suka_descr = this.config.description;
+        suka_descr = this.config.description;
     } else {
-        var suka_descr = '';
+        suka_descr = '';
     }
 
     if (this.page.description) {
@@ -46,14 +47,15 @@ hexo.extend.helper.register('suka_descr', function () {
 });
 
 hexo.extend.helper.register('suka_tags', function () {
+    let suka_tags;
     if (this.theme.head.keywords) {
-        var suka_tags = this.theme.head.keywords;
+        suka_tags = this.theme.head.keywords;
     } else {
-        var suka_tags = '';
+        suka_tags = '';
     }
 
     if (this.page.tags && this.page.tags.length) {
-        this.page.tags.forEach(function (tag, index) {
+        this.page.tags.forEach((tag, index) => {
             suka_tags += ', ' + tag.name;
         });
     }
@@ -66,7 +68,7 @@ hexo.extend.helper.register('suka_tags', function () {
 });
 
 hexo.extend.helper.register('suka_full_url_for', function (url) {
-    var relative = url.indexOf('http') == -1;
+    let relative = url.indexOf('http') == -1;
     if (relative === true) {
         return this.config.url + this.url_for(url).replace(this.config.root, '/');
     } else {
@@ -75,17 +77,19 @@ hexo.extend.helper.register('suka_full_url_for', function (url) {
 });
 
 hexo.extend.helper.register('suka_icon', function () {
-    var suka_std_icon = 'https://theme-suka.skk.moe/demo/img/suka-favicon.png';
+    let suka_std_icon = 'https://theme-suka.skk.moe/demo/img/suka-favicon.png';
+    suka_icon_url = (type) => this.config.url + this.url_for(this.theme.head.favicon[type]).replace(this.config.root, '/');
+
     if (this.theme.head.favicon.large) {
-        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.large).replace(this.config.root, '/');
+        suka_std_icon = suka_icon_url('large');
     } else if (this.theme.head.favicon.apple_touch_icon) {
-        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.apple_touch_icon).replace(this.config.root, '/');
+        suka_std_icon = suka_icon_url('apple_touch_icon');
     } else if (this.theme.head.favicon.medium) {
-        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.medium).replace(this.config.root, '/');
+        suka_std_icon = suka_icon_url('medium');
     } else if (this.theme.head.favicon.small) {
-        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.small).replace(this.config.root, '/');
+        suka_std_icon = suka_icon_url('small');
     } else if (this.theme.head.favicon.ico) {
-        suka_std_icon = this.config.url + this.url_for(this.theme.head.favicon.ico).replace(this.config.root, '/');
+        suka_std_icon = suka_icon_url('ico');
     }
 
     return suka_std_icon;

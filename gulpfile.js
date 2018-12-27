@@ -4,7 +4,7 @@ const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const rename = require("gulp-rename");
 
-var configs = {
+let configs = {
     autoprefixer: {
         browsers: [
             'last 2 versions',
@@ -43,6 +43,6 @@ gulp.task('build', gulp.parallel('minify-js', 'minify-css'));
 
 gulp.task('default', gulp.parallel('build'));
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
     gulp.watch('src/**', gulp.parallel('build'));
 });
