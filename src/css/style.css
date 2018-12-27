@@ -902,9 +902,17 @@ a.category-link {
     visibility: visible;
 }
 
+#post-content ul {
+    list-style: disc;
+}
+
+#post-content ol {
+    list-style: decimal;
+}
+
 #post-content ul,
 #post-content ol {
-    padding-left: 0;
+    padding-left: .5rem;
     margin-top: 0;
     margin-bottom: 0;
     margin-left: .7rem;
