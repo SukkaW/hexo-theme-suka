@@ -1,18 +1,19 @@
-var ejs = require('ejs');
-var pathFn = require('path');
-var fs = require('fs');
-var stringify = require('json-stringify-safe');
+const ejs = require('ejs');
+const pathFn = require('path');
+const fs = require('fs');
+const stringify = require('json-stringify-safe');
 
-var searchTmplSrc = pathFn.join(__dirname, '../../layout/_plugin/search/local-search/search-json.ejs');
-var searchTmpl = ejs.compile(fs.readFileSync(searchTmplSrc, 'utf8'));
+let searchTmplSrc = pathFn.join(__dirname, '../../layout/_plugin/search/local-search/search-json.ejs');
+let searchTmpl = ejs.compile(fs.readFileSync(searchTmplSrc, 'utf8'));
 
 module.exports = function (locals) {
-    var config = this.config;
-    var searchConfig = config.suka_theme.search;
-    var template = searchTmpl;
-    var searchfield = searchConfig.field;
+    let config = this.config;
+    let searchConfig = config.suka_theme.search;
+    let template = searchTmpl;
+    let searchfield = searchConfig.field;
 
-    var posts, pages;
+    let posts,
+        pages;
 
     if (searchfield.trim() != '') {
         searchfield = searchfield.trim();
