@@ -2,9 +2,9 @@ const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
-const rename = require("gulp-rename");
+const rename = require('gulp-rename');
 
-let configs = {
+const configs = {
     autoprefixer: {
         browsers: [
             'last 2 versions',

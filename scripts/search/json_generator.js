@@ -3,13 +3,13 @@ const pathFn = require('path');
 const fs = require('fs');
 const stringify = require('json-stringify-safe');
 
-let searchTmplSrc = pathFn.join(__dirname, '../../layout/_plugin/search/local-search/search-json.ejs');
-let searchTmpl = ejs.compile(fs.readFileSync(searchTmplSrc, 'utf8'));
+const searchTmplSrc = pathFn.join(__dirname, '../../layout/_plugin/search/local-search/search-json.ejs');
+const searchTmpl = ejs.compile(fs.readFileSync(searchTmplSrc, 'utf8'));
 
 module.exports = function (locals) {
-    let config = this.config;
-    let searchConfig = config.suka_theme.search;
-    let template = searchTmpl;
+    const config = this.config;
+    const searchConfig = config.suka_theme.search;
+    const template = searchTmpl;
     let searchfield = searchConfig.field;
 
     let posts,
