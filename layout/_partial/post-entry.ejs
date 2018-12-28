@@ -3,7 +3,7 @@
             <% if (post.thumbnail) { %>
                 <div class="column column-thumbnail col-4 col-lg-12">
                     <a href="<%= url_for(post.path) %>">
-                        <div class="post-thumbnail lazyload" data-src="<%= post.thumbnail %>"></div>
+                        <div class="post-thumbnail lazyload" data-bg="url(<%= post.thumbnail %>)"></div>
                     </a>
                 </div>
                 <div class="column column-body col-8 col-lg-12">
