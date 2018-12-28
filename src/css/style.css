@@ -918,6 +918,11 @@ a.category-link {
     margin-left: .7rem;
 }
 
+#post-content>ol,
+#post-content>ul {
+    margin-bottom: 16px;
+}
+
 #post-content ul ul,
 #post-content ul ol,
 #post-content ol ol,
