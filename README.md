@@ -6,7 +6,7 @@
 > 现代 · 强大 · 简洁
 
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/Version-1.3.0-5755d9.svg?style=flat-square"/>
+<img alt="Version" src="https://img.shields.io/badge/Version-1.3.2-5755d9.svg?style=flat-square"/>
 <a href="https://skk.moe" target="_blank"><img alt="Author" src="https://img.shields.io/badge/Author-Sukka-b68469.svg?style=flat-square"/></a>
 <a href="https://hexo.io" target="_blank"><img alt="Hexo" src="https://img.shields.io/badge/hexo-3.7+-0e83cd.svg?style=flat-square"/></a>
 <a href="https://nodejs.org/" target="_blank"><img alt="node.js" src="https://img.shields.io/badge/node.js-10.0%2B-43853d.svg?style=flat-square"/></a>
