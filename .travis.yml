@@ -1,7 +1,5 @@
 language: node_js
 node_js:
-  - "6"
-  - "7"
   - "8"
   - "9"
   - "10"
@@ -21,7 +19,6 @@ install:
   - cd suka-theme-test
   - npm i > /dev/null
   - chmod +x ./install-theme.sh
-  - chmod +x ./perf-test.sh
   - ./install-theme.sh
 script:
   - chmod +x ./build.sh

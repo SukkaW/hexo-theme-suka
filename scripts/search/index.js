@@ -3,9 +3,9 @@
  * license: MIT
  */
 
-var pathFn = require('path');
+const pathFn = require('path');
 
-var config = hexo.config.suka_theme.search
+let config = hexo.config.suka_theme.search
 
 if (hexo.config.suka_theme.search.enable !== true) {
     return;

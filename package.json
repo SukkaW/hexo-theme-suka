@@ -25,10 +25,10 @@
   "homepage": "https://github.com/SukkaW/hexo-theme-suka#readme",
   "devDependencies": {
     "ejs-lint": "0.3.0",
-    "eslint": "5.8.0",
+    "eslint": "5.11.1",
     "gulp": "4.0.0",
     "gulp-autoprefixer": "6.0.0",
-    "gulp-clean-css": "3.10.0",
+    "gulp-clean-css": "4.0.0",
     "gulp-rename": "1.4.0",
     "gulp-uglify": "3.0.1",
     "sass-lint": "1.12.1"
