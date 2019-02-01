@@ -10,7 +10,7 @@ function checkDep(name) {
     return false;
 }
 
-logger.info('Checking dependencies...');
+logger.info('Checking dependencies');
 
 const missingDeps = [
     'json-stringify-safe',
