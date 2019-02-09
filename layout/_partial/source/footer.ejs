@@ -6,8 +6,6 @@ window.lazyLoadOptions = {
     threshold: 50
 };
 
-<% if (page.layout !== 'gallery') { %>
-
     /* Copyright */
     var copyrightNow = new Date().getFullYear();
     var copyrightContent = document.querySelector('span[data-year]')
@@ -21,8 +19,6 @@ window.lazyLoadOptions = {
     <% } else { %>
         copyrightContent.textContent = copyrightNow
     <% } %>
-
-<% } %>
 
 /* Cnosole Log */
 console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme.verison %> %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
@@ -48,15 +44,6 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 <% if (theme.prettify.enable === true) { %>
     <!-- prettify -->
     <%- partial('_plugin/highlight/prettify/import_js') %>
-<% } %>
-
-<!-- gallery.js -->
-<% if (page.layout === 'gallery') { %>
-    <% if (theme.vendors.suka.gallery_js) { %>
-        <script src="<%= theme.vendors.suka.gallery_js %>"></script>
-    <% } else { %>
-        <script src="<%- url_for('js/gallery.min.js') %>"></script>
-    <% } %>
 <% } %>
 
 <!-- Comment -->
