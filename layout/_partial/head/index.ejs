@@ -6,14 +6,50 @@
         Version: <%= theme.verison %>
     -->
 
-    <!-- ### DNS Prefetch ### -->
-    <%- partial('_partial/head/dns-prefetch', {}, {cache: theme.fragment_cache}) %>
+    <!-- ### Resource Hint ### -->
 
-    <!-- ### Preload ### -->
+    <!-- ## DNS Prefetch ## -->
+    <%- partial('_partial/head/dns-prefetch', {}, {cache: theme.fragment_cache}) %>
+    <!-- ## Preload ## -->
     <%- partial('_partial/head/preload') %>
 
     <!-- ### Meta & Title & Info ### -->
-    <%- partial('_partial/head/meta') %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=2, viewport-fit=cover">
+
+    <!-- Title -->
+    <title><%= suka_title() %><%= config.title %></title>
+
+    <!-- Favicons -->
+    <% if (theme.head.favicon.ico) { %>
+        <link rel="shortcut icon" type="image/ico" href="<%- url_for(theme.head.favicon.ico) %>">
+    <% } %>
+    <% if (theme.head.favicon.apple_touch_icon) { %>
+        <link rel="apple-touch-icon" sizes="180x180" href="<%- url_for(theme.head.favicon.apple_touch_icon) %>">
+    <% } %>
+    <% if (theme.head.favicon.large) { %>
+        <link rel="icon" type="image/png" sizes="192x192" href="<%- url_for(theme.head.favicon.large) %>">
+    <% } %>
+    <% if (theme.head.favicon.medium) { %>
+        <link rel="icon" type="image/png" sizes="32x32" href="<%- url_for(theme.head.favicon.medium) %>">
+    <% } %>
+    <% if (theme.head.favicon.small) { %>
+        <link rel="icon" type="image/png" sizes="16x16" href="<%- url_for(theme.head.favicon.small) %>">
+    <% } %>
+    <% if (theme.head.favicon.safari_pinned_tab) { %>
+        <link rel="mask-icon" href="<%- url_for(theme.head.favicon.safari_pinned_tab) %>" color="<%= theme.head.color %>">
+    <% } %>
+    <!-- Android Chrome Color -->
+    <% if (theme.head.color) { %>
+        <meta name="theme-color" content="<%= theme.head.color %>">
+    <% } else if (theme.uiux.bg_color) { %>
+        <meta name="theme-color" content="<%= theme.uiux.bg_color %>">
+    <% } %>
+
+    <!-- Description -->
+    <meta name="description" content="<%= suka_descr() %>">
+    <!-- Keywords -->
+    <meta name="keywords" content="<%= suka_tags() %>">
 
     <!-- ### Import File ### -->
     <% if (page.layout === 'gallery') { %>
@@ -26,17 +62,40 @@
     <%- partial('_partial/head/site-verification', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### RSS ### -->
-    <%- partial('_partial/head/rss', {}, {cache: theme.fragment_cache}) %>
+    <% if ( (config.feed) && (config.feed.path) ) { %>
+        <% if (config.feed.type === "atom"){ %>
+            <link rel="alternate" type="application/atom+xml" href="<%= url_for(config.feed.path) %>">
+        <% } else if (config.feed.type === "rss2") { %>
+            <link rel="alternate" type="application/rss+xml" href="<%= url_for(config.feed.path) %>">
+        <% } else { %>
+        <% } %>
+    <% } %>
 
     <!-- ### WebApp ### -->
-    <%- partial('_partial/head/webapp', {}, {cache: theme.fragment_cache}) %>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="<%= config.title %>">
+    <meta name="msapplication-starturl" content="<%= config.url %>">
+    <% if (theme.head.color) { %>
+        <meta name="msapplication-navbutton-color" content="<%= theme.head.color %>">
+    <% } %>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Manifest Import -->
+    <% if (theme.head.pwa_manifest) { %>
+        <link rel="manifest" href="<%= theme.head.pwa_manifest %>">
+    <% } %>
+    <!-- Open Search -->
+    <% if (theme.head.open_search) { %>
+        <link rel="search" type="application/opensearchdescription+xml" href="<%= theme.head.open_search %>" title="<%= config.title %>">
+    <% } %>
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
     <%- partial('_partial/head/open-graph') %>
 
     <!-- ### Analytics ### -->
     <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
-
 
     <!-- ### Canonical link ### -->
     <link rel="canonical" href="<%= config.url + url_for(page.path).replace('index.html', '') %>">
@@ -45,6 +104,15 @@
     <%- partial('_partial/head/structured-data') %>
 
     <!-- ### Custom Head ### -->
-    <%- partial('_partial/head/custom-head', {}, {cache: theme.fragment_cache}) %>
-
+    <%
+    if (site.data.head) {
+        for (var i in site.data.head) {
+            if (Array.isArray(site.data.head[i])) { %>
+                <%- site.data.head[i].join('') %>
+            <% } else { %>
+                <%- site.data.head[i] %>
+            <% }
+        }
+    }
+    %>
 </head>
