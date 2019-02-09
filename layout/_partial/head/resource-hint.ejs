@@ -1,3 +1,4 @@
+<!-- ## DNS Prefetch ## -->
 <meta http-equiv="x-dns-prefetch-control" content="on">
 
 <!-- busuanzi -->
@@ -47,4 +48,16 @@
 <% } %>
 <% if (theme.analytics.tencent_mta_id) { %>
     <link rel="dns-prefetch" href="//pingjs.qq.com">
+<% } %>
+
+
+<!-- ## Preload ## -->
+<% if(theme.busuanzi.enable === true) { %>
+    <!-- Busuanzi -->
+    <%- partial('_plugin/busuanzi/preload') %>
+<% } %>
+
+<% if (theme.hanabi.enable === true) { %>
+    <!-- Hanabi -->
+    <%- partial('_plugin/highlight/hanabi/preload') %>
 <% } %>

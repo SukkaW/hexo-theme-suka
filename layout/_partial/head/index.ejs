@@ -7,11 +7,7 @@
     -->
 
     <!-- ### Resource Hint ### -->
-
-    <!-- ## DNS Prefetch ## -->
-    <%- partial('_partial/head/dns-prefetch', {}, {cache: theme.fragment_cache}) %>
-    <!-- ## Preload ## -->
-    <%- partial('_partial/head/preload') %>
+    <%- partial('_partial/head/resource-hint.ejs', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### Meta & Title & Info ### -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,31 +16,7 @@
     <!-- Title -->
     <title><%= suka_title() %><%= config.title %></title>
 
-    <!-- Favicons -->
-    <% if (theme.head.favicon.ico) { %>
-        <link rel="shortcut icon" type="image/ico" href="<%- url_for(theme.head.favicon.ico) %>">
-    <% } %>
-    <% if (theme.head.favicon.apple_touch_icon) { %>
-        <link rel="apple-touch-icon" sizes="180x180" href="<%- url_for(theme.head.favicon.apple_touch_icon) %>">
-    <% } %>
-    <% if (theme.head.favicon.large) { %>
-        <link rel="icon" type="image/png" sizes="192x192" href="<%- url_for(theme.head.favicon.large) %>">
-    <% } %>
-    <% if (theme.head.favicon.medium) { %>
-        <link rel="icon" type="image/png" sizes="32x32" href="<%- url_for(theme.head.favicon.medium) %>">
-    <% } %>
-    <% if (theme.head.favicon.small) { %>
-        <link rel="icon" type="image/png" sizes="16x16" href="<%- url_for(theme.head.favicon.small) %>">
-    <% } %>
-    <% if (theme.head.favicon.safari_pinned_tab) { %>
-        <link rel="mask-icon" href="<%- url_for(theme.head.favicon.safari_pinned_tab) %>" color="<%= theme.head.color %>">
-    <% } %>
-    <!-- Android Chrome Color -->
-    <% if (theme.head.color) { %>
-        <meta name="theme-color" content="<%= theme.head.color %>">
-    <% } else if (theme.uiux.bg_color) { %>
-        <meta name="theme-color" content="<%= theme.uiux.bg_color %>">
-    <% } %>
+    <%- partial('_partial/head/favicon.ejs', {}, {cache: theme.fragment_cache}) %>
 
     <!-- Description -->
     <meta name="description" content="<%= suka_descr() %>">
@@ -59,7 +31,7 @@
     <% } %>
 
     <!-- ### Site Verification ### -->
-    <%- partial('_partial/head/site-verification', {}, {cache: theme.fragment_cache}) %>
+    <%- partial('_partial/head/site-verification') %>
 
     <!-- ### RSS ### -->
     <% if ( (config.feed) && (config.feed.path) ) { %>
@@ -71,25 +43,7 @@
         <% } %>
     <% } %>
 
-    <!-- ### WebApp ### -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="<%= config.title %>">
-    <meta name="msapplication-starturl" content="<%= config.url %>">
-    <% if (theme.head.color) { %>
-        <meta name="msapplication-navbutton-color" content="<%= theme.head.color %>">
-    <% } %>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <!-- Manifest Import -->
-    <% if (theme.head.pwa_manifest) { %>
-        <link rel="manifest" href="<%= theme.head.pwa_manifest %>">
-    <% } %>
-    <!-- Open Search -->
-    <% if (theme.head.open_search) { %>
-        <link rel="search" type="application/opensearchdescription+xml" href="<%= theme.head.open_search %>" title="<%= config.title %>">
-    <% } %>
+    <%- partial('_partial/head/rss-webapp', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
     <%- partial('_partial/head/open-graph') %>
@@ -98,21 +52,11 @@
     <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="<%= config.url + url_for(page.path).replace('index.html', '') %>">
+    <link rel="canonical" href="<%= `${config.url}/${page.canonical_path.replace('index.html', '')}` %>">
 
     <!-- ### Structured Data ### -->
     <%- partial('_partial/head/structured-data') %>
 
     <!-- ### Custom Head ### -->
-    <%
-    if (site.data.head) {
-        for (var i in site.data.head) {
-            if (Array.isArray(site.data.head[i])) { %>
-                <%- site.data.head[i].join('') %>
-            <% } else { %>
-                <%- site.data.head[i] %>
-            <% }
-        }
-    }
-    %>
+    <%- partial('_partial/head/custom-head', {}, {cache: theme.fragment_cache}) %>
 </head>
