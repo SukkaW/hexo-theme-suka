@@ -1,28 +1,3 @@
-hexo.extend.helper.register('suka_title', function() {
-    let sukaTitle = this.page.title;
-    if (this.is_archive()) {
-        sukaTitle = this.__('archive');
-        if (this.is_month()) {
-            sukaTitle += `: ${this.page.year}-${this.page.month}`;
-        }
-        else if (this.is_year()) {
-            sukaTitle += `: ${this.page.year}`;
-        }
-    }
-    else if (this.is_category()) {
-        sukaTitle = `${this.__('category')}: ${this.page.category}`;
-    }
-    else if (this.is_tag()) {
-        sukaTitle = `${this.__('tag')}: ${this.page.tag}`;
-    }
-
-    if (sukaTitle) {
-        return `${sukaTitle} | `;
-    } else {
-        return '';
-    }
-});
-
 hexo.extend.helper.register('suka_descr', function () {
     let sukaDescr;
     if (this.config.description) {
