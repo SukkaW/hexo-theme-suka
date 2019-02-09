@@ -219,12 +219,26 @@ comment:
 # Site Analytics
 # Suka theme has a built in Baidu's, Google's website analytics and CNZZ's analytics service
 analytics:
-  google_site_id:
-  gtags_site_id:
-  baidu_site_id:
-  cnzz_site_id:
-  tencent_site_id:
-  tencent_mta_id:
+  # Google Analytics (analytics.js)
+  google_analytics:
+    enable: false
+    site_id: # UA-XXXXXXXX-Y
+  # Google Analytics (gtag.js)
+  google_gtag:
+    enable: false
+    site_id: # UA-XXXXXXXX-Y
+  # Baidu Tongji
+  baidu:
+    enable: false
+    site_id:
+  # CNZZ
+  cnzz:
+    enable: false
+    site_id:
+  # Tencent MTA
+  tencent_mta:
+    enable: false
+    site_id:
 
 # Views Analytics
 # Busuanzi
