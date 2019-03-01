@@ -30,7 +30,7 @@
     "gulp-autoprefixer": "6.0.0",
     "gulp-clean-css": "4.0.0",
     "gulp-rename": "1.4.0",
-    "gulp-uglify": "3.0.1",
+    "gulp-uglify": "3.0.2",
     "sass-lint": "1.12.1"
   },
   "dependencies": {
