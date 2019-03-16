@@ -25,7 +25,7 @@
   "homepage": "https://github.com/SukkaW/hexo-theme-suka#readme",
   "devDependencies": {
     "ejs-lint": "0.3.0",
-    "eslint": "5.15.1",
+    "eslint": "5.15.2",
     "gulp": "4.0.0",
     "gulp-autoprefixer": "6.0.0",
     "gulp-clean-css": "4.0.0",
