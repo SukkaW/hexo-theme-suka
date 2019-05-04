@@ -31,7 +31,7 @@
     "gulp-clean-css": "4.2.0",
     "gulp-rename": "1.4.0",
     "gulp-uglify": "3.0.2",
-    "sass-lint": "1.12.1"
+    "sass-lint": "1.13.1"
   },
   "dependencies": {
     "json-stringify-safe": "5.0.1",
