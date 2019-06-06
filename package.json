@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-suka",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Modern, powerful and simple theme for Hexo",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
