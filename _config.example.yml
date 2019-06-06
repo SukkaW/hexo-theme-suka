@@ -414,7 +414,7 @@ vendors:
 fragment_cache: false
 # Theme Version
 #   localStorage cache version
-verison: 1.3.2
+verison: 1.3.3
 old_verison:
   - 0.2.0
   - 0.0.1
@@ -425,3 +425,4 @@ old_verison:
   - 1.1.1
   - 1.2.0
   - 1.3.0
+  - 1.3.2

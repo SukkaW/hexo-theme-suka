@@ -1,5 +1,5 @@
 <% if (post.title) { %>
-    <h2 class="h5 mb-0 card-header"><a class="card-title" href="<%= url_for(post.path) %>"><%- post.title %></a></h2>
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="<%= url_for(post.path) %>" rel="bookmark"><%- post.title %></a></h2>
 <% } %>
 
 <p class="mb-0 card-body">
