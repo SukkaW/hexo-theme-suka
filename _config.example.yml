@@ -372,6 +372,7 @@ vendors:
   # You can check current the Suka Version Code at the end of theme config.
   suka:
     style_css:
+    lazyload_img:
     local_search_js:
     hanabi_browser_js:
     highlight_theme:
@@ -424,3 +425,4 @@ old_verison:
   - 1.1.1
   - 1.2.0
   - 1.3.0
+  - 1.3.2

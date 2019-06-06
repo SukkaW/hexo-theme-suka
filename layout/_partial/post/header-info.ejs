@@ -1,9 +1,19 @@
 <% if (page.title) { %>
     <h1 class="card-title h3 mb-2"><%- page.title %></h1>
 <% } %>
+
+<%
+    var lazyloadImgSrc = '';
+    if (theme.vendors.lazyload_img) {
+        lazyloadImgSrc = theme.vendors.lazyload_img;
+    } else {
+        lazyloadImgSrc = url_for('img/suka-lazyload.gif');
+    }
+%>
+
 <div class="post-header-info">
     <p class="post-header-info-left text-gray">
-        <img class="author-thumb lazyload" data-src="<%= url_for(theme.img.avatar) %>" alt="<%= config.author %>'s Avatar">
+        <img class="author-thumb lazyload" data-src="<%= url_for(theme.img.avatar) %>" src="<%= lazyloadImgSrc %>" alt="<%= config.author %>'s Avatar">
         <span><%= date(page.date, config.date_format) %></span>
         <% if (page.categories && page.categories.length) { %>
             <span class="suka-devide-dot"></span>
