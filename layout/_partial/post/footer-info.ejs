@@ -52,7 +52,7 @@
 <span class="post-tags-list mt-2">
 <% count = page.tags.length %>
 <% page.tags.forEach(function(tag, index) { %>
-<a class="post-tags-list-item" href='<%= url_for(tag.path) %>'>#&nbsp;<%= tag.name %></a>
+<a class="post-tags-list-item" href="<%= url_for(tag.path) %>" rel="tag">#&nbsp;<%= tag.name %></a>
 <% }); %>
 </span>
 <% } %>
