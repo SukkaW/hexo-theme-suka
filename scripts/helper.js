@@ -1,26 +1,3 @@
-hexo.extend.helper.register('suka_descr', function () {
-    let sukaDescr;
-    if (this.config.description) {
-        sukaDescr = this.config.description;
-    } else {
-        sukaDescr = '';
-    }
-
-    if (this.page.description) {
-        sukaDescr = this.page.description;
-    } else if (this.page.excerpt) {
-        sukaDescr = this.strip_html(this.page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
-    } else if (this.page.content) {
-        sukaDescr = this.strip_html(this.truncate(this.page.content, { length: this.theme.post.entry_excerpt }));
-    }
-
-    if (sukaDescr) {
-        return sukaDescr;
-    } else {
-        return '';
-    }
-});
-
 hexo.extend.helper.register('suka_tags', function () {
     let sukaTags;
     if (this.theme.head.keywords) {
