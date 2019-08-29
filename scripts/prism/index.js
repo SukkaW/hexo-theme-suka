@@ -20,7 +20,7 @@ const regex = /<pre><code class="(.*)?">([\s\S]*?)<\/code><\/pre>/igm;
 const captionRegex = /<p><code>(?![\s\S]*<code)(.*?)\s(.*?)\n([\s\S]*)<\/code><\/p>/igm;
 
 // Plugin settings
-var config = hexo.config.suka_theme.prism;
+const config = hexo.config.suka_theme.prism;
 
 const line_number = config.line_number || true;
 

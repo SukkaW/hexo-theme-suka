@@ -7,19 +7,20 @@ window.lazyLoadOptions = {
 };
 
 <% if (page.layout !== 'gallery') { %>
-
     /* Copyright */
-    var copyrightNow = new Date().getFullYear();
-    var copyrightContent = document.querySelector('span[data-year]')
     <% if (theme.footer.copyright_since > 0) { %>
-        copyrightSince = <%= theme.footer.copyright_since %>;
+    (function() {
+        var copyrightNow = new Date().getFullYear();
+        var copyrightContent = document.getElementById('copyright-year');
+        var copyrightSince = <%= theme.footer.copyright_since %>;
         if (copyrightSince === copyrightNow) {
-            copyrightContent.textContent = copyrightNow
+            copyrightContent.textContent = copyrightNow;
         } else {
-            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
         }
+    })();
     <% } else { %>
-        copyrightContent.textContent = copyrightNow
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
     <% } %>
 
 <% } %>
@@ -67,4 +68,16 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 <% } %>
 
 <!-- ### Custom Footer ### -->
-<%- partial('_partial/source/custom_footer', {}, {cache: theme.fragment_cache}) %>
+<%- fragment_cache('footer_custom_code', () => {
+    let html = '';
+    if (site.data.head) {
+        for (const i in site.data.head) {
+            if (Array.isArray(site.data.head[i])) {
+                html += site.data.head[i].join('');
+            } else {
+                html += site.data.head[i];
+            }
+        }
+    }
+    return html;
+}) %>

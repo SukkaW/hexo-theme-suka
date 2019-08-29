@@ -1,0 +1,135 @@
+<head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: <%= theme.verison %>
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <%- partial('_partial/head/dns-prefetch', {}, {cache: theme.fragment_cache}) %>
+    <!-- ## Preload ## -->
+    <%- partial('_partial/head/preload') %>
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+
+    <!-- Title -->
+    <title><%= page_title() %></title>
+
+    <!-- Favicons -->
+    <%- fragment_cache('head_favicon_and_theme-color', () => {
+        let html = '';
+        let theme_color = '';
+        if (theme.head.favicon.ico) {
+            html += `<link rel="icon" type="image/ico" href="${url_for(theme.head.favicon.ico)}">`;
+        }
+        if (theme.head.favicon.apple_touch_icon) {
+            html += `<link rel="apple-touch-icon" sizes="180x180" href="${url_for(theme.head.favicon.apple_touch_icon)}">`;
+        }
+        if (theme.head.favicon.large) {
+            html += `<link rel="icon" type="image/png" sizes="192x192" href="${url_for(theme.head.favicon.large)}">`;
+        }
+        if (theme.head.favicon.medium) {
+            html += `<link rel="icon" type="image/png" sizes="32x32" href="${url_for(theme.head.favicon.medium)}">`;
+        }
+        if (theme.head.favicon.small) {
+            html += `<link rel="icon" type="image/png" sizes="16x16" href="${url_for(theme.head.favicon.small)}">`;
+        }
+        if (theme.head.color) {
+            theme_color = theme.head.color
+        } else if (theme.uiux.bg_color) {
+            theme_color = theme.uiux.bg_color
+        }
+        if (theme.head.favicon.safari_pinned_tab) {
+            html += `<link rel="mask-icon" href="${url_for(theme.head.favicon.safari_pinned_tab)}" color="${theme_color}">`;
+        }
+        if (theme.head.color || theme.uiux.bg_color) {
+            html += `<meta name="theme-color" content="${theme_color}">`;
+        }
+
+        return html;
+    }) %>
+
+
+
+    <!-- Description -->
+    <meta name="description" content="<%= page_descr() %>">
+    <!-- Keywords -->
+    <meta name="keywords" content="<%= suka_tags() %>">
+
+    <!-- ### Import File ### -->
+    <% if (page.layout === 'gallery') { %>
+        <%- partial('_partial/source/head_gallery') %>
+    <% } else { %>
+        <%- partial('_partial/source/head') %>
+    <% } %>
+
+    <!-- ### Site Verification ### -->
+    <%- partial('_partial/head/site-verification', {}, {cache: theme.fragment_cache}) %>
+
+    <!-- ### RSS ### -->
+    <%- fragment_cache('head_rss', () => {
+        if ( (config.feed) && (config.feed.path) ) {
+            let mime_type = '';
+            if (config.feed.type === "atom") {
+                mime_type = 'application/atom+xml';
+            } else if (config.feed.type === "rss2") {
+                mime_type = 'application/rss+xml';
+            }
+            return `<link rel="alternate" type="${mime_type}" href="${url_for(config.feed.path)}">`
+        } else {
+            return ''
+        }
+    }) %>
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="<%= config.title %>">
+    <meta name="msapplication-starturl" content="<%= config.url %>">
+    <% if (theme.head.color) { %>
+        <meta name="msapplication-navbutton-color" content="<%= theme.head.color %>">
+    <% } %>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Manifest Import -->
+    <% if (theme.head.pwa_manifest) { %>
+        <link rel="manifest" href="<%= theme.head.pwa_manifest %>">
+    <% } %>
+    <!-- Open Search -->
+    <% if (theme.head.open_search) { %>
+        <link rel="search" type="application/opensearchdescription+xml" href="<%= theme.head.open_search %>" title="<%= config.title %>">
+    <% } %>
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <%- partial('_partial/head/open-graph') %>
+
+    <!-- ### Analytics ### -->
+    <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="<%= config.url + url_for(page.path).replace('index.html', '') %>">
+
+    <!-- ### Structured Data ### -->
+    <%- partial('_partial/head/structured-data') %>
+
+    <!-- ### Custom Head ### -->
+    <%- fragment_cache('head_custom_code', () => {
+        let html = '';
+        if (site.data.head) {
+            for (const i in site.data.head) {
+                if (Array.isArray(site.data.head[i])) {
+                    html += site.data.head[i].join('');
+                } else {
+                    html += site.data.head[i];
+                }
+            }
+        }
+        return html;
+    }) %>
+</head>
