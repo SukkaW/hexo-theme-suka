@@ -1,9 +1,9 @@
 const ejs = require('ejs');
 const pathFn = require('path');
 const fs = require('fs');
-const stringify = require('json-stringify-safe');
+const stringify = require('json-stringify-safe')
 
-const searchTmplSrc = pathFn.join(__dirname, '../../layout/_plugin/search/local-search/search-json.ejs');
+const searchTmplSrc = pathFn.join(__dirname, './template.ejs');
 const searchTmpl = ejs.compile(fs.readFileSync(searchTmplSrc, 'utf8'));
 
 module.exports = function (locals) {
