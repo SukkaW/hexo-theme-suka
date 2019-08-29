@@ -1,4 +1,10 @@
 const logger = require('hexo-log')();
+const pkg = require('../../package.json');
+
+let depsList = [];
+for (const dep in pkg.dependencies) {
+    depsList.push(dep);
+}
 
 function checkDep(name) {
     try {
@@ -12,12 +18,7 @@ function checkDep(name) {
 
 logger.info('Checking dependencies');
 
-const missingDeps = [
-    'json-stringify-safe',
-    'node-prismjs',
-    'prismjs',
-    'qr-image'
-].map(checkDep).some(installed => !installed);
+const missingDeps = depsList.map(checkDep).some(installed => !installed);
 
 if (missingDeps) {
     logger.error('Please install the missing dependencies.');
