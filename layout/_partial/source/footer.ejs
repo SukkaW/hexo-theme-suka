@@ -1,32 +1,41 @@
 <!-- ### Footer JS Import ### -->
 
 <script>
+<% if (page.layout !== 'gallery') { %>
+    <%- fragment_cache('footer_inline_js', () => {
+        let html = [];
+
+        /* Vanilla Lazyload Config */
+        html.push(`
 window.lazyLoadOptions = {
     elements_selector: ".lazyload",
     threshold: 50
-};
+};`);
 
-<% if (page.layout !== 'gallery') { %>
-    /* Copyright */
-    <% if (theme.footer.copyright_since > 0) { %>
-    (function() {
-        var copyrightNow = new Date().getFullYear();
-        var copyrightContent = document.getElementById('copyright-year');
-        var copyrightSince = <%= theme.footer.copyright_since %>;
-        if (copyrightSince === copyrightNow) {
-            copyrightContent.textContent = copyrightNow;
+        /* Copyright */
+        if (theme.footer.copyright_since > 0) {
+            html.push(`
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = ${theme.footer.copyright_since};
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();`);
         } else {
-            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+            html.push(`document.getElementById('copyright-year').textContent = new Date().getFullYear();`);
         }
-    })();
-    <% } else { %>
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
-    <% } %>
 
+        /* Suka Theme Console.Log */
+        html.push(`console.log('\\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision ${theme.verison} %c https://github.com/SukkaW/hexo-theme-suka \\n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');`);
+
+        return html.join('\n');
+    }) %>
 <% } %>
 
-/* Cnosole Log */
-console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme.verison %> %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
 </script>
 
 <!-- vanilla-lazyload -->
