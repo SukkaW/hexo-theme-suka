@@ -3,10 +3,11 @@ require('../includes/tasks/welcome');
 // Check required dependencies
 require('../includes/tasks/check_deps');
 
-// Page Helper
+// Helper
 require('../includes/helpers/page')(hexo);
+require('../includes/helpers/qrcode')(hexo);
 
-// Search Generator
+// Generator
 require('../includes/generator/search/index')(hexo);
 
 // Debug helper
