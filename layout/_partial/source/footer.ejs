@@ -67,4 +67,16 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 <% } %>
 
 <!-- ### Custom Footer ### -->
-<%- partial('_partial/source/custom_footer', {}, {cache: theme.fragment_cache}) %>
+<%- fragment_cache('footer_custom_code', () => {
+    let html = '';
+    if (site.data.head) {
+        for (const i in site.data.head) {
+            if (Array.isArray(site.data.head[i])) {
+                html += site.data.head[i].join('');
+            } else {
+                html += site.data.head[i];
+            }
+        }
+    }
+    return html;
+}) %>
