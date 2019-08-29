@@ -75,9 +75,9 @@
     <%- fragment_cache('head_rss', () => {
         if ( (config.feed) && (config.feed.path) ) {
             let mime_type = '';
-            if (config.feed.type === "atom") {
+            if (config.feed.type === 'atom') {
                 mime_type = 'application/atom+xml';
-            } else if (config.feed.type === "rss2") {
+            } else if (config.feed.type === 'rss2') {
                 mime_type = 'application/rss+xml';
             }
             return `<link rel="alternate" type="${mime_type}" href="${url_for(config.feed.path)}">`
