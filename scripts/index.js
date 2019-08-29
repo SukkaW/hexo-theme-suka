@@ -3,6 +3,9 @@ require('../includes/tasks/welcome');
 // Check required dependencies
 require('../includes/tasks/check_deps');
 
+const logger = require('hexo-log')();
+logger.info('Loading Suka Theme Plugins');
+
 // Helper
 require('../includes/helpers/page')(hexo);
 require('../includes/helpers/qrcode')(hexo);
