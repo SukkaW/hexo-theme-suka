@@ -11,7 +11,7 @@ require('../includes/helpers/page')(hexo);
 require('../includes/helpers/qrcode')(hexo);
 
 // Generator
-require('../includes/generator/search/index')(hexo);
+require('../includes/generator/search')(hexo);
 
 // Debug helper
 hexo.extend.helper.register('console', function () {
