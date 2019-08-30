@@ -34,7 +34,6 @@
     "sass-lint": "1.13.1"
   },
   "dependencies": {
-    "json-stringify-safe": "5.0.1",
     "node-prismjs": "0.1.2",
     "prismjs": "1.17.1",
     "qr-image": "3.2.0"
