@@ -3,7 +3,7 @@
 
 <% if (config.language) { %><meta property="og:locale" content="<%- config.language %>"><% } %>
 
-<meta property="og:url" content="<%= suka_full_url_for(page.path).replace('index.html', '') %>">
+<meta property="og:url" content="<%= config.url + '/' + page.path.replace('index.html', '') %>">
 <meta property="og:image" content="<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>">
 
 <meta property="og:description" content="<%= page_descr() %>">
