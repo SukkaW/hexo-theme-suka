@@ -1,8 +1,7 @@
-module.exports = function (hexo) {
-    const start_time = +new Date;
+const qrImage = require('qr-image');
 
+module.exports = function (hexo) {
     hexo.extend.helper.register('qrcode', (url, option) => {
-        const qrImage = require('qr-image');
         const qrConfig = Object.assign(
             {
                 size: 6,
@@ -23,7 +22,4 @@ module.exports = function (hexo) {
         );
         return `data:image/png;base64,${buffer.toString('base64')}`
     });
-
-    const end_time = +new Date;
-    console.log(`  * helper-qrcode (QRCode) loaded in ${end_time - start_time} ms`);
 };

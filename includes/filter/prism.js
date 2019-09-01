@@ -14,8 +14,6 @@ module.exports = function (hexo) {
         return;
     }
 
-    const start_time = +new Date;
-
     const Prism = require('node-prismjs');
 
     const map = {
@@ -84,7 +82,4 @@ module.exports = function (hexo) {
     }
 
     hexo.extend.filter.register('after_post_render', PrismPlugin);
-
-    const end_time = +new Date;
-    console.log(`  * filter-prism (code highlight) loaded in ${end_time - start_time} ms`);
 };

@@ -1,6 +1,6 @@
-module.exports = function (hexo) {
-    const { htmlTag } = require('hexo-util');
+const { htmlTag } = require('hexo-util');
 
+module.exports = function (hexo) {
     hexo.extend.helper.register('favicon', function (options) {
         const url_for = hexo.extend.helper.get('url_for').bind(this);
 

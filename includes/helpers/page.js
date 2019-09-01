@@ -6,9 +6,9 @@
   *     <%- page_tags(page) %>
   */
 
-module.exports = function (hexo) {
-    const { stripHTML } = require('hexo-util');
+const { stripHTML } = require('hexo-util');
 
+module.exports = function (hexo) {
     hexo.extend.helper.register('page_title', function (page = null) {
         page = (page === null) ? this.page : page;
 

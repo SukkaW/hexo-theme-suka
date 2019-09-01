@@ -3,9 +3,8 @@ module.exports = function (hexo) {
         return;
     }
 
-    const start_time = +new Date;
-
     const pathFn = require('path');
+    const util = require('hexo-util');
 
     let config = hexo.config.suka_theme.search;
 
@@ -13,8 +12,6 @@ module.exports = function (hexo) {
     if (!config.path) config.path = 'search.json';
 
     function searchGenerator(locals = {}) {
-        const util = require('hexo-util');
-
         const url_for = hexo.extend.helper.get('url_for').bind(this);
 
         const parse = (item) => {
@@ -80,7 +77,4 @@ module.exports = function (hexo) {
     if (pathFn.extname(config.path) === '.json') {
         hexo.extend.generator.register('json', searchGenerator);
     }
-
-    const end_time = +new Date;
-    console.log(`  * generator-search (local search) loaded in ${end_time - start_time} ms`);
 };
