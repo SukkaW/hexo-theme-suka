@@ -1,9 +1,8 @@
 <div id="disqus_thread"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.js"></script>
-
+<script id="js-disqusjs" src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.js" async></script>
 <script>
-window.addEventListener("load", function () {
+document.getElementById('js-disqusjs').addEventListener("load", function () {
     var dsqjs = new DisqusJS({
         shortname: '<%= theme.comment.disqusjs.shortname %>',
         <% if (theme.comment.disqusjs.siteName) { %>
