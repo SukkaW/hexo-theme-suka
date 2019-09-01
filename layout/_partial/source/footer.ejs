@@ -1,7 +1,7 @@
 <!-- ### Footer JS Import ### -->
 
 <script>
-<% if (page.layout !== 'gallery') { %>
+
     <%- fragment_cache('footer_inline_js', () => {
         let js = [];
 
@@ -34,7 +34,6 @@ window.lazyLoadOptions = {
 
         return js.join('\n');
     }) %>
-<% } %>
 
 </script>
 
@@ -60,15 +59,6 @@ window.lazyLoadOptions = {
 <% if (theme.prettify.enable) { %>
     <!-- prettify -->
     <%- partial('_plugin/highlight/prettify/import_js') %>
-<% } %>
-
-<!-- gallery.js -->
-<% if (page.layout === 'gallery') { %>
-    <% if (theme.vendors.suka.gallery_js) { %>
-        <script src="<%= theme.vendors.suka.gallery_js %>"></script>
-    <% } else { %>
-        <script src="<%- url_for('js/gallery.min.js') %>"></script>
-    <% } %>
 <% } %>
 
 <!-- Comment -->

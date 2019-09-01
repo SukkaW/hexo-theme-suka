@@ -4,11 +4,6 @@
     <%- partial('_partial/head/index') %>
 
     <body>
-        <% if (page.layout === 'gallery') { %>
-            <!-- ## Gallery ## -->
-            <%- partial('_pages/gallery') %>
-        <% } else { %>
-
             <% if (theme.comment.use === 'facebook') { %>
                 <% if ( (is_post()) ) { %>
                     <!-- Facebook SDK -->
@@ -21,7 +16,6 @@
             <%- body %>
             <!-- ### Footer ### -->
             <%- partial('_partial/footer') %>
-        <% } %>
 
         <!-- ### Import File ### -->
         <%- partial('_partial/source/footer') %>

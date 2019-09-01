@@ -62,11 +62,7 @@
     <meta name="keywords" content="<%= suka_tags() %>">
 
     <!-- ### Import File ### -->
-    <% if (page.layout === 'gallery') { %>
-        <%- partial('_partial/source/head_gallery') %>
-    <% } else { %>
-        <%- partial('_partial/source/head') %>
-    <% } %>
+    <%- partial('_partial/source/head') %>
 
     <!-- ### Site Verification ### -->
     <%- partial('_partial/head/site-verification', {}, {cache: theme.fragment_cache}) %>
