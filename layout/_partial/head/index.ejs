@@ -22,23 +22,9 @@
 
     <!-- Favicons -->
     <%- fragment_cache('head_favicon_and_theme-color', () => {
-        let html = '';
+        let html = favicon(theme.head.favicon);
         let theme_color = '';
-        if (theme.head.favicon.ico) {
-            html += `<link rel="icon" type="image/ico" href="${url_for(theme.head.favicon.ico)}">`;
-        }
-        if (theme.head.favicon.apple_touch_icon) {
-            html += `<link rel="apple-touch-icon" sizes="180x180" href="${url_for(theme.head.favicon.apple_touch_icon)}">`;
-        }
-        if (theme.head.favicon.large) {
-            html += `<link rel="icon" type="image/png" sizes="192x192" href="${url_for(theme.head.favicon.large)}">`;
-        }
-        if (theme.head.favicon.medium) {
-            html += `<link rel="icon" type="image/png" sizes="32x32" href="${url_for(theme.head.favicon.medium)}">`;
-        }
-        if (theme.head.favicon.small) {
-            html += `<link rel="icon" type="image/png" sizes="16x16" href="${url_for(theme.head.favicon.small)}">`;
-        }
+
         if (theme.head.color) {
             theme_color = theme.head.color
         } else if (theme.uiux.bg_color) {
