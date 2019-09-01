@@ -20,6 +20,25 @@
         opacity: 1;
     }
 
+    <% if (theme.uiux.lazy_padding_bottom) { %>
+    #post-content img.lazyload {
+        transition: filter .35s ease 0s;
+    }
+
+    #post-content img.lazyload:not(.loaded) {
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+    }
+
+    #post-content img.lazyload:not(.loaded):not(.loading) {
+        padding-bottom: <%= theme.uiux.lazy_padding_bottom %>;
+    }
+
+    #post-content img.lazyload.error {
+        display: none
+    }
+    <% } %>
+
     .post-entry .card-body a {
         color: <% if (theme.uiux.primary_color) { %><%= theme.uiux.primary_color %><% } else { %>#0070ff<% } %>;
     }

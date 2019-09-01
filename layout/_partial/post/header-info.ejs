@@ -3,12 +3,7 @@
 <% } %>
 
 <%
-    var lazyloadImgSrc = '';
-    if (theme.vendors.lazyload_img) {
-        lazyloadImgSrc = theme.vendors.lazyload_img;
-    } else {
-        lazyloadImgSrc = url_for('img/suka-lazyload.gif');
-    }
+    const lazyloadImgSrc = (theme.vendors.lazyload_img) ? theme.vendors.lazyload_img : url_for('img/suka-lazyload.gif');
 %>
 
 <div class="post-header-info">
@@ -23,15 +18,15 @@
                 style: 'none'
             }) %>
         <% } %>
-        <% if ( (theme.busuanzi.enable === true) && (theme.busuanzi.post_pv.enable === true) ) { %>
+        <% if ( (theme.busuanzi.enable) && (theme.busuanzi.post_pv.enable) ) { %>
             <%- partial('_plugin/busuanzi/post-counter', {}, {cache: theme.fragment_cache}) %>
         <% } %>
-        <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.post_pv.enable === true) ) { %>
+        <% if ( (theme.valine_counter.enable) && (theme.valine_counter.post_pv.enable) ) { %>
             <%- partial('_plugin/valine-counter/post', {}, {cache: theme.fragment_cache}) %>
         <% } %>
     </p>
     <div class="post-header-info-right">
-        <% if (theme.post.share === true) { %>
+        <% if (theme.post.share) { %>
             <%- partial('_partial/menu/post-share') %>
         <% } %>
     </div>
