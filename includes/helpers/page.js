@@ -30,15 +30,17 @@ module.exports = function (hexo) {
     hexo.extend.helper.register('page_descr', function (page = null) {
         page = (page === null) ? this.page : page;
 
-        let description = (hexo.config.description) ? hexo.config.description : '';
-    
-        if (page.description) {
-            description = page.description;
-        } else if (page.excerpt) {
-            description = this.strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
-        } else if (page.content) {
-            description = this.strip_html(this.truncate(page.content, { length: hexo.theme.config.post.entry_excerpt }));
-        }
+        let description = hexo.config.description || page.description || page.excerpt || page.content;
+
+        description = this.strip_html(description).trim() // Remove prefixing/trailing spaces
+            .replace(/^s*/, '').replace(/s*$/, '')
+            .substring(0, 200)
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&apos;')
+            .replace(/\n/g, ' '); // Replace new lines by spaces
 
         return description;
     });
