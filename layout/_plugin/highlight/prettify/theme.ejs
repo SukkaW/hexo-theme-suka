@@ -1,10 +1,13 @@
 <% if ( (is_post()) ) { %>
-    <% if (theme.vendors.prettify_theme) { %>
-        <link rel="stylesheet" href="<%= theme.vendors.prettify_theme %>">
-    <% } else if (theme.prettify.theme) { %>
-        <link rel="stylesheet" href="<%- url_for('lib/prettify/themes/' + theme.prettify.theme + '.min.css') %>">
-    <% } %>
-    <style>
+    <%- fragment_cache('head_prettify_css', () => {
+        let html = '';
+        if (theme.vendors.prettify_theme) {
+            html += css_async(url_for(theme.vendors.prettify_theme));
+        } else if (theme.prettify.theme) {
+            html += css_async(url_for('lib/prettify/themes/' + theme.prettify.theme + '.min.css'));
+        }
+
+        html += `<style>
         pre.prettyprint {
             padding: 4px 0 0 2px !important;
         }
@@ -27,12 +30,18 @@
         .prettyprint li.L6,
         .prettyprint li.L7,
         .prettyprint li.L8,
-        .prettyprint li.L9 {
-            <% if (theme.prettify.linenumber === true) { %>
-            list-style-type: decimal !important;
-            <% } else { %>
-            list-style-type: none !important;
-            <% } %>
+        .prettyprint li.L9 {`;
+
+        if (theme.prettify.linenumber) {
+            html += 'list-style-type: decimal !important;';
+        } else {
+            html += 'list-style-type: none !important;';
         }
-    </style>
+
+        html += `
+        }
+        </style>`;
+
+        return html;
+    }) %>
 <% } %>
