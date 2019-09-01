@@ -71,12 +71,12 @@ window.lazyLoadOptions = {
 <!-- ### Custom Footer ### -->
 <%- fragment_cache('footer_custom_code', () => {
     let html = '';
-    if (site.data.head) {
-        for (const i in site.data.head) {
-            if (Array.isArray(site.data.head[i])) {
-                html += site.data.head[i].join('');
+    if (site.data.footer) {
+        for (const i in site.data.footer) {
+            if (Array.isArray(site.data.footer[i])) {
+                html += site.data.footer[i].join('');
             } else {
-                html += site.data.head[i];
+                html += site.data.footer[i];
             }
         }
     }
