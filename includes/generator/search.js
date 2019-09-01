@@ -11,19 +11,17 @@ module.exports = function (hexo) {
     let config = hexo.config.suka_theme.search;
 
     // Set default search path
-    if (!config.path) {
-        config.path = 'search.json';
-    }
+    if (!config.path) config.path = 'search.json';
 
-    if (pathFn.extname(config.path) == '.json') {
+    if (pathFn.extname(config.path) === '.json') {
         hexo.extend.generator.register('json', function (locals) {
             const url_for = hexo.extend.helper.get('url_for').bind(this);
 
             const parse = (item) => {
                 let _item = {};
-                if (item.title) _item.title = item.title
-                if (item.date) _item.date = item.date
-                if (item.path) _item.url = url_for(item.path)
+                if (item.title) _item.title = item.title;
+                if (item.date) _item.date = item.date;
+                if (item.path) _item.url = url_for(item.path);
                 if (item.tags && item.tags.length > 0) {
                     _item.tags = [];
                     item.tags.forEach((tag) => {
@@ -37,13 +35,12 @@ module.exports = function (hexo) {
                     });
                 }
                 if (item._content) {
-                    _item.content = item.content.trim().replace(/<pre(.*?)\<\/pre\>/gs, '');
-                    _item.content = util.stripHTML(_item.content).replace(/\n/g, ' ').replace(/\s+/g, ' ').replace(new RegExp('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]', 'g'), '');
+                    _item.content = util.stripHTML(item.content.trim().replace(/<pre(.*?)\<\/pre\>/gs, '')).replace(/\n/g, ' ').replace(/\s+/g, ' ').replace(new RegExp('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]', 'g'), '');
                 }
                 return _item;
             }
 
-            let searchfield = config.field;
+            const searchfield = config.field;
 
             let posts,
                 pages;
@@ -82,5 +79,5 @@ module.exports = function (hexo) {
     }
 
     const end_time = +new Date;
-    console.log(`  * Local Search (Generator) loaded in ${end_time - start_time} ms`)
+    console.log(`  * Local Search (Generator) loaded in ${end_time - start_time} ms`);
 }

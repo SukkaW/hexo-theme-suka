@@ -47,7 +47,7 @@ function PrismPlugin(data) {
         data.content = data.content.replace(captionRegex, (origin, lang, caption, code) => {
             if (!lang || !caption || !code) return origin;
             return `<figcaption>${caption}</figcaption><pre><code class="${lang}">${code}</code></pre>`;
-        })
+        });
     }
 
     data.content = data.content.replace(regex, (origin, lang, code) => {

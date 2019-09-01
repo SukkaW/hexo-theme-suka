@@ -15,5 +15,5 @@ require('../includes/generator/search')(hexo);
 
 // Debug helper
 hexo.extend.helper.register('console', function () {
-    console.log(arguments)
+    console.log(arguments);
 });

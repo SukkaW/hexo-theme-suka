@@ -20,8 +20,8 @@ hexo.extend.helper.register('suka_tags', function () {
 });
 
 hexo.extend.helper.register('suka_full_url_for', function (url) {
-    let relative = url.indexOf('http') == -1;
-    if (relative === true) {
+    const relative = (url.indexOf('http') === -1);
+    if (relative) {
         return this.config.url + this.url_for(url).replace(this.config.root, '/');
     } else {
         return url;

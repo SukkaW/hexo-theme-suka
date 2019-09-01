@@ -23,7 +23,7 @@ module.exports = function (hexo) {
         }
 
         return [title, hexo.config.title].filter((str) => {
-            return typeof (str) !== 'undefined' && str.trim() !== ''
+            return typeof (str) !== 'undefined' && str.trim() !== '';
         }).join(' | ');
     });
 
@@ -42,4 +42,4 @@ module.exports = function (hexo) {
 
         return description;
     });
-}
+};
