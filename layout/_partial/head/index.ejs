@@ -109,7 +109,7 @@
             for (const i in site.data.head) {
                 if (Array.isArray(site.data.head[i])) {
                     html += site.data.head[i].join('');
-                } else {
+                } else if (site.data.head[i] !== null) {
                     html += site.data.head[i];
                 }
             }

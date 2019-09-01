@@ -75,7 +75,7 @@ window.lazyLoadOptions = {
         for (const i in site.data.footer) {
             if (Array.isArray(site.data.footer[i])) {
                 html += site.data.footer[i].join('');
-            } else {
+            } else if (site.data.footer[i] !== null) {
                 html += site.data.footer[i];
             }
         }
