@@ -16,6 +16,7 @@
     <!-- ### Meta & Title & Info ### -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
 
     <!-- Title -->
     <title><%= page_title() %></title>
@@ -51,32 +52,33 @@
     <!-- ### Site Verification ### -->
     <%- partial('_partial/head/site-verification', {}, {cache: theme.fragment_cache}) %>
 
-    <!-- ### RSS ### -->
-    <%- fragment_cache('head_rss', () => {
+    <%- fragment_cache('head_common', () => {
+        let html = '';
+        /* RSS */
         if ( (config.feed) && (config.feed.path) ) {
-            let mime_type = '';
             if (config.feed.type === 'atom') {
-                mime_type = 'application/atom+xml';
+                html += `<link rel="alternate" type="application/atom+xml" href="${url_for(config.feed.path)}">`
             } else if (config.feed.type === 'rss2') {
-                mime_type = 'application/rss+xml';
+                html += `<link rel="alternate" type="application/rss+xml" href="${url_for(config.feed.path)}">`
             }
-            return `<link rel="alternate" type="${mime_type}" href="${url_for(config.feed.path)}">`
-        } else {
-            return ''
         }
+
+        /* WebApp */
+        html += '<meta name="mobile-web-app-capable" content="yes">';
+        html += `<meta name="application-name" content="${config.title}">`;
+        html += `<meta name="msapplication-starturl" content="${config.url}">`;
+        if (theme.head.color) {
+            html += `<meta name="msapplication-navbutton-color" content="${theme.head.color}">`;
+        } else if (theme.uiux.bg_color) {
+            html += `<meta name="msapplication-navbutton-color" content="${theme.uiux.bg_color}">`;
+        }
+        html += '<meta name="apple-mobile-web-app-capable" content="yes">';
+        html += `<meta name="apple-mobile-web-app-title" content="${config.title}">`
+        html += '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">'
+
+        return html;
     }) %>
 
-    <!-- ### WebApp ### -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="<%= config.title %>">
-    <meta name="msapplication-starturl" content="<%= config.url %>">
-    <% if (theme.head.color) { %>
-        <meta name="msapplication-navbutton-color" content="<%= theme.head.color %>">
-    <% } %>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
     <!-- Manifest Import -->
     <% if (theme.head.pwa_manifest) { %>
         <link rel="manifest" href="<%= theme.head.pwa_manifest %>">

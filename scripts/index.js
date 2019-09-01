@@ -22,3 +22,7 @@ require('../includes/filter/prism')(hexo);
 hexo.extend.helper.register('console', function () {
     console.log(arguments);
 });
+
+if ((/3.[89]/).test(hexo.version)) {
+    hexo.extend.filter.unregister('after_render:html', require('../../../node_modules/hexo/lib/plugins/filter/meta_generator'));
+}
