@@ -3,6 +3,7 @@
   * @example
   *     <%- page_title(page) %>
   *     <%- page_descr(page) %>
+  *     <%- page_tags(page) %>
   */
 
 module.exports = function (hexo) {
@@ -26,9 +27,7 @@ module.exports = function (hexo) {
             title = `${this.__('tag')}: ${page.tag}`;
         }
 
-        return [title, hexo.config.title].filter((str) => {
-            return typeof (str) !== 'undefined' && str.trim() !== '';
-        }).join(' | ');
+        return [title, hexo.config.title].filter((str) => typeof (str) !== 'undefined' && str.trim() !== '').join(' | ');
     });
 
     hexo.extend.helper.register('page_descr', function (page = null) {
@@ -47,5 +46,27 @@ module.exports = function (hexo) {
             .replace(/\n/g, ' '); // Replace new lines by spaces
 
         return description;
+    });
+
+    hexo.extend.helper.register('page_tags', function (page = null) {
+        page = (page === null) ? this.page : page;
+        const { config } = this;
+
+        let page_tags = page.keywords || page.tags,
+            site_tags = config.keywords || this.theme.head.keywords;
+
+        const parse = (tags) => {
+            let result = [];
+            if (tags) {
+                if (typeof tags === 'string') {
+                    result.push(tags);
+                } else if (tags.length) {
+                    result.push(tags.map(tag => tag.name ? tag.name : tag).filter(tags => !!tags).join(', '));
+                }
+            }
+            return result;
+        }
+
+        return [parse(page_tags), parse(site_tags)].filter(tags => tags.length && tags.length !== 0).join(', ');
     });
 };

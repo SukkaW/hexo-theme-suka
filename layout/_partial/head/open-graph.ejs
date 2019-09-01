@@ -15,7 +15,7 @@
     <meta property="article:published_time" content="<%= date_xml(page.date) %>">
     <meta property="article:modified_time" content="<%= date_xml(page.date) %>">
     <meta property="article:author" content="<%= config.author %>">
-    <meta property="article:tag" content="<%= suka_tags() %>">
+    <meta property="article:tag" content="<%= page_tags() %>">
 <% } else { %>
     <meta property="og:type" content="website">
 <% } %>

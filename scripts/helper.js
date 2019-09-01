@@ -1,24 +1,3 @@
-hexo.extend.helper.register('suka_tags', function () {
-    let sukaTags;
-    if (this.theme.head.keywords) {
-        sukaTags = this.theme.head.keywords;
-    } else {
-        sukaTags = '';
-    }
-
-    if (this.page.tags && this.page.tags.length) {
-        this.page.tags.forEach((tag, index) => {
-            sukaTags += ', ' + tag.name;
-        });
-    }
-
-    if (sukaTags) {
-        return sukaTags;
-    } else {
-        return '';
-    }
-});
-
 hexo.extend.helper.register('suka_full_url_for', function (url) {
     const relative = (url.indexOf('http') === -1);
     if (relative) {
