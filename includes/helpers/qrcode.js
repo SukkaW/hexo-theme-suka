@@ -26,5 +26,5 @@ module.exports = function (hexo) {
     });
 
     const end_time = +new Date;
-    console.log(`  * QRCode (Helper) loaded in ${end_time - start_time} ms`);
+    console.log(`  * helper-qrcode (QRCode) loaded in ${end_time - start_time} ms`);
 };

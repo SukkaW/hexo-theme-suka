@@ -8,10 +8,14 @@ logger.info('Loading Suka Theme Plugins');
 
 // Helper
 require('../includes/helpers/page')(hexo);
+require('../includes/helpers/favicon')(hexo);
 require('../includes/helpers/qrcode')(hexo);
 
 // Generator
 require('../includes/generator/search')(hexo);
+
+// Filter
+require('../includes/filter/prism')(hexo);
 
 // Debug helper
 hexo.extend.helper.register('console', function () {

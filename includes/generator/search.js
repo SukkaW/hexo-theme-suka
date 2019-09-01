@@ -79,5 +79,5 @@ module.exports = function (hexo) {
     }
 
     const end_time = +new Date;
-    console.log(`  * Local Search (Generator) loaded in ${end_time - start_time} ms`);
+    console.log(`  * generator-search (local search) loaded in ${end_time - start_time} ms`);
 };
