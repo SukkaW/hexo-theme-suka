@@ -1,9 +1,8 @@
 module.exports = function (hexo) {
     const start_time = +new Date;
 
-    const qrImage = require('qr-image');
-
     hexo.extend.helper.register('qrcode', (url, option) => {
+        const qrImage = require('qr-image');
         const qrConfig = Object.assign(
             {
                 size: 6,

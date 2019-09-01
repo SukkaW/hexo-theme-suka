@@ -89,6 +89,8 @@
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
     <%- partial('_partial/head/open-graph') %>
 
+    <%- fragment_cache('head_meta_generator', _meta_generator) %>
+
     <!-- ### Analytics ### -->
     <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
 
