@@ -17,10 +17,10 @@
     </p>
     <!-- footer develop info -->
     <p class="footer-develop mb-0">
-        <% if (theme.busuanzi.enable === true) { %>
+        <% if (theme.busuanzi.enable) { %>
             <%- partial('_plugin/busuanzi/footer_counter', {}, {cache: theme.fragment_cache}) %>
         <% } %>
-        <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.site_pv.enable === true) ) { %>
+        <% if ( (theme.valine_counter.enable) && (theme.valine_counter.site_pv.enable) ) { %>
             <%- partial('_plugin/valine-counter/footer') %>
         <% } %>
         Powered by&nbsp;<!--

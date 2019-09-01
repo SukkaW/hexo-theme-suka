@@ -3,10 +3,10 @@
 <script>
 <% if (page.layout !== 'gallery') { %>
     <%- fragment_cache('footer_inline_js', () => {
-        let html = [];
+        let js = [];
 
         /* Vanilla Lazyload Config */
-        html.push(`
+        js.push(`
 window.lazyLoadOptions = {
     elements_selector: ".lazyload",
     threshold: 50
@@ -14,7 +14,7 @@ window.lazyLoadOptions = {
 
         /* Copyright */
         if (theme.footer.copyright_since > 0) {
-            html.push(`
+            js.push(`
 (function() {
     var copyrightNow = new Date().getFullYear();
     var copyrightContent = document.getElementById('copyright-year');
@@ -26,36 +26,38 @@ window.lazyLoadOptions = {
     }
 })();`);
         } else {
-            html.push(`document.getElementById('copyright-year').textContent = new Date().getFullYear();`);
+            js.push(`document.getElementById('copyright-year').textContent = new Date().getFullYear();`);
         }
 
         /* Suka Theme Console.Log */
-        html.push(`console.log('\\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision ${theme.verison} %c https://github.com/SukkaW/hexo-theme-suka \\n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');`);
+        js.push(`console.log('\\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision ${theme.verison} %c https://github.com/SukkaW/hexo-theme-suka \\n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');`);
 
-        return html.join('\n');
+        return js.join('\n');
     }) %>
 <% } %>
 
 </script>
 
-<!-- vanilla-lazyload -->
-<% if (theme.vendors.lazyload) { %>
-    <script src="<%= theme.vendors.lazyload %>" async></script>
-<% } else { %>
-    <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" async></script>
-<% } %>
+<%- fragment_cache('footer_common_js', () => {
+    let html = '';
 
-<% if(theme.busuanzi.enable === true) { %>
-    <!-- Busuanzi -->
-    <%- partial('_plugin/busuanzi/import_js') %>
-<% } %>
+    /* vanilla-lazyload */
+    if (theme.vendors.lazyload) {
+        html += `<script src="${theme.vendors.lazyload}" async></script>`
+    } else {
+        html += `<script src="${url_for('lib/vanilla-lazyload/lazyload.min.js')}" async></script>`
+    }
 
-<% if (theme.hanabi.enable === true) { %>
-    <!-- Hanabi -->
-    <%- partial('_plugin/highlight/hanabi/import_js', {}, {cache: theme.fragment_cache}) %>
-<% } %>
+    /* Busuanzi */
+    if (theme.busuanzi.enable) html += partial('_plugin/busuanzi/import_js');
 
-<% if (theme.prettify.enable === true) { %>
+    /* theme.hanabi.enable */
+    if (theme.hanabi.enable) html += partial('_plugin/highlight/hanabi/import_js');
+
+    return html
+}) %>
+
+<% if (theme.prettify.enable) { %>
     <!-- prettify -->
     <%- partial('_plugin/highlight/prettify/import_js') %>
 <% } %>

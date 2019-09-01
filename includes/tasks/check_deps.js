@@ -11,7 +11,7 @@ function checkDep(name) {
         require.resolve(name);
         return true;
     } catch(e) {
-        logger.error(`Package ${name} is not installed.`)
+        logger.error(`Package ${name} is not installed.`);
     }
     return false;
 }
