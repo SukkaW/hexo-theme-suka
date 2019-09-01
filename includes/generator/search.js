@@ -35,7 +35,7 @@ module.exports = function (hexo) {
                 _item.content = util.stripHTML(item.content.trim().replace(/<pre(.*?)\<\/pre\>/gs, '')).replace(/\n/g, ' ').replace(/\s+/g, ' ').replace(new RegExp('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]', 'g'), '');
             }
             return _item;
-        }
+        };
 
         const searchfield = config.field;
 

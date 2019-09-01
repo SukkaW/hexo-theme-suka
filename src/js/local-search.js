@@ -5,21 +5,14 @@
  * License: GPL-3.0
  */
 
-// Get search query from URL
-String.prototype.queryUrl = function (e) {
-    var t = this.replace(/^[^?=]*\?/ig, "").split("#")[0],
-        n = {};
-    return t.replace(/(^|&)([^&=]+)=([^&]*)/g, function (e, t, r, i) {
-        try {
-            r = decodeURIComponent(r)
-        } catch (s) { }
-        try {
-            i = decodeURIComponent(i)
-        } catch (s) { }
-        r in n ? n[r] instanceof Array ? n[r].push(i) : n[r] = [n[r], i] : n[r] = /\[\]$/.test(r) ? [i] : i
-    }), e ? n[e] : n
-};
-var searchQuery = location.search.queryUrl();
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(window.location.search);
+    return results == null ? '' : decodeURIComponent(results[1]);
+}
+
+var searchKeyword = getParameterByName('s');
 
 var res;
 var searchFunc = function (searchFilePath) {
@@ -31,10 +24,10 @@ var searchFunc = function (searchFilePath) {
         var $resultNum = document.getElementById("search-result-num");
         var $resultInfo = document.getElementById("search-result-info");
         // Search only when there is a search query
-        if (typeof(searchQuery.s) !== "undefined") {
-            search(searchQuery.s)
+        if (typeof (searchKeyword) !== "undefined") {
+            search(searchKeyword)
             // Set form value
-            document.getElementById('search-field').setAttribute('value', searchQuery.s)
+            document.getElementById('search-field').setAttribute('value', searchKeyword)
         }
         function search(key) {
             var str = '';

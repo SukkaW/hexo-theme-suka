@@ -23,7 +23,7 @@
 
     <!-- Favicons -->
     <%- fragment_cache('head_favicon_and_theme-color', () => {
-        let html = favicon(theme.head.favicon);
+        let html = favicon();
         let theme_color = '';
 
         if (theme.head.color) {
