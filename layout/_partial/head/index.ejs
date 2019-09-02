@@ -97,7 +97,7 @@
     <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="<%= full_url_for(page.path).replace('index.html', '') %>">
+    <link rel="canonical" href="<%= _full_url_for(page.path).replace('index.html', '') %>">
 
     <!-- ### Structured Data ### -->
     <%- partial('_partial/head/structured-data') %>

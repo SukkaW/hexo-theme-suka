@@ -27,9 +27,9 @@ module.exports = function (hexo) {
     });
 
     hexo.extend.helper.register('site_logo', function () {
-        const full_url_for = hexo.extend.helper.get('full_url_for').bind(this);
+        const _full_url_for = hexo.extend.helper.get('_full_url_for').bind(this);
         const { favicon } = this.theme.head;
-        const getFavicon = (type) => full_url_for(favicon[type]);
+        const getFavicon = (type) => _full_url_for(favicon[type]);
 
         if (favicon.large) {
             return getFavicon('large');

@@ -8,7 +8,7 @@
         "name": "<%= config.author %>",
         "image": {
             "@type": "ImageObject",
-            "url": "<%= full_url_for(theme.img.avatar) %>"
+            "url": "<%= _full_url_for(theme.img.avatar) %>"
         },
         "description": "<%- theme.uiux.slogan %>"
     },
@@ -33,7 +33,7 @@
     <% if ( (theme.search.use === "local") || (theme.nav.search.link) ) { %>
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "<%= full_url_for(theme.nav.search.link) %>?s={search_term_string}",
+        "target": "<%= _full_url_for(theme.nav.search.link) %>?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     <% } %>
@@ -59,7 +59,7 @@
     <% if(page.thumbnail) { %>
     "image": {
         "@type": "ImageObject",
-        "url": "<%= full_url_for(page.thumbnail) %>"
+        "url": "<%= _full_url_for(page.thumbnail) %>"
     },
     <% } else { %>
     "image": {
@@ -74,7 +74,7 @@
         "name": "<%= config.author %>",
         "image": {
             "@type": "ImageObject",
-            "url": "<%= full_url_for(theme.img.avatar) %>"
+            "url": "<%= _full_url_for(theme.img.avatar) %>"
         },
         "description": "<%- theme.uiux.slogan %>"
     },
@@ -89,7 +89,7 @@
     <% if ( (theme.search.use === "local") || (theme.nav.search.link) ) { %>
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "<%= full_url_for(theme.nav.search.link) %>?s={search_term_string}",
+        "target": "<%= _full_url_for(theme.nav.search.link) %>?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     <% } %>

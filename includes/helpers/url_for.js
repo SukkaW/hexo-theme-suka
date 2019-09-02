@@ -4,7 +4,7 @@
 const { parse } = require('url');
 
 module.exports = function (hexo) {
-    hexo.extend.helper.register('full_url_for', function (path = '/') {
+    hexo.extend.helper.register('_full_url_for', function (path = '/') {
         if (path[0] === '#' || path.startsWith('//')) {
             return path;
         }
