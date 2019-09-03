@@ -27,7 +27,7 @@
                 style: 'none'
             }) %>
         <% } %>
-        <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.index_post_pv.enable === true) ) { %>
+        <% if ( (theme.valine_counter.enable) && (theme.valine_counter.index_post_pv.enable) ) { %>
             <span class="suka-devide-dot"></span>
             <%- partial('_plugin/valine-counter/index_post', {}, {cache: theme.fragment_cache}) %>
         <% } %>

@@ -15,7 +15,7 @@
     </blockquote>
 <% } %>
 
-<% if (theme.post.expire === true) { %>
+<% if (theme.post.expire) { %>
     <blockquote id="date-expire-notification" class="post-expired-notify"><%- __('post.expired', '<span id="date-expire-num"></span>') %></blockquote>
     <script>
     (function() {
