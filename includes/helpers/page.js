@@ -65,7 +65,7 @@ module.exports = function (hexo) {
                 }
             }
             return result;
-        }
+        };
 
         return [parse(page_tags), parse(site_tags)].filter(tags => tags.length && tags.length !== 0).join(', ');
     });

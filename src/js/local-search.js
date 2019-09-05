@@ -32,13 +32,14 @@
                     var output = [];
 
                     for (var i in input) {
-                        if (input[i].indexOf('+') > -1) {
-                            var keys = input[i].split('+');
+                        var keyword = input[i];
+                        if (keyword.indexOf('+') > -1) {
+                            var keys = keyword.split('+');
                             for (var j in keys) {
                                 output.push(keys[j]);
                             }
                         } else {
-                            output.push(input[i]);
+                            output.push(keyword);
                         }
                     }
 
@@ -97,8 +98,8 @@
                             match_title = match_title.replace(regS, '<strong><mark>' + keyword + '</mark></strong>');
                         })
                         str += '<a href="' + data.url + '"><p class="tile-title search-result-title">' + match_title + '</p></a>';
-                        str += '<p class="text-gray search-result-summary">'
-                        str += '<span class="saerch-result-date">' + data_date + '</span>'
+                        str += '<p class="text-gray search-result-summary">';
+                        str += '<span class="saerch-result-date">' + data_date + '</span>';
                         var content = data.content;
                         if (first_occur >= 0) {
                             /* cut out characters & highlight keyword in content
@@ -123,7 +124,7 @@
                         resultArray.push([str, data_weight]);
                     }
                 });
-                var resultHTML = function () {
+                var resultHTML = (function () {
                     var html = '';
                     resultArray.sort(function (x, y) {
                         return y[1] - x[1];
@@ -134,7 +135,7 @@
                     }
 
                     return html;
-                };
+                })();
 
                 $resultNum.innerHTML = resultArray.length;
                 if (index_num <= 0) {
@@ -142,7 +143,7 @@
                     $resultContent.innerHTML = noResultText;
                 } else {
                     $resultInfo.style.display = 'block';
-                    $resultContent.innerHTML = resultHTML();
+                    $resultContent.innerHTML = resultHTML;
                 }
             }
 
@@ -150,8 +151,8 @@
             if (typeof (searchKeyword) !== 'undefined') {
                 search(searchKeyword);
                 // Set form value
-                document.getElementById('search-field').setAttribute('value', searchKeyword)
-            }
-        })
-    }
+                document.getElementById('search-field').setAttribute('value', searchKeyword);
+            } 
+        });
+    };
 })();

@@ -20,6 +20,6 @@ module.exports = function (hexo) {
                 margin: qrConfig.margin
             }
         );
-        return `data:image/png;base64,${buffer.toString('base64')}`
+        return `data:image/png;base64,${buffer.toString('base64')}`;
     });
 };
