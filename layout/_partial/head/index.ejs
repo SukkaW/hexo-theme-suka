@@ -41,11 +41,6 @@
         return html;
     }) %>
 
-    <!-- Description -->
-    <meta name="description" content="<%= page_descr() %>">
-    <!-- Keywords -->
-    <meta name="keywords" content="<%= page_tags() %>">
-
     <!-- ### Import File ### -->
     <%- partial('_partial/source/head') %>
 
@@ -89,15 +84,29 @@
     <% } %>
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <%- partial('_partial/head/open-graph') %>
+    <%- _open_graph() %>
+
+    <%- fragment_cache('head_facebook_admin', () => {
+        let html = '';
+
+        if (theme.comment.use === 'facebook') {
+            if (theme.comment.facebook.admin_fb_appid) {
+                html += `<meta property="fb:app_id" content="${theme.comment.facebook.admin_fb_appid}">`
+            } else if (theme.comment.facebook.admin_fb_username) {
+                html += `<meta property="fb:admins" content="${theme.comment.facebook.admin_fb_username}">`
+            }
+        }
+
+        return html;
+    }) %>
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="<%= _full_url_for(page.path).replace('index.html', '') %>">
 
     <%- fragment_cache('head_meta_generator', _meta_generator) %>
 
     <!-- ### Analytics ### -->
     <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
-
-    <!-- ### Canonical link ### -->
-    <link rel="canonical" href="<%= _full_url_for(page.path).replace('index.html', '') %>">
 
     <!-- ### Structured Data ### -->
     <%- partial('_partial/head/structured-data') %>
