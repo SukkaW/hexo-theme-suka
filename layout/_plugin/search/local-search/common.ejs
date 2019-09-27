@@ -10,7 +10,7 @@
         var searchNoResult = '';
         searchNoResult += '<div class="search-noresult"><span><%= __('search.noresult') %>'
         searchNoResult += '<br><%= __('search.trygoogle') %>&nbsp;:&nbsp;</span>'
-        searchNoResult += '<a href="https://www.google.com/search?&q=' + window.getParameterByName('s') + '%20site:<%= config.url %>" target="_blank">' + window.getParameterByName('s') + '&nbsp;site:<%= config.url %></a></div>'
+        searchNoResult += '<a href="https://www.google.com/search?&q=' + window.searchEscape(window.getParameterByName('s')) + '%20site:<%= config.url %>" target="_blank">' + window.searchEscape(window.getParameterByName('s')) + '&nbsp;site:<%= config.url %></a></div>'
         window.searchFunc('<%= url_for(config.suka_theme.search.path) %>', searchNoResult);
     })();
 </script>

@@ -15,8 +15,24 @@
 
     var searchKeyword = window.getParameterByName('s');
 
+    window.searchEscape = function (keyword) {
+        var htmlEntityMap = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            '\'': '&#39;',
+            '/': '&#x2F;'
+        };
+
+        return keyword.replace(/[&<>"'/]/g, function (i) {
+            return htmlEntityMap[i];
+        });
+    }
+
     window.searchFunc = function (searchFilePath, noResultText) {
         'use strict';
+
         fetch(searchFilePath).then(function (res) {
             return res.json();
         }).then(function (datas) {
@@ -95,7 +111,7 @@
                         var match_title = data.title;
                         keywords.forEach(function (keyword) {
                             var regS = new RegExp(keyword, 'gi');
-                            match_title = match_title.replace(regS, '<strong><mark>' + keyword + '</mark></strong>');
+                            match_title = match_title.replace(regS, '<strong><mark>' + window.searchEscape(keyword) + '</mark></strong>');
                         })
                         str += '<a href="' + data.url + '"><p class="tile-title search-result-title">' + match_title + '</p></a>';
                         str += '<p class="text-gray search-result-summary">';
@@ -115,7 +131,7 @@
                             var match_content = content.substr(start, end);
                             keywords.forEach(function (keyword) {
                                 var regS = new RegExp(keyword, 'gi');
-                                match_content = match_content.replace(regS, '<strong><mark>' + key + '</mark></strong>');
+                                match_content = match_content.replace(regS, '<strong><mark>' + window.searchEscape(key) + '</mark></strong>');
                             })
                             str += match_content + '...</p>';
                         }
@@ -137,7 +153,7 @@
                     return html;
                 })();
 
-                $resultNum.innerHTML = resultArray.length;
+                $resultNum.appendChild(document.createTextNode(resultArray.length));
                 if (index_num <= 0) {
                     $resultInfo.style.display = 'none';
                     $resultContent.innerHTML = noResultText;
@@ -152,7 +168,7 @@
                 search(searchKeyword);
                 // Set form value
                 document.getElementById('search-field').setAttribute('value', searchKeyword);
-            } 
+            }
         });
     };
 })();
