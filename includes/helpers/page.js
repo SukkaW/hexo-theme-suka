@@ -33,7 +33,7 @@ module.exports = function (hexo) {
     hexo.extend.helper.register('page_descr', function (page = null) {
         page = (page === null) ? this.page : page;
 
-        let description = hexo.config.description || page.description || page.excerpt || page.content;
+        let description = page.description || page.excerpt || page.content || hexo.config.description ;
 
         description = stripHTML(description).trim() // Remove prefixing/trailing spaces
             .replace(/^s*/, '').replace(/s*$/, '')
@@ -45,7 +45,8 @@ module.exports = function (hexo) {
             .replace(/'/g, '&apos;')
             .replace(/\n/g, ' '); // Replace new lines by spaces
 
-        return description;
+        return ;
+        return [description, hexo.config.author, hexo.config.title].filter((str) => typeof (str) !== 'undefined' && str.trim() !== '').join(' - ');
     });
 
     hexo.extend.helper.register('page_tags', function (page = null) {
