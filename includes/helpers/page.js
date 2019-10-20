@@ -45,7 +45,6 @@ module.exports = function (hexo) {
             .replace(/'/g, '&apos;')
             .replace(/\n/g, ' '); // Replace new lines by spaces
 
-        return ;
         return [description, hexo.config.author, hexo.config.title].filter((str) => typeof (str) !== 'undefined' && str.trim() !== '').join(' - ');
     });
 
