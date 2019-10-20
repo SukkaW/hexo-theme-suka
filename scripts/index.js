@@ -1,5 +1,9 @@
+/* global hexo */
+
 // Welcome Message
 require('../includes/tasks/welcome');
+// Check Hexo Version
+require('../includes/tasks/check_hexo')(hexo);
 // Check required dependencies
 require('../includes/tasks/check_deps');
 
