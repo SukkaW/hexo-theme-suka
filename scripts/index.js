@@ -9,7 +9,6 @@ logger.info('Loading Suka Theme Plugins');
 // Helper
 require('../includes/helpers/page')(hexo);
 require('../includes/helpers/tags')(hexo);
-require('../includes/helpers/url_for')(hexo);
 require('../includes/helpers/favicon')(hexo);
 require('../includes/helpers/qrcode')(hexo);
 
