@@ -101,7 +101,7 @@
     }) %>
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="<%= _full_url_for(page.path).replace('index.html', '') %>">
+    <link rel="canonical" href="<%= full_url_for(page.path).replace('index.html', '') %>">
 
     <%- fragment_cache('head_meta_generator', _meta_generator) %>
 
