@@ -31,23 +31,12 @@ module.exports = function (hexo) {
         const { favicon } = this.theme.head;
         const getFavicon = (type) => full_url_for(favicon[type]);
 
-        if (favicon.large) {
-            return getFavicon('large');
-        }
-        if (favicon.apple_touch_icon) {
-            return getFavicon('apple_touch_icon');
-        }
-        if (favicon.medium) {
-            return getFavicon('medium');
-        }
-        if (favicon.small) {
-            return getFavicon('small');
-        }
-        if (favicon.ico) {
-            return getFavicon('ico');
-        }
+        if (favicon.large) return getFavicon('large');
+        if (favicon.apple_touch_icon) return getFavicon('apple_touch_icon');
+        if (favicon.medium) return getFavicon('medium');
+        if (favicon.small) return getFavicon('small');
+        if (favicon.ico) return getFavicon('ico');
 
         return 'https://theme-suka.skk.moe/demo/img/suka-favicon.png';
     });
-    
 };

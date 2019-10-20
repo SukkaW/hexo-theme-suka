@@ -33,10 +33,9 @@ module.exports = function (hexo) {
 
         let images = options.image || options.images || page.photos || [];
 
-        const _description = helper.get('page_descr').bind(this);
-        const _keywords = helper.get('page_tags').bind(this);
-        const description = (() => _description())();
-        const _tags = (() => _keywords())();
+        const description = helper.get('page_descr').bind(this)();
+        const _tags = helper.get('page_tags').bind(this)();
+
         let keywords;
 
         const _title = helper.get('page_title').bind(this);
