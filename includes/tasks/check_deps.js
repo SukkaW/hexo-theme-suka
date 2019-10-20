@@ -1,10 +1,7 @@
 const logger = require('hexo-log')();
 const pkg = require('../../package.json');
 
-let depsList = [];
-for (const dep in pkg.dependencies) {
-    depsList.push(dep);
-}
+const depsList = Object.keys(pkg.dependencies);
 
 function checkDep(name) {
     try {

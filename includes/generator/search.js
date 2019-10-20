@@ -4,7 +4,7 @@ module.exports = function (hexo) {
     }
 
     const pathFn = require('path');
-    const util = require('hexo-util');
+    const { stripHTML } = require('hexo-util');
 
     let config = hexo.config.suka_theme.search;
 
@@ -32,7 +32,9 @@ module.exports = function (hexo) {
                 });
             }
             if (item._content) {
-                _item.content = util.stripHTML(item.content.trim().replace(/<pre(.*?)\<\/pre\>/gs, '')).replace(/\n/g, ' ').replace(/\s+/g, ' ').replace(new RegExp('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]', 'g'), '');
+                _item.content = stripHTML(item.content.trim().replace(/<pre(.*?)\<\/pre\>/gs, ''))
+                    .replace(/\n/g, ' ').replace(/\s+/g, ' ')
+                    .replace(new RegExp('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]', 'g'), '');
             }
             return _item;
         };
