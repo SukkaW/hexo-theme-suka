@@ -1,9 +1,8 @@
 <head>
     <meta charset="utf-8">
     <!--
-        © SukkaW
+        hexo-theme-suka © SukkaW
         GitHub: https://github.com/SukkaW/hexo-theme-suka
-        Version: <%= theme.verison %>
     -->
 
     <!-- ### Resource Hint ### -->
@@ -11,7 +10,7 @@
     <!-- ## DNS Prefetch ## -->
     <%- partial('_partial/head/dns-prefetch', {}, {cache: theme.fragment_cache}) %>
     <!-- ## Preload ## -->
-    <%- partial('_partial/head/preload') %>
+    <%- partial('_partial/head/preload', {}, {cache: theme.fragment_cache}) %>
 
     <!-- ### Meta & Title & Info ### -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,17 +70,18 @@
         html += `<meta name="apple-mobile-web-app-title" content="${config.title}">`
         html += '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">'
 
+        /* PWA Manifest */
+        if (theme.head.pwa_manifest) {
+            html += `<link rel="manifest" href="${theme.head.pwa_manifest}">`
+        }
+        
+        /* Open Search */
+        if (theme.head.open_search) {
+            html += `<link rel="search" type="application/opensearchdescription+xml" href="${theme.head.open_search}" title="${config.title}">`
+        }
+
         return html;
     }) %>
-
-    <!-- Manifest Import -->
-    <% if (theme.head.pwa_manifest) { %>
-        <link rel="manifest" href="<%= theme.head.pwa_manifest %>">
-    <% } %>
-    <!-- Open Search -->
-    <% if (theme.head.open_search) { %>
-        <link rel="search" type="application/opensearchdescription+xml" href="<%= theme.head.open_search %>" title="<%= config.title %>">
-    <% } %>
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
     <%- _open_graph() %>

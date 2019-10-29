@@ -1,8 +1,12 @@
 <footer class="text-center">
     <!-- footer copyright -->
-    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-        <a class="footer-copyright-a" href="<%= config.url %>"><%= config.title %></a>
-    </p>
+    <%- fragment_cache('footer_copyright_text', () => {
+        return `
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="${config.url}">${config.title}</a>
+        </p>`
+    }) %>
+
     <!-- footer custom text -->
     <p class="footer-text mb-0">
     <%- fragment_cache('footer_custom_text', () => {
@@ -17,9 +21,11 @@
     </p>
     <!-- footer develop info -->
     <p class="footer-develop mb-0">
-        <% if (theme.busuanzi.enable) { %>
-            <%- partial('_plugin/busuanzi/footer_counter', {}, {cache: theme.fragment_cache}) %>
-        <% } %>
+        <%- fragment_cache('footer_counter_text', () => {
+            if (theme.busuanzi.enable) return partial('_plugin/busuanzi/footer_counter');
+            return '';
+        }) %>
+
         <% if ( (theme.valine_counter.enable) && (theme.valine_counter.site_pv.enable) ) { %>
             <%- partial('_plugin/valine-counter/footer') %>
         <% } %>
