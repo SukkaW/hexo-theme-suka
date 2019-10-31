@@ -1,49 +1,50 @@
 <meta http-equiv="x-dns-prefetch-control" content="on">
+
 <!-- busuanzi -->
-<% if(theme.busuanzi.enable === true) { %>
+<% if (theme.busuanzi.enable) { %>
     <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
 <% } %>
 
 <!-- comment -->
-<% if(theme.comment.use === "changyan") { %>
+<% if (theme.comment.use === "changyan") { %>
     <link rel="dns-prefetch" href="//changyan.sohu.com">
 <% } %>
 <% if (theme.comment.use === "disqus") { %>
     <link rel="dns-prefetch" href="//disqus.com">
     <link rel="dns-prefetch" href="//<%= theme.comment.disqus.shortname %>.disqus.com">
 <% } %>
-<% if(theme.comment.use === "gitalk") { %>
+<% if (theme.comment.use === "gitalk") { %>
     <link rel="dns-prefetch" href="//api.github.com">
     <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
 <% } %>
-<% if(theme.comment.use === "gitment") { %>
+<% if (theme.comment.use === "gitment") { %>
     <link rel="dns-prefetch" href="//imsun.github.io">
     <link rel="dns-prefetch" href="//api.github.com">
 <% } %>
-<% if(theme.comment.use === "livere") { %>
+<% if (theme.comment.use === "livere") { %>
     <link rel="dns-prefetch" href="//cdn-city.livere.com">
 <% } %>
-<% if(theme.comment.use === "valine") { %>
+<% if (theme.comment.use === "valine") { %>
     <link rel="dns-prefetch" href="//cdn1.lncld.net">
 <% } %>
 
 <!-- analytics -->
-<% if(theme.analytics.baidu_site_id) { %>
+<% if (theme.analytics.baidu_site_id) { %>
     <link rel="dns-prefetch" href="//hm.baidu.com">
 <% } %>
-<% if(theme.analytics.google_site_id) { %>
+<% if (theme.analytics.google_site_id) { %>
     <link rel="dns-prefetch" href="//www.google-analytics.com">
 <% } %>
-<% if(theme.analytics.gtags_site_id) { %>
+<% if (theme.analytics.gtags_site_id) { %>
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
 <% } %>
-<% if(theme.analytics.cnzz_site_id) { %>
+<% if (theme.analytics.cnzz_site_id) { %>
     <link rel="dns-prefetch" href="//s95.cnzz.com">
 <% } %>
-<% if(theme.analytics.tencent_site_id) { %>
+<% if (theme.analytics.tencent_site_id) { %>
     <link rel="dns-prefetch" href="//tajs.qq.com">
 <% } %>
-<% if(theme.analytics.tencent_mta_id) { %>
+<% if (theme.analytics.tencent_mta_id) { %>
     <link rel="dns-prefetch" href="//pingjs.qq.com">
 <% } %>

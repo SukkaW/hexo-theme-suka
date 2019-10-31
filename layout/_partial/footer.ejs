@@ -1,24 +1,32 @@
 <footer class="text-center">
     <!-- footer copyright -->
-    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
-        <a class="footer-copyright-a" href="<%= config.url %>"><%= config.title %></a>
-    </p>
+    <%- fragment_cache('footer_copyright_text', () => {
+        return `
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="${config.url}">${config.title}</a>
+        </p>`
+    }) %>
+
     <!-- footer custom text -->
     <p class="footer-text mb-0">
-    <% if(theme.footer.custom_text) { %>
-        <% if(Array.isArray(theme.footer.custom_text)) { %>
-            <%- theme.footer.custom_text.join('<br>') %>
-        <% } else { %>
-            <%- theme.footer.custom_text %>
-        <% } %>
-    <% } %>
+    <%- fragment_cache('footer_custom_text', () => {
+        if (theme.footer.custom_text) {
+            if (Array.isArray(theme.footer.custom_text)) {
+                return theme.footer.custom_text.join('<br>');
+            } else {
+                return theme.footer.custom_text;
+            }
+        }
+    }) %>
     </p>
     <!-- footer develop info -->
     <p class="footer-develop mb-0">
-        <% if (theme.busuanzi.enable === true) { %>
-            <%- partial('_plugin/busuanzi/footer_counter', {}, {cache: theme.fragment_cache}) %>
-        <% } %>
-        <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.site_pv.enable === true) ) { %>
+        <%- fragment_cache('footer_counter_text', () => {
+            if (theme.busuanzi.enable) return partial('_plugin/busuanzi/footer_counter');
+            return '';
+        }) %>
+
+        <% if ( (theme.valine_counter.enable) && (theme.valine_counter.site_pv.enable) ) { %>
             <%- partial('_plugin/valine-counter/footer') %>
         <% } %>
         Powered by&nbsp;<!--

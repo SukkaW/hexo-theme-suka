@@ -1,16 +1,22 @@
 <% if( (is_post()) ) { %>
-    <!-- prism.line_number -->
-    <% if (config.suka_theme.prism.line_number === true) { %>
-        <% if (theme.vendors.prism.line_number) { %>
-            <link rel="stylesheet" href="<%= theme.vendors.prism.line_number %>">
-        <% } else { %>
-            <link rel="stylesheet" href="<%- url_for('lib/prism/prism-line-numbers.min.css') %>">
-        <% } %>
-    <% } %>
-    <!-- prism.theme -->
-    <% if (theme.vendors.prism.theme) { %>
-        <link rel="stylesheet" href="<%= theme.vendors.prism.theme %>">
-    <% } else { %>
-        <link rel="stylesheet" href="<%- url_for('lib/prism/prism-' + config.suka_theme.prism.theme + '.min.css') %>">
-    <% } %>
+    <%- fragment_cache('head_prism_css', () => {
+    let html = '';
+    /* prism.line_number */
+    if (config.suka_theme.prism.line_number) {
+        if (theme.vendors.prism.line_number) {
+            html += css_async(url_for(theme.vendors.prism.line_number));
+        } else {
+            html += css_async(url_for('lib/prism/prism-line-numbers.min.css'));
+        }
+    }
+
+    /* rism.theme */
+    if (theme.vendors.prism.theme) {
+        html += css_async(url_for(theme.vendors.prism.theme));
+    } else {
+        html += css_async(url_for('lib/prism/prism-' + config.suka_theme.prism.theme + '.min.css'));
+    }
+
+    return html;
+    }) %>
 <% } %>

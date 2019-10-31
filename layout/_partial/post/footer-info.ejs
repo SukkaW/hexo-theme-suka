@@ -15,9 +15,10 @@
     </blockquote>
 <% } %>
 
-<% if (theme.post.expire === true) { %>
+<% if (theme.post.expire) { %>
     <blockquote id="date-expire-notification" class="post-expired-notify"><%- __('post.expired', '<span id="date-expire-num"></span>') %></blockquote>
     <script>
+    (function() {
         var dateUpdate = Date.parse("<%= date(page.updated, 'YYYY-MM-DD') %>");
         var nowDate = new Date();
         var a = nowDate.getTime();
@@ -28,20 +29,18 @@
         } else {
             document.getElementById('date-expire-notification').style.display = 'none';
         }
+    })();
     </script>
 <% } %>
 
 <p class="post-footer-info mb-0 pt-0"><%= __('post.posted') %>&nbsp;<time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date, config.date_format) %></time>
-<%  var posted = date(page.date, 'MMM DD, YYYY')
-    var edited = date(page.updated, 'MMM DD, YYYY')
-    if (posted !== edited) { %>
+<%  if (date(page.date, 'MMM DD, YYYY') !== date(page.updated, 'MMM DD, YYYY')) { %>
     , <%= __('post.edited') %>&nbsp;<time datetime="<%= date_xml(page.updated) %>" itemprop="dateModified"><%= date(page.updated, config.date_format) %></time>
 <% } %>
 </p>
 <p class="post-footer-info mb-0 pt-2">
 <% if (page.categories && page.categories.length) { %>
 <span class="post-categories-list mt-2">
-<% count = page.categories.length %>
 <% page.categories.forEach(function(category, index) { %>
 <a class="post-categories-list-item" href='<%= url_for(category.path) %>'><%= category.name %></a>
 <% }); %>
@@ -50,7 +49,6 @@
 
 <% if (page.tags && page.tags.length){ %>
 <span class="post-tags-list mt-2">
-<% count = page.tags.length %>
 <% page.tags.forEach(function(tag, index) { %>
 <a class="post-tags-list-item" href="<%= url_for(tag.path) %>" rel="tag">#&nbsp;<%= tag.name %></a>
 <% }); %>

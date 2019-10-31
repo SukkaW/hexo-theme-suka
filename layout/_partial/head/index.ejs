@@ -1,0 +1,128 @@
+<head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <%- partial('_partial/head/dns-prefetch', {}, {cache: theme.fragment_cache}) %>
+    <!-- ## Preload ## -->
+    <%- partial('_partial/head/preload', {}, {cache: theme.fragment_cache}) %>
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title><%= page_title() %></title>
+
+    <!-- Favicons -->
+    <%- fragment_cache('head_favicon_and_theme-color', () => {
+        let html = favicon();
+        let theme_color = '';
+
+        if (theme.head.color) {
+            theme_color = theme.head.color
+        } else if (theme.uiux.bg_color) {
+            theme_color = theme.uiux.bg_color
+        }
+        if (theme.head.favicon.safari_pinned_tab) {
+            html += `<link rel="mask-icon" href="${url_for(theme.head.favicon.safari_pinned_tab)}" color="${theme_color}">`;
+        }
+        if (theme.head.color || theme.uiux.bg_color) {
+            html += `<meta name="theme-color" content="${theme_color}">`;
+        }
+
+        return html;
+    }) %>
+
+    <!-- ### Import File ### -->
+    <%- partial('_partial/source/head') %>
+
+    <!-- ### Site Verification ### -->
+    <%- partial('_partial/head/site-verification', {}, {cache: theme.fragment_cache}) %>
+
+    <%- fragment_cache('head_common', () => {
+        let html = '';
+        /* RSS */
+        if ( (config.feed) && (config.feed.path) ) {
+            if (config.feed.type === 'atom') {
+                html += `<link rel="alternate" type="application/atom+xml" href="${url_for(config.feed.path)}">`
+            } else if (config.feed.type === 'rss2') {
+                html += `<link rel="alternate" type="application/rss+xml" href="${url_for(config.feed.path)}">`
+            }
+        }
+
+        /* WebApp */
+        html += '<meta name="mobile-web-app-capable" content="yes">';
+        html += `<meta name="application-name" content="${config.title}">`;
+        html += `<meta name="msapplication-starturl" content="${config.url}">`;
+        if (theme.head.color) {
+            html += `<meta name="msapplication-navbutton-color" content="${theme.head.color}">`;
+        } else if (theme.uiux.bg_color) {
+            html += `<meta name="msapplication-navbutton-color" content="${theme.uiux.bg_color}">`;
+        }
+        html += '<meta name="apple-mobile-web-app-capable" content="yes">';
+        html += `<meta name="apple-mobile-web-app-title" content="${config.title}">`
+        html += '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">'
+
+        /* PWA Manifest */
+        if (theme.head.pwa_manifest) {
+            html += `<link rel="manifest" href="${theme.head.pwa_manifest}">`
+        }
+        
+        /* Open Search */
+        if (theme.head.open_search) {
+            html += `<link rel="search" type="application/opensearchdescription+xml" href="${theme.head.open_search}" title="${config.title}">`
+        }
+
+        return html;
+    }) %>
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <%- _open_graph() %>
+
+    <%- fragment_cache('head_facebook_admin', () => {
+        let html = '';
+
+        if (theme.comment.use === 'facebook') {
+            if (theme.comment.facebook.admin_fb_appid) {
+                html += `<meta property="fb:app_id" content="${theme.comment.facebook.admin_fb_appid}">`
+            } else if (theme.comment.facebook.admin_fb_username) {
+                html += `<meta property="fb:admins" content="${theme.comment.facebook.admin_fb_username}">`
+            }
+        }
+
+        return html;
+    }) %>
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="<%= full_url_for(page.path).replace('index.html', '') %>">
+
+    <%- fragment_cache('head_meta_generator', _meta_generator) %>
+
+    <!-- ### Analytics ### -->
+    <%- partial('_partial/head/analytics', {}, {cache: theme.fragment_cache}) %>
+
+    <!-- ### Structured Data ### -->
+    <%- partial('_partial/head/structured-data') %>
+
+    <!-- ### Custom Head ### -->
+    <%- fragment_cache('head_custom_code', () => {
+        let html = '';
+        if (site.data.head) {
+            for (const i in site.data.head) {
+                if (Array.isArray(site.data.head[i])) {
+                    html += site.data.head[i].join('');
+                } else if (site.data.head[i] !== null) {
+                    html += site.data.head[i];
+                }
+            }
+        }
+        return html;
+    }) %>
+</head>

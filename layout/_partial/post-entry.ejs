@@ -1,8 +1,3 @@
-<% if (theme.vendors.lazyload_img) { %>
-    <script src="<%= theme.vendors.lazyload %>" async></script>
-<% } else { %>
-    <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" async></script>
-<% } %>
 <article class="post-entry container px-0 card">
         <div class="columns col-gapless">
             <% if (post.thumbnail) { %>

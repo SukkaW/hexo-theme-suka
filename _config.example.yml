@@ -372,13 +372,11 @@ vendors:
   # You can check current the Suka Version Code at the end of theme config.
   suka:
     style_css:
-    lazyload_img:
     local_search_js:
     hanabi_browser_js:
     highlight_theme:
-    gallery_css:
-    gallery_js:
     # You can fill in any suka built in highlight.js theme you want here, and it will override the prism theme config before.
+  lazyload_img:
   # Spectre.css
   # https://picturepan2.github.io/spectre/
   # Version: 0.5.3

@@ -3,56 +3,56 @@
     <ul class="menu share-menu">
 
         <!-- Share Weibo -->
-        <% if(theme.sns_share.weibo === true) { %>
+        <% if(theme.sns_share.weibo) { %>
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=<%- config.title %>&url=<%- config.url %>&pic=<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow"><%= __('share.toWeibo') %></a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=<%- config.title %>&url=<%- config.url %>&pic=<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= site_logo() %><% } %>&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow"><%= __('share.toWeibo') %></a>
         </li>
         <% } %>
 
         <!-- Share Twitter -->
-        <% if(theme.sns_share.twitter === true) { %>
+        <% if(theme.sns_share.twitter) { %>
         <li class="menu-item">
             <a href="https://twitter.com/intent/tweet?text=<%- config.title %>&url=<%- config.url %>&via=<%= config.author %>" target="_blank" rel="external noopener noreferrer nofollow"><%= __('share.toTwitter') %></a>
         </li>
         <% } %>
 
         <!-- Share Facebook -->
-        <% if(theme.sns_share.facebook === true) { %>
+        <% if(theme.sns_share.facebook) { %>
         <li class="menu-item">
             <a href="https://www.facebook.com/sharer/sharer.php?u=<%= config.url %>" target="_blank" rel="external noopener noreferrer nofollow"><%= __('share.toFacebook') %></a>
         </li>
         <% } %>
 
         <!-- Share Google+ -->
-        <% if(theme.sns_share.googleplus === true) { %>
+        <% if(theme.sns_share.googleplus) { %>
         <li class="menu-item">
             <a href="https://plus.google.com/share?url=<%- config.url %>" target="_blank" rel="external noopener noreferrer nofollow"><%= __('share.toGplus') %></a>
         </li>
         <% } %>
 
         <!-- Share LinkedIn -->
-        <% if(theme.sns_share.linkedin === true) { %>
+        <% if(theme.sns_share.linkedin) { %>
         <li class="menu-item">
             <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%- config.url %>&title=<%= page.title %>" target="_blank" rel="external noopener noreferrer nofollow"><%= __('share.toLinkedIn') %></a>
         </li>
         <% } %>
 
         <!-- Share QQ -->
-        <% if(theme.sns_share.qq === true) { %>
+        <% if(theme.sns_share.qq) { %>
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%- config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= suka_icon() %><% } %>&url=<%- config.url %>" target="_blank" rel="external noopener noreferrer nofollow"> <%= __('share.toQQ') %></a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%- config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<% if (page.thumbnail) { %><%= page.thumbnail %><% } else { %><%= site_logo() %><% } %>&url=<%- config.url %>" target="_blank" rel="external noopener noreferrer nofollow"> <%= __('share.toQQ') %></a>
         </li>
         <% } %>
 
         <!-- Share Telegram -->
-        <% if(theme.sns_share.telegram === true) { %>
+        <% if(theme.sns_share.telegram) { %>
         <li class="menu-item">
             <a href="https://t.me/share/url?url=<%- config.url %>&text=<%= page.title %>" target="_blank" rel="external noopener noreferrer nofollow"><%= __('share.toTelegram') %></a>
         </li>
         <% } %>
 
         <!-- QRCode -->
-        <% if(theme.qrcode.post_share === true) { %>
+        <% if(theme.qrcode.post_share) { %>
         <li class="menu-item">
             <img src="<%- qrcode(url, {margin: 2, size: 4}) %>" alr="QRCode">
         </li>

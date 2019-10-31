@@ -3,20 +3,15 @@
 <% } %>
 
 <p class="mb-0 card-body">
-    <% if(post.excerpt) {%>
+    <% if (post.excerpt) {%>
         <%- strip_html(post.excerpt) %>
     <% } else { %>
-        <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
+        <%- strip_html(truncate(post.content, { length: theme.post.entry_excerpt })) %>
     <% } %><a href="<%= url_for(post.path) %>"><%= __('post.continue') %></a>
 </p>
 
 <%
-    var lazyloadImgSrc = '';
-    if (theme.vendors.lazyload_img) {
-        lazyloadImgSrc = theme.vendors.lazyload_img;
-    } else {
-        lazyloadImgSrc = url_for('img/suka-lazyload.gif');
-    }
+    const lazyloadImgSrc = (theme.vendors.lazyload_img) ? theme.vendors.lazyload_img : url_for('img/suka-lazyload.gif');
 %>
 
 
@@ -32,7 +27,7 @@
                 style: 'none'
             }) %>
         <% } %>
-        <% if ( (theme.valine_counter.enable === true) && (theme.valine_counter.index_post_pv.enable === true) ) { %>
+        <% if ( (theme.valine_counter.enable) && (theme.valine_counter.index_post_pv.enable) ) { %>
             <span class="suka-devide-dot"></span>
             <%- partial('_plugin/valine-counter/index_post', {}, {cache: theme.fragment_cache}) %>
         <% } %>

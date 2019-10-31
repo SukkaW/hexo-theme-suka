@@ -19,15 +19,8 @@
                     </div>
                 </div>
 
-                <% var last = 0, year, yearArr = []; %>
-
-                <% page.posts.sort('date', -1).each(function(post) { %>
-                <% year = post.date.year(); %>
-                <% if (last != year){ %>
-                    <% if (yearArr.length != 0){ %>
-                    <% } %>
-                    <% yearArr.push(year); %>
-                    <% last = year; %>
+                <% function buildArchive(posts, year, month = null) {
+                    const time = moment([page.year, (page.month) ? page.month - 1 : null].filter(i => i !== null)); %>
                     <div class="timeline-item">
                         <div class="timeline-left">
                             <div class="timeline-icon icon-lg"></div>
@@ -35,13 +28,12 @@
                         <div class="timeline-content">
                             <div class="tile">
                                 <div class="tile-content">
-                                    <p class="tile-title mb-0 h4">
-                                        <%= year %>
-                                    </p>
+                                    <p class="tile-title mb-0 h4"><%= (month === null) ? year : (time.locale((config.language) ? config.language : 'en').format('MMMM YYYY')) %></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <% posts.each(post => { %>
                     <div class="timeline-item">
                         <div class="timeline-left">
                             <div class="timeline-icon"></div>
@@ -55,23 +47,18 @@
                             </div>
                         </div>
                     </div>
-                <% } else { %>
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <div class="timeline-icon"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="tile">
-                                <div class="tile-content">
-                                    <span class="tile-subtitle text-gray mb-1"><%= date(post.date, 'MM-DD') %></span>
-                                    <a href="<%- url_for(post.path) %>" class="timeline-tile-title ml-1" rel="bookmark"><span class="tile-title"><%- post.title %></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <% }) %>
                 <% } %>
-                <% }) %>
-
+                <% if (!page.year) {
+                    let years = {};
+                    page.posts.each(post => years[post.date.year()] = null);
+                    for (let year of Object.keys(years).sort((a, b) => b - a)) {
+                        let posts = page.posts.filter(p => p.date.year() == year); %>
+                        <%- buildArchive(posts, year, null) %>
+                    <% }
+                } else { %>
+                    <%- buildArchive(page.posts, page.year, page.month) %>
+                <% } %>
             </div>
 
         </main>

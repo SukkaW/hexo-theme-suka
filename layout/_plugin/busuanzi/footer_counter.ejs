@@ -1,4 +1,4 @@
-<% if(theme.busuanzi.site_uv.enable === true) { %>
+<% if(theme.busuanzi.site_uv.enable) { %>
     <!-- Busuanzi User Views -->
     <span id="busuanzi_container_site_uv" hidden>
         <span><%- theme.busuanzi.site_uv.before %></span>
@@ -9,7 +9,7 @@
         <% } %>
     </span>
 <% } %>
-<% if(theme.busuanzi.site_pv.enable === true) { %>
+<% if(theme.busuanzi.site_pv.enable) { %>
     <!-- Busuanzi Post Views -->
     <span id="busuanzi_container_site_pv" hidden>
         <span><%- theme.busuanzi.site_pv.before %></span>

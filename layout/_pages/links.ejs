@@ -3,7 +3,7 @@
 
     <% if (site.data.links) { %>
         <div class="link-list">
-        <% for (var i in site.data.links) { %>
+        <% for (const i in site.data.links) { %>
             <div class="link-item">
                 <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
                     <div class="card">

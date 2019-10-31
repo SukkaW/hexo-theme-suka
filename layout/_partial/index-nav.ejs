@@ -1,20 +1,22 @@
 <nav class="navbar-section text-center">
-    <% if (theme.nav.home.use === true) { %>
+    <% if (theme.nav.home.use) { %>
         <a href="<%= url_for('/') %>" class="navbar-link"><%= __('home') %></a>
     <% } %>
-    <% if (theme.nav.archives.use === true) { %>
-        <a href="<%= url_for('archives/') %>" class="navbar-link"><%= __('archive') %></a>
+    <% if (theme.nav.archives.use) {
+        let archiveDir = config.archive_dir;
+        if (archiveDir[archiveDir.length - 1] !== '/') archiveDir += '/'; %>
+        <a href="<%= url_for(archiveDir) %>" class="navbar-link"><%= __('archive') %></a>
     <% } %>
-    <% if (theme.nav.search.use === true) { %>
+    <% if (theme.nav.search.use) { %>
         <a href="<%= theme.nav.search.link %>" class="navbar-link"><%= __('search.main') %></a>
     <% } %>
-    <% for (var i in theme.nav.pages){ %>
+    <% for (const i in theme.nav.pages){ %>
         <a href="<%= theme.nav.pages[i].link %>" class="navbar-link"><%= i %></a>
     <% } %>
-    <% if (theme.nav.share.use === true) { %>
+    <% if (theme.nav.share.use) { %>
         <%- partial('_partial/menu/index-share', {}, {cache: theme.fragment_cache}) %>
     <% } %>
-    <% if (theme.nav.rss.use === true) { %>
+    <% if (theme.nav.rss.use) { %>
         <a href="<%= url_for(config.feed.path) %>" target="_blank" class="navbar-link">RSS</a>
     <% } %>
 </nav>

@@ -3,8 +3,8 @@
     <h1 class="header-title text-center"><a href="<%= config.root %>"><%= config.title %></a></h1>
 
     <p class="text-center header-slogan">
-        <% if(theme.uiux.slogan) { %>
-            <% if(Array.isArray(theme.uiux.slogan)) { %>
+        <% if (theme.uiux.slogan) { %>
+            <% if (Array.isArray(theme.uiux.slogan)) { %>
                 <%- theme.uiux.slogan.join('<br>') %>
             <% } else { %>
                 <%- theme.uiux.slogan %>
@@ -12,5 +12,5 @@
         <% } %>
     </p>
 
-    <%- partial('_partial/index-nav', {}, {cache: theme.fragment_cache}) %>
+    <%- partial('_partial/index-nav') %>
 </header>

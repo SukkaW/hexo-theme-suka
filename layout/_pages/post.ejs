@@ -1,15 +1,7 @@
-<% if ( (theme.toc.enable === true) && (page.toc !== false) ) { %>
-    <% var toc_obj = toc(page.content, {
-        class: 'post-toc',
-        list_number: theme.toc.line_number || false,
-    }) %>
-<% } %>
-
 <div class="post-container">
     <div id="post-card" class="card">
-        <% if(page.thumbnail) { %>
-            <!-- # Post Thumbnail # -->
-            <div class="card-image" style="background-image: url('<%= page.thumbnail %>');"></div>
+        <% if (page.thumbnail) { %>
+            <div class="card-image lazyload" data-bg="url('<%= page.thumbnail %>')"></div>
         <% } %>
         <div class="card-item-container">
             <div class="card-inner-cell">
@@ -18,11 +10,13 @@
                     <%- partial('_partial/post/header-info') %>
                 </div>
                 <div class="card-body">
-                    <% if ( (theme.toc.enable === true) && (page.toc !== false) ) { %>
-                        <% if(toc_obj.length > 0) { %>
-                            <div id="post-toc">
-                                <%- toc_obj %>
-                            </div>
+                    <% if (theme.toc.enable && (page.toc !== false) ) { %>
+                        <% const toc_obj = toc(page.content, {
+                            class: 'post-toc',
+                            list_number: theme.toc.line_number || false
+                        }); %>
+                        <% if (toc_obj.length > 0) { %>
+                            <div id="post-toc"><%- toc_obj %></div>
                         <% } %>
                     <% } %>
                     <article id="post-content">
@@ -32,7 +26,7 @@
                 </div>
                 <%- partial('_partial/post/footer-pagination') %>
 
-                <% if(page.comments !== false) { %>
+                <% if (page.comments !== false) { %>
                     <!-- # Comment # -->
                     <% if (theme.comment.use) { %>
                         <div class="card-footer post-comment">

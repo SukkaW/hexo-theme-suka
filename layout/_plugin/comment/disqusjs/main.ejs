@@ -1,24 +1,30 @@
 <div id="disqus_thread"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.js"></script>
-
+<script id="js-disqusjs" src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.js" async></script>
 <script>
-window.addEventListener("load", function () {
-    var dsqjs = new DisqusJS({
-        shortname: '<%= theme.comment.disqusjs.shortname %>',
-        <% if (theme.comment.disqusjs.siteName) { %>
-        siteName: '<%= theme.comment.disqusjs.siteName %>',
-        <% } %>
-        identifier: '<%= page.permalink %>',
-        url: '<%= page.permalink %>',
-        api: '<%= theme.comment.disqusjs.api %>',
-        apikey: '<%= theme.comment.disqusjs.apikey %>',
-        <% if (theme.comment.disqusjs.admin) { %>
-        admin: '<%= theme.comment.disqusjs.admin %>',
-        <% } %>
-        <% if (theme.comment.disqusjs.adminLabel) { %>
-        adminLabel: '<%= theme.comment.disqusjs.adminLabel %>'
-        <% } %>
-    });
+document.getElementById('js-disqusjs').addEventListener('load', function () {
+    function loadDisqusJS() {
+        new DisqusJS({
+            shortname: '<%= theme.comment.disqusjs.shortname %>',
+            <% if (theme.comment.disqusjs.siteName) { %>
+            siteName: '<%= theme.comment.disqusjs.siteName %>',
+            <% } %>
+            identifier: '<%= page.permalink %>',
+            url: '<%= page.permalink %>',
+            api: '<%= theme.comment.disqusjs.api %>',
+            apikey: '<%= theme.comment.disqusjs.apikey %>',
+            <% if (theme.comment.disqusjs.admin) { %>
+            admin: '<%= theme.comment.disqusjs.admin %>',
+            <% } %>
+            <% if (theme.comment.disqusjs.adminLabel) { %>
+            adminLabel: '<%= theme.comment.disqusjs.adminLabel %>'
+            <% } %>
+        })
+    }
+    if (document.readyState === 'complete') {
+        loadDisqusJS();
+    } else {
+        window.addEventListener('load', loadDisqusJS);
+    }
 });
 </script>

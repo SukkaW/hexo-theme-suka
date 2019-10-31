@@ -1,18 +1,24 @@
-<!-- spectre.css -->
-<% if (theme.vendors.spectre.spectre_css) { %>
-    <link rel="stylesheet" href="<%= theme.vendors.spectre.spectre_css %>">
-<% } else { %>
-    <link rel="stylesheet" href="<%- url_for('lib/spectre/spectre.min.css') %>">
-<% } %>
+<%- fragment_cache('head_source_common', () => {
+    let html = '';
 
-<%- partial('_partial/head/config_style', {}, {cache: theme.fragment_cache}) %>
+    /* spectre.css */
+    if (theme.vendors.spectre.spectre_css) {
+        html += `<link rel="stylesheet" href="${theme.vendors.spectre.spectre_css}">`;
+    } else {
+        html += `<link rel="stylesheet" href="${url_for('lib/spectre/spectre.min.css')}">`;
+    }
 
-<!-- style.css -->
-<% if (theme.vendors.suka.style_css) { %>
-    <link rel="stylesheet" href="<%= theme.vendors.suka.style_css %>">
-<% } else { %>
-    <link rel="stylesheet" href="<%- url_for('css/style.min.css') %>">
-<% } %>
+    html += partial('_partial/head/config_style');
+
+    /* style.css */
+    if (theme.vendors.suka.style_css) {
+        html += `<link rel="stylesheet" href="${theme.vendors.suka.style_css}">`;
+    } else {
+        html += `<link rel="stylesheet" href="${url_for('css/style.min.css')}">`;
+    }
+
+    return html;
+}) %>
 
 <% if (theme.comment.use === 'disqusjs') { %>
     <% if ( (is_post()) ) { %>
@@ -21,17 +27,23 @@
     <% } %>
 <% } %>
 
-<% if (config.suka_theme.prism.enable === true) { %>
+<% if (config.suka_theme.prism.enable) { %>
     <!-- prism.css -->
     <%- partial('_plugin/highlight/prism/common') %>
 <% } %>
 
-<% if (theme.prettify.enable === true) { %>
+<% if (theme.prettify.enable) { %>
     <!-- Prettify Theme -->
     <%- partial('_plugin/highlight/prettify/theme') %>
 <% } %>
 
-<% if (config.highlight.enable === true) { %>
+<% if (config.highlight.enable) { %>
     <!-- Prettify Theme -->
     <%- partial('_plugin/highlight/hexo-hljs/theme') %>
 <% } %>
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>

@@ -8,7 +8,7 @@
         "name": "<%= config.author %>",
         "image": {
             "@type": "ImageObject",
-            "url": "<%= suka_full_url_for(theme.img.avatar) %>"
+            "url": "<%= full_url_for(theme.img.avatar) %>"
         },
         "description": "<%- theme.uiux.slogan %>"
     },
@@ -17,14 +17,14 @@
         "name": "<%= config.title %>",
         "logo": {
             "@type": "ImageObject",
-            "url": "<%= suka_icon() %>"
+            "url": "<%= site_logo() %>"
         }
     },
     "url": "<%- config.url %>",
-    "logo": "<%= suka_icon() %>",
+    "logo": "<%= site_logo() %>",
     "image": {
         "@type": "ImageObject",
-        "url": "<%= suka_icon() %>"
+        "url": "<%= site_logo() %>"
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -33,12 +33,12 @@
     <% if ( (theme.search.use === "local") || (theme.nav.search.link) ) { %>
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "<%= suka_full_url_for(theme.nav.search.link) %>?s={search_term_string}",
+        "target": "<%= full_url_for(theme.nav.search.link) %>?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     <% } %>
-    "keywords": "<%= suka_tags() %>",
-    "description": "<%= suka_descr() %>"
+    "keywords": "<%= page_tags() %>",
+    "description": "<%= page_descr() %>"
 }
 </script>
 <% } %>
@@ -50,21 +50,21 @@
     "@context": "http://schema.org",
     "url": "<%= page.permalink %>",
     "@type": "BlogPosting",
-    "logo": "<%= suka_icon() %>",
+    "logo": "<%= site_logo() %>",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "<%= page.permalink %>"
     },
-    "headline": "<%= suka_title() %><%= config.title %>",
+    "headline": "<%= page_title() %>",
     <% if(page.thumbnail) { %>
     "image": {
         "@type": "ImageObject",
-        "url": "<%= suka_full_url_for(page.thumbnail) %>"
+        "url": "<%= full_url_for(page.thumbnail) %>"
     },
     <% } else { %>
     "image": {
         "@type": "ImageObject",
-        "url": "<%= suka_icon() %>"
+        "url": "<%= site_logo() %>"
     },
     <% } %>
     "datePublished": "<%= date_xml(page.date) %>",
@@ -74,7 +74,7 @@
         "name": "<%= config.author %>",
         "image": {
             "@type": "ImageObject",
-            "url": "<%= suka_full_url_for(theme.img.avatar) %>"
+            "url": "<%= full_url_for(theme.img.avatar) %>"
         },
         "description": "<%- theme.uiux.slogan %>"
     },
@@ -83,18 +83,18 @@
         "name": "<%= config.title %>",
         "logo": {
             "@type": "ImageObject",
-            "url": "<%= suka_icon() %>"
+            "url": "<%= site_logo() %>"
         }
     },
     <% if ( (theme.search.use === "local") || (theme.nav.search.link) ) { %>
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "<%= suka_full_url_for(theme.nav.search.link) %>?s={search_term_string}",
+        "target": "<%= full_url_for(theme.nav.search.link) %>?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     <% } %>
-    "keywords": "<%= suka_tags() %>",
-    "description": "<%= suka_descr() %>"
+    "keywords": "<%= page_tags() %>",
+    "description": "<%= page_descr() %>"
 }
 </script>
 <% } %>

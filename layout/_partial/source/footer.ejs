@@ -1,62 +1,64 @@
 <!-- ### Footer JS Import ### -->
 
 <script>
+
+    <%- fragment_cache('footer_inline_js', () => {
+        let js = [];
+
+        /* Vanilla Lazyload Config */
+        js.push(`
 window.lazyLoadOptions = {
     elements_selector: ".lazyload",
     threshold: 50
-};
+};`);
 
-<% if (page.layout !== 'gallery') { %>
-
-    /* Copyright */
+        /* Copyright */
+        if (theme.footer.copyright_since > 0) {
+            js.push(`
+(function() {
     var copyrightNow = new Date().getFullYear();
-    var copyrightContent = document.querySelector('span[data-year]')
-    <% if (theme.footer.copyright_since > 0) { %>
-        copyrightSince = <%= theme.footer.copyright_since %>;
-        if (copyrightSince === copyrightNow) {
-            copyrightContent.textContent = copyrightNow
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = ${theme.footer.copyright_since};
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();`);
         } else {
-            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+            js.push(`document.getElementById('copyright-year').textContent = new Date().getFullYear();`);
         }
-    <% } else { %>
-        copyrightContent.textContent = copyrightNow
-    <% } %>
 
-<% } %>
+        /* Suka Theme Console.Log */
+        js.push(`console.log('\\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision ${theme.verison} %c https://github.com/SukkaW/hexo-theme-suka \\n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');`);
 
-/* Cnosole Log */
-console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme.verison %> %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+        return js.join('\n');
+    }) %>
+
 </script>
 
-<!-- vanilla-lazyload -->
-<% if (theme.vendors.lazyload) { %>
-    <script src="<%= theme.vendors.lazyload %>" async></script>
-<% } else { %>
-    <script src="<%- url_for('lib/vanilla-lazyload/lazyload.min.js') %>" async></script>
-<% } %>
+<%- fragment_cache('footer_common_js', () => {
+    let html = '';
 
-<% if(theme.busuanzi.enable === true) { %>
-    <!-- Busuanzi -->
-    <%- partial('_plugin/busuanzi/import_js') %>
-<% } %>
+    /* vanilla-lazyload */
+    if (theme.vendors.lazyload) {
+        html += `<script src="${theme.vendors.lazyload}" async></script>`
+    } else {
+        html += `<script src="${url_for('lib/vanilla-lazyload/lazyload.min.js')}" async></script>`
+    }
 
-<% if (theme.hanabi.enable === true) { %>
-    <!-- Hanabi -->
-    <%- partial('_plugin/highlight/hanabi/import_js', {}, {cache: theme.fragment_cache}) %>
-<% } %>
+    /* Busuanzi */
+    if (theme.busuanzi.enable) html += partial('_plugin/busuanzi/import_js');
 
-<% if (theme.prettify.enable === true) { %>
+    /* theme.hanabi.enable */
+    if (theme.hanabi.enable) html += partial('_plugin/highlight/hanabi/import_js');
+
+    return html
+}) %>
+
+<% if (theme.prettify.enable) { %>
     <!-- prettify -->
     <%- partial('_plugin/highlight/prettify/import_js') %>
-<% } %>
-
-<!-- gallery.js -->
-<% if (page.layout === 'gallery') { %>
-    <% if (theme.vendors.suka.gallery_js) { %>
-        <script src="<%= theme.vendors.suka.gallery_js %>"></script>
-    <% } else { %>
-        <script src="<%- url_for('js/gallery.min.js') %>"></script>
-    <% } %>
 <% } %>
 
 <!-- Comment -->
@@ -67,4 +69,16 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision <%= theme
 <% } %>
 
 <!-- ### Custom Footer ### -->
-<%- partial('_partial/source/custom_footer', {}, {cache: theme.fragment_cache}) %>
+<%- fragment_cache('footer_custom_code', () => {
+    let html = '';
+    if (site.data.footer) {
+        for (const i in site.data.footer) {
+            if (Array.isArray(site.data.footer[i])) {
+                html += site.data.footer[i].join('');
+            } else if (site.data.footer[i] !== null) {
+                html += site.data.footer[i];
+            }
+        }
+    }
+    return html;
+}) %>
