@@ -8,8 +8,8 @@
 <p align="center">
 <img alt="Version" src="https://img.shields.io/github/v/release/sukkaw/hexo-theme-suka?color=%235755d9&include_prereleases&label=version&style=flat-square">
 <a href="https://skk.moe" target="_blank"><img alt="Author" src="https://img.shields.io/badge/Author-Sukka-b68469.svg?style=flat-square"/></a>
-<a href="https://hexo.io" target="_blank"><img alt="Hexo" src="https://img.shields.io/badge/hexo-3.7+-0e83cd.svg?style=flat-square"/></a>
-<a href="https://nodejs.org/" target="_blank"><img alt="node.js" src="https://img.shields.io/badge/node.js-8.6%2B-43853d.svg?style=flat-square"/></a>
+<a href="https://hexo.io" target="_blank"><img alt="Hexo" src="https://img.shields.io/badge/hexo-4.0+-0e83cd.svg?style=flat-square"/></a>
+<a href="https://nodejs.org/" target="_blank"><img alt="node.js" src="https://img.shields.io/badge/node.js-10%2B-43853d.svg?style=flat-square"/></a>
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/sukkaw/hexo-theme-suka?style=flat-square">
 <br>
 <a href="https://travis-ci.org/SukkaW/hexo-theme-suka"><img alt="Build Status" src="https://img.shields.io/travis/SukkaW/hexo-theme-suka.svg?style=flat-square"/></a>
