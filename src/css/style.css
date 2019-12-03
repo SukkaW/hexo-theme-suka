@@ -1101,11 +1101,15 @@ a.category-link {
 /* Fix for highlight */
 
 #post-content figure.highlight {
-    margin: .5rem 0;
+    margin: 1rem 0;
+}
+
+#post-content figure.highlight tr {
+    background: transparent !important;
 }
 
 #post-content figure.highlight pre {
-    margin: .5rem 0;
+    margin: .1rem 0;
     padding: 0 0 0 10px;
 }
 

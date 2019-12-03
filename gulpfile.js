@@ -6,7 +6,7 @@ const rename = require('gulp-rename');
 
 const configs = {
     autoprefixer: {
-        browsers: [
+        overrideBrowserslist: [
             'last 2 versions',
             '> 1%',
             'Chrome >= 30',

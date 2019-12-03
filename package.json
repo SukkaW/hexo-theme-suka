@@ -27,7 +27,7 @@
     "ejs-lint": "0.3.0",
     "eslint": "6.5.1",
     "gulp": "4.0.2",
-    "gulp-autoprefixer": "7.0.1",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "4.2.0",
     "gulp-rename": "1.4.0",
     "gulp-uglify": "3.0.2",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "node-prismjs": "0.1.2",
-    "prismjs": "1.17.1",
+    "prismjs": "^1.17.1",
     "qr-image": "3.2.0"
   }
 }
