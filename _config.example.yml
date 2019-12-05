@@ -104,6 +104,7 @@ nav:
       #link: /about/
     #Friends:
       #link: /links/
+      #attr: 'target="_blank" rel="noopener"'
 
 # SNS Share Switch
 # Used to choose which items will be displayed in share menu.

@@ -11,7 +11,7 @@
         <a href="<%= theme.nav.search.link %>" class="navbar-link"><%= __('search.main') %></a>
     <% } %>
     <% for (const i in theme.nav.pages){ %>
-        <a href="<%= theme.nav.pages[i].link %>" class="navbar-link"><%= i %></a>
+        <a href="<%= theme.nav.pages[i].link %>" class="navbar-link" <% const attr = theme.nav.pages[i].attr; if (attr) { %><%- attr %><% } %>><%= i %></a>
     <% } %>
     <% if (theme.nav.share.use) { %>
         <%- partial('_partial/menu/index-share', {}, {cache: theme.fragment_cache}) %>
