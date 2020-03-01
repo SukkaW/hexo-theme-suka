@@ -16,6 +16,14 @@
     } else {
         html += `<link rel="stylesheet" href="${url_for('css/style.min.css')}">`;
     }
+    if(theme.uiux.darkmode) { 
+        <!-- ### Darkmode ### -->
+        if (theme.vendors.suka.darkmode_css) {
+            html += `<link rel="stylesheet" href="${theme.vendors.suka.darkmode_css}">`;
+        } else {
+            html += `<link rel="stylesheet" href="${url_for('css/darkmode.min.css')}">`;
+        }
+    }
 
     return html;
 }) %>

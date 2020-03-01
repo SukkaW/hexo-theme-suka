@@ -78,6 +78,8 @@ uiux:
   primary_color:
   # Background color
   bg_color:
+  # Darkmode
+  darkmode:
 
 img:
   avatar: '/img/default_avatar.png'
@@ -375,6 +377,7 @@ vendors:
     local_search_js:
     hanabi_browser_js:
     highlight_theme:
+    darkmode_css:
     # You can fill in any suka built in highlight.js theme you want here, and it will override the prism theme config before.
   lazyload_img:
   # Spectre.css
