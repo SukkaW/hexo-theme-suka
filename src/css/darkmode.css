@@ -384,4 +384,21 @@ a.category-link {
     color: #d9dce2;
 }
 
+
 }
+
+/**
+ * =========================================================
+ * ************   Page: DisqusJS   ************
+ * =========================================================
+ */
+
+#dsqjs .dsqjs-post-body {
+     color: #e1e1e1 !important;
+ }
+#dsqjs .dsqjs-post-list .dsqjs-post-header .dsqjs-meta {
+     color: #c4c4c4 !important;
+ }
+#dsqjs .dsqjs-nav-tab{
+    color: #d9dce2 !important;
+ }
