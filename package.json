@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "node-prismjs": "0.1.2",
-    "prismjs": "1.17.1",
+    "prismjs": "1.20.0",
     "qr-image": "3.2.0"
   }
 }
