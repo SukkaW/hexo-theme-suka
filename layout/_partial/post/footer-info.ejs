@@ -1,5 +1,6 @@
 <% if (page.hide_license !== true && theme.post.license || page.license) { %>
     <blockquote class="post-license">
+        <% if(theme.post.license_strong != false){ %>
         <p>
             <strong><%- __('post.author') %>&nbsp;:&nbsp;<%= config.author %></strong>
             <br>
@@ -12,6 +13,19 @@
             <br>
             <strong><%- __('post.permalink') %>&nbsp;:&nbsp;</strong><a href="<%= page.permalink %>"><%= page.permalink %></a>
         </p>
+        <%} else {%>
+            <p>
+                <%- __('post.author') %>&nbsp;:&nbsp;<%= config.author %>
+                <br>
+                <% if (page.license) { %>
+                    <%- page.license %>
+                <% } else { %>
+                    <%- theme.post.license %>
+                <% } %>
+                <br>
+                <%- __('post.permalink') %>&nbsp;:&nbsp;<a href="<%= page.permalink %>"><%= page.permalink %></a>
+            </p>
+        <% } %>
     </blockquote>
 <% } %>
 

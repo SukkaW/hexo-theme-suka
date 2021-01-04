@@ -140,6 +140,12 @@ post:
   # You can also use Front-Matter `license` to override this setting
   # or use Front-Matter `hide_license: true` to hide license on spefic post
   license:
+  # License_strong decides whether the copyright description is strengthen(bold).
+  # For example, if you set license_strong to true with setting up your license as:
+  #       license: 'This blog is under a CC BY-NC-SA 3.0 Unported License.'
+  # The license description will be show on page as:
+  #       <strong>This blog is under a CC BY-NC-SA 3.0 Unported License.</strong>
+  license_strong: true
 
 # Table Of Contents which will be show on right side of the post
 toc:
