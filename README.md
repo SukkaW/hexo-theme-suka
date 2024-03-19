@@ -99,6 +99,12 @@ Authored and maintained by Sukka with help from contributors ([list](https://git
 
 > [Personal Website](https://skk.moe) · [Blog](https://blog.skk.moe) · GitHub [@SukkaW](https://github.com/SukkaW) · Telegram Channel [@SukkaChannel](https://t.me/SukkaChannel) · Twitter [@isukkaw](https://twitter.com/isukkaw) · Keybase [@sukka](https://keybase.io/sukka)
 
+<p align="center">
+  <a href="https://github.com/sponsors/SukkaW/">
+    <img src="https://sponsor.cdn.skk.moe/sponsors.svg"/>
+  </a>
+</p>
+
 ## License 许可证
 
 [![license](https://img.shields.io/github/license/sukkaw/hexo-theme-suka.svg?style=flat-square)](./LICENSE)
